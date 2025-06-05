@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Language experiment</title>
+    <script src="https://unpkg.com/jspsych@7.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.1"></script>
+    <link href="https://unpkg.com/jspsych@7.1.2/css/jspsych.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="jspsych-target"></div>
+  </body>
+<link href="timerstyle.css" rel="stylesheet" type="text/css" />
+ <script src = "timer.js"></script> 
+
+<script>
+
+var jsPsych = initJsPsych({
+  display_element: 'jspsych-target',
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
+
+var timeline = [];
+  
+var subject_id = Math.floor(Math.random()*100000);
+
+
+var instructions1 = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+  <p style="font-size:20px;"> </p>
+  <p style="font-size:20px;"> How many words can you come up with?</p>
+  <p style="font-size:20px;"> Click the button below to find out.</p>
+  `,
+  choices: ['Start game!'],
+      data: {
+        typeoftrial: 'instructions',
+        subject: subject_id
+    }
+};    
+
+  var animal = {
+    type: jsPsychSurveyText,
+    questions: [
+    {prompt: '<p style="font-size:40px;">List all the ANIMALS you can in 3 minutes.</p>'}
+  ]
+  }
+
+  var food = {
+    //on_load: countDown(),
+    type: jsPsychSurveyText,
+    questions: [
+    {prompt: '<p style="font-size:40px;">List all the FOODS you can in 3 minutes.</p>'}
+  ]
+  }
+
+  var countdowntrial = {
+    type: jsPsychCallFunction,
+    func: countDown
+}
+
+
+  // Timeline
+  var animal_loop = {
+    timeline: [animal],
+   // on_timeline_start: countDown,
+    loop_function: function(data){
+      var getTime = new Date().getTime();
+      var timePassedCounter = getTime - startTime;
+
+        if(timePassedCounter < 15000){
+          console.log("timePassed: " + timePassedCounter);
+            return true;
+        } else {
+          console.log("timePassed: " + timePassedCounter);
+            startTime = new Date().getTime();
+            return false;
+        }
+    }
+}
+
+var food_loop = {
+    timeline: [food],
+   // on_timeline_start: countDown,
+    loop_function: function(data){
+      var getTime = new Date().getTime();
+      var timePassedCounter = getTime - startTime;
+
+        if(timePassedCounter < 15000){
+          console.log("timePassed: " + timePassedCounter);
+            return true;
+        } else {
+          console.log("timePassed: " + timePassedCounter);
+          startTime = new Date().getTime();
+            return false;
+        }
+    }
+}
+  
+  var endexperiment = {
+    on_load: resetCountdown,
+      type: jsPsychHtmlButtonResponse,
+      stimulus: `<p>Thank you for participating! </p>
+      <p> Please click <a href="https://bit.ly/3t1aLGU" target="_blank" rel="noopener noreferrer">here</a> to access the debriefing form and know more about our research.</p>
+      <p> Please click the button below to finish the experiment and save your data.</p>
+      <p> IMPORTANT: Please do not leave this page without clicking the button below.</p>
+        `,
+      choices: ['Finish and Save Data']
+  };
+
+  // add everything to timeline
+
+  timeline.push(instructions1);
+  startTime = new Date().getTime();
+  timeline.push(countdowntrial);
+  timeline.push(animal_loop);
+  timeline.push(food_loop);
+
+  var save_data = {
+    type: 'call-function',
+    func: function(){saveData(subject_id+".csv",
+      jsPsych.data.get().csv())}
+}
+
+function saveData(filename, filedata){
+  	$.ajax({
+  		type:'post',
+  		cache: false,
+  		url: 'save_data.php', // this is the path to the above PHP script
+      //url: https://script.google.com/macros/s/AKfycbzV--xTooSkBLufMs4AnrCTdwZxVNtycTE4JNtaCze2UijXAg8/exec
+  		data: {filename: filename, filedata: filedata}})
+  }
+
+
+  timeline.push(save_data);
+  timeline.push(endexperiment);
+
+  
+  jsPsych.run(timeline);
+
+
+
+
+</script>
+</html>
