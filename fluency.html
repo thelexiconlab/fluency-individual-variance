@@ -7,22 +7,32 @@
     <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.1"></script>
     <link href="https://unpkg.com/jspsych@7.1.2/css/jspsych.css" rel="stylesheet" type="text/css" />
+    <link href="timerstyle.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src = "timer.js"></script> 
+
   </head>
   <body>
     <div id="app"></div>
     <div id="jspsych-target"></div>
-  </body>
-<link href="timerstyle.css" rel="stylesheet" type="text/css" />
- <script src = "timer.js"></script> 
+    
+    
 
-<script>
+
+
+    <script>
 
 var jsPsych = initJsPsych({
   display_element: 'jspsych-target',
       on_finish: function() {
         jsPsych.data.displayData();
+      },
+      on_trial_start: function(trial) {
+        jsPsych.data.addProperties({subject: subject_id});
       }
     });
+
+
 
 var timeline = [];
   
@@ -43,7 +53,7 @@ var instructions1 = {
     }
 };    
 
-  var animall = {
+  var animal = {
     type: jsPsychSurveyText,
     questions: [
     {prompt: '<p style="font-size:40px;">List all the ANIMALS you can in 3 minutes.</p>'}
@@ -58,48 +68,126 @@ var instructions1 = {
   ]
   }
 
-  var countdowntrial = {
-    type: jsPsychCallFunction,
-    func: countDown
-}
+
+
+var AnimalResponses = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+    <div id = "timer-box"></div>
+    <div id = "response-input-box">
+      <p style = "font-size:30px;">List all of the Animals you can in 3 minutes.</p>
+      <div id = "responses">
+        <input type = "text" class = "animal-response" autofocus />
+      </div>
+    </div>
+    <style>
+      .animal-response {
+        display: block;
+        margin-top: 10px;
+        font-size: 20px;
+        width: 300px;
+
+      }
+    </style>
+    `,
+  choices: [],
+  trial_duration: 15000, 
+  on_load: function () {
+    resetCountdown();
+    countDown();
+    document.addEventListener ("keydown", function(event) {
+      
+      if (event.key == "Enter") {
+        event.preventDefault();
+        const currentInput = document.activeElement;
+      
+        if (
+          currentInput.classList.contains("animal-response") && 
+          currentInput.value.trim() !==""
+      ) {
+        currentInput.disabled = true;
+        const newInput = document.createElement("input");
+        newInput.type = "text";
+        newInput.className = "animal-response";
+      
+        document.getElementById("responses").appendChild(newInput);
+        newInput.focus();
+        }
+      }
+    });
+  },
+  on_finish: function(data) {
+    const inputElements = document.querySelectorAll(".animal-response");
+    const responses = [];
+    inputElements.forEach(response => {
+      if (response.value.trim() !=="") {
+        responses.push(response.value.trim());
+      }    
+    });
+    data.responses = responses;
+    clearInterval(timerInterval);
+  }
+};
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   // Timeline
-  var animal_loop = {
-    timeline: [animal],
-   // on_timeline_start: countDown,
-    loop_function: function(data){
-      var getTime = new Date().getTime();
-      var timePassedCounter = getTime - startTime;
+//   var animal_loop = {
+//     //starts timer when loop for this task begins
+//     timeline: [animal],
+//     on_timeline_start: function() {
+//       animalStartTime = new Date().getTime();
+//     },
 
-        if(timePassedCounter < 15000){
-          console.log("timePassed: " + timePassedCounter);
-            return true;
-        } else {
-          console.log("timePassed: " + timePassedCounter);
-            startTime = new Date().getTime();
-            return false;
-        }
-    }
-}
+//     loop_function: function(data){
+//       var getTime = new Date().getTime();
+//       var timePassedCounter = getTime - animalStartTime;
 
-var food_loop = {
-    timeline: [food],
-   // on_timeline_start: countDown,
-    loop_function: function(data){
-      var getTime = new Date().getTime();
-      var timePassedCounter = getTime - startTime;
+//       console.log("AnimaltimePassed: " + timePassedCounter)
 
-        if(timePassedCounter < 15000){
-          console.log("timePassed: " + timePassedCounter);
-            return true;
-        } else {
-          console.log("timePassed: " + timePassedCounter);
-          startTime = new Date().getTime();
-            return false;
-        }
-    }
-}
+//         if(timePassedCounter < 15000) {
+//           return true;
+//         } else {
+//           return false;
+//         }
+//     }
+// };
+
+// var food_loop = {
+
+//     timeline: [food],
+//     on_timeline_start: function() {
+//       foodStartTime = new Date().getTime();
+//     },
+
+//     loop_function: function(data){
+//       var getTime = new Date().getTime();
+//       var timePassedCounter = getTime - foodStartTime;
+
+//       console.log("FoodtimePassed: " + timePassedCounter);
+
+//         if(timePassedCounter < 15000){
+//           return true;
+//         } else {
+//           return false;
+//         }
+//     }
+// }
   
   var endexperiment = {
     on_load: resetCountdown,
@@ -114,14 +202,11 @@ var food_loop = {
 
   // add everything to timeline
 
-  timeline.push(instructions1);
-  startTime = new Date().getTime();
-  timeline.push(countdowntrial);
-  timeline.push(animal_loop);
-  timeline.push(food_loop);
+  
+
 
   var save_data = {
-    type: 'call-function',
+    type: jsPsychCallFunction,
     func: function(){saveData(subject_id+".csv",
       jsPsych.data.get().csv())}
 }
@@ -135,7 +220,8 @@ function saveData(filename, filedata){
   		data: {filename: filename, filedata: filedata}})
   }
 
-
+  timeline.push(instructions1);
+  timeline.push(AnimalResponses);
   timeline.push(save_data);
   timeline.push(endexperiment);
 
@@ -145,5 +231,6 @@ function saveData(filename, filedata){
 
 
 
-</script>
+    </script>
+  </body>
 </html>

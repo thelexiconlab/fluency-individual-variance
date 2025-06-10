@@ -1,7 +1,13 @@
 // Credit: Mateusz Rybczonec
+let timerInterval = null;
+
 function resetCountdown(){
   // hide app
-  document.getElementById("app").style.display = "none";
+  clearInterval(timerInterval);
+  const timerEl = document.getElementById("timer-box");
+  if (timerEl) {
+    timerEl.innerHTML = "";
+  }
 }
 
 function countDown(){
@@ -27,10 +33,11 @@ const TIME_LIMIT = 15;
 let timePassed = 0;
 let endCalled = 0;
 let timeLeft = TIME_LIMIT;
-let timerInterval = null;
 let remainingPathColor = COLOR_CODES.info.color;
 
-document.getElementById("app").innerHTML = `
+const timerEl = document.getElementById("timer-box");
+
+timerEl.innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
@@ -61,8 +68,7 @@ function onTimesUp() {
   endCalled = 1;
   timePassed = 0;
   timeLeft = TIME_LIMIT
-  startTimer();
-
+  jsPsych.finishTrial();
 }
 
 function startTimer() {
