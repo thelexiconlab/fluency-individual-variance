@@ -77,16 +77,30 @@ var AnimalResponses = {
     <div id = "response-input-box">
       <p style = "font-size:30px;">List all of the Animals you can in 3 minutes.</p>
       <div id = "responses">
-        <input type = "text" class = "animal-response" autofocus />
+        <input type = "text" class = "animal-response active" autofocus />
       </div>
     </div>
     <style>
-      .animal-response {
-        display: block;
-        margin-top: 10px;
-        font-size: 20px;
-        width: 300px;
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
 
+      .animal-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .animal-response.active {
+      opacity: 1;
+      z-index: 999;
       }
     </style>
     `,
@@ -106,9 +120,10 @@ var AnimalResponses = {
           currentInput.value.trim() !==""
       ) {
         currentInput.disabled = true;
+        currentInput.classList.remove("active");
         const newInput = document.createElement("input");
         newInput.type = "text";
-        newInput.className = "animal-response";
+        newInput.className = "animal-response active";
       
         document.getElementById("responses").appendChild(newInput);
         newInput.focus();
@@ -116,6 +131,7 @@ var AnimalResponses = {
       }
     });
   },
+  //try updating formatting for every new event so that it is in the same place as the old input and the box is color filled
   on_finish: function(data) {
     const inputElements = document.querySelectorAll(".animal-response");
     const responses = [];
@@ -130,64 +146,81 @@ var AnimalResponses = {
 };
   
 
+var FoodResponses = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+    <div id = "timer-box"></div>
+    <div id = "response-input-box">
+      <p style = "font-size:30px;">List all of the Foods you can in 3 minutes.</p>
+      <div id = "responses">
+        <input type = "text" class = "food-response active" autofocus />
+      </div>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
 
+      .food-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // Timeline
-//   var animal_loop = {
-//     //starts timer when loop for this task begins
-//     timeline: [animal],
-//     on_timeline_start: function() {
-//       animalStartTime = new Date().getTime();
-//     },
-
-//     loop_function: function(data){
-//       var getTime = new Date().getTime();
-//       var timePassedCounter = getTime - animalStartTime;
-
-//       console.log("AnimaltimePassed: " + timePassedCounter)
-
-//         if(timePassedCounter < 15000) {
-//           return true;
-//         } else {
-//           return false;
-//         }
-//     }
-// };
-
-// var food_loop = {
-
-//     timeline: [food],
-//     on_timeline_start: function() {
-//       foodStartTime = new Date().getTime();
-//     },
-
-//     loop_function: function(data){
-//       var getTime = new Date().getTime();
-//       var timePassedCounter = getTime - foodStartTime;
-
-//       console.log("FoodtimePassed: " + timePassedCounter);
-
-//         if(timePassedCounter < 15000){
-//           return true;
-//         } else {
-//           return false;
-//         }
-//     }
-// }
+      .food-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    `,
+  choices: [],
+  trial_duration: 15000, 
+  on_load: function () {
+    resetCountdown();
+    countDown();
+    document.addEventListener ("keydown", function(event) {
+      
+      if (event.key == "Enter") {
+        event.preventDefault();
+        const currentInput = document.activeElement;
+      
+        if (
+          currentInput.classList.contains("food-response") && 
+          currentInput.value.trim() !==""
+      ) {
+        currentInput.disabled = true;
+        currentInput.classList.remove("active");
+        const newInput = document.createElement("input");
+        newInput.type = "text";
+        newInput.className = "food-response active";
+      
+        document.getElementById("responses").appendChild(newInput);
+        newInput.focus();
+        }
+      }
+    });
+  },
+  //try updating formatting for every new event so that it is in the same place as the old input and the box is color filled
+  on_finish: function(data) {
+    const inputElements = document.querySelectorAll(".food-response");
+    const responses = [];
+    inputElements.forEach(response => {
+      if (response.value.trim() !=="") {
+        responses.push(response.value.trim());
+      }    
+    });
+    data.responses = responses;
+    clearInterval(timerInterval);
+  }
+};
+   
   
   var endexperiment = {
     on_load: resetCountdown,
@@ -222,6 +255,7 @@ function saveData(filename, filedata){
 
   timeline.push(instructions1);
   timeline.push(AnimalResponses);
+  timeline.push(FoodResponses);
   timeline.push(save_data);
   timeline.push(endexperiment);
 
