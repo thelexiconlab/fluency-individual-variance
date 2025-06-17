@@ -6,6 +6,7 @@
     <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.1"></script>
     <link href="https://unpkg.com/jspsych@7.1.2/css/jspsych.css" rel="stylesheet" type="text/css" />
     <link href="timerstyle.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -53,25 +54,36 @@ var instructions1 = {
     }
 };    
 
-  var animal = {
-    type: jsPsychSurveyText,
-    questions: [
-    {prompt: '<p style="font-size:40px;">List all the ANIMALS you can in 3 minutes.</p>'}
-  ]
+
+
+var AnimalResponsesArray = [];
+
+function animalResponseInput(event) {
+  if (event.key == "Enter") {
+      event.preventDefault();
+      const currentInput = document.activeElement;
+      
+    if (
+      currentInput.classList.contains("animal-response") && 
+      currentInput.value.trim() !==""
+    ) {
+      AnimalResponsesArray.push(currentInput.value.trim())
+      currentInput.disabled = true;
+      currentInput.classList.remove("active");
+
+      const newInput = document.createElement("input");
+      newInput.type = "text";
+      newInput.className = "animal-response active";
+      document.getElementById("responses").appendChild(newInput);
+      newInput.focus();
+    }
   }
+}
 
-  var food = {
-    //on_load: countDown(),
-    type: jsPsychSurveyText,
-    questions: [
-    {prompt: '<p style="font-size:40px;">List all the FOODS you can in 3 minutes.</p>'}
-  ]
-  }
-
-
+// create event handler for each response
 
 var AnimalResponses = {
-  type: jsPsychHtmlButtonResponse,
+  type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <div id = "timer-box"></div>
     <div id = "response-input-box">
@@ -106,48 +118,52 @@ var AnimalResponses = {
     `,
   choices: [],
   trial_duration: 15000, 
-  on_load: function () {
+  response_ends_trial: false,
+    on_load: function () {
     resetCountdown();
     countDown();
-    document.addEventListener ("keydown", function(event) {
-      
-      if (event.key == "Enter") {
-        event.preventDefault();
-        const currentInput = document.activeElement;
-      
-        if (
-          currentInput.classList.contains("animal-response") && 
-          currentInput.value.trim() !==""
-      ) {
-        currentInput.disabled = true;
-        currentInput.classList.remove("active");
-        const newInput = document.createElement("input");
-        newInput.type = "text";
-        newInput.className = "animal-response active";
-      
-        document.getElementById("responses").appendChild(newInput);
-        newInput.focus();
-        }
-      }
-    });
+    AnimalResponsesArray = [];
+    document.addEventListener ("keydown", animalResponseInput);
   },
+
   //try updating formatting for every new event so that it is in the same place as the old input and the box is color filled
   on_finish: function(data) {
-    const inputElements = document.querySelectorAll(".animal-response");
-    const responses = [];
-    inputElements.forEach(response => {
-      if (response.value.trim() !=="") {
-        responses.push(response.value.trim());
-      }    
-    });
-    data.responses = responses;
+    document.removeEventListener("keydown", animalResponseInput)
+    data.response = JSON.stringify(AnimalResponsesArray);
+    console.log("Animal Responses:", AnimalResponsesArray);
     clearInterval(timerInterval);
   }
 };
   
+var foodResponsesArray = [];
+
+function foodResponseInput(event) {
+  if (event.key == "Enter") {
+      event.preventDefault();
+      const currentInput = document.activeElement;
+      
+    if (
+      currentInput.classList.contains("food-response") && 
+      currentInput.value.trim() !==""
+    ) {
+      foodResponsesArray.push(currentInput.value.trim())
+      currentInput.disabled = true;
+      currentInput.classList.remove("active");
+
+      const newInput = document.createElement("input");
+      newInput.type = "text";
+      newInput.className = "food-response active";
+      document.getElementById("responses").appendChild(newInput);
+      newInput.focus();
+    }
+  }
+}
+
+
+
 
 var FoodResponses = {
-  type: jsPsychHtmlButtonResponse,
+  type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <div id = "timer-box"></div>
     <div id = "response-input-box">
@@ -185,38 +201,14 @@ var FoodResponses = {
   on_load: function () {
     resetCountdown();
     countDown();
-    document.addEventListener ("keydown", function(event) {
-      
-      if (event.key == "Enter") {
-        event.preventDefault();
-        const currentInput = document.activeElement;
-      
-        if (
-          currentInput.classList.contains("food-response") && 
-          currentInput.value.trim() !==""
-      ) {
-        currentInput.disabled = true;
-        currentInput.classList.remove("active");
-        const newInput = document.createElement("input");
-        newInput.type = "text";
-        newInput.className = "food-response active";
-      
-        document.getElementById("responses").appendChild(newInput);
-        newInput.focus();
-        }
-      }
-    });
+    foodResponsesArray = [];
+    document.addEventListener ("keydown", foodResponseInput);
   },
   //try updating formatting for every new event so that it is in the same place as the old input and the box is color filled
   on_finish: function(data) {
-    const inputElements = document.querySelectorAll(".food-response");
-    const responses = [];
-    inputElements.forEach(response => {
-      if (response.value.trim() !=="") {
-        responses.push(response.value.trim());
-      }    
-    });
-    data.responses = responses;
+    document.removeEventListener("keydown", foodResponseInput)
+    data.response = JSON.stringify(foodResponsesArray);
+    console.log("Food Responses:", foodResponsesArray);
     clearInterval(timerInterval);
   }
 };
@@ -253,6 +245,8 @@ function saveData(filename, filedata){
   		data: {filename: filename, filedata: filedata}})
   }
 
+  print(foodResponsesArray)
+  print(AnimalResponsesArray)
   timeline.push(instructions1);
   timeline.push(AnimalResponses);
   timeline.push(FoodResponses);
