@@ -22,7 +22,7 @@
 
 
     <script>
-
+// needs to be window.jsPsych is running in
 var jsPsych = initJsPsych({
   display_element: 'jspsych-target',
       on_finish: function() {
@@ -55,6 +55,7 @@ var instructions1 = {
 };    
 
 
+var AnimalResponseTimes = []; 
 
 var AnimalResponsesArray = [];
 
@@ -62,11 +63,12 @@ function animalResponseInput(event) {
   if (event.key == "Enter") {
       event.preventDefault();
       const currentInput = document.activeElement;
-      
-    if (
+
+      if (
       currentInput.classList.contains("animal-response") && 
       currentInput.value.trim() !==""
     ) {
+      AnimalResponseTimes.push(performance.now());
       AnimalResponsesArray.push(currentInput.value.trim())
       currentInput.disabled = true;
       currentInput.classList.remove("active");
@@ -80,10 +82,10 @@ function animalResponseInput(event) {
   }
 }
 
-// create event handler for each response
 
 var AnimalResponses = {
   type: jsPsychHtmlKeyboardResponse,
+  data: {task: "animal-list"},
   stimulus: `
     <div id = "timer-box"></div>
     <div id = "response-input-box">
@@ -122,30 +124,40 @@ var AnimalResponses = {
     on_load: function () {
     resetCountdown();
     countDown();
+    AnimalResponseTimes = [];
     AnimalResponsesArray = [];
     document.addEventListener ("keydown", animalResponseInput);
   },
 
-  //try updating formatting for every new event so that it is in the same place as the old input and the box is color filled
   on_finish: function(data) {
     document.removeEventListener("keydown", animalResponseInput)
     data.response = JSON.stringify(AnimalResponsesArray);
+    data.task = "animal-list";
+    // calculate interitem reaction time by subtracting the current time from the last time stamp
+    const interitemResponseTimes = AnimalResponseTimes.map((time, i) => { 
+      if (i === 0) return 0;
+      return time - AnimalResponseTimes[i - 1];
+    });
+    data.intervals = JSON.stringify(interitemResponseTimes);
     console.log("Animal Responses:", AnimalResponsesArray);
     clearInterval(timerInterval);
   }
 };
   
+var foodResponseTimes = [];
+
 var foodResponsesArray = [];
 
 function foodResponseInput(event) {
   if (event.key == "Enter") {
       event.preventDefault();
       const currentInput = document.activeElement;
-      
+
     if (
       currentInput.classList.contains("food-response") && 
       currentInput.value.trim() !==""
     ) {
+      foodResponseTimes.push(performance.now());
       foodResponsesArray.push(currentInput.value.trim())
       currentInput.disabled = true;
       currentInput.classList.remove("active");
@@ -164,6 +176,7 @@ function foodResponseInput(event) {
 
 var FoodResponses = {
   type: jsPsychHtmlKeyboardResponse,
+  data: {task: "food-list"},
   stimulus: `
     <div id = "timer-box"></div>
     <div id = "response-input-box">
@@ -201,19 +214,161 @@ var FoodResponses = {
   on_load: function () {
     resetCountdown();
     countDown();
+    foodResponseTimes = [];
     foodResponsesArray = [];
     document.addEventListener ("keydown", foodResponseInput);
   },
   //try updating formatting for every new event so that it is in the same place as the old input and the box is color filled
   on_finish: function(data) {
-    document.removeEventListener("keydown", foodResponseInput)
+    document.removeEventListener("keydown", foodResponseInput);
     data.response = JSON.stringify(foodResponsesArray);
+
+    const interitemResponseTimes = foodResponseTimes.map((time, i) => { 
+      if (i === 0) return 0;
+      return time - foodResponseTimes[i - 1];
+    });
+    data.intervals = JSON.stringify(foodResponseTimes)
     console.log("Food Responses:", foodResponsesArray);
     clearInterval(timerInterval);
   }
 };
    
+
+var AnimalSpamTask = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: function() {
+    let html = `
+      <p style="font-size:24px;">
+        Arrange each word to the drop area based on how related they are to one another. 
+        A new one will appear after you move each.
+      </p>
+      <div id="word-drop-area" style="
+        margin-top: 40px;        
+        height: 600px;        
+        border: 2px solid #aaa;        
+        padding: 10px;       
+        font-size: 20px;       
+        text-align: center;       
+        color: #888;     
+        ">Drop here</div>     
+        <style>       
+          .draggable {         
+          display: inline-block;         
+          background: #eef;         
+          padding: 10px;         
+          border: 1px solid #aaa;         
+          border-radius: 4px;         
+          cursor: move;         
+          font-size: 18px;         
+          margin-bottom: 5px;       
+        }     
+      </style>    
+    `;
+      return html;
+  },
+  //trial ends when continue pressed meaning after one word is moved and button continue is pressed next shows up
   
+  choices: ["Continue"],
+  
+  on_load: function() {
+    const AnimalVFTResponses = jsPsych.data.get().filter({ task: "animal-list" }).last(1).values()[0];
+    const AnimalWords = JSON.parse(AnimalVFTResponses.response || "[]");
+    const WordDropArea = document.getElementById("word-drop-area");
+    let currentIndex = 0;
+    window.WordsDropped = [];
+
+    function Draggable(element, onFirstMove) {
+      let offsetX, offsetY;
+      let currentlyDragging = false;
+      let hasMoved = false;
+    
+    
+      element.addEventListener("mousedown", (event) => {
+        currentlyDragging = true;
+        offsetX = event.clientX - element.getBoundingClientRect().left;
+        offsetY = event.clientY - element.getBoundingClientRect().top;
+        element.style.cursor = "grabbing";
+
+        document.addEventListener("mousemove", OnMouseMove);
+        document.addEventListener("mouseup", OnMouseUp);
+      });
+
+      
+      function OnMouseMove () {
+        if (!currentlyDragging) return;
+
+        const dropRectangle = WordDropArea.getBoundingClientRect();
+        let left = event.clientX - dropRectangle.left - offsetX;
+        let top = event.clientY - dropRectangle.top - offsetY;
+
+        left = Math.max(0, Math.min(left, dropRectangle.width - element.offsetWidth));
+        top = Math.max(0, Math.min(top, dropRectangle.height - element.offsetHeight));
+
+        element.style.left = left + "px"
+        element.style.top = top + "px"
+    
+        if (!hasMoved) {
+          hasMoved = true
+          if (typeof onFirstMove === "function") {
+            onFirstMove();
+          }
+        }
+      }
+      
+      
+      function OnMouseUp () {
+        if (currentlyDragging) {
+          currentlyDragging = false;
+          element.style.cursor = "grab";
+          document.addEventListener("mousemove", OnMouseMove)
+          document.addEventListener("mouseup", OnMouseUp)
+
+        }
+      }
+    }
+
+      function NextWord() {
+      if (currentIndex >= AnimalWords.length) return;
+
+      const words = AnimalWords[currentIndex];
+      const wordDiv = document.createElement("div");
+      wordDiv.textContent = words;
+      wordDiv.className = "draggable";
+      wordDiv.id = `word-${currentIndex}`;
+      wordDiv.style.position = "absolute";
+      wordDiv.style.left = "80px";
+      wordDiv.style.top = "80px"
+      
+
+     
+      WordDropArea.appendChild(wordDiv);
+      Draggable(wordDiv, () => {
+        currentIndex ++; 
+        NextWord();
+      });
+    }
+    NextWord();
+  },
+      
+
+  on_finish: function (data) {
+    const wordElements = document.querySelectorAll(".draggable");
+    const wordPositions = [];
+  
+    wordElements.forEach(element => {
+      wordPositions.push({
+        word: element.textContent,
+        id: element.id,
+        left: element.style.left,
+        top: element.style.top
+      });
+    });
+    
+    data.WordsDropped = JSON.stringify(wordPositions);
+  }
+};
+
+
   var endexperiment = {
     on_load: resetCountdown,
       type: jsPsychHtmlButtonResponse,
@@ -245,10 +400,9 @@ function saveData(filename, filedata){
   		data: {filename: filename, filedata: filedata}})
   }
 
-  print(foodResponsesArray)
-  print(AnimalResponsesArray)
   timeline.push(instructions1);
   timeline.push(AnimalResponses);
+  timeline.push(AnimalSpamTask)
   timeline.push(FoodResponses);
   timeline.push(save_data);
   timeline.push(endexperiment);
