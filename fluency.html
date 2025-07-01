@@ -36,13 +36,13 @@ var timeline = [];
 //creates random subject number 
 var subject_id = Math.floor(Math.random()*100000);
 
-//formats opening instruction page 
+//formats opening instruction page and tells participant about experiment
 var instructions1 = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
   <p style="font-size:20px;"> </p>
   <p style="font-size:22px;"> Hi, thank you for taking part in this experiment!</p>
-    <p style="font-size:20px;"> ‎</p>
+  <p style="font-size:20px;"> ‎</p>
   <p style="font-size:18px;"> You will first be given a category and 3 minutes to type in as many items in that category as possible </p>
   <p style="font-size:18px;"> To submit an answer, please press enter after each INDIVIDUAL response.</p>
   <p style="font-size:20px;"> ‎</p>
@@ -50,10 +50,20 @@ var instructions1 = {
   <p style="font-size:18px;"> you input around each other based on how closely related you believe any given item is to the others..</p>
   <p style="font-size:18px;"> Once you complete this task, press the continue button to move to the next category.</p>
   <p style="font-size:18px;"> If you have any questions please ask the experimenter.</p>
-  <p style="font-size:20px;"> ‎</p>
+
+  `,
+  choices: ["continue"],
+      data: {
+        typeoftrial: 'instructions',
+        subject: subject_id
+    }
+};    
+
+//page to prep participant to begin experiment
+var startpage = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
   <p style="font-size:18px;"> When you are ready to begin, please press the button below.</p>
-
-
   `,
   choices: ["Begin Experiment"],
       data: {
@@ -436,6 +446,7 @@ function saveData(filename, filedata){
 
 
   timeline.push(instructions1);
+  timeline.push(startpage)
   timeline.push(AnimalResponses);
   timeline.push(AnimalSpamTask)
   timeline.push(FoodResponses);
