@@ -41,10 +41,21 @@ var instructions1 = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
   <p style="font-size:20px;"> </p>
-  <p style="font-size:20px;"> How many words can you come up with?</p>
-  <p style="font-size:20px;"> Click the button below to find out.</p>
+  <p style="font-size:22px;"> Hi, thank you for taking part in this experiment!</p>
+    <p style="font-size:20px;"> ‎</p>
+  <p style="font-size:18px;"> You will first be given a category and 3 minutes to type in as many items in that category as possible </p>
+  <p style="font-size:18px;"> To submit an answer, please press enter after each INDIVIDUAL response.</p>
+  <p style="font-size:20px;"> ‎</p>
+  <p style="font-size:18px;"> After each category, you will take part in a spacial aramgement task where you arrange each of the words</p>
+  <p style="font-size:18px;"> you input around each other based on how closely related you believe any given item is to the others..</p>
+  <p style="font-size:18px;"> Once you complete this task, press the continue button to move to the next category.</p>
+  <p style="font-size:18px;"> If you have any questions please ask the experimenter.</p>
+  <p style="font-size:20px;"> ‎</p>
+  <p style="font-size:18px;"> When you are ready to begin, please press the button below.</p>
+
+
   `,
-  choices: ['Start game!'],
+  choices: ["Begin Experiment"],
       data: {
         typeoftrial: 'instructions',
         subject: subject_id
@@ -70,7 +81,7 @@ function animalResponseInput(event) {
       currentInput.classList.contains("animal-response") && 
       currentInput.value.trim() !==""
     ) {
-      AnimalResponseTimes.push(performance.now()); 
+      AnimalResponseTimes.push(Number((performance.now() - animalResponseTrialStartTime).toFixed(2))); 
       AnimalResponsesArray.push(currentInput.value.trim())
       currentInput.disabled = true;
       currentInput.classList.remove("active");
@@ -130,20 +141,25 @@ var AnimalResponses = {
     countDown();
     AnimalResponseTimes = [];
     AnimalResponsesArray = [];
+    
+    animalResponseTrialStartTime = performance.now();
+
     document.addEventListener ("keydown", animalResponseInput);
+    document.querySelector(".animal-response.active")?.focus();
   },
 
   on_finish: function(data) {
     document.removeEventListener("keydown", animalResponseInput)
-    data.response = JSON.stringify(AnimalResponsesArray);
     data.task = "animal-list";
     // calculates interitem reaction time by subtracting the current time from the last time stamp
     const interitemResponseTimes = AnimalResponseTimes.map((time, i) => { 
       if (i === 0) return 0;
       return time - AnimalResponseTimes[i - 1];
     });
-    data.intervals = JSON.stringify(interitemResponseTimes);
-    console.log("Animal Responses:", AnimalResponsesArray); //for checking purposes
+    
+    data.response = JSON.stringify(AnimalResponsesArray);
+    data.interitem_intervals = JSON.stringify(interitemResponseTimes);
+    data.response_times = JSON.stringify(AnimalResponseTimes)
     clearInterval(timerInterval);
   }
 };
@@ -161,7 +177,7 @@ function foodResponseInput(event) {
       currentInput.classList.contains("food-response") && 
       currentInput.value.trim() !==""
     ) {
-      foodResponseTimes.push(performance.now());
+      foodResponseTimes.push(Number((performance.now() - foodResponseTrialStartTime).toFixed(2)));
       foodResponsesArray.push(currentInput.value.trim())
       currentInput.disabled = true;
       currentInput.classList.remove("active");
@@ -218,19 +234,27 @@ var FoodResponses = {
     countDown();
     foodResponseTimes = [];
     foodResponsesArray = [];
+
+    foodResponseTrialStartTime = performance.now();
+
     document.addEventListener ("keydown", foodResponseInput);
+    document.querySelector(".food-response.active")?.focus();
+
   },
 
   on_finish: function(data) {
     document.removeEventListener("keydown", foodResponseInput);
-    data.response = JSON.stringify(foodResponsesArray);
 
-    const interitemResponseTimes = foodResponseTimes.map((time, i) => { 
+    foodExclusiveTimes = foodResponseTimes.map(time => time - foodResponseTrialStartTime);
+
+    const interitemResponseTimes = foodExclusiveTimes.map((time, i) => { 
       if (i === 0) return 0;
-      return time - foodResponseTimes[i - 1];
+      return time - foodExclusiveTimes[i - 1];
     });
-    data.intervals = JSON.stringify(foodResponseTimes)
-    console.log("Food Responses:", foodResponsesArray);
+    
+    data.response = JSON.stringify(foodResponsesArray);
+    data.interitem_intervals = JSON.stringify(interitemResponseTimes);
+    data.response_times = JSON.stringify(foodResponseTimes)
     clearInterval(timerInterval);
   }
 };
@@ -272,6 +296,7 @@ var AnimalSpamTask = {
   },
   
   choices: ["Continue"], 
+  button_html: '<button class = "jspsych-btn" id = "continue-button" style = "display:none;">%choice%</button>',
   data: {
     task: "AnimalSpAMArrangement"
   },
@@ -340,7 +365,12 @@ var AnimalSpamTask = {
             id: element.id,
             left: element.style.left,
             top: element.style.top
-          })
+          });
+          
+          if (window.WordsDropped.length === AnimalWords.length) {
+            const button = document.getElementById("continue-button");
+            if (button) button.style.display = "inline-block";
+          }
 
         }
       }
