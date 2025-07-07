@@ -97,7 +97,7 @@ var SpAMInstructions = {
   <p style="font-size:17px;"> After arranging each word, the next word will appear. You may rearrange previously placed items.</p>
   <p style="font-size:17px;"> Once you finish, a "continue" button will appear. Press it to move to the next task.</p>
   
-  <video width = "600" height = "300" autoplay muted loop style = "margin-top: 10px;">
+  <video width = "600" height = "350" autoplay muted loop style = "margin-top: 10px;">
     <source src = "SpAMTutorial.mp4" type = "video/mp4">
   </video>
 
@@ -116,7 +116,10 @@ var startInstructions = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
   <p style="font-size:20px;">You have completed the practice round!</p>
-  <p style="font-size:18x;"> Now, you will begin the actual task.</p>
+  <p style="font-size:18x;"> Now, you will begin the actual task, consisting of three rounds with different categories.</p>
+  <p style="font-size:18x;"> Again, you will first type in as many items that correspond to the given category as possible within the time limit.</p>
+  <p style="font-size:18x;"> Then, you will arrange the items you input previously in the box provided based on how related they are.</p>
+
   <p style="font-size:10px;"> ‎</p>
   <p style="font-size:18px;"> When you're ready, <strong>press begin</strong> to start the verbal fluency task.</p>
 
@@ -131,7 +134,7 @@ var startInstructions = {
 var betweenVFTAndSpAMInstructions = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
-  <p style="font-size:18px;"> You are moving to the spacial arrangement task.</p>
+  <p style="font-size:20px;"> You are moving to the spacial arrangement task.</p>
   <p style="font-size:18px;"> Press begin to start.</p>
 
   `,
