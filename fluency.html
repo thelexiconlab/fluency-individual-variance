@@ -44,7 +44,7 @@ var instructions1 = {
   <p style="font-size:20px;"> ‎</p>
   <p style="font-size:22px;"> <strong>This experiment has two parts:</strong></p>
   <p style="font-size:18px;"> <strong>In the first part,</strong> you will be presented the name of a category and must type in as many items that correspond to that category as you can. </p>
-  <p style="font-size:18px;"> <strong>In the second part,</strong> you will arrange each of the words hat you typed in the first part based on how closely related they are.</p>
+  <p style="font-size:18px;"> <strong>In the second part,</strong> you will arrange each of the words that you typed in the first part based on how closely related they are.</p>
   <p style="font-size:20px;"> ‎</p>
   <p style="font-size:18px;"> We will begin with a practice round where more detailed instructions will be provided.</p>
 
@@ -134,7 +134,7 @@ var startInstructions = {
 var betweenVFTAndSpAMInstructions = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
-  <p style="font-size:20px;"> You are moving to the spacial arrangement task.</p>
+  <p style="font-size:20px;"> You are moving to the spatial arrangement task.</p>
   <p style="font-size:18px;"> Press begin to start.</p>
 
   `,
@@ -495,16 +495,15 @@ function saveData(filename, filedata){
   );
   timeline.push(startInstructions);
   timeline.push(
-    VFTRedo("animal", "Name as many ANIMALS as you can", 10000),
+    VFTRedo("animal", "Name as many ANIMALS as you can.", 10000),
     betweenVFTAndSpAMInstructions,
     SpamTask("animal"),
     afterSpAMInstructions
   );
   timeline.push(
-    VFTRedo("food", "Name as many FOODS as you can", 10000),
+    VFTRedo("food", "Name as many FOODS as you can.", 10000),
     betweenVFTAndSpAMInstructions,
     SpamTask("food"),
-    afterSpAMInstructions
   );
   timeline.push(save_data);
   timeline.push(endexperiment);
