@@ -296,9 +296,11 @@ function VFTTask(domain, prompt, time = 10000) {
       ? [times[0], ...times.slice(1).map((time, i) => time - times[i])]
       : [];
 
+    const roundedResponseIntervals = firstResponseThenIntervals.map(t => Number(t.toFixed(2)));
+
       
       data.tagged_responses = JSON.stringify(taggedResponses);
-      data.response_times = JSON.stringify(firstResponseThenIntervals)
+      data.response_times = JSON.stringify(roundedResponseIntervals)
   
     
     clearInterval(timerInterval);
@@ -347,7 +349,7 @@ function SpamTask(domain) {
       let html = `
         <p style="font-size:20px;">Arrange each word to the drop box below based on how related they are to one another.</p> 
         <p style="font-size:18px;">A new word will appear after <strong>each word</strong> you move.</p>
-        <p style="font-size:14px; color: gray;">Remember, previously placed words can be rearranged if needed!</p>
+        <p style="font-size:17px;"> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
         <div id="word-drop-area" style="
           margin-top: 40px;        
           height: 400px;        
@@ -357,7 +359,8 @@ function SpamTask(domain) {
           text-align: center;       
           color: #888;   
           position: relative;   
-          "></div>     
+          "></div>
+          <p style="font-size:14px; color: gray;">Remember, previously placed words can be rearranged if needed!</p>
           <style>       
             .draggable {         
             display: inline-block;         
