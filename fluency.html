@@ -42,17 +42,22 @@ var instructions1 = {
   stimulus: `
   <p style="font-size:20px;"> Thank you for taking part in this experiment!</p>
   <p style="font-size:20px;"> ‎</p>
-  <p style="font-size:22px;"> <strong>This experiment has two parts:</strong></p>
-  <p style="font-size:18px;"> <strong>In the first part,</strong> you will be presented the name of a category and must type in as many items that correspond to that category as you can. </p>
-  <p style="font-size:18px;"> <strong>In the second part,</strong> you will arrange each of the words that you typed in the first part based on how closely related they are.</p>
+  <p style="font-size:22px;"> <strong>This experiment has two tasks:</strong></p>
+  <p style="font-size:18px;"> <u>In the first task</u>, you will be presented the name of a category and must type 
+  <p style="font-size:18px;"> in as many items that correspond to that category as you can within the time limit. </p>
+  <p style="font-size:18px;"> <u>In the second task</u>, you will move each of the words that you typed in the first </p>
+  <p style="font-size:18px;"> task around so that the similar ones are proportionately closer together.</p>
+  <p style="font-size:18px;"> The experiment will consist of only 3 "trials," so please be as accurate/precise as 
+  <p style="font-size:18px;"> possible when typing in items and placing the objects, rather than trying to speed through.</p>
   <p style="font-size:20px;"> ‎</p>
-  <p style="font-size:18px;"> We will begin with a practice round where more detailed instructions will be provided.</p>
+  <p style="font-size:18px;"> Before you get started, we just want to get you familiar with the experiment layout. We'll walk you </p>
+  <p style="font-size:18px;"> through a practice verbal fluency and spacial arrangement task and provide more detailed instructions.</p>
 
 
-  <p style="font-size:18px;"> When you are ready to start, <strong>press continue.</strong></p>
+  <p style="font-size:18px;"> When you are ready to start, <strong>press Continue.</strong></p>
 
   `,
-  choices: ["continue"],
+  choices: ["Continue"],
       data: {
         typeoftrial: 'instructions',
         subject: subject_id
@@ -64,15 +69,16 @@ var VFTInstructions = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
   <p style="font-size:22px;"><strong>You are about to perform a verbal fluency task.</strong></p>
-  <p style="font-size:5px;"> ‎</p>
-  <p style="font-size:17px;"> You will be presented the name of a category (e.g., FURNITURE) in capital letters.</p>
-  <p style="font-size:17px;"> Your task is to type in as many items as you can think of that correspond to that category in 3 minutes.</p>
-  <p style="font-size:17px;"> After you type in each word, press <strong>ENTER</strong> to type in the next word.</p>
-  <p style="font-size:17px;"> When the timer runs out, you will automatically proceed to the next task.</p>
+  <p style="font-size:17px;"> In this task, you will be presented the name of a category (e.g., FURNITURE) in capital</p>
+  <p style="font-size:17px;"> letters. Your job is to type in as many items as you can think of that correspond to that</p>
+  <p style="font-size:17px;"> category in 3 minutes. You will be doing this three times on three separate domains.</p> 
 
   <video width = "600" height = "300" autoplay muted loop style = "margin-top: 10px;">
     <source src = "VFTTutorial.mp4" type = "video/mp4">
   </video>
+
+  <p style="font-size:17px;"> After you type in each word, press <strong>ENTER</strong> to type in the next </p>
+  <p style="font-size:17px;"> word. When the timer runs out, you will automatically proceed to the next task.</p>
 
   <p style="font-size:17px;"> When you're ready, <strong>press begin</strong> to practice!</p>
 
@@ -91,15 +97,26 @@ var VFTInstructions = {
 var SpAMInstructions = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
-  <p style="font-size:20px;"> <strong>Now, you will begin a spatial arrangement task.</strong></p>
-  <p style="font-size:17px;"> Each word you previously typed in the verbal fluency task will appear in the top left corner of a box.</p>
-  <p style="font-size:17px;"> <strong>Drag and drop each word around the box</strong> by placing unrelated items further apart and related items close to each other.</p>
-  <p style="font-size:17px;"> After arranging each word, the next word will appear. You may rearrange previously placed items.</p>
-  <p style="font-size:17px;"> Once you finish, a "continue" button will appear. Press it to move to the next task.</p>
-  
-  <video width = "600" height = "350" autoplay muted loop style = "margin-top: 10px;">
+  <p style="font-size:22px;"> <strong>Now, you will begin a spacial arrangement task.</strong></p>
+  <p style="font-size:17px;"> In this task, you will be shown the set of words you typed in the last verbal fluency task you performed.</p>
+  <p style="font-size:17px;"> We need to know how similar you think these words are to one another. Your job is to move each word</p>
+  <p style="font-size:17px;"> around so that the similar words are proportionately closer together. That is, you should move them into</p>
+  <p style="font-size:17px;"> space such that the distance between each pair of items represents how similar you think the pair is.</p>
+  <p style="font-size:17px;"> (with closer in space meaning more similar, and farther away in space meaning more dissimilar)</p>
+
+  <video width = "600" height = "400" autoplay muted loop style = "margin-top: 10px;">
     <source src = "SpAMTutorial.mp4" type = "video/mp4">
   </video>
+
+  <p style="font-size:17px;"> The words will appear one by one in the top left corner of a box. You can move the words by simply</p>
+  <p style="font-size:17px;"> click/dragging them. If the words seem similar, place them close together, if they seem dissimilar,</p>
+  <p style="font-size:17px;"> place them farther away from each other. You will be doing this three times on three separate domains,</p> 
+  <p style="font-size:17px;"> with a different set of words each time, based the words you typed in the corresponding verbal fluency </p>
+  <p style="font-size:17px;"> task. After dragging each word, the next word will appear. You may rearrange previously placed items.</p>
+  <p style="font-size:17px;"> Note, to complete the trial, <u>all items</u> must be moved into the "active arena," the large central box. </p>
+  <p style="font-size:17px;"> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+  
+    <p style="font-size:5px;"> ‎</p>
 
   <p style="font-size:17px;"> Let's continue with our practice round!</p>
   <p style="font-size:17px;"> When you're ready, <strong>press begin.</strong></p>
@@ -117,8 +134,8 @@ var startInstructions = {
   stimulus: `
   <p style="font-size:20px;">You have completed the practice round!</p>
   <p style="font-size:18x;"> Now, you will begin the actual task, consisting of three rounds with different categories.</p>
-  <p style="font-size:18x;"> Again, you will first type in as many items that correspond to the given category as possible within the time limit.</p>
-  <p style="font-size:18x;"> Then, you will arrange the items you input previously in the box provided based on how related they are.</p>
+  <p style="font-size:18x;"> Again, your first task is to first type in as many items as you can think of that correspond to the given category</p>
+  <p style="font-size:18x;"> within the time limit. Then, you will arrange the items you input previously in the box provided based on how related they are.</p>
 
   <p style="font-size:10px;"> ‎</p>
   <p style="font-size:18px;"> When you're ready, <strong>press begin</strong> to start the verbal fluency task.</p>
@@ -134,7 +151,14 @@ var startInstructions = {
 var betweenVFTAndSpAMInstructions = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
-  <p style="font-size:20px;"> You are moving to the spatial arrangement task.</p>
+  <p style="font-size:20px;"> <strong>You are moving to the spatial arrangement task.</strong></p>
+  <p style="font-size:16px;"> As a reminder, in this task, you will be shown a set of words.</p>
+  <p style="font-size:16px;"> We need to know how similar you think these words are to one another.</p>
+  <p style="font-size:16px;"> To indicate your perception of similarity, you will move each word</p> 
+  <p style="font-size:16px;"> around so that the similar ones are proportionately closer together.</p>
+  <p style="font-size:16px;"> If the words seem similar, place them close together, if they seem</p>
+  <p style="font-size:16px;"> dissimilar, place them farther away from each other.</p>
+  <p style="font-size:10px;"> ‎</p>
   <p style="font-size:18px;"> Press begin to start.</p>
 
   `,
@@ -148,7 +172,9 @@ var betweenVFTAndSpAMInstructions = {
 var afterSpAMInstructions = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
-  <p style="font-size:18px;"> You will now move to the next category.</p>
+  <p style="font-size:18px;"> <strong>You will now move to the next category.</strong></p>
+  <p style="font-size:16px;"> As a reminder, in this task, you will type as many words as you can </p> 
+  <p style="font-size:16px;"> think of that correspond to the category presented in capital letters.</p>
   <p style="font-size:18px;"> Press begin to start.</p>
 
   `,
