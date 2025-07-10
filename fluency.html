@@ -527,6 +527,164 @@ function saveData(filename, filedata){
   		data: {filename: filename, filedata: filedata}})
   }
 
+  /// DEMOGRAPHICS
+
+  // demographics
+
+// var demographics_intro = {
+//         type: jsPsychInstructions,
+//         pages: [
+//             'The experiment is now complete! We will now ask you a short series of demographics questions. <br><br> While some questions are required (*), you may skip any others you do not wish to answer. <br><br>Aftering filling out your responses, you may press CONTINUE to advance to the next page.'
+//         ],
+//         show_clickable_nav: true
+//     }
+
+// var demographics_survey1 = {
+//         type: jsPsychSurveyHtmlForm,
+//         preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+//         html: `
+//         <label for="gender">What is your gender?</label>
+//         <input type="text" id="gender" name="gender" required><br><br>
+        
+//         <label for="age">What is your age?</label>
+//         <input type="number" id="age" name="age" min="0" max="120" required><br><br>
+
+//         <label for="education">How many years of formal education have you had? (consider graduating high school to be 12 years)</label>
+//         <input type="number" id="education" name="education" min="0" max="120" required><br><br>
+//     `,
+//         data: {
+//             typeoftrial: 'demographics',
+//         },
+//         on_finish: function(data){
+
+//             data.age = data.response.age
+//             data.gender = data.response.gender
+//             data.education = data.response.education
+            
+//         }
+//     };
+        
+//     var demographics_survey2 = {  
+//     type: jsPsychSurveyMultiSelect,
+//     preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+//     questions: [  
+//         {
+//             prompt: "Please select all the racial categories that apply to you:",
+//             name: 'race',
+//             options: ['American Indian/Alaskan Native', 'Asian','Black/African American', 'Native Hawaiian or Other Pacific Islander', 'White/Caucasian', 'Other'
+//             ],
+//             required: true,
+//             is_multiple: true 
+//         },
+//     ],
+//     data: {
+//         typeoftrial: 'demographics',
+//     },
+//     on_finish: function(data){
+//         data.race = data.response.race
+//         // if length of data.race is more than 1, then replace race with "multiracial"
+//         if(data.race.length > 1){
+//           data.race = "multiracial"
+//       }
+//       else{
+//         data.race = data.race[0]
+//       }
+//     }
+//     };
+
+//     var demographics_survey3 = {  
+//     type: jsPsychSurveyMultiChoice,
+//     preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+//     questions: [
+//         {
+//             prompt: "Are you of Hispanic, Latino/a/x or of Spanish origin?",
+//             name: 'hispanic',
+//             options: ['Yes', 'No'],
+//         },
+//         {
+//             prompt: "What is your dominant hand?",
+//             name: 'dominant_hand',
+//             options: ['Right', 'Left', 'Ambidextrous'],
+//         },
+//         {
+//             prompt: "Please indicate what time of the day you feel most alert:",
+//             name: 'alert_time',
+//             options: ['Morning', 'Afternoon', 'Evening', 'No differences'],
+//         },
+//     ],
+//     data: {
+//         typeoftrial: 'demographics',
+//     },
+//     on_finish: function(data){
+//         data.hispanic = data.response.hispanic
+//         data.dominant_hand = data.response.dominant_hand
+//         data.alert_time = data.response.alert_time
+//     }
+//     };
+
+
+//     var demographics_survey4 = {  
+//     type: jsPsychHtmlButtonResponse,
+//     preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+//     stimulus: "Is English your first language?",
+//     choices: ['Yes','No'],
+
+//     data: {
+//         typeoftrial: 'demographics',
+//     },
+//     on_finish: function(data){
+//         if(data.response == 0){data.english = "yes"}
+//         else{data.english = "no"}
+//     }
+//     };
+
+
+// var additional_info_question = {
+//     type: jsPsychSurveyText,
+//     questions: [
+//         {prompt: "Is there anything else we should know about, which might have affected your performance during the experiment? (e.g., lack of sleep, feeling ill etc.)", name: 'additional_info'}
+//     ],
+//     data: {
+//         typeoftrial: 'demographics'
+//     },
+//     on_finish: function(data){
+//         data.other_info = data.response.additional_info
+//     }
+// };
+
+// var follow_up_questions = {
+//   type: jsPsychSurveyHtmlForm,
+//   preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+//   preamble: "You indicated that English is not your first language. Please answer the following questions:<br><br>",
+//   html: `
+//     <label for="first_language_detail">What is your first language?</label>
+//     <input type="text" id="first_language" name="first_language" required><br><br>
+    
+//     <label for="age_learned_english">At what age did you learn English?</label>
+//     <input type="number" id="age_learned_english" name="age_learned_english" min="0" max="120" required><br><br>
+//   `,
+//   data: {
+//         typeoftrial: 'follow_up_demographics'
+//     },
+//     on_finish: function(data){
+//         data.first_language = data.response.first_language
+//         data.age_learned_english = data.response.age_learned_english
+//     }
+// };
+
+// var follow_up_procedure = {
+//         timeline: [follow_up_questions],
+//     conditional_function: function() {
+//         var lastTrialData = jsPsych.data.get().last(1).values()[0];
+//         //console.log("lastTrialData=",lastTrialData)
+//         return lastTrialData.response === 1;
+//     }
+// };
+
+// var demographics = {
+//     timeline: [demographics_intro, demographics_survey1, demographics_survey2, demographics_survey3, demographics_survey4, follow_up_procedure]
+// }
+
 
   timeline.push(instructions1);
   timeline.push(
