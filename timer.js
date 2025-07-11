@@ -66,7 +66,7 @@ function onTimesUp() {
   clearInterval(timerInterval);
   endCalled = 1;
   timePassed = 0;
-  timeLeft = TIME_LIMIT
+  timeLeft = Math.ceil(duration/1000) - timePassed;
   jsPsych.finishTrial();
 }
 

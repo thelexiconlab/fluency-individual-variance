@@ -7,6 +7,11 @@
     <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.1"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@1.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-select@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.1.1"></script>
+
     <link href="https://unpkg.com/jspsych@7.1.2/css/jspsych.css" rel="stylesheet" type="text/css" />
     <link href="timerstyle.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -36,11 +41,39 @@ var timeline = [];
 //creates random subject number 
 var subject_id = Math.floor(Math.random()*100000);
 
+var interestssurveyinstructions = {
+ type: jsPsychHtmlButtonResponse,
+ stimulus: `
+ <p style="font-size:20px;"> Thank you for taking part in this experiment!</p>
+ <p style="font-size:20px;"> ‎</p>
+ <p style="font-size:18px;"> before we walk you through the tasks you will be doing, we would like to get a sense of what</p>
+ <p style="font-size:18px;"> content you typically consume on the reddit platform. In the preceeding page, we ask that you</p>
+ <p style="font-size:18px;"> input the names of the subreddits you typically engage with in any capacity. (i.e. writing posts,</p>
+ <p style="font-size:18px;"> reading posts, upvoting, commenting, sharing, etc.) In the next page, we ask that you input your</p>
+ <p style="font-size:18px;"> general interests, independent of specific subreddits. To input a response, type it within the </p>
+ <p style="font-size:18px;"> provided box and <strong>press ENTER</strong> after every response. Keep in mind, there will be a three minute</p>
+ <p style="font-size:18px;"> time limit. However, if you feel you are done before time runs out, <strong>press continue</strong>. This data</p>
+ <p style="font-size:18px;"> is crucial to the experiment, so please be as accurate possible when typing your responses.</p>
+
+
+ <p style="font-size:20px;"> ‎</p>
+ <p style="font-size:18px;"> After you complete these tasks, you will be provided further instructions and continue to the actual experiment.</p>
+ <p style="font-size:18px;"> When you are ready to start, <strong>press Continue.</strong></p>
+
+
+ `,
+ choices: ["Continue"],
+     data: {
+       typeoftrial: 'instructions',
+       subject: subject_id
+   }
+};   
+
 //formats opening instruction page and tells participant about experiment
-var instructions1 = {
+var maininstructions = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
-  <p style="font-size:20px;"> Thank you for taking part in this experiment!</p>
+  <p style="font-size:20px;"> You will now proceed with the acutal experiment.</p>
   <p style="font-size:20px;"> ‎</p>
   <p style="font-size:22px;"> <strong>This experiment has two tasks:</strong></p>
   <p style="font-size:18px;"> <u>In the first task</u>, you will be presented the name of a category and must type 
@@ -50,14 +83,20 @@ var instructions1 = {
   <p style="font-size:18px;"> The experiment will consist of only 3 "trials," so please be as accurate/precise as 
   <p style="font-size:18px;"> possible when typing in items and placing the objects, rather than trying to speed through.</p>
   <p style="font-size:20px;"> ‎</p>
-  <p style="font-size:18px;"> Before you get started, we just want to get you familiar with the experiment layout. We'll walk you </p>
-  <p style="font-size:18px;"> through a practice verbal fluency and spatial arrangement task and provide more detailed instructions.</p>
+  <p style="font-size:18px;"> Before you get started, we just want to get you familiar with the experiment layout. We'll walk you through</p>
+  <p style="font-size:18px;"> a practice verbal fluency and spatial arrangement task and provide more detailed instructions.</p>
 
 
   <p style="font-size:18px;"> When you are ready to start, <strong>press Continue.</strong></p>
 
   `,
   choices: ["Continue"],
+  on_load: function() {
+    clearInterval(timerInterval);
+    resetCountdown();
+    jsPsych.pluginAPI.clearAllTimeouts();
+
+  },
       data: {
         typeoftrial: 'instructions',
         subject: subject_id
@@ -72,6 +111,7 @@ var VFTInstructions = {
   <p style="font-size:17px;"> In this task, you will be presented the name of a category (e.g., FURNITURE) in capital</p>
   <p style="font-size:17px;"> letters. Your job is to type in as many items as you can think of that correspond to that</p>
   <p style="font-size:17px;"> category in 3 minutes. You will be doing this three times on three separate domains.</p> 
+  
 
   <video width = "600" height = "300" autoplay muted loop style = "margin-top: 10px;">
     <source src = "VFTTutorial.mp4" type = "video/mp4">
@@ -80,13 +120,21 @@ var VFTInstructions = {
   <p style="font-size:17px;"> After you type in each word, press <strong>ENTER</strong> to type in the next </p>
   <p style="font-size:17px;"> word. When the timer runs out, you will automatically proceed to the next task.</p>
 
-  <p style="font-size:17px;"> When you're ready, <strong>press begin</strong> to practice!</p>
+  <p style="font-size:17px;"> When you're ready, <strong>press begin</strong> to practice! For the practice trial,</p>
+  <p style="font-size:17px;"> you will be given 1 minute, but remember you will be given 3 minutes for the real task.</p> 
+
 
 
 
 
   `,
   choices: ["Begin Experiment"],
+  on_load: function() {
+    clearInterval(timerInterval);
+    resetCountdown();
+    jsPsych.pluginAPI.clearAllTimeouts();
+
+  },
       data: {
         typeoftrial: 'instructions',
         subject: subject_id
@@ -352,6 +400,150 @@ function VFTRedo(domain, prompt, time = 10000) {
   };
 }
 
+
+
+function VFTTaskContinueButton(domain, prompt, time = 10000) {
+  const className = `${domain}-response`;
+  const responseHandler = createResponseHandler(domain);
+  
+  return {
+  type: jsPsychHtmlKeyboardResponse,
+  data: {
+    task: "VFT",
+    domain: domain,
+    subject: subject_id
+  },
+  
+  stimulus:`
+    <div id = "timer-box"></div>
+    <div id = "response-input-box">
+      <p style = "font-size:30px;">${prompt}</p>
+      <div id = "responses">
+        <input type = "text" class = "${className} active" autofocus />
+      </div>
+      <p id = "below-input-text" style = "font-size: 14px; margin-top: 10px; color: gray; text-align: left;"> press <strong>enter</strong> after each word!</p>
+      <button id = "continue-btn" style = "margin-top: 15px; padding: 10px 20px font-size:16px;">Continue</button> 
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .${className} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .${className}.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    `,
+
+  choices: [],
+  trial_duration: time, 
+  response_ends_trial: false,
+
+  on_load: function () {
+
+    document.addEventListener ("keydown", responseHandler);
+    document.querySelector(`.${className}.active`)?.focus();
+    
+    resetCountdown();
+    countDown(time);
+    // const continueButton = document.getElementById("continue-btn");
+    // const timerText = document.getElementById("time-remaining");
+    
+    
+    responseData[domain]= {
+      responses: [],
+      times: [],
+      interitem_intervals: [],
+      startTime: performance.now()
+    };
+
+    const continueButton = document.getElementById("continue-btn");
+    continueButton.addEventListener("click", () => {
+      clearInterval(timerInterval);
+      jsPsych.finishTrial({
+        taggedResponses: JSON.stringify(responseData[domain].responses.map((word, i) => ({response: word, tag: i + 1}))),
+        response_times: JSON.stringify(
+          responseData[domain].times.length > 0
+          ? [responseData[domain].times[0], ...responseData[domain].times.slice(1).map((t, i) => t - responseData[domain].times[i])]
+          : []
+        ),
+        ended_early: true
+      });
+    });
+  },
+
+
+  on_finish: function(data) {
+    document.removeEventListener("keydown", responseHandler);
+    clearInterval(timerInterval)
+    resetCountdown();
+
+    if (!data.tagged_responses) {
+      const responses = responseData[domain].responses;
+      const times = responseData[domain].times;
+      const tagged = responses.map((word, i) => ({ response: word, tag: i + 1}));
+      const intervals = times.length > 0
+        ? [times[0], ...times.slice(1).map((t, i) => t - times[i])]
+        : [];
+
+        data.tagged_responses = JSON.stringify(tagged)
+        data.response_times  = JSON.stringify(intervals.map(t => Number(t.toFixed(2))));
+        data.ended_early = false;
+      }
+
+      delete responseData[domain];
+      timerInterval = null;
+      jsPsych.pluginAPI.clearAllTimeouts();
+    }
+  };
+}
+   
+    
+function VFTRedoContinueButton(domain, prompt, time = 10000) {
+  const VFTTrial = VFTTaskContinueButton(domain, prompt, time);
+  
+  return {
+    timeline: [VFTTrial],
+    loop_function: function() {
+      const trialData = jsPsych.data.get().filter({
+        task: "VFT",
+        domain: domain
+      }).last(1).values()[0];
+      let responses = [];
+
+      try {
+        responses = JSON.parse(trialData?.tagged_responses || "[]");
+      } catch (e) {
+        console.error("Error parsing tagged_responses:", e);
+    }
+
+      if (responses.length === 0) {
+        alert("You did not input any responses. Please try again.");
+        return true;
+      }
+      return false;
+    }
+  };
+}
+
+
+
+
+
 //creates SpAM task by gathering VFT responses and tracking item movement/coordinates
 function SpamTask(domain) {
   return {
@@ -531,180 +723,218 @@ function saveData(filename, filedata){
 
   // demographics
 
-// var demographics_intro = {
-//         type: jsPsychInstructions,
-//         pages: [
-//             'The experiment is now complete! We will now ask you a short series of demographics questions. <br><br> While some questions are required (*), you may skip any others you do not wish to answer. <br><br>Aftering filling out your responses, you may press CONTINUE to advance to the next page.'
-//         ],
-//         show_clickable_nav: true
-//     }
+var demographics_intro = {
+        type: jsPsychInstructions,
+        pages: [
+            'The experiment is now complete! We will now ask you a short series of demographics questions. <br><br> While some questions are required (*), you may skip any others you do not wish to answer. <br><br>Aftering filling out your responses, you may press CONTINUE to advance to the next page.'
+        ],
+        show_clickable_nav: true
+    }
 
-// var demographics_survey1 = {
-//         type: jsPsychSurveyHtmlForm,
-//         preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
-//         html: `
-//         <label for="gender">What is your gender?</label>
-//         <input type="text" id="gender" name="gender" required><br><br>
+var demographics_survey1 = {
+        type: jsPsychSurveyHtmlForm,
+        preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+        html: `
+        <label for="gender">What is your gender?</label>
+        <input type="text" id="gender" name="gender" required><br><br>
         
-//         <label for="age">What is your age?</label>
-//         <input type="number" id="age" name="age" min="0" max="120" required><br><br>
+        <label for="age">What is your age?</label>
+        <input type="number" id="age" name="age" min="0" max="120" required><br><br>
 
-//         <label for="education">How many years of formal education have you had? (consider graduating high school to be 12 years)</label>
-//         <input type="number" id="education" name="education" min="0" max="120" required><br><br>
-//     `,
-//         data: {
-//             typeoftrial: 'demographics',
-//         },
-//         on_finish: function(data){
+        <label for="education">How many years of formal education have you had? (consider graduating high school to be 12 years)</label>
+        <input type="number" id="education" name="education" min="0" max="120" required><br><br>
+    `,
+        data: {
+            typeoftrial: 'demographics',
+        },
+        on_finish: function(data){
 
-//             data.age = data.response.age
-//             data.gender = data.response.gender
-//             data.education = data.response.education
+            data.age = data.response.age
+            data.gender = data.response.gender
+            data.education = data.response.education
             
-//         }
-//     };
+        }
+    };
         
-//     var demographics_survey2 = {  
-//     type: jsPsychSurveyMultiSelect,
-//     preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
-//     questions: [  
-//         {
-//             prompt: "Please select all the racial categories that apply to you:",
-//             name: 'race',
-//             options: ['American Indian/Alaskan Native', 'Asian','Black/African American', 'Native Hawaiian or Other Pacific Islander', 'White/Caucasian', 'Other'
-//             ],
-//             required: true,
-//             is_multiple: true 
-//         },
-//     ],
-//     data: {
-//         typeoftrial: 'demographics',
-//     },
-//     on_finish: function(data){
-//         data.race = data.response.race
-//         // if length of data.race is more than 1, then replace race with "multiracial"
-//         if(data.race.length > 1){
-//           data.race = "multiracial"
-//       }
-//       else{
-//         data.race = data.race[0]
-//       }
-//     }
-//     };
+    var demographics_survey2 = {  
+    type: jsPsychSurveyMultiSelect,
+    preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+    questions: [  
+        {
+            prompt: "Please select all the racial categories that apply to you:",
+            name: 'race',
+            options: ['American Indian/Alaskan Native', 'Asian','Black/African American', 'Native Hawaiian or Other Pacific Islander', 'White/Caucasian', 'Other'
+            ],
+            required: true,
+            is_multiple: true 
+        },
+    ],
+    data: {
+        typeoftrial: 'demographics',
+    },
+    on_finish: function(data){
+        data.race = data.response.race
+        // if length of data.race is more than 1, then replace race with "multiracial"
+        if(data.race.length > 1){
+          data.race = "multiracial"
+      }
+      else{
+        data.race = data.race[0]
+      }
+    }
+    };
 
-//     var demographics_survey3 = {  
-//     type: jsPsychSurveyMultiChoice,
-//     preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
-//     questions: [
-//         {
-//             prompt: "Are you of Hispanic, Latino/a/x or of Spanish origin?",
-//             name: 'hispanic',
-//             options: ['Yes', 'No'],
-//         },
-//         {
-//             prompt: "What is your dominant hand?",
-//             name: 'dominant_hand',
-//             options: ['Right', 'Left', 'Ambidextrous'],
-//         },
-//         {
-//             prompt: "Please indicate what time of the day you feel most alert:",
-//             name: 'alert_time',
-//             options: ['Morning', 'Afternoon', 'Evening', 'No differences'],
-//         },
-//     ],
-//     data: {
-//         typeoftrial: 'demographics',
-//     },
-//     on_finish: function(data){
-//         data.hispanic = data.response.hispanic
-//         data.dominant_hand = data.response.dominant_hand
-//         data.alert_time = data.response.alert_time
-//     }
-//     };
-
-
-//     var demographics_survey4 = {  
-//     type: jsPsychHtmlButtonResponse,
-//     preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
-//     stimulus: "Is English your first language?",
-//     choices: ['Yes','No'],
-
-//     data: {
-//         typeoftrial: 'demographics',
-//     },
-//     on_finish: function(data){
-//         if(data.response == 0){data.english = "yes"}
-//         else{data.english = "no"}
-//     }
-//     };
+    var demographics_survey3 = {  
+    type: jsPsychSurveyMultiChoice,
+    preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+    questions: [
+        {
+            prompt: "Are you of Hispanic, Latino/a/x or of Spanish origin?",
+            name: 'hispanic',
+            options: ['Yes', 'No'],
+        },
+        {
+            prompt: "What is your dominant hand?",
+            name: 'dominant_hand',
+            options: ['Right', 'Left', 'Ambidextrous'],
+        },
+        {
+            prompt: "Please indicate what time of the day you feel most alert:",
+            name: 'alert_time',
+            options: ['Morning', 'Afternoon', 'Evening', 'No differences'],
+        },
+    ],
+    data: {
+        typeoftrial: 'demographics',
+    },
+    on_finish: function(data){
+        data.hispanic = data.response.hispanic
+        data.dominant_hand = data.response.dominant_hand
+        data.alert_time = data.response.alert_time
+    }
+    };
 
 
-// var additional_info_question = {
-//     type: jsPsychSurveyText,
-//     questions: [
-//         {prompt: "Is there anything else we should know about, which might have affected your performance during the experiment? (e.g., lack of sleep, feeling ill etc.)", name: 'additional_info'}
-//     ],
-//     data: {
-//         typeoftrial: 'demographics'
-//     },
-//     on_finish: function(data){
-//         data.other_info = data.response.additional_info
-//     }
-// };
+    var demographics_survey4 = {  
+    type: jsPsychHtmlButtonResponse,
+    preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+    stimulus: "Is English your first language?",
+    choices: ['Yes','No'],
 
-// var follow_up_questions = {
-//   type: jsPsychSurveyHtmlForm,
-//   preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
-//   preamble: "You indicated that English is not your first language. Please answer the following questions:<br><br>",
-//   html: `
-//     <label for="first_language_detail">What is your first language?</label>
-//     <input type="text" id="first_language" name="first_language" required><br><br>
+    data: {
+        typeoftrial: 'demographics',
+    },
+    on_finish: function(data){
+        if(data.response == 0){data.english = "yes"}
+        else{data.english = "no"}
+    }
+    };
+
+
+var additional_info_question = {
+    type: jsPsychSurveyText,
+    questions: [
+        {prompt: "Is there anything else we should know about, which might have affected your performance during the experiment? (e.g., lack of sleep, feeling ill etc.)", name: 'additional_info'}
+    ],
+    data: {
+        typeoftrial: 'demographics'
+    },
+    on_finish: function(data){
+        data.other_info = data.response.additional_info
+    }
+};
+
+var follow_up_questions = {
+  type: jsPsychSurveyHtmlForm,
+  preamble: "<h2>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+  preamble: "You indicated that English is not your first language. Please answer the following questions:<br><br>",
+  html: `
+    <label for="first_language_detail">What is your first language?</label>
+    <input type="text" id="first_language" name="first_language" required><br><br>
     
-//     <label for="age_learned_english">At what age did you learn English?</label>
-//     <input type="number" id="age_learned_english" name="age_learned_english" min="0" max="120" required><br><br>
-//   `,
-//   data: {
-//         typeoftrial: 'follow_up_demographics'
-//     },
-//     on_finish: function(data){
-//         data.first_language = data.response.first_language
-//         data.age_learned_english = data.response.age_learned_english
-//     }
-// };
+    <label for="age_learned_english">At what age did you learn English?</label>
+    <input type="number" id="age_learned_english" name="age_learned_english" min="0" max="120" required><br><br>
+  `,
+  data: {
+        typeoftrial: 'follow_up_demographics'
+    },
+    on_finish: function(data){
+        data.first_language = data.response.first_language
+        data.age_learned_english = data.response.age_learned_english
+    }
+};
 
-// var follow_up_procedure = {
-//         timeline: [follow_up_questions],
-//     conditional_function: function() {
-//         var lastTrialData = jsPsych.data.get().last(1).values()[0];
-//         //console.log("lastTrialData=",lastTrialData)
-//         return lastTrialData.response === 1;
-//     }
-// };
+var follow_up_procedure = {
+        timeline: [follow_up_questions],
+    conditional_function: function() {
+        var lastTrialData = jsPsych.data.get().last(1).values()[0];
+        //console.log("lastTrialData=",lastTrialData)
+        return lastTrialData.response === 1;
+    }
+};
 
-// var demographics = {
-//     timeline: [demographics_intro, demographics_survey1, demographics_survey2, demographics_survey3, demographics_survey4, follow_up_procedure]
-// }
+var demographics = {
+    timeline: [demographics_intro, demographics_survey1, demographics_survey2, demographics_survey3, demographics_survey4, follow_up_procedure]
+}
 
-
-  timeline.push(instructions1);
-  timeline.push(
-    VFTInstructions,
-    VFTRedo("furniture-practice", "Name as many items of <strong>FURNITURE</strong> as you can.", 180000),
-    SpAMInstructions,
-    SpamTask("furniture-practice")
-  );
-  timeline.push(startInstructions);
-  timeline.push(
-    VFTRedo("animal", "Name as many ANIMALS as you can.", 180000),
-    betweenVFTAndSpAMInstructions,
-    SpamTask("animal"),
-    afterSpAMInstructions
-  );
-  timeline.push(
-    VFTRedo("food", "Name as many FOODS as you can.", 180000),
-    betweenVFTAndSpAMInstructions,
-    SpamTask("food"),
-  );
+  timeline.push(interestssurveyinstructions);
+  timeline.push(VFTRedoContinueButton("subreddits", "Please type in the names of the Subreddits you frequently engage with"));
+  timeline.push(VFTRedoContinueButton("interest", "Please type in your general interests"));
+  timeline.push(maininstructions);
+  //   timeline.push(
+  //   VFTInstructions,
+  //   VFTRedo("furniture-practice", "Name as many items of <strong>FURNITURE</strong> as you can.", 10000),
+  //   SpAMInstructions,
+  //   SpamTask("furniture-practice")
+  // );
+  // timeline.push(startInstructions);
+  // timeline.push(
+  //   VFTRedo("animals", "Name as many <strong>ANIMALS</strong> as you can.", 10000),
+  //   betweenVFTAndSpAMInstructions,
+  //   SpamTask("animals"),
+  //   afterSpAMInstructions
+  // );
+  // timeline.push(
+  //   VFTRedo("clothes", "Name as many items of <strong>CLOTHING</strong> as you can.", 10000),
+  //   betweenVFTAndSpAMInstructions,
+  //   SpamTask("clothes"),
+  // );
+  // timeline.push(
+  //   VFTRedo("tools", "Name as many <strong>TOOLS</strong> as you can.", 10000),
+  //   betweenVFTAndSpAMInstructions,
+  //   SpamTask("tools"),
+  //   afterSpAMInstructions
+  // );
+  // timeline.push(
+  //   VFTRedo("sports", "Name as many <strong>SPORTS</strong> as you can.", 10000),
+  //   betweenVFTAndSpAMInstructions,
+  //   SpamTask("sports"),
+  //   afterSpAMInstructions
+  // );
+  // timeline.push(
+  //   VFTRedo("occupations", "Name as many <strong>OCCUPATIONS</strong> as you can.", 10000),
+  //   betweenVFTAndSpAMInstructions,
+  //   SpamTask("occupations"),
+  //   afterSpAMInstructions
+  // );
+  // timeline.push(
+  //   VFTRedo("foods", "Name as many <strong>FOODS</strong> as you can.", 10000),
+  //   betweenVFTAndSpAMInstructions,
+  //   SpamTask("foods"),
+  //   afterSpAMInstructions
+  // );
+  // timeline.push(
+  //   VFTRedo("music-genres", "Name as many <strong>MUSIC GENRES</strong> as you can.", 10000),
+  //   betweenVFTAndSpAMInstructions,
+  //   SpamTask("music-genres"),
+  //   afterSpAMInstructions
+  // );
+  //  timeline.push(
+  //   VFTRedo("classroom-items", "Name as many items in a <strong>CLASSROOM</strong> as you can.", 10000),
+  //   betweenVFTAndSpAMInstructions,
+  //   SpamTask("classroom-items")
+  // );
+  timeline.push(demographics)
   timeline.push(save_data);
   timeline.push(endexperiment);
 
