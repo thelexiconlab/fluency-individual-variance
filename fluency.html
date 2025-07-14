@@ -46,11 +46,11 @@ var interestssurveyinstructions = {
  stimulus: `
  <p style="font-size:20px;"> Thank you for taking part in this experiment!</p>
  <p style="font-size:20px;"> ‎</p>
- <p style="font-size:18px;"> before we walk you through the tasks you will be doing, we would like to get a sense of what</p>
- <p style="font-size:18px;"> content you typically consume on the reddit platform. In the preceeding page, we ask that you</p>
- <p style="font-size:18px;"> input the names of the subreddits you typically engage with in any capacity. (i.e. writing posts,</p>
- <p style="font-size:18px;"> reading posts, upvoting, commenting, sharing, etc.) In the next page, we ask that you input your</p>
- <p style="font-size:18px;"> general interests, independent of specific subreddits. To input a response, type it within the </p>
+ <p style="font-size:18px;"> Before we walk you through the tasks you will be doing, we would like to get a sense of what</p>
+ <p style="font-size:18px;"> content you typically consume on the Reddit platform. On the preceeding page, we ask that you</p>
+ <p style="font-size:18px;"> input the names of the Subreddits you typically engage with in any capacity. (i.e. writing posts,</p>
+ <p style="font-size:18px;"> reading posts, upvoting, commenting, sharing, etc.) On the page following that, we ask that you input</p>
+ <p style="font-size:18px;"> your general interests, independent of specific Subreddits. To input a response, type it within the </p>
  <p style="font-size:18px;"> provided box and <strong>press ENTER</strong> after every response. Keep in mind, there will be a three minute</p>
  <p style="font-size:18px;"> time limit. However, if you feel you are done before time runs out, <strong>press continue</strong>. This data</p>
  <p style="font-size:18px;"> is crucial to the experiment, so please be as accurate possible when typing your responses.</p>
@@ -120,7 +120,7 @@ var VFTInstructions = {
   <p style="font-size:17px;"> After you type in each word, press <strong>ENTER</strong> to type in the next </p>
   <p style="font-size:17px;"> word. When the timer runs out, you will automatically proceed to the next task.</p>
 
-  <p style="font-size:17px;"> When you're ready, <strong>press begin</strong> to practice! For the practice trial,</p>
+  <p style="font-size:17px;"> When you're ready, <strong>press Begin</strong> to practice! For the practice trial,</p>
   <p style="font-size:17px;"> you will be given 1 minute, but remember you will be given 3 minutes for the real task.</p> 
 
 
@@ -128,7 +128,7 @@ var VFTInstructions = {
 
 
   `,
-  choices: ["Begin Experiment"],
+  choices: ["Begin"],
   on_load: function() {
     clearInterval(timerInterval);
     resetCountdown();
@@ -157,7 +157,7 @@ var SpAMInstructions = {
   </video>
 
   <p style="font-size:17px;"> The words will appear one by one in the top left corner of a box. You can move the words by simply</p>
-  <p style="font-size:17px;"> click/dragging them. If the words seem similar, place them close together, if they seem dissimilar,</p>
+  <p style="font-size:17px;"> click/dragging them. If the words seem similar, place them close together. If they seem dissimilar,</p>
   <p style="font-size:17px;"> place them farther away from each other. You will be doing this three times on three separate domains,</p> 
   <p style="font-size:17px;"> with a different set of words each time, based the words you typed in the corresponding verbal fluency </p>
   <p style="font-size:17px;"> task. After dragging each word, the next word will appear. You may rearrange previously placed items.</p>
@@ -167,7 +167,7 @@ var SpAMInstructions = {
     <p style="font-size:5px;"> ‎</p>
 
   <p style="font-size:17px;"> Let's continue with our practice round!</p>
-  <p style="font-size:17px;"> When you're ready, <strong>press begin.</strong></p>
+  <p style="font-size:17px;"> When you're ready, <strong>press Begin.</strong></p>
 
   `,
   choices: ["Begin"],
@@ -187,7 +187,7 @@ var startInstructions = {
   <p style="font-size:18x;"> within the time limit. Then, you will arrange the items you input previously in the box provided based on how related they are.</p>
 
   <p style="font-size:10px;"> ‎</p>
-  <p style="font-size:18px;"> When you're ready, <strong>press begin</strong> to start the verbal fluency task.</p>
+  <p style="font-size:18px;"> When you're ready, <strong>press Begin</strong> to start the verbal fluency task.</p>
 
   `,
   choices: ["Begin"],
@@ -209,7 +209,7 @@ var betweenVFTAndSpAMInstructions = {
   <p style="font-size:16px;"> If the words seem similar, place them close together, if they seem</p>
   <p style="font-size:16px;"> dissimilar, place them farther away from each other.</p>
   <p style="font-size:10px;"> ‎</p>
-  <p style="font-size:18px;"> Press begin to start.</p>
+  <p style="font-size:18px;"> Press <strong>Begin</strong> to start.</p>
 
   `,
   choices: ["Begin"],
@@ -226,7 +226,7 @@ var afterSpAMInstructions = {
   <p style="font-size:18px;"> <strong>You will now move to the next category.</strong></p>
   <p style="font-size:16px;"> As a reminder, in this task, you will type as many words as you can </p> 
   <p style="font-size:16px;"> think of that correspond to the category presented in capital letters.</p>
-  <p style="font-size:18px;"> Press begin to start.</p>
+  <p style="font-size:18px;"> Press <strong>Begin</strong> to start.</p>
 
   `,
   choices: ["Begin"],
@@ -400,7 +400,7 @@ function VFTRedo(domain, prompt, time = 10000) {
   };
 }
 
-
+//handles pages where participants are asked about their interests and able to proceed with continue button or time running out
 
 function VFTTaskContinueButton(domain, prompt, time = 10000) {
   const className = `${domain}-response`;
@@ -512,6 +512,7 @@ function VFTTaskContinueButton(domain, prompt, time = 10000) {
   };
 }
    
+//ensures that in trials asking participants interests, they must input responses 
     
 function VFTRedoContinueButton(domain, prompt, time = 10000) {
   const VFTTrial = VFTTaskContinueButton(domain, prompt, time);
@@ -719,7 +720,7 @@ function saveData(filename, filedata){
   		data: {filename: filename, filedata: filedata}})
   }
 
-  /// DEMOGRAPHICS
+ 
 
   // demographics
 
@@ -878,62 +879,63 @@ var demographics = {
 }
 
   timeline.push(interestssurveyinstructions);
-  timeline.push(VFTRedoContinueButton("subreddits", "Please type in the names of the Subreddits you frequently engage with"));
-  timeline.push(VFTRedoContinueButton("interest", "Please type in your general interests"));
+  timeline.push(VFTRedoContinueButton("subreddits", "Please type in the names of the Subreddits you frequently engage with", 180000));
+  timeline.push(VFTRedoContinueButton("interest", "Please type in your general interests", 180000));
   timeline.push(maininstructions);
-  //   timeline.push(
-  //   VFTInstructions,
-  //   VFTRedo("furniture-practice", "Name as many items of <strong>FURNITURE</strong> as you can.", 10000),
-  //   SpAMInstructions,
-  //   SpamTask("furniture-practice")
-  // );
-  // timeline.push(startInstructions);
-  // timeline.push(
-  //   VFTRedo("animals", "Name as many <strong>ANIMALS</strong> as you can.", 10000),
-  //   betweenVFTAndSpAMInstructions,
-  //   SpamTask("animals"),
-  //   afterSpAMInstructions
-  // );
-  // timeline.push(
-  //   VFTRedo("clothes", "Name as many items of <strong>CLOTHING</strong> as you can.", 10000),
-  //   betweenVFTAndSpAMInstructions,
-  //   SpamTask("clothes"),
-  // );
-  // timeline.push(
-  //   VFTRedo("tools", "Name as many <strong>TOOLS</strong> as you can.", 10000),
-  //   betweenVFTAndSpAMInstructions,
-  //   SpamTask("tools"),
-  //   afterSpAMInstructions
-  // );
-  // timeline.push(
-  //   VFTRedo("sports", "Name as many <strong>SPORTS</strong> as you can.", 10000),
-  //   betweenVFTAndSpAMInstructions,
-  //   SpamTask("sports"),
-  //   afterSpAMInstructions
-  // );
-  // timeline.push(
-  //   VFTRedo("occupations", "Name as many <strong>OCCUPATIONS</strong> as you can.", 10000),
-  //   betweenVFTAndSpAMInstructions,
-  //   SpamTask("occupations"),
-  //   afterSpAMInstructions
-  // );
-  // timeline.push(
-  //   VFTRedo("foods", "Name as many <strong>FOODS</strong> as you can.", 10000),
-  //   betweenVFTAndSpAMInstructions,
-  //   SpamTask("foods"),
-  //   afterSpAMInstructions
-  // );
-  // timeline.push(
-  //   VFTRedo("music-genres", "Name as many <strong>MUSIC GENRES</strong> as you can.", 10000),
-  //   betweenVFTAndSpAMInstructions,
-  //   SpamTask("music-genres"),
-  //   afterSpAMInstructions
-  // );
-  //  timeline.push(
-  //   VFTRedo("classroom-items", "Name as many items in a <strong>CLASSROOM</strong> as you can.", 10000),
-  //   betweenVFTAndSpAMInstructions,
-  //   SpamTask("classroom-items")
-  // );
+    timeline.push(
+    VFTInstructions,
+    VFTRedo("furniture-practice", "Name as many items of <strong>FURNITURE</strong> as you can.", 60000),
+    SpAMInstructions,
+    SpamTask("furniture-practice")
+  );
+  timeline.push(startInstructions);
+  timeline.push(
+    VFTRedo("animals", "Name as many <strong>ANIMALS</strong> as you can.", 180000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("animals"),
+    afterSpAMInstructions
+  );
+  timeline.push(
+    VFTRedo("clothes", "Name as many items of <strong>CLOTHING</strong> as you can.", 180000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("clothes"),
+    afterSpAMInstructions
+  );
+  timeline.push(
+    VFTRedo("tools", "Name as many <strong>TOOLS</strong> as you can.", 180000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("tools"),
+    afterSpAMInstructions
+  );
+  timeline.push(
+    VFTRedo("sports", "Name as many <strong>SPORTS</strong> as you can.", 180000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("sports"),
+    afterSpAMInstructions
+  );
+  timeline.push(
+    VFTRedo("occupations", "Name as many <strong>OCCUPATIONS</strong> as you can.", 180000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("occupations"),
+    afterSpAMInstructions
+  );
+  timeline.push(
+    VFTRedo("foods", "Name as many <strong>FOODS</strong> as you can.", 180000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("foods"),
+    afterSpAMInstructions
+  );
+  timeline.push(
+    VFTRedo("music-genres", "Name as many <strong>MUSIC GENRES</strong> as you can.", 180000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("music-genres"),
+    afterSpAMInstructions
+  );
+   timeline.push(
+    VFTRedo("classroom-items", "Name as many items in a <strong>CLASSROOM</strong> as you can.", 180000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("classroom-items")
+  );
   timeline.push(demographics)
   timeline.push(save_data);
   timeline.push(endexperiment);
