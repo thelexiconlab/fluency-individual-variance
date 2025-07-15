@@ -1,0 +1,86 @@
+---
+title: "VFT/SpAM data processing"
+output: html_document
+date: "2025-07-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Libraries
+```{r}
+#Toolboxes
+library(tidyverse)
+library(dplyr)
+library(jsonlite)
+```
+
+## Importing Data
+```{r}
+#Importing participant csv data file: 
+#datafile <- read_csv("filepath") where filepath is the location of the csv file
+
+#Pilot participant csv data file:
+datafile <- read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Desktop/fluency data processing/fluency.csv")
+
+#Viewing the data file in seperate tab:
+View(datafile)
+```
+
+##Working with Fluency Data from Datafile
+```{r}
+#to make data analysis through Forager easier:
+forager_prep <- datafile %>% #initiates dplyr pipeline
+  filter(task == "VFT", !is.na(tagged_responses), tagged_responses != "[]", tagged_responses != "") %>% 
+  select(-response) %>%
+  rowwise() %>%
+  mutate(
+    parsed_responses = list(fromJSON(tagged_responses)),
+    response_times = list(fromJSON(response_times))
+    ) %>%
+  filter(length(parsed_responses) > 0) %>%
+  unnest_longer(parsed_responses, indices_to = "response_index") %>%
+  unnest_longer(response_times, indices_to = "time_index") %>%
+  filter(response_index == time_index) %>%
+  unnest_wider(parsed_responses) %>%
+  select(-time_index) %>%
+  select(subject, response, tag, response_times, domain) %>%
+  arrange(domain, subject)
+#write_csv(forager_prep, "foragerreadyVFTdata.csv") #Creates new, cleaned data file
+View(forager_prep)
+
+##change tqg to entry_number
+```
+
+##Cleaning SpAM Data
+```{r}
+organized_spam <- datafile %>%
+  filter(task == "SpAM", !is.na(droppedwords), droppedwords != "[]", droppedwords != "") %>%
+  rowwise() %>%
+  mutate(droppedwords = list(fromJSON(droppedwords))) %>%
+  filter(length(droppedwords) > 0) %>% #ensures no empty responses are kept 
+  unnest_longer(droppedwords) %>%
+  unnest_wider(droppedwords) %>%
+  ungroup() %>%
+  group_by(subject, domain, id) %>%
+  slice_tail(n = 1) %>% #keeps only most recent word position 
+  ungroup() %>%
+  mutate(x = as.numeric(str_remove(left, "px")), y = as.numeric((str_remove(top, "px"))))%>%
+  select(subject, word, id, x, y, domain) %>%
+  mutate(id = str_remove(id, "word-"))%>%
+  arrange(domain, subject)
+```
+
+##Calculating Euclidean Distance for SpAM Data
+```{r}
+organized_spam <- organized_spam %>%
+  group_by(domain, subject) %>%
+  mutate(
+    x_next = lead(x),
+    y_next = lead(y),
+    euclidean_distance = sqrt((x_next - x)^2 + (y_next - y)^2))%>%
+  ungroup()%>%
+  select(-x_next, -y_next)
+View(organized_spam)
+```
