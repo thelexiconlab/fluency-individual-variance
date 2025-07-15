@@ -1,0 +1,938 @@
+value,trial_type,trial_index,time_elapsed,internal_node_id,run_id,condition,recorded_at,source_code_version,ip,user_agent,device,browser,browser_version,platform,platform_version,referer,accept_language,subject_id,rt,stimulus,response,typeoftrial,subject,task,domain,tagged_responses,response_times,droppedwords
+,call-function,0,0,0.0-0.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,,,,,,,,,,
+,html-button-response,1,922,0.0-1.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,921,"
+  <p style=""font-size:20px;""> Thank you for taking part in this experiment!</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:22px;""> <strong>This experiment has two tasks:</strong></p>
+  <p style=""font-size:18px;""> <u>In the first task</u>, you will be presented the name of a category and must type 
+  <p style=""font-size:18px;""> in as many items that correspond to that category as you can within the time limit. </p>
+  <p style=""font-size:18px;""> <u>In the second task</u>, you will move each of the words that you typed in the first </p>
+  <p style=""font-size:18px;""> task around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:18px;""> The experiment will consist of only 3 ""trials,"" so please be as accurate/precise as 
+  <p style=""font-size:18px;""> possible when typing in items and placing the objects, rather than trying to speed through.</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:18px;""> Before you get started, we just want to get you familiar with the experiment layout. We'll walk you </p>
+  <p style=""font-size:18px;""> through a practice verbal fluency and spatial arrangement task and provide more detailed instructions.</p>
+
+
+  <p style=""font-size:18px;""> When you are ready to start, <strong>press Continue.</strong></p>
+
+  ",0,instructions,34998,,,,,
+,html-button-response,2,1642,0.0-2.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,715,"
+  <p style=""font-size:22px;""><strong>You are about to perform a verbal fluency task.</strong></p>
+  <p style=""font-size:17px;""> In this task, you will be presented the name of a category (e.g., FURNITURE) in capital</p>
+  <p style=""font-size:17px;""> letters. Your job is to type in as many items as you can think of that correspond to that</p>
+  <p style=""font-size:17px;""> category in 3 minutes. You will be doing this three times on three separate domains.</p> 
+
+  <video width = ""600"" height = ""300"" autoplay muted loop style = ""margin-top: 10px;"">
+    <source src = ""VFTTutorial.mp4"" type = ""video/mp4"">
+  </video>
+
+  <p style=""font-size:17px;""> After you type in each word, press <strong>ENTER</strong> to type in the next </p>
+  <p style=""font-size:17px;""> word. When the timer runs out, you will automatically proceed to the next task.</p>
+
+  <p style=""font-size:17px;""> When you're ready, <strong>press begin</strong> to practice!</p>
+
+
+
+
+  ",0,instructions,34998,,,,,
+,html-keyboard-response,3,181646,0.0-3.0-0.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,null,"
+    <div id = ""timer-box""></div>
+    <div id = ""response-input-box"">
+      <p style = ""font-size:30px;"">Name as many items of <strong>FURNITURE</strong> as you can.</p>
+      <div id = ""responses"">
+        <input type = ""text"" class = ""furniture-practice-response active"" autofocus />
+      </div>
+      <p id = ""below-input-text"" style = ""font-size: 14px; margin-top: 10px; color: gray; text-align: left;""> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .furniture-practice-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .furniture-practice-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    ",null,,34998,VFT,furniture-practice,"[{""response"":""chair"",""tag"":1},{""response"":""bed"",""tag"":2},{""response"":""couch"",""tag"":3},{""response"":""bench"",""tag"":4}]","[2826.9,1656.6,1800.1,96719]",
+,html-button-response,4,217632,0.0-4.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,35980,"
+  <p style=""font-size:22px;""> <strong>Now, you will begin a spatial arrangement task.</strong></p>
+  <p style=""font-size:17px;""> In this task, you will be shown the set of words you typed in the last verbal fluency task you performed.</p>
+  <p style=""font-size:17px;""> We need to know how similar you think these words are to one another. Your job is to move each word</p>
+  <p style=""font-size:17px;""> around so that the similar words are proportionately closer together. That is, you should move them into</p>
+  <p style=""font-size:17px;""> space such that the distance between each pair of items represents how similar you think the pair is.</p>
+  <p style=""font-size:17px;""> (with closer in space meaning more similar, and farther away in space meaning more dissimilar)</p>
+
+  <video width = ""600"" height = ""400"" autoplay muted loop style = ""margin-top: 10px;"">
+    <source src = ""SpAMTutorial.mp4"" type = ""video/mp4"">
+  </video>
+
+  <p style=""font-size:17px;""> The words will appear one by one in the top left corner of a box. You can move the words by simply</p>
+  <p style=""font-size:17px;""> click/dragging them. If the words seem similar, place them close together, if they seem dissimilar,</p>
+  <p style=""font-size:17px;""> place them farther away from each other. You will be doing this three times on three separate domains,</p> 
+  <p style=""font-size:17px;""> with a different set of words each time, based the words you typed in the corresponding verbal fluency </p>
+  <p style=""font-size:17px;""> task. After dragging each word, the next word will appear. You may rearrange previously placed items.</p>
+  <p style=""font-size:17px;""> Note, to complete the trial, <u>all items</u> must be moved into the ""active arena,"" the large central box. </p>
+  <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+  
+    <p style=""font-size:5px;""> ‎</p>
+
+  <p style=""font-size:17px;""> Let's continue with our practice round!</p>
+  <p style=""font-size:17px;""> When you're ready, <strong>press begin.</strong></p>
+
+  ",0,instructions,34998,,,,,
+,html-button-response,5,229209,0.0-5.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,11575,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+        <div id=""word-drop-area"" style=""
+          margin-top: 40px;        
+          height: 400px;        
+          border: 2px solid #aaa;        
+          padding: 10px;       
+          font-size: 20px;       
+          text-align: center;       
+          color: #888;   
+          position: relative;   
+          ""></div>
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {         
+            display: inline-block;         
+            background: #eef;         
+            padding: 10px;         
+            border: 1px solid #aaa;         
+            border-radius: 4px;         
+            cursor: move;         
+            font-size: 18px;         
+            margin-bottom: 5px;       
+          }     
+        </style>    
+      ",0,,34998,SpAM,furniture-practice,,,"[{""word"":""chair"",""id"":""word-1"",""left"":""540px"",""top"":""191px""},{""word"":""bed"",""id"":""word-2"",""left"":""393px"",""top"":""86px""},{""word"":""couch"",""id"":""word-3"",""left"":""427px"",""top"":""189px""},{""word"":""bench"",""id"":""word-4"",""left"":""490px"",""top"":""269px""}]"
+,html-button-response,6,230623,0.0-6.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,1412,"
+  <p style=""font-size:20px;"">You have completed the practice round!</p>
+  <p style=""font-size:18x;""> Now, you will begin the actual task, consisting of three rounds with different categories.</p>
+  <p style=""font-size:18x;""> Again, your first task is to first type in as many items as you can think of that correspond to the given category</p>
+  <p style=""font-size:18x;""> within the time limit. Then, you will arrange the items you input previously in the box provided based on how related they are.</p>
+
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> When you're ready, <strong>press begin</strong> to start the verbal fluency task.</p>
+
+  ",0,instructions,34998,,,,,
+,html-keyboard-response,7,410626,0.0-7.0-0.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,null,"
+    <div id = ""timer-box""></div>
+    <div id = ""response-input-box"">
+      <p style = ""font-size:30px;"">Name as many ANIMALS as you can.</p>
+      <div id = ""responses"">
+        <input type = ""text"" class = ""animal-response active"" autofocus />
+      </div>
+      <p id = ""below-input-text"" style = ""font-size: 14px; margin-top: 10px; color: gray; text-align: left;""> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .animal-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .animal-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    ",null,,34998,VFT,animal,"[{""response"":""cat"",""tag"":1},{""response"":""wolf"",""tag"":2},{""response"":""panda"",""tag"":3},{""response"":""otter"",""tag"":4},{""response"":""tiger"",""tag"":5}]","[2530.2,1626,2132.4,1843.6,1223]",
+,html-button-response,8,425178,0.0-8.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,14549,"
+  <p style=""font-size:20px;""> <strong>You are moving to the spatial arrangement task.</strong></p>
+  <p style=""font-size:16px;""> As a reminder, in this task, you will be shown a set of words.</p>
+  <p style=""font-size:16px;""> We need to know how similar you think these words are to one another.</p>
+  <p style=""font-size:16px;""> To indicate your perception of similarity, you will move each word</p> 
+  <p style=""font-size:16px;""> around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:16px;""> If the words seem similar, place them close together, if they seem</p>
+  <p style=""font-size:16px;""> dissimilar, place them farther away from each other.</p>
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> Press begin to start.</p>
+
+  ",0,instructions,34998,,,,,
+,html-button-response,9,440010,0.0-9.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,14831,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+        <div id=""word-drop-area"" style=""
+          margin-top: 40px;        
+          height: 400px;        
+          border: 2px solid #aaa;        
+          padding: 10px;       
+          font-size: 20px;       
+          text-align: center;       
+          color: #888;   
+          position: relative;   
+          ""></div>
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {         
+            display: inline-block;         
+            background: #eef;         
+            padding: 10px;         
+            border: 1px solid #aaa;         
+            border-radius: 4px;         
+            cursor: move;         
+            font-size: 18px;         
+            margin-bottom: 5px;       
+          }     
+        </style>    
+      ",0,,34998,SpAM,animal,,,"[{""word"":""cat"",""id"":""word-1"",""left"":""380px"",""top"":""160px""},{""word"":""wolf"",""id"":""word-2"",""left"":""154px"",""top"":""156px""},{""word"":""panda"",""id"":""word-3"",""left"":""619px"",""top"":""312px""},{""word"":""otter"",""id"":""word-4"",""left"":""336px"",""top"":""327px""},{""word"":""tiger"",""id"":""word-5"",""left"":""410px"",""top"":""221px""}]"
+,html-button-response,10,503183,0.0-10.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,63171,"
+  <p style=""font-size:18px;""> <strong>You will now move to the next category.</strong></p>
+  <p style=""font-size:16px;""> As a reminder, in this task, you will type as many words as you can </p> 
+  <p style=""font-size:16px;""> think of that correspond to the category presented in capital letters.</p>
+  <p style=""font-size:18px;""> Press begin to start.</p>
+
+  ",0,instructions,34998,,,,,
+,html-keyboard-response,11,683190,0.0-11.0-0.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,null,"
+    <div id = ""timer-box""></div>
+    <div id = ""response-input-box"">
+      <p style = ""font-size:30px;"">Name as many FOODS as you can.</p>
+      <div id = ""responses"">
+        <input type = ""text"" class = ""food-response active"" autofocus />
+      </div>
+      <p id = ""below-input-text"" style = ""font-size: 14px; margin-top: 10px; color: gray; text-align: left;""> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .food-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .food-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    ",null,,34998,VFT,food,"[{""response"":""vread"",""tag"":1},{""response"":""cake"",""tag"":2},{""response"":""tofu"",""tag"":3},{""response"":""apple"",""tag"":4},{""response"":""cherry"",""tag"":5}]","[5386.9,4201,2714.8,8095.6,2644.1]",
+,html-button-response,12,693529,0.0-12.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,10336,"
+  <p style=""font-size:20px;""> <strong>You are moving to the spatial arrangement task.</strong></p>
+  <p style=""font-size:16px;""> As a reminder, in this task, you will be shown a set of words.</p>
+  <p style=""font-size:16px;""> We need to know how similar you think these words are to one another.</p>
+  <p style=""font-size:16px;""> To indicate your perception of similarity, you will move each word</p> 
+  <p style=""font-size:16px;""> around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:16px;""> If the words seem similar, place them close together, if they seem</p>
+  <p style=""font-size:16px;""> dissimilar, place them farther away from each other.</p>
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> Press begin to start.</p>
+
+  ",0,instructions,34998,,,,,
+,html-button-response,13,706880,0.0-13.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,13349,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+        <div id=""word-drop-area"" style=""
+          margin-top: 40px;        
+          height: 400px;        
+          border: 2px solid #aaa;        
+          padding: 10px;       
+          font-size: 20px;       
+          text-align: center;       
+          color: #888;   
+          position: relative;   
+          ""></div>
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {         
+            display: inline-block;         
+            background: #eef;         
+            padding: 10px;         
+            border: 1px solid #aaa;         
+            border-radius: 4px;         
+            cursor: move;         
+            font-size: 18px;         
+            margin-bottom: 5px;       
+          }     
+        </style>    
+      ",0,,34998,SpAM,food,,,"[{""word"":""vread"",""id"":""word-1"",""left"":""499px"",""top"":""241px""},{""word"":""cake"",""id"":""word-2"",""left"":""418px"",""top"":""249px""},{""word"":""tofu"",""id"":""word-3"",""left"":""403px"",""top"":""120px""},{""word"":""apple"",""id"":""word-4"",""left"":""178px"",""top"":""224px""},{""word"":""cherry"",""id"":""word-5"",""left"":""182px"",""top"":""144px""}]"
+,html-button-response,14,708200,0.0-14.0,2,1,2025-07-08 20:51:55,348af30701339f9bbd7c58c3ad0c4853,139.140.216.106,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,1318,"<p>You have completed the experiment. Thank you for participating! </p>
+      <p> Please click <a href=""https://bit.ly/3t1aLGU"" target=""_blank"" rel=""noopener noreferrer"">here</a> to access the debriefing form and know more about our research.</p>
+      <p> Please click the button below to finish the experiment and save your data.</p>
+      <p> IMPORTANT: Please do not leave this page without clicking the button below.</p>
+        ",0,,,,,,,
+,call-function,0,1,0.0-0.0,5,1,2025-07-09 14:22:21,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,,,,,,,,,,
+,call-function,0,1,0.0-0.0,7,1,2025-07-10 12:53:46,348af30701339f9bbd7c58c3ad0c4853,139.140.48.190,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",Macintosh,Chrome,136.0.0.0,OS X,10_15_7,https://www.google.com/,"en-GB,en-US;q=0.9,en;q=0.8",,,,,,,,,,,
+,html-button-response,1,22185,0.0-1.0,7,1,2025-07-10 12:53:46,348af30701339f9bbd7c58c3ad0c4853,139.140.48.190,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",Macintosh,Chrome,136.0.0.0,OS X,10_15_7,https://www.google.com/,"en-GB,en-US;q=0.9,en;q=0.8",,22183,"
+  <p style=""font-size:20px;""> Thank you for taking part in this experiment!</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:22px;""> <strong>This experiment has two tasks:</strong></p>
+  <p style=""font-size:18px;""> <u>In the first task</u>, you will be presented the name of a category and must type 
+  <p style=""font-size:18px;""> in as many items that correspond to that category as you can within the time limit. </p>
+  <p style=""font-size:18px;""> <u>In the second task</u>, you will move each of the words that you typed in the first </p>
+  <p style=""font-size:18px;""> task around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:18px;""> The experiment will consist of only 3 ""trials,"" so please be as accurate/precise as 
+  <p style=""font-size:18px;""> possible when typing in items and placing the objects, rather than trying to speed through.</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:18px;""> Before you get started, we just want to get you familiar with the experiment layout. We'll walk you </p>
+  <p style=""font-size:18px;""> through a practice verbal fluency and spatial arrangement task and provide more detailed instructions.</p>
+
+
+  <p style=""font-size:18px;""> When you are ready to start, <strong>press Continue.</strong></p>
+
+  ",0,instructions,15148,,,,,
+,html-button-response,2,29848,0.0-2.0,7,1,2025-07-10 12:53:46,348af30701339f9bbd7c58c3ad0c4853,139.140.48.190,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",Macintosh,Chrome,136.0.0.0,OS X,10_15_7,https://www.google.com/,"en-GB,en-US;q=0.9,en;q=0.8",,7652,"
+  <p style=""font-size:22px;""><strong>You are about to perform a verbal fluency task.</strong></p>
+  <p style=""font-size:17px;""> In this task, you will be presented the name of a category (e.g., FURNITURE) in capital</p>
+  <p style=""font-size:17px;""> letters. Your job is to type in as many items as you can think of that correspond to that</p>
+  <p style=""font-size:17px;""> category in 3 minutes. You will be doing this three times on three separate domains.</p> 
+
+  <video width = ""600"" height = ""300"" autoplay muted loop style = ""margin-top: 10px;"">
+    <source src = ""VFTTutorial.mp4"" type = ""video/mp4"">
+  </video>
+
+  <p style=""font-size:17px;""> After you type in each word, press <strong>ENTER</strong> to type in the next </p>
+  <p style=""font-size:17px;""> word. When the timer runs out, you will automatically proceed to the next task.</p>
+
+  <p style=""font-size:17px;""> When you're ready, <strong>press begin</strong> to practice!</p>
+
+
+
+
+  ",0,instructions,15148,,,,,
+,call-function,0,1,0.0-0.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,,,,,,,,,,
+,html-button-response,1,404029,0.0-1.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,404027,"
+  <p style=""font-size:20px;""> Thank you for taking part in this experiment!</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:22px;""> <strong>This experiment has two tasks:</strong></p>
+  <p style=""font-size:18px;""> <u>In the first task</u>, you will be presented the name of a category and must type 
+  <p style=""font-size:18px;""> in as many items that correspond to that category as you can within the time limit. </p>
+  <p style=""font-size:18px;""> <u>In the second task</u>, you will move each of the words that you typed in the first </p>
+  <p style=""font-size:18px;""> task around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:18px;""> The experiment will consist of only 3 ""trials,"" so please be as accurate/precise as 
+  <p style=""font-size:18px;""> possible when typing in items and placing the objects, rather than trying to speed through.</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:18px;""> Before you get started, we just want to get you familiar with the experiment layout. We'll walk you </p>
+  <p style=""font-size:18px;""> through a practice verbal fluency and spatial arrangement task and provide more detailed instructions.</p>
+
+
+  <p style=""font-size:18px;""> When you are ready to start, <strong>press Continue.</strong></p>
+
+  ",0,instructions,11859,,,,,
+,html-button-response,2,434129,0.0-2.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,30093,"
+  <p style=""font-size:22px;""><strong>You are about to perform a verbal fluency task.</strong></p>
+  <p style=""font-size:17px;""> In this task, you will be presented the name of a category (e.g., FURNITURE) in capital</p>
+  <p style=""font-size:17px;""> letters. Your job is to type in as many items as you can think of that correspond to that</p>
+  <p style=""font-size:17px;""> category in 3 minutes. You will be doing this three times on three separate domains.</p> 
+
+  <video width = ""600"" height = ""300"" autoplay muted loop style = ""margin-top: 10px;"">
+    <source src = ""VFTTutorial.mp4"" type = ""video/mp4"">
+  </video>
+
+  <p style=""font-size:17px;""> After you type in each word, press <strong>ENTER</strong> to type in the next </p>
+  <p style=""font-size:17px;""> word. When the timer runs out, you will automatically proceed to the next task.</p>
+
+  <p style=""font-size:17px;""> When you're ready, <strong>press begin</strong> to practice!</p>
+
+
+
+
+  ",0,instructions,11859,,,,,
+,html-keyboard-response,3,614133,0.0-3.0-0.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,null,"
+    <div id = ""timer-box""></div>
+    <div id = ""response-input-box"">
+      <p style = ""font-size:30px;"">Name as many items of <strong>FURNITURE</strong> as you can.</p>
+      <div id = ""responses"">
+        <input type = ""text"" class = ""furniture-practice-response active"" autofocus />
+      </div>
+      <p id = ""below-input-text"" style = ""font-size: 14px; margin-top: 10px; color: gray; text-align: left;""> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .furniture-practice-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .furniture-practice-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    ",null,,11859,VFT,furniture-practice,"[{""response"":""shelf"",""tag"":1},{""response"":""desk"",""tag"":2},{""response"":""sofa"",""tag"":3},{""response"":""couch"",""tag"":4},{""response"":""chair"",""tag"":5},{""response"":""table"",""tag"":6},{""response"":""kitchen island"",""tag"":7},{""response"":""cupboard"",""tag"":8},{""response"":""love chair"",""tag"":9},{""response"":""day bed"",""tag"":10},{""response"":""pull out couch"",""tag"":11},{""response"":""foot rest"",""tag"":12},{""response"":""bed"",""tag"":13},{""response"":""cabinet"",""tag"":14},{""response"":""bookshelf"",""tag"":15},{""response"":""stool"",""tag"":16},{""response"":""leather couch"",""tag"":17},{""response"":""hammock"",""tag"":18}]","[3815.5,2466.8,1316.5,1106.5,5396.8,1078.9,5599.3,1533.3,13687.7,13878.3,7853.9,4802.1,20350.6,13428.4,2349.3,12624.5,55527.4,7414.9]",
+,html-button-response,4,627310,0.0-4.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,13172,"
+  <p style=""font-size:22px;""> <strong>Now, you will begin a spatial arrangement task.</strong></p>
+  <p style=""font-size:17px;""> In this task, you will be shown the set of words you typed in the last verbal fluency task you performed.</p>
+  <p style=""font-size:17px;""> We need to know how similar you think these words are to one another. Your job is to move each word</p>
+  <p style=""font-size:17px;""> around so that the similar words are proportionately closer together. That is, you should move them into</p>
+  <p style=""font-size:17px;""> space such that the distance between each pair of items represents how similar you think the pair is.</p>
+  <p style=""font-size:17px;""> (with closer in space meaning more similar, and farther away in space meaning more dissimilar)</p>
+
+  <video width = ""600"" height = ""400"" autoplay muted loop style = ""margin-top: 10px;"">
+    <source src = ""SpAMTutorial.mp4"" type = ""video/mp4"">
+  </video>
+
+  <p style=""font-size:17px;""> The words will appear one by one in the top left corner of a box. You can move the words by simply</p>
+  <p style=""font-size:17px;""> click/dragging them. If the words seem similar, place them close together, if they seem dissimilar,</p>
+  <p style=""font-size:17px;""> place them farther away from each other. You will be doing this three times on three separate domains,</p> 
+  <p style=""font-size:17px;""> with a different set of words each time, based the words you typed in the corresponding verbal fluency </p>
+  <p style=""font-size:17px;""> task. After dragging each word, the next word will appear. You may rearrange previously placed items.</p>
+  <p style=""font-size:17px;""> Note, to complete the trial, <u>all items</u> must be moved into the ""active arena,"" the large central box. </p>
+  <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+  
+    <p style=""font-size:5px;""> ‎</p>
+
+  <p style=""font-size:17px;""> Let's continue with our practice round!</p>
+  <p style=""font-size:17px;""> When you're ready, <strong>press begin.</strong></p>
+
+  ",0,instructions,11859,,,,,
+,html-button-response,5,730742,0.0-5.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,103430,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+        <div id=""word-drop-area"" style=""
+          margin-top: 40px;        
+          height: 400px;        
+          border: 2px solid #aaa;        
+          padding: 10px;       
+          font-size: 20px;       
+          text-align: center;       
+          color: #888;   
+          position: relative;   
+          ""></div>
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {         
+            display: inline-block;         
+            background: #eef;         
+            padding: 10px;         
+            border: 1px solid #aaa;         
+            border-radius: 4px;         
+            cursor: move;         
+            font-size: 18px;         
+            margin-bottom: 5px;       
+          }     
+        </style>    
+      ",0,,11859,SpAM,furniture-practice,,,"[{""word"":""shelf"",""id"":""word-1"",""left"":""171px"",""top"":""80px""},{""word"":""desk"",""id"":""word-2"",""left"":""97px"",""top"":""234px""},{""word"":""sofa"",""id"":""word-3"",""left"":""320px"",""top"":""183px""},{""word"":""couch"",""id"":""word-4"",""left"":""378px"",""top"":""184px""},{""word"":""chair"",""id"":""word-5"",""left"":""99px"",""top"":""292px""},{""word"":""table"",""id"":""word-6"",""left"":""240px"",""top"":""73px""},{""word"":""table"",""id"":""word-6"",""left"":""23px"",""top"":""235px""},{""word"":""kitchen island"",""id"":""word-7"",""left"":""22px"",""top"":""173px""},{""word"":""chair"",""id"":""word-5"",""left"":""321px"",""top"":""239px""},{""word"":""cupboard"",""id"":""word-8"",""left"":""173px"",""top"":""26px""},{""word"":""love chair"",""id"":""word-9"",""left"":""391px"",""top"":""240px""},{""word"":""day bed"",""id"":""word-10"",""left"":""459px"",""top"":""182px""},{""word"":""pull out couch"",""id"":""word-11"",""left"":""362px"",""top"":""101px""},{""word"":""couch"",""id"":""word-4"",""left"":""381px"",""top"":""154px""},{""word"":""foot rest"",""id"":""word-12"",""left"":""505px"",""top"":""100px""},{""word"":""bed"",""id"":""word-13"",""left"":""260px"",""top"":""182px""},{""word"":""bed"",""id"":""word-13"",""left"":""356px"",""top"":""44px""},{""word"":""cabinet"",""id"":""word-14"",""left"":""82px"",""top"":""23px""},{""word"":""bookshelf"",""id"":""word-15"",""left"":""58px"",""top"":""80px""},{""word"":""stool"",""id"":""word-16"",""left"":""333px"",""top"":""292px""},{""word"":""leather couch"",""id"":""word-17"",""left"":""418px"",""top"":""43px""},{""word"":""hammock"",""id"":""word-18"",""left"":""497px"",""top"":""131px""},{""word"":""hammock"",""id"":""word-18"",""left"":""549px"",""top"":""181px""}]"
+,html-button-response,6,739459,0.0-6.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,8714,"
+  <p style=""font-size:20px;"">You have completed the practice round!</p>
+  <p style=""font-size:18x;""> Now, you will begin the actual task, consisting of three rounds with different categories.</p>
+  <p style=""font-size:18x;""> Again, your first task is to first type in as many items as you can think of that correspond to the given category</p>
+  <p style=""font-size:18x;""> within the time limit. Then, you will arrange the items you input previously in the box provided based on how related they are.</p>
+
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> When you're ready, <strong>press begin</strong> to start the verbal fluency task.</p>
+
+  ",0,instructions,11859,,,,,
+,html-keyboard-response,7,919462,0.0-7.0-0.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,null,"
+    <div id = ""timer-box""></div>
+    <div id = ""response-input-box"">
+      <p style = ""font-size:30px;"">Name as many ANIMALS as you can.</p>
+      <div id = ""responses"">
+        <input type = ""text"" class = ""animal-response active"" autofocus />
+      </div>
+      <p id = ""below-input-text"" style = ""font-size: 14px; margin-top: 10px; color: gray; text-align: left;""> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .animal-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .animal-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    ",null,,11859,VFT,animal,"[{""response"":""dog"",""tag"":1},{""response"":""cat"",""tag"":2},{""response"":""mouse"",""tag"":3},{""response"":""hamster"",""tag"":4},{""response"":""monkey"",""tag"":5},{""response"":""bull"",""tag"":6},{""response"":""ram"",""tag"":7},{""response"":""tiger"",""tag"":8},{""response"":""lion"",""tag"":9},{""response"":""sheep"",""tag"":10},{""response"":""hare"",""tag"":11},{""response"":""wolf"",""tag"":12},{""response"":""rhino"",""tag"":13},{""response"":""hippo"",""tag"":14},{""response"":""chimpanzee"",""tag"":15},{""response"":""squirrel"",""tag"":16},{""response"":""cow"",""tag"":17},{""response"":""horse"",""tag"":18},{""response"":""pig"",""tag"":19},{""response"":""donkey"",""tag"":20},{""response"":""chicken"",""tag"":21},{""response"":""rooster"",""tag"":22},{""response"":""salamander"",""tag"":23},{""response"":""lizzard"",""tag"":24},{""response"":""alligator"",""tag"":25},{""response"":""crocodile"",""tag"":26},{""response"":""fish"",""tag"":27},{""response"":""dolphin"",""tag"":28},{""response"":""shark"",""tag"":29},{""response"":""whale"",""tag"":30},{""response"":""octupus"",""tag"":31},{""response"":""goat"",""tag"":32},{""response"":""camel"",""tag"":33},{""response"":""crane"",""tag"":34},{""response"":""peacock"",""tag"":35},{""response"":""flamingo"",""tag"":36},{""response"":""rabbit"",""tag"":37},{""response"":""hamster"",""tag"":38},{""response"":""chinchilla"",""tag"":39},{""response"":""hedgehog"",""tag"":40},{""response"":""ferret"",""tag"":41},{""response"":""chameleon"",""tag"":42},{""response"":""giraffe"",""tag"":43},{""response"":""kangaroo"",""tag"":44},{""response"":""rat"",""tag"":45},{""response"":""grasshopper"",""tag"":46},{""response"":""skunk"",""tag"":47},{""response"":""moose"",""tag"":48},{""response"":""bear"",""tag"":49},{""response"":""polar bear"",""tag"":50},{""response"":""snake"",""tag"":51},{""response"":""eph"",""tag"":52},{""response"":""cheetah"",""tag"":53},{""response"":""leopard"",""tag"":54},{""response"":""panther"",""tag"":55}]","[2154.1,918,1133.6,1958.6,1674.4,2180.1,647.9,1654.2,1162.9,1406.5,1259,951.2,5724.7,1600.3,2678.9,4411,1304.5,1033.6,2999.3,2983.4,1396.8,2633.5,1937,3696.1,3598.9,3538.1,2019,2562.3,1832.6,1064.1,2156.5,3398.4,9163.4,5763.3,4433.7,1472,9515.1,1506.5,2476.2,4567.1,998.5,6704.9,5629.5,4056.5,4547.3,16130,2334.1,1648.7,1138.7,3954.3,1956.9,5100.7,2699.2,1457.4,5625.8]",
+,html-button-response,8,923708,0.0-8.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,4242,"
+  <p style=""font-size:20px;""> <strong>You are moving to the spatial arrangement task.</strong></p>
+  <p style=""font-size:16px;""> As a reminder, in this task, you will be shown a set of words.</p>
+  <p style=""font-size:16px;""> We need to know how similar you think these words are to one another.</p>
+  <p style=""font-size:16px;""> To indicate your perception of similarity, you will move each word</p> 
+  <p style=""font-size:16px;""> around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:16px;""> If the words seem similar, place them close together, if they seem</p>
+  <p style=""font-size:16px;""> dissimilar, place them farther away from each other.</p>
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> Press begin to start.</p>
+
+  ",0,instructions,11859,,,,,
+,html-button-response,9,1184823,0.0-9.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,261114,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+        <div id=""word-drop-area"" style=""
+          margin-top: 40px;        
+          height: 400px;        
+          border: 2px solid #aaa;        
+          padding: 10px;       
+          font-size: 20px;       
+          text-align: center;       
+          color: #888;   
+          position: relative;   
+          ""></div>
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {         
+            display: inline-block;         
+            background: #eef;         
+            padding: 10px;         
+            border: 1px solid #aaa;         
+            border-radius: 4px;         
+            cursor: move;         
+            font-size: 18px;         
+            margin-bottom: 5px;       
+          }     
+        </style>    
+      ",0,,11859,SpAM,animal,,,"[{""word"":""dog"",""id"":""word-1"",""left"":""253px"",""top"":""16px""},{""word"":""cat"",""id"":""word-2"",""left"":""309px"",""top"":""17px""},{""word"":""mouse"",""id"":""word-3"",""left"":""250px"",""top"":""69px""},{""word"":""hamster"",""id"":""word-4"",""left"":""331px"",""top"":""67px""},{""word"":""monkey"",""id"":""word-5"",""left"":""243px"",""top"":""188px""},{""word"":""bull"",""id"":""word-6"",""left"":""596px"",""top"":""43px""},{""word"":""ram"",""id"":""word-7"",""left"":""653px"",""top"":""41px""},{""word"":""tiger"",""id"":""word-8"",""left"":""595px"",""top"":""98px""},{""word"":""lion"",""id"":""word-9"",""left"":""657px"",""top"":""98px""},{""word"":""sheep"",""id"":""word-10"",""left"":""159px"",""top"":""68px""},{""word"":""hare"",""id"":""word-11"",""left"":""158px"",""top"":""11px""},{""word"":""monkey"",""id"":""word-5"",""left"":""260px"",""top"":""270px""},{""word"":""wolf"",""id"":""word-12"",""left"":""358px"",""top"":""14px""},{""word"":""rhino"",""id"":""word-13"",""left"":""659px"",""top"":""151px""},{""word"":""hippo"",""id"":""word-14"",""left"":""582px"",""top"":""151px""},{""word"":""chimpanzee"",""id"":""word-15"",""left"":""353px"",""top"":""270px""},{""word"":""squirrel"",""id"":""word-16"",""left"":""247px"",""top"":""125px""},{""word"":""cow"",""id"":""word-17"",""left"":""182px"",""top"":""124px""},{""word"":""horse"",""id"":""word-18"",""left"":""107px"",""top"":""122px""},{""word"":""pig"",""id"":""word-19"",""left"":""186px"",""top"":""179px""},{""word"":""monkey"",""id"":""word-5"",""left"":""393px"",""top"":""328px""},{""word"":""donkey"",""id"":""word-20"",""left"":""92px"",""top"":""178px""},{""word"":""chicken"",""id"":""word-21"",""left"":""99px"",""top"":""230px""},{""word"":""rooster"",""id"":""word-22"",""left"":""188px"",""top"":""229px""},{""word"":""salamander"",""id"":""word-23"",""left"":""586px"",""top"":""259px""},{""word"":""lizzard"",""id"":""word-24"",""left"":""589px"",""top"":""313px""},{""word"":""alligator"",""id"":""word-25"",""left"":""671px"",""top"":""314px""},{""word"":""crocodile"",""id"":""word-26"",""left"":""577px"",""top"":""366px""},{""word"":""fish"",""id"":""word-27"",""left"":""679px"",""top"":""367px""},{""word"":""dolphin"",""id"":""word-28"",""left"":""736px"",""top"":""373px""},{""word"":""salamander"",""id"":""word-23"",""left"":""552px"",""top"":""245px""},{""word"":""lizzard"",""id"":""word-24"",""left"":""548px"",""top"":""303px""},{""word"":""crocodile"",""id"":""word-26"",""left"":""552px"",""top"":""357px""},{""word"":""alligator"",""id"":""word-25"",""left"":""632px"",""top"":""301px""},{""word"":""fish"",""id"":""word-27"",""left"":""658px"",""top"":""358px""},{""word"":""dolphin"",""id"":""word-28"",""left"":""713px"",""top"":""357px""},{""word"":""shark"",""id"":""word-29"",""left"":""729px"",""top"":""299px""},{""word"":""whale"",""id"":""word-30"",""left"":""724px"",""top"":""242px""},{""word"":""bull"",""id"":""word-6"",""left"":""504px"",""top"":""9px""},{""word"":""ram"",""id"":""word-7"",""left"":""557px"",""top"":""9px""},{""word"":""tiger"",""id"":""word-8"",""left"":""501px"",""top"":""60px""},{""word"":""lion"",""id"":""word-9"",""left"":""563px"",""top"":""62px""},{""word"":""hippo"",""id"":""word-14"",""left"":""496px"",""top"":""112px""},{""word"":""rhino"",""id"":""word-13"",""left"":""566px"",""top"":""114px""},{""word"":""octupus"",""id"":""word-31"",""left"":""722px"",""top"":""189px""},{""word"":""goat"",""id"":""word-32"",""left"":""237px"",""top"":""175px""},{""word"":""camel"",""id"":""word-33"",""left"":""676px"",""top"":""6px""},{""word"":""crane"",""id"":""word-34"",""left"":""32px"",""top"":""336px""},{""word"":""peacock"",""id"":""word-35"",""left"":""102px"",""top"":""338px""},{""word"":""flamingo"",""id"":""word-36"",""left"":""196px"",""top"":""335px""},{""word"":""rabbit"",""id"":""word-37"",""left"":""336px"",""top"":""123px""},{""word"":""hamster"",""id"":""word-38"",""left"":""300px"",""top"":""177px""},{""word"":""hamster"",""id"":""word-38"",""left"":""328px"",""top"":""68px""},{""word"":""chinchilla"",""id"":""word-39"",""left"":""547px"",""top"":""192px""},{""word"":""hedgehog"",""id"":""word-40"",""left"":""297px"",""top"":""175px""},{""word"":""ferret"",""id"":""word-41"",""left"":""401px"",""top"":""177px""},{""word"":""ferret"",""id"":""word-41"",""left"":""363px"",""top"":""178px""},{""word"":""chameleon"",""id"":""word-42"",""left"":""583px"",""top"":""248px""},{""word"":""giraffe"",""id"":""word-43"",""left"":""620px"",""top"":""65px""},{""word"":""camel"",""id"":""word-33"",""left"":""621px"",""top"":""10px""},{""word"":""kangaroo"",""id"":""word-44"",""left"":""695px"",""top"":""9px""},{""word"":""rat"",""id"":""word-45"",""left"":""230px"",""top"":""67px""},{""word"":""grasshopper"",""id"":""word-46"",""left"":""36px"",""top"":""6px""},{""word"":""skunk"",""id"":""word-47"",""left"":""202px"",""top"":""20px""},{""word"":""moose"",""id"":""word-48"",""left"":""458px"",""top"":""10px""},{""word"":""bear"",""id"":""word-49"",""left"":""709px"",""top"":""67px""},{""word"":""moose"",""id"":""word-48"",""left"":""737px"",""top"":""79px""},{""word"":""bear"",""id"":""word-49"",""left"":""711px"",""top"":""65px""},{""word"":""polar bear"",""id"":""word-50"",""left"":""651px"",""top"":""95px""},{""word"":""snake"",""id"":""word-51"",""left"":""580px"",""top"":""260px""},{""word"":""snake"",""id"":""word-51"",""left"":""540px"",""top"":""299px""},{""word"":""eph"",""id"":""word-52"",""left"":""767px"",""top"":""111px""},{""word"":""cheetah"",""id"":""word-53"",""left"":""473px"",""top"":""71px""},{""word"":""leopard"",""id"":""word-54"",""left"":""474px"",""top"":""77px""},{""word"":""panther"",""id"":""word-55"",""left"":""470px"",""top"":""86px""},{""word"":""chimpanzee"",""id"":""word-15"",""left"":""345px"",""top"":""315px""},{""word"":""flamingo"",""id"":""word-36"",""left"":""179px"",""top"":""335px""},{""word"":""peacock"",""id"":""word-35"",""left"":""87px"",""top"":""331px""}]"
+,html-button-response,10,1195040,0.0-10.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,10214,"
+  <p style=""font-size:18px;""> <strong>You will now move to the next category.</strong></p>
+  <p style=""font-size:16px;""> As a reminder, in this task, you will type as many words as you can </p> 
+  <p style=""font-size:16px;""> think of that correspond to the category presented in capital letters.</p>
+  <p style=""font-size:18px;""> Press begin to start.</p>
+
+  ",0,instructions,11859,,,,,
+,html-keyboard-response,11,1375044,0.0-11.0-0.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,null,"
+    <div id = ""timer-box""></div>
+    <div id = ""response-input-box"">
+      <p style = ""font-size:30px;"">Name as many FOODS as you can.</p>
+      <div id = ""responses"">
+        <input type = ""text"" class = ""food-response active"" autofocus />
+      </div>
+      <p id = ""below-input-text"" style = ""font-size: 14px; margin-top: 10px; color: gray; text-align: left;""> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .food-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .food-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    ",null,,11859,VFT,food,"[{""response"":""pizza"",""tag"":1},{""response"":""pasta"",""tag"":2},{""response"":""chicken tikka masala"",""tag"":3},{""response"":""chole"",""tag"":4},{""response"":""naan"",""tag"":5},{""response"":""kulfi"",""tag"":6},{""response"":""gulab jamun"",""tag"":7},{""response"":""jalebi"",""tag"":8},{""response"":""roti"",""tag"":9},{""response"":""soup"",""tag"":10},{""response"":""beans"",""tag"":11},{""response"":""toast"",""tag"":12},{""response"":""eggs"",""tag"":13},{""response"":""cereal"",""tag"":14},{""response"":""avacad"",""tag"":15},{""response"":""tomato"",""tag"":16},{""response"":""cucumber"",""tag"":17},{""response"":""carrot"",""tag"":18},{""response"":""spinach"",""tag"":19},{""response"":""brownie"",""tag"":20},{""response"":""cake"",""tag"":21},{""response"":""cupcake"",""tag"":22},{""response"":""creme brulee"",""tag"":23},{""response"":""crepe"",""tag"":24},{""response"":""dosa"",""tag"":25},{""response"":""tortilla"",""tag"":26},{""response"":""wrap"",""tag"":27},{""response"":""burrito"",""tag"":28},{""response"":""sandwich"",""tag"":29},{""response"":""panini"",""tag"":30},{""response"":""chicken"",""tag"":31},{""response"":""beef"",""tag"":32},{""response"":""fish"",""tag"":33},{""response"":""potato"",""tag"":34},{""response"":""pork"",""tag"":35},{""response"":""ribs"",""tag"":36},{""response"":""lasagna"",""tag"":37},{""response"":""kebab"",""tag"":38},{""response"":""fufu"",""tag"":39},{""response"":""curry"",""tag"":40},{""response"":""paneer"",""tag"":41},{""response"":""tofu"",""tag"":42},{""response"":""gravy"",""tag"":43},{""response"":""mashed potato"",""tag"":44},{""response"":""stuffing"",""tag"":45},{""response"":""oatmeal"",""tag"":46},{""response"":""ice cream"",""tag"":47},{""response"":""yogurt"",""tag"":48},{""response"":""cottage cheese"",""tag"":49},{""response"":""feta cheese"",""tag"":50},{""response"":""grape"",""tag"":51},{""response"":""orange"",""tag"":52},{""response"":""watermelon"",""tag"":53},{""response"":""mango"",""tag"":54},{""response"":""lychee"",""tag"":55},{""response"":""burger"",""tag"":56}]","[3123.7,1176.5,4031,1004.2,2600.8,1613.5,2930.8,6593.1,2238.2,2810.9,1529.7,1679.8,889.7,3000.4,2676.1,6580.1,2259.5,927,1955.4,2648.9,937.3,1974.4,2525.5,1025.6,2887.8,5949.8,1346.2,2271.8,1974.5,2004,3392.8,641.7,2695.3,3071.8,6397.7,5917.7,6837.1,3761.7,2369.6,4794.6,2104.3,2979.9,4073,3983.6,3097.9,7271.4,1747.4,4660.5,2170.8,6672.4,6507.8,2139.6,2443.3,7035.5,1005.6,6244.9]",
+,html-button-response,12,1377338,0.0-12.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,2292,"
+  <p style=""font-size:20px;""> <strong>You are moving to the spatial arrangement task.</strong></p>
+  <p style=""font-size:16px;""> As a reminder, in this task, you will be shown a set of words.</p>
+  <p style=""font-size:16px;""> We need to know how similar you think these words are to one another.</p>
+  <p style=""font-size:16px;""> To indicate your perception of similarity, you will move each word</p> 
+  <p style=""font-size:16px;""> around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:16px;""> If the words seem similar, place them close together, if they seem</p>
+  <p style=""font-size:16px;""> dissimilar, place them farther away from each other.</p>
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> Press begin to start.</p>
+
+  ",0,instructions,11859,,,,,
+,html-button-response,13,1568138,0.0-13.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,190798,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+        <div id=""word-drop-area"" style=""
+          margin-top: 40px;        
+          height: 400px;        
+          border: 2px solid #aaa;        
+          padding: 10px;       
+          font-size: 20px;       
+          text-align: center;       
+          color: #888;   
+          position: relative;   
+          ""></div>
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {         
+            display: inline-block;         
+            background: #eef;         
+            padding: 10px;         
+            border: 1px solid #aaa;         
+            border-radius: 4px;         
+            cursor: move;         
+            font-size: 18px;         
+            margin-bottom: 5px;       
+          }     
+        </style>    
+      ",0,,11859,SpAM,food,,,"[{""word"":""pizza"",""id"":""word-1"",""left"":""183px"",""top"":""96px""},{""word"":""pasta"",""id"":""word-2"",""left"":""181px"",""top"":""123px""},{""word"":""pasta"",""id"":""word-2"",""left"":""180px"",""top"":""113px""},{""word"":""chicken tikka masala"",""id"":""word-3"",""left"":""387px"",""top"":""14px""},{""word"":""chole"",""id"":""word-4"",""left"":""371px"",""top"":""37px""},{""word"":""naan"",""id"":""word-5"",""left"":""417px"",""top"":""38px""},{""word"":""kulfi"",""id"":""word-6"",""left"":""472px"",""top"":""37px""},{""word"":""gulab jamun"",""id"":""word-7"",""left"":""520px"",""top"":""39px""},{""word"":""jalebi"",""id"":""word-8"",""left"":""500px"",""top"":""70px""},{""word"":""chicken tikka masala"",""id"":""word-3"",""left"":""389px"",""top"":""0px""},{""word"":""roti"",""id"":""word-9"",""left"":""424px"",""top"":""67px""},{""word"":""soup"",""id"":""word-10"",""left"":""302px"",""top"":""175px""},{""word"":""soup"",""id"":""word-10"",""left"":""302px"",""top"":""175px""},{""word"":""pasta"",""id"":""word-2"",""left"":""182px"",""top"":""123px""},{""word"":""beans"",""id"":""word-11"",""left"":""358px"",""top"":""180px""},{""word"":""toast"",""id"":""word-12"",""left"":""368px"",""top"":""218px""},{""word"":""eggs"",""id"":""word-13"",""left"":""423px"",""top"":""219px""},{""word"":""cereal"",""id"":""word-14"",""left"":""428px"",""top"":""264px""},{""word"":""avacad"",""id"":""word-15"",""left"":""474px"",""top"":""208px""},{""word"":""tomato"",""id"":""word-16"",""left"":""518px"",""top"":""230px""},{""word"":""cucumber"",""id"":""word-17"",""left"":""509px"",""top"":""265px""},{""word"":""carrot"",""id"":""word-18"",""left"":""562px"",""top"":""247px""},{""word"":""spinach"",""id"":""word-19"",""left"":""537px"",""top"":""281px""},{""word"":""brownie"",""id"":""word-20"",""left"":""592px"",""top"":""104px""},{""word"":""cake"",""id"":""word-21"",""left"":""652px"",""top"":""84px""},{""word"":""cupcake"",""id"":""word-22"",""left"":""692px"",""top"":""60px""},{""word"":""creme brulee"",""id"":""word-23"",""left"":""617px"",""top"":""142px""},{""word"":""crepe"",""id"":""word-24"",""left"":""709px"",""top"":""168px""},{""word"":""dosa"",""id"":""word-25"",""left"":""740px"",""top"":""197px""},{""word"":""tortilla"",""id"":""word-26"",""left"":""113px"",""top"":""236px""},{""word"":""wrap"",""id"":""word-27"",""left"":""88px"",""top"":""265px""},{""word"":""burrito"",""id"":""word-28"",""left"":""142px"",""top"":""274px""},{""word"":""sandwich"",""id"":""word-29"",""left"":""53px"",""top"":""307px""},{""word"":""panini"",""id"":""word-30"",""left"":""29px"",""top"":""272px""},{""word"":""chicken"",""id"":""word-31"",""left"":""42px"",""top"":""133px""},{""word"":""beef"",""id"":""word-32"",""left"":""28px"",""top"":""99px""},{""word"":""fish"",""id"":""word-33"",""left"":""24px"",""top"":""158px""},{""word"":""potato"",""id"":""word-34"",""left"":""162px"",""top"":""59px""},{""word"":""pork"",""id"":""word-35"",""left"":""75px"",""top"":""105px""},{""word"":""ribs"",""id"":""word-36"",""left"":""67px"",""top"":""165px""},{""word"":""lasagna"",""id"":""word-37"",""left"":""233px"",""top"":""109px""},{""word"":""kebab"",""id"":""word-38"",""left"":""21px"",""top"":""60px""},{""word"":""fufu"",""id"":""word-39"",""left"":""435px"",""top"":""98px""},{""word"":""curry"",""id"":""word-40"",""left"":""482px"",""top"":""104px""},{""word"":""curry"",""id"":""word-40"",""left"":""349px"",""top"":""0px""},{""word"":""paneer"",""id"":""word-41"",""left"":""295px"",""top"":""0px""},{""word"":""tofu"",""id"":""word-42"",""left"":""274px"",""top"":""0px""},{""word"":""tofu"",""id"":""word-42"",""left"":""304px"",""top"":""0px""},{""word"":""gravy"",""id"":""word-43"",""left"":""336px"",""top"":""43px""},{""word"":""gravy"",""id"":""word-43"",""left"":""308px"",""top"":""304px""},{""word"":""mashed potato"",""id"":""word-44"",""left"":""275px"",""top"":""340px""},{""word"":""stuffing"",""id"":""word-45"",""left"":""304px"",""top"":""328px""},{""word"":""oatmeal"",""id"":""word-46"",""left"":""455px"",""top"":""302px""},{""word"":""ice cream"",""id"":""word-47"",""left"":""651px"",""top"":""175px""},{""word"":""yogurt"",""id"":""word-48"",""left"":""660px"",""top"":""217px""},{""word"":""cottage cheese"",""id"":""word-49"",""left"":""665px"",""top"":""258px""},{""word"":""feta cheese"",""id"":""word-50"",""left"":""684px"",""top"":""262px""},{""word"":""grape"",""id"":""word-51"",""left"":""547px"",""top"":""310px""},{""word"":""orange"",""id"":""word-52"",""left"":""551px"",""top"":""315px""},{""word"":""watermelon"",""id"":""word-53"",""left"":""563px"",""top"":""320px""},{""word"":""mango"",""id"":""word-54"",""left"":""576px"",""top"":""328px""},{""word"":""lychee"",""id"":""word-55"",""left"":""583px"",""top"":""333px""},{""word"":""burger"",""id"":""word-56"",""left"":""181px"",""top"":""233px""}]"
+,html-button-response,14,1583320,0.0-14.0,3,1,2025-07-09 13:55:36,348af30701339f9bbd7c58c3ad0c4853,139.140.223.237,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,15180,"<p>You have completed the experiment. Thank you for participating! </p>
+      <p> Please click <a href=""https://bit.ly/3t1aLGU"" target=""_blank"" rel=""noopener noreferrer"">here</a> to access the debriefing form and know more about our research.</p>
+      <p> Please click the button below to finish the experiment and save your data.</p>
+      <p> IMPORTANT: Please do not leave this page without clicking the button below.</p>
+        ",0,,,,,,,
+,call-function,0,2,0.0-0.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,,,,,,,,,,
+,html-button-response,1,2328102,0.0-1.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,1678657,"
+  <p style=""font-size:20px;""> Thank you for taking part in this experiment!</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:22px;""> <strong>This experiment has two tasks:</strong></p>
+  <p style=""font-size:18px;""> <u>In the first task</u>, you will be presented the name of a category and must type 
+  <p style=""font-size:18px;""> in as many items that correspond to that category as you can within the time limit. </p>
+  <p style=""font-size:18px;""> <u>In the second task</u>, you will move each of the words that you typed in the first </p>
+  <p style=""font-size:18px;""> task around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:18px;""> The experiment will consist of only 3 ""trials,"" so please be as accurate/precise as 
+  <p style=""font-size:18px;""> possible when typing in items and placing the objects, rather than trying to speed through.</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:18px;""> Before you get started, we just want to get you familiar with the experiment layout. We'll walk you </p>
+  <p style=""font-size:18px;""> through a practice verbal fluency and spatial arrangement task and provide more detailed instructions.</p>
+
+
+  <p style=""font-size:18px;""> When you are ready to start, <strong>press Continue.</strong></p>
+
+  ",0,instructions,70000,,,,,
+,html-button-response,2,2337486,0.0-2.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,9378,"
+  <p style=""font-size:22px;""><strong>You are about to perform a verbal fluency task.</strong></p>
+  <p style=""font-size:17px;""> In this task, you will be presented the name of a category (e.g., FURNITURE) in capital</p>
+  <p style=""font-size:17px;""> letters. Your job is to type in as many items as you can think of that correspond to that</p>
+  <p style=""font-size:17px;""> category in 3 minutes. You will be doing this three times on three separate domains.</p> 
+
+  <video width = ""600"" height = ""300"" autoplay muted loop style = ""margin-top: 10px;"">
+    <source src = ""VFTTutorial.mp4"" type = ""video/mp4"">
+  </video>
+
+  <p style=""font-size:17px;""> After you type in each word, press <strong>ENTER</strong> to type in the next </p>
+  <p style=""font-size:17px;""> word. When the timer runs out, you will automatically proceed to the next task.</p>
+
+  <p style=""font-size:17px;""> When you're ready, <strong>press begin</strong> to practice!</p>
+
+
+
+
+  ",0,instructions,70000,,,,,
+,html-keyboard-response,3,2517490,0.0-3.0-0.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,null,"
+    <div id = ""timer-box""></div>
+    <div id = ""response-input-box"">
+      <p style = ""font-size:30px;"">Name as many items of <strong>FURNITURE</strong> as you can.</p>
+      <div id = ""responses"">
+        <input type = ""text"" class = ""furniture-practice-response active"" autofocus />
+      </div>
+      <p id = ""below-input-text"" style = ""font-size: 14px; margin-top: 10px; color: gray; text-align: left;""> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .furniture-practice-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .furniture-practice-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    ",null,,70000,VFT,furniture-practice,"[{""response"":""chair"",""tag"":1},{""response"":""table"",""tag"":2},{""response"":""bookshelf"",""tag"":3},{""response"":""lamp"",""tag"":4},{""response"":""bed"",""tag"":5},{""response"":""curtains"",""tag"":6},{""response"":""desk"",""tag"":7},{""response"":""carpet"",""tag"":8},{""response"":""rug"",""tag"":9},{""response"":""shelf"",""tag"":10},{""response"":""cupboard"",""tag"":11},{""response"":""couch"",""tag"":12},{""response"":""bed stand"",""tag"":13},{""response"":""sofa"",""tag"":14}]","[4296.2,1624.2,4926.6,5934.3,7754.4,6523.4,10009.8,9862.4,33837.5,26160.7,3216.9,42222,9630.4,8337.2]",
+,html-button-response,4,2541116,0.0-4.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,23622,"
+  <p style=""font-size:22px;""> <strong>Now, you will begin a spatial arrangement task.</strong></p>
+  <p style=""font-size:17px;""> In this task, you will be shown the set of words you typed in the last verbal fluency task you performed.</p>
+  <p style=""font-size:17px;""> We need to know how similar you think these words are to one another. Your job is to move each word</p>
+  <p style=""font-size:17px;""> around so that the similar words are proportionately closer together. That is, you should move them into</p>
+  <p style=""font-size:17px;""> space such that the distance between each pair of items represents how similar you think the pair is.</p>
+  <p style=""font-size:17px;""> (with closer in space meaning more similar, and farther away in space meaning more dissimilar)</p>
+
+  <video width = ""600"" height = ""400"" autoplay muted loop style = ""margin-top: 10px;"">
+    <source src = ""SpAMTutorial.mp4"" type = ""video/mp4"">
+  </video>
+
+  <p style=""font-size:17px;""> The words will appear one by one in the top left corner of a box. You can move the words by simply</p>
+  <p style=""font-size:17px;""> click/dragging them. If the words seem similar, place them close together, if they seem dissimilar,</p>
+  <p style=""font-size:17px;""> place them farther away from each other. You will be doing this three times on three separate domains,</p> 
+  <p style=""font-size:17px;""> with a different set of words each time, based the words you typed in the corresponding verbal fluency </p>
+  <p style=""font-size:17px;""> task. After dragging each word, the next word will appear. You may rearrange previously placed items.</p>
+  <p style=""font-size:17px;""> Note, to complete the trial, <u>all items</u> must be moved into the ""active arena,"" the large central box. </p>
+  <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+  
+    <p style=""font-size:5px;""> ‎</p>
+
+  <p style=""font-size:17px;""> Let's continue with our practice round!</p>
+  <p style=""font-size:17px;""> When you're ready, <strong>press begin.</strong></p>
+
+  ",0,instructions,70000,,,,,
+,html-button-response,5,2610366,0.0-5.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,69248,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+        <div id=""word-drop-area"" style=""
+          margin-top: 40px;        
+          height: 400px;        
+          border: 2px solid #aaa;        
+          padding: 10px;       
+          font-size: 20px;       
+          text-align: center;       
+          color: #888;   
+          position: relative;   
+          ""></div>
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {         
+            display: inline-block;         
+            background: #eef;         
+            padding: 10px;         
+            border: 1px solid #aaa;         
+            border-radius: 4px;         
+            cursor: move;         
+            font-size: 18px;         
+            margin-bottom: 5px;       
+          }     
+        </style>    
+      ",0,,70000,SpAM,furniture-practice,,,"[{""word"":""chair"",""id"":""word-1"",""left"":""400px"",""top"":""121px""},{""word"":""table"",""id"":""word-2"",""left"":""234px"",""top"":""192px""},{""word"":""bookshelf"",""id"":""word-3"",""left"":""164px"",""top"":""66px""},{""word"":""lamp"",""id"":""word-4"",""left"":""85px"",""top"":""147px""},{""word"":""bed"",""id"":""word-5"",""left"":""381px"",""top"":""259px""},{""word"":""lamp"",""id"":""word-4"",""left"":""261px"",""top"":""280px""},{""word"":""table"",""id"":""word-2"",""left"":""236px"",""top"":""166px""},{""word"":""curtains"",""id"":""word-6"",""left"":""463px"",""top"":""260px""},{""word"":""desk"",""id"":""word-7"",""left"":""317px"",""top"":""149px""},{""word"":""carpet"",""id"":""word-8"",""left"":""415px"",""top"":""340px""},{""word"":""rug"",""id"":""word-9"",""left"":""492px"",""top"":""340px""},{""word"":""shelf"",""id"":""word-10"",""left"":""111px"",""top"":""126px""},{""word"":""cupboard"",""id"":""word-11"",""left"":""72px"",""top"":""190px""},{""word"":""bookshelf"",""id"":""word-3"",""left"":""165px"",""top"":""68px""},{""word"":""couch"",""id"":""word-12"",""left"":""476px"",""top"":""119px""},{""word"":""couch"",""id"":""word-12"",""left"":""453px"",""top"":""121px""},{""word"":""rug"",""id"":""word-9"",""left"":""478px"",""top"":""342px""},{""word"":""bed stand"",""id"":""word-13"",""left"":""350px"",""top"":""222px""},{""word"":""sofa"",""id"":""word-14"",""left"":""487px"",""top"":""81px""}]"
+,html-button-response,6,2617266,0.0-6.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,6898,"
+  <p style=""font-size:20px;"">You have completed the practice round!</p>
+  <p style=""font-size:18x;""> Now, you will begin the actual task, consisting of three rounds with different categories.</p>
+  <p style=""font-size:18x;""> Again, your first task is to first type in as many items as you can think of that correspond to the given category</p>
+  <p style=""font-size:18x;""> within the time limit. Then, you will arrange the items you input previously in the box provided based on how related they are.</p>
+
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> When you're ready, <strong>press begin</strong> to start the verbal fluency task.</p>
+
+  ",0,instructions,70000,,,,,
+,html-keyboard-response,7,2797272,0.0-7.0-0.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,null,"
+    <div id = ""timer-box""></div>
+    <div id = ""response-input-box"">
+      <p style = ""font-size:30px;"">Name as many ANIMALS as you can.</p>
+      <div id = ""responses"">
+        <input type = ""text"" class = ""animal-response active"" autofocus />
+      </div>
+      <p id = ""below-input-text"" style = ""font-size: 14px; margin-top: 10px; color: gray; text-align: left;""> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .animal-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .animal-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    ",null,,70000,VFT,animal,"[{""response"":""dog"",""tag"":1},{""response"":""cat"",""tag"":2},{""response"":""hyena"",""tag"":3},{""response"":""wolf"",""tag"":4},{""response"":""lion"",""tag"":5},{""response"":""giraffe"",""tag"":6},{""response"":""zebra"",""tag"":7},{""response"":""tiger"",""tag"":8},{""response"":""wilderbeast"",""tag"":9},{""response"":""cheetah"",""tag"":10},{""response"":""alligator"",""tag"":11},{""response"":""crocodile"",""tag"":12},{""response"":""fish"",""tag"":13},{""response"":""salmon"",""tag"":14},{""response"":""tuna"",""tag"":15},{""response"":""fox"",""tag"":16},{""response"":""coyote"",""tag"":17},{""response"":""lynx"",""tag"":18},{""response"":""bobcat"",""tag"":19},{""response"":""jaguar"",""tag"":20},{""response"":""leopard"",""tag"":21},{""response"":""falcon"",""tag"":22},{""response"":""eagle"",""tag"":23},{""response"":""songbird"",""tag"":24},{""response"":""squirrel"",""tag"":25},{""response"":""hampster"",""tag"":26},{""response"":""rate"",""tag"":27},{""response"":""mouse"",""tag"":28},{""response"":""gerbil"",""tag"":29},{""response"":""ant"",""tag"":30},{""response"":""praying mantis"",""tag"":31},{""response"":""hippo"",""tag"":32},{""response"":""dolphin"",""tag"":33},{""response"":""great white shark"",""tag"":34},{""response"":""hammerhead"",""tag"":35},{""response"":""bull shark"",""tag"":36},{""response"":""tiger shark"",""tag"":37},{""response"":""mako shark"",""tag"":38},{""response"":""blue marlin"",""tag"":39},{""response"":""orca"",""tag"":40},{""response"":""seal"",""tag"":41},{""response"":""polar bear"",""tag"":42},{""response"":""grizzly bear"",""tag"":43},{""response"":""brown bear"",""tag"":44},{""response"":""penguin"",""tag"":45}]","[2619.5,694.6,1439.2,1261.8,1230.8,1472.9,1068.1,1653.9,5339.7,3721.9,2585.6,1843.4,1786.1,3929.5,1099.6,6236.4,3484.9,3014,1765.6,5386.3,2618.5,20216.9,1780.1,5297.9,6071.8,2494.3,691.1,1394.9,8539.9,3909.6,4449.7,8969,13313.8,3724,4813.6,2682,2022.3,4725.1,3248.6,2325.8,1759.9,2114.3,2063.6,1636.4,6824.4]",
+,html-button-response,8,2799098,0.0-8.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,1823,"
+  <p style=""font-size:20px;""> <strong>You are moving to the spatial arrangement task.</strong></p>
+  <p style=""font-size:16px;""> As a reminder, in this task, you will be shown a set of words.</p>
+  <p style=""font-size:16px;""> We need to know how similar you think these words are to one another.</p>
+  <p style=""font-size:16px;""> To indicate your perception of similarity, you will move each word</p> 
+  <p style=""font-size:16px;""> around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:16px;""> If the words seem similar, place them close together, if they seem</p>
+  <p style=""font-size:16px;""> dissimilar, place them farther away from each other.</p>
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> Press begin to start.</p>
+
+  ",0,instructions,70000,,,,,
+,html-button-response,9,2973298,0.0-9.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,174198,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+        <div id=""word-drop-area"" style=""
+          margin-top: 40px;        
+          height: 400px;        
+          border: 2px solid #aaa;        
+          padding: 10px;       
+          font-size: 20px;       
+          text-align: center;       
+          color: #888;   
+          position: relative;   
+          ""></div>
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {         
+            display: inline-block;         
+            background: #eef;         
+            padding: 10px;         
+            border: 1px solid #aaa;         
+            border-radius: 4px;         
+            cursor: move;         
+            font-size: 18px;         
+            margin-bottom: 5px;       
+          }     
+        </style>    
+      ",0,,70000,SpAM,animal,,,"[{""word"":""dog"",""id"":""word-1"",""left"":""688px"",""top"":""22px""},{""word"":""cat"",""id"":""word-2"",""left"":""534px"",""top"":""27px""},{""word"":""hyena"",""id"":""word-3"",""left"":""717px"",""top"":""81px""},{""word"":""wolf"",""id"":""word-4"",""left"":""652px"",""top"":""73px""},{""word"":""lion"",""id"":""word-5"",""left"":""428px"",""top"":""82px""},{""word"":""lion"",""id"":""word-5"",""left"":""465px"",""top"":""84px""},{""word"":""cat"",""id"":""word-2"",""left"":""508px"",""top"":""10px""},{""word"":""dog"",""id"":""word-1"",""left"":""604px"",""top"":""21px""},{""word"":""cat"",""id"":""word-2"",""left"":""507px"",""top"":""20px""},{""word"":""lion"",""id"":""word-5"",""left"":""466px"",""top"":""72px""},{""word"":""giraffe"",""id"":""word-6"",""left"":""535px"",""top"":""169px""},{""word"":""hyena"",""id"":""word-3"",""left"":""561px"",""top"":""98px""},{""word"":""hyena"",""id"":""word-3"",""left"":""563px"",""top"":""77px""},{""word"":""cat"",""id"":""word-2"",""left"":""484px"",""top"":""20px""},{""word"":""hyena"",""id"":""word-3"",""left"":""579px"",""top"":""85px""},{""word"":""zebra"",""id"":""word-7"",""left"":""473px"",""top"":""179px""},{""word"":""tiger"",""id"":""word-8"",""left"":""414px"",""top"":""78px""},{""word"":""wilderbeast"",""id"":""word-9"",""left"":""524px"",""top"":""216px""},{""word"":""cheetah"",""id"":""word-10"",""left"":""441px"",""top"":""115px""},{""word"":""giraffe"",""id"":""word-6"",""left"":""536px"",""top"":""264px""},{""word"":""wilderbeast"",""id"":""word-9"",""left"":""543px"",""top"":""306px""},{""word"":""zebra"",""id"":""word-7"",""left"":""488px"",""top"":""210px""},{""word"":""alligator"",""id"":""word-11"",""left"":""652px"",""top"":""182px""},{""word"":""crocodile"",""id"":""word-12"",""left"":""696px"",""top"":""213px""},{""word"":""fish"",""id"":""word-13"",""left"":""234px"",""top"":""186px""},{""word"":""alligator"",""id"":""word-11"",""left"":""317px"",""top"":""221px""},{""word"":""crocodile"",""id"":""word-12"",""left"":""313px"",""top"":""187px""},{""word"":""fish"",""id"":""word-13"",""left"":""220px"",""top"":""194px""},{""word"":""salmon"",""id"":""word-14"",""left"":""179px"",""top"":""208px""},{""word"":""salmon"",""id"":""word-14"",""left"":""161px"",""top"":""210px""},{""word"":""tuna"",""id"":""word-15"",""left"":""143px"",""top"":""189px""},{""word"":""fox"",""id"":""word-16"",""left"":""641px"",""top"":""145px""},{""word"":""coyote"",""id"":""word-17"",""left"":""671px"",""top"":""150px""},{""word"":""lynx"",""id"":""word-18"",""left"":""371px"",""top"":""95px""},{""word"":""bobcat"",""id"":""word-19"",""left"":""370px"",""top"":""54px""},{""word"":""jaguar"",""id"":""word-20"",""left"":""415px"",""top"":""90px""},{""word"":""leopard"",""id"":""word-21"",""left"":""368px"",""top"":""59px""},{""word"":""falcon"",""id"":""word-22"",""left"":""75px"",""top"":""16px""},{""word"":""falcon"",""id"":""word-22"",""left"":""157px"",""top"":""30px""},{""word"":""leopard"",""id"":""word-21"",""left"":""364px"",""top"":""13px""},{""word"":""jaguar"",""id"":""word-20"",""left"":""337px"",""top"":""79px""},{""word"":""eagle"",""id"":""word-23"",""left"":""111px"",""top"":""58px""},{""word"":""songbird"",""id"":""word-24"",""left"":""186px"",""top"":""91px""},{""word"":""squirrel"",""id"":""word-25"",""left"":""134px"",""top"":""312px""},{""word"":""hampster"",""id"":""word-26"",""left"":""199px"",""top"":""326px""},{""word"":""rate"",""id"":""word-27"",""left"":""269px"",""top"":""343px""},{""word"":""mouse"",""id"":""word-28"",""left"":""298px"",""top"":""349px""},{""word"":""gerbil"",""id"":""word-29"",""left"":""301px"",""top"":""338px""},{""word"":""gerbil"",""id"":""word-29"",""left"":""302px"",""top"":""327px""},{""word"":""ant"",""id"":""word-30"",""left"":""760px"",""top"":""328px""},{""word"":""praying mantis"",""id"":""word-31"",""left"":""706px"",""top"":""272px""},{""word"":""hippo"",""id"":""word-32"",""left"":""467px"",""top"":""265px""},{""word"":""dolphin"",""id"":""word-33"",""left"":""21px"",""top"":""169px""},{""word"":""great white shark"",""id"":""word-34"",""left"":""0px"",""top"":""250px""},{""word"":""tuna"",""id"":""word-15"",""left"":""176px"",""top"":""183px""},{""word"":""salmon"",""id"":""word-14"",""left"":""161px"",""top"":""210px""},{""word"":""salmon"",""id"":""word-14"",""left"":""221px"",""top"":""197px""},{""word"":""squirrel"",""id"":""word-25"",""left"":""201px"",""top"":""299px""},{""word"":""hammerhead"",""id"":""word-35"",""left"":""0px"",""top"":""263px""},{""word"":""bull shark"",""id"":""word-36"",""left"":""21px"",""top"":""257px""},{""word"":""tiger shark"",""id"":""word-37"",""left"":""0px"",""top"":""279px""},{""word"":""mako shark"",""id"":""word-38"",""left"":""0px"",""top"":""233px""},{""word"":""mako shark"",""id"":""word-38"",""left"":""0px"",""top"":""242px""},{""word"":""blue marlin"",""id"":""word-39"",""left"":""9px"",""top"":""269px""},{""word"":""orca"",""id"":""word-40"",""left"":""6px"",""top"":""302px""},{""word"":""orca"",""id"":""word-40"",""left"":""1px"",""top"":""317px""},{""word"":""seal"",""id"":""word-41"",""left"":""61px"",""top"":""356px""},{""word"":""polar bear"",""id"":""word-42"",""left"":""87px"",""top"":""373px""},{""word"":""hampster"",""id"":""word-26"",""left"":""315px"",""top"":""327px""},{""word"":""squirrel"",""id"":""word-25"",""left"":""264px"",""top"":""301px""},{""word"":""gerbil"",""id"":""word-29"",""left"":""340px"",""top"":""349px""},{""word"":""mouse"",""id"":""word-28"",""left"":""351px"",""top"":""356px""},{""word"":""rate"",""id"":""word-27"",""left"":""316px"",""top"":""347px""},{""word"":""polar bear"",""id"":""word-42"",""left"":""118px"",""top"":""371px""},{""word"":""grizzly bear"",""id"":""word-43"",""left"":""136px"",""top"":""373px""},{""word"":""brown bear"",""id"":""word-44"",""left"":""156px"",""top"":""373px""},{""word"":""penguin"",""id"":""word-45"",""left"":""0px"",""top"":""373px""},{""word"":""seal"",""id"":""word-41"",""left"":""69px"",""top"":""348px""}]"
+,html-button-response,10,2974397,0.0-10.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,1097,"
+  <p style=""font-size:18px;""> <strong>You will now move to the next category.</strong></p>
+  <p style=""font-size:16px;""> As a reminder, in this task, you will type as many words as you can </p> 
+  <p style=""font-size:16px;""> think of that correspond to the category presented in capital letters.</p>
+  <p style=""font-size:18px;""> Press begin to start.</p>
+
+  ",0,instructions,70000,,,,,
+,html-keyboard-response,11,3154400,0.0-11.0-0.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,null,"
+    <div id = ""timer-box""></div>
+    <div id = ""response-input-box"">
+      <p style = ""font-size:30px;"">Name as many FOODS as you can.</p>
+      <div id = ""responses"">
+        <input type = ""text"" class = ""food-response active"" autofocus />
+      </div>
+      <p id = ""below-input-text"" style = ""font-size: 14px; margin-top: 10px; color: gray; text-align: left;""> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .food-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .food-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    ",null,,70000,VFT,food,"[{""response"":""banana"",""tag"":1},{""response"":""apple"",""tag"":2},{""response"":""strawberry"",""tag"":3},{""response"":""raspberry"",""tag"":4},{""response"":""blackberry"",""tag"":5},{""response"":""blueberry"",""tag"":6},{""response"":""mango"",""tag"":7},{""response"":""pineapple"",""tag"":8},{""response"":""watermelon"",""tag"":9},{""response"":""cherry"",""tag"":10},{""response"":""rice"",""tag"":11},{""response"":""bread"",""tag"":12},{""response"":""pancakes"",""tag"":13},{""response"":""pizza"",""tag"":14},{""response"":""hamburger"",""tag"":15},{""response"":""french fries"",""tag"":16},{""response"":""mash potatoes"",""tag"":17},{""response"":""gravy"",""tag"":18},{""response"":""turkey"",""tag"":19},{""response"":""stuffing"",""tag"":20},{""response"":""fried rice"",""tag"":21},{""response"":""broccoli"",""tag"":22},{""response"":""spinach"",""tag"":23},{""response"":""kale"",""tag"":24},{""response"":""lettuce"",""tag"":25},{""response"":""carrot"",""tag"":26},{""response"":""butter"",""tag"":27},{""response"":""peanut butter"",""tag"":28},{""response"":""whipped cream"",""tag"":29},{""response"":""waffle"",""tag"":30},{""response"":""steak"",""tag"":31},{""response"":""sashimi"",""tag"":32},{""response"":""hot dog"",""tag"":33},{""response"":""mozzarella sticks"",""tag"":34},{""response"":""buns"",""tag"":35},{""response"":""chocolate"",""tag"":36}]","[2777.6,1213,3495.9,1850,2184.3,1453.5,1816.7,1764.4,2198.2,2346.3,3083.2,1346.1,6852.3,10334.1,1614.2,3056.3,4146.3,4051.8,2704.7,1690.4,11092.5,18145.2,3639.5,1134.2,2076.5,2648.9,4488.4,3685.3,3788,6036,8069.1,3799.1,22050.5,12683.2,4019,5997.5]",
+,html-button-response,12,3155597,0.0-12.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,1194,"
+  <p style=""font-size:20px;""> <strong>You are moving to the spatial arrangement task.</strong></p>
+  <p style=""font-size:16px;""> As a reminder, in this task, you will be shown a set of words.</p>
+  <p style=""font-size:16px;""> We need to know how similar you think these words are to one another.</p>
+  <p style=""font-size:16px;""> To indicate your perception of similarity, you will move each word</p> 
+  <p style=""font-size:16px;""> around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:16px;""> If the words seem similar, place them close together, if they seem</p>
+  <p style=""font-size:16px;""> dissimilar, place them farther away from each other.</p>
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> Press begin to start.</p>
+
+  ",0,instructions,70000,,,,,
+,html-button-response,13,3273194,0.0-13.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,117596,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+        <div id=""word-drop-area"" style=""
+          margin-top: 40px;        
+          height: 400px;        
+          border: 2px solid #aaa;        
+          padding: 10px;       
+          font-size: 20px;       
+          text-align: center;       
+          color: #888;   
+          position: relative;   
+          ""></div>
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {         
+            display: inline-block;         
+            background: #eef;         
+            padding: 10px;         
+            border: 1px solid #aaa;         
+            border-radius: 4px;         
+            cursor: move;         
+            font-size: 18px;         
+            margin-bottom: 5px;       
+          }     
+        </style>    
+      ",0,,70000,SpAM,food,,,"[{""word"":""banana"",""id"":""word-1"",""left"":""737px"",""top"":""9px""},{""word"":""apple"",""id"":""word-2"",""left"":""762px"",""top"":""31px""},{""word"":""strawberry"",""id"":""word-3"",""left"":""664px"",""top"":""43px""},{""word"":""strawberry"",""id"":""word-3"",""left"":""723.492px"",""top"":""95px""},{""word"":""raspberry"",""id"":""word-4"",""left"":""675px"",""top"":""97px""},{""word"":""blackberry"",""id"":""word-5"",""left"":""726.492px"",""top"":""124px""},{""word"":""blueberry"",""id"":""word-6"",""left"":""688px"",""top"":""118px""},{""word"":""mango"",""id"":""word-7"",""left"":""734px"",""top"":""183px""},{""word"":""mango"",""id"":""word-7"",""left"":""608px"",""top"":""0px""},{""word"":""pineapple"",""id"":""word-8"",""left"":""614px"",""top"":""26px""},{""word"":""watermelon"",""id"":""word-9"",""left"":""565px"",""top"":""31px""},{""word"":""cherry"",""id"":""word-10"",""left"":""578px"",""top"":""103px""},{""word"":""rice"",""id"":""word-11"",""left"":""319px"",""top"":""25px""},{""word"":""bread"",""id"":""word-12"",""left"":""322px"",""top"":""37px""},{""word"":""pancakes"",""id"":""word-13"",""left"":""308px"",""top"":""110px""},{""word"":""pizza"",""id"":""word-14"",""left"":""323px"",""top"":""178px""},{""word"":""hamburger"",""id"":""word-15"",""left"":""334px"",""top"":""195px""},{""word"":""french fries"",""id"":""word-16"",""left"":""354px"",""top"":""207px""},{""word"":""mash potatoes"",""id"":""word-17"",""left"":""325px"",""top"":""273px""},{""word"":""gravy"",""id"":""word-18"",""left"":""398px"",""top"":""271px""},{""word"":""turkey"",""id"":""word-19"",""left"":""371px"",""top"":""327px""},{""word"":""stuffing"",""id"":""word-20"",""left"":""387px"",""top"":""346px""},{""word"":""fried rice"",""id"":""word-21"",""left"":""263px"",""top"":""10px""},{""word"":""broccoli"",""id"":""word-22"",""left"":""130px"",""top"":""97px""},{""word"":""spinach"",""id"":""word-23"",""left"":""121px"",""top"":""110px""},{""word"":""kale"",""id"":""word-24"",""left"":""131px"",""top"":""142px""},{""word"":""lettuce"",""id"":""word-25"",""left"":""131px"",""top"":""176px""},{""word"":""lettuce"",""id"":""word-25"",""left"":""126px"",""top"":""110px""},{""word"":""kale"",""id"":""word-24"",""left"":""133px"",""top"":""121px""},{""word"":""carrot"",""id"":""word-26"",""left"":""118px"",""top"":""110px""},{""word"":""butter"",""id"":""word-27"",""left"":""119px"",""top"":""191px""},{""word"":""butter"",""id"":""word-27"",""left"":""158px"",""top"":""222px""},{""word"":""peanut butter"",""id"":""word-28"",""left"":""94px"",""top"":""267px""},{""word"":""pancakes"",""id"":""word-13"",""left"":""300px"",""top"":""103px""},{""word"":""whipped cream"",""id"":""word-29"",""left"":""36px"",""top"":""243px""},{""word"":""waffle"",""id"":""word-30"",""left"":""383px"",""top"":""118px""},{""word"":""steak"",""id"":""word-31"",""left"":""634px"",""top"":""260px""},{""word"":""sashimi"",""id"":""word-32"",""left"":""702px"",""top"":""346px""},{""word"":""hot dog"",""id"":""word-33"",""left"":""400px"",""top"":""186px""},{""word"":""mozzarella sticks"",""id"":""word-34"",""left"":""508px"",""top"":""208px""},{""word"":""steak"",""id"":""word-31"",""left"":""752px"",""top"":""259px""},{""word"":""buns"",""id"":""word-35"",""left"":""504px"",""top"":""178px""},{""word"":""chocolate"",""id"":""word-36"",""left"":""535px"",""top"":""310px""},{""word"":""chocolate"",""id"":""word-36"",""left"":""106px"",""top"":""354px""}]"
+,html-button-response,14,3278946,0.0-14.0,6,1,2025-07-09 15:13:31,348af30701339f9bbd7c58c3ad0c4853,139.140.204.45,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",Macintosh,Chrome,138.0.0.0,OS X,10_15_7,null,"en-US,en;q=0.9",,5749,"<p>You have completed the experiment. Thank you for participating! </p>
+      <p> Please click <a href=""https://bit.ly/3t1aLGU"" target=""_blank"" rel=""noopener noreferrer"">here</a> to access the debriefing form and know more about our research.</p>
+      <p> Please click the button below to finish the experiment and save your data.</p>
+      <p> IMPORTANT: Please do not leave this page without clicking the button below.</p>
+        ",0,,,,,,,
+,call-function,0,1,0.0-0.0,8,1,2025-07-10 14:43:53,348af30701339f9bbd7c58c3ad0c4853,174.91.186.153,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",WebKit,Chrome,138.0.0.0,Windows,10.0,null,"en-CA,en-GB;q=0.9,en-US;q=0.8,en;q=0.7",,,,,,,,,,,
+,html-button-response,1,3754,0.0-1.0,8,1,2025-07-10 14:43:53,348af30701339f9bbd7c58c3ad0c4853,174.91.186.153,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",WebKit,Chrome,138.0.0.0,Windows,10.0,null,"en-CA,en-GB;q=0.9,en-US;q=0.8,en;q=0.7",,3752,"
+  <p style=""font-size:20px;""> Thank you for taking part in this experiment!</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:22px;""> <strong>This experiment has two tasks:</strong></p>
+  <p style=""font-size:18px;""> <u>In the first task</u>, you will be presented the name of a category and must type 
+  <p style=""font-size:18px;""> in as many items that correspond to that category as you can within the time limit. </p>
+  <p style=""font-size:18px;""> <u>In the second task</u>, you will move each of the words that you typed in the first </p>
+  <p style=""font-size:18px;""> task around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:18px;""> The experiment will consist of only 3 ""trials,"" so please be as accurate/precise as 
+  <p style=""font-size:18px;""> possible when typing in items and placing the objects, rather than trying to speed through.</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:18px;""> Before you get started, we just want to get you familiar with the experiment layout. We'll walk you </p>
+  <p style=""font-size:18px;""> through a practice verbal fluency and spatial arrangement task and provide more detailed instructions.</p>
+
+
+  <p style=""font-size:18px;""> When you are ready to start, <strong>press Continue.</strong></p>
+
+  ",0,instructions,13049,,,,,

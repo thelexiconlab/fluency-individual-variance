@@ -22,7 +22,7 @@ library(jsonlite)
 #datafile <- read_csv("filepath") where filepath is the location of the csv file
 
 #Pilot participant csv data file:
-datafile <- read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Desktop/fluency data processing/fluency.csv")
+datafile <- read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Data/Pilot Data/fluency.csv")
 
 #Viewing the data file in seperate tab:
 View(datafile)
@@ -46,11 +46,11 @@ forager_prep <- datafile %>% #initiates dplyr pipeline
   unnest_wider(parsed_responses) %>%
   select(-time_index) %>%
   select(subject, response, tag, response_times, domain) %>%
+  rename(entry_number = tag) %>%
   arrange(domain, subject)
 #write_csv(forager_prep, "foragerreadyVFTdata.csv") #Creates new, cleaned data file
 View(forager_prep)
 
-##change tqg to entry_number
 ```
 
 ##Cleaning SpAM Data
@@ -67,8 +67,15 @@ organized_spam <- datafile %>%
   slice_tail(n = 1) %>% #keeps only most recent word position 
   ungroup() %>%
   mutate(x = as.numeric(str_remove(left, "px")), y = as.numeric((str_remove(top, "px"))))%>%
-  select(subject, word, id, x, y, domain) %>%
-  mutate(id = str_remove(id, "word-"))%>%
+  mutate(word1 = word,
+         word2 = lead(word),
+         x1 = x,
+         x2 = lead(x),
+         y1 = y,
+         y2 = lead(y),
+         pair = str_c(word1, word2, sep = ", "))%>%
+  mutate(entry_number = str_remove(id, "word-"))%>%
+  select(subject, word, entry_number, x, y, domain, pair, word1, x1, y1, word2, x2, y2) %>%
   arrange(domain, subject)
 ```
 
