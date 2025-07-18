@@ -91,3 +91,62 @@ organized_spam <- organized_spam %>%
   select(-x_next, -y_next)
 View(organized_spam)
 ```
+
+
+## demographics code: DRAFT
+
+```{r}
+demographics = datafile %>%
+  filter(typeoftrial == "demographics") %>%
+  select("ID","gender", "age", "education", "race", 
+         "hispanic", "dominant_hand", "alert_time", "english")%>%
+  mutate(across(c("age","education"), ~ replace_na(., NA)))%>%
+ mutate(across(c("gender","race","hispanic",
+                 "dominant_hand","alert_time","english"),
+                 ~ replace_na(., "NOT_FOUND"))) %>%
+mutate(across(c("age","gender","education","race",
+                "hispanic", "dominant_hand", "alert_time", "english"),
+              ~ifelse(. == "", "blank",.)))%>%
+  # people fill in gender in different ways, will need to look at data and recode this
+  mutate(gender = ifelse(gender == "Cis-female", "F",
+                         ifelse(gender %in% c("cis male", "i am a boy"), 
+                                "M", gender)))%>%
+  mutate(Gender_Abbrev = str_to_upper(str_sub(gender, 1, 1))) %>%
+  mutate(Gender_Abbrev = ifelse(Gender_Abbrev == "W", "F", 
+                                ifelse(Gender_Abbrev %in% 
+                                         c("T", "N"), "N", Gender_Abbrev)))
+demographics%>%
+  summarise(mean_age= mean(age, na.rm = TRUE),
+            sd_age=sd(age, na.rm = TRUE))
+
+demographics%>%
+    filter(Gender_Abbrev != "B")%>%
+  group_by(Gender_Abbrev) %>% count %>%
+  ungroup() %>%
+  mutate(Percentage = (n / sum(n)) * 100)
+
+demographics%>%
+  filter(race != "blank")%>%
+  count(race) %>%
+  mutate(Percentage = (n / sum(n)) * 100)
+
+demographics%>%
+  filter(education != "blank")%>%
+  summarise(mean_ed= mean(education, na.rm = TRUE),
+            sd_ed=sd(education, na.rm = TRUE))
+# if people answer that english is not their first language, there will be 
+# two additional columns called first_language and age_learned_english
+non_english_IDs = datafile %>%
+  select(ID, english, first_language, age_learned_english) %>%
+  filter(!is.na(age_learned_english))
+
+1-(length(unique(non_english_IDs$ID))/length(unique(datafile$ID)))
+
+after_age_five = non_english_IDs %>%
+  filter(age_learned_english >5)
+
+after_age_five_IDs = after_age_five %>% pull(ID)
+
+final_data = final_data %>% filter(!ID %in% after_age_five_IDs)
+```
+
