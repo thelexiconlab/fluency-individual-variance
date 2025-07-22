@@ -718,12 +718,54 @@ function saveData(filename, filedata){
   		url: 'save_data.php', // this is the path to the above PHP script
       //url: https://script.google.com/macros/s/AKfycbzV--xTooSkBLufMs4AnrCTdwZxVNtycTE4JNtaCze2UijXAg8/exec
   		data: {filename: filename, filedata: filedata}})
-  }
+  };
 
  
+  //compensation question 
+  var compensationpage1 = {  
+    type: jsPsychHtmlButtonResponse,
+    stimulus: "As a thank you for your participation, you may choose to enter a raffle for $(tbd..). Would you like to enter the raffle?",
+    choices: ['Yes','No'],
+
+    data: {
+        typeoftrial: 'compensation',
+    },
+    on_finish: function(data){
+        if(data.response == 0){data.compensation = "yes"}
+        else{data.compensation = "no"}
+      }
+    };
+
+  var compensationpage2 = {
+    type: jsPsychSurveyHtmlForm,
+    preamble: "<h2>Compensation Questions</h2>",
+    html: `
+      <label for="compensation_name">Type in your full name.</label>
+      <input type="text" id="compensation_name" name="compensation_name" required><br><br>
+      <label for="compensation_email">Type in your email address.</label>
+      <input type="text" id="compensation_email" name="compensation_email" required><br><br>
+    `,
+    data: {
+          typeoftrial: 'follow_up_demographics'
+      },
+      on_finish: function(data){
+        let responseData = JSON.parse(data.responses)
+        data.compensation_name = responseData.compensation_name
+        data.compensation_email = responseData.compensation_email
+      }
+};
+
+var compensation_procedure = {
+        timeline: [compensationpage2],
+    conditional_function: function() {
+        var lastTrialData = jsPsych.data.get().last(1).values()[0];
+        //console.log("lastTrialData=",lastTrialData)
+        return lastTrialData.response === 0;
+    }
+};
+
 
   // demographics
-
 var demographics_intro = {
         type: jsPsychInstructions,
         pages: [
@@ -889,58 +931,74 @@ var demographics = {
     SpamTask("furniture-practice")
   );
   timeline.push(startInstructions);
-  timeline.push(
+
+//randomizes trials 
+function randomize(array) {
+  for (let index = array.length - 1; index > 0; index--) {
+    const randomindex = Math.floor(Math.random() * (index + 1));
+    [array[index], array[randomindex]] = [array[randomindex], array[index]]
+  }
+}
+
+
+
+const trials = [
+  
+  [
     VFTRedo("animals", "Name as many <strong>ANIMALS</strong> as you can.", 180000),
     betweenVFTAndSpAMInstructions,
     SpamTask("animals"),
-    afterSpAMInstructions
-  );
-  timeline.push(
+  ],
+  [
     VFTRedo("clothes", "Name as many items of <strong>CLOTHING</strong> as you can.", 180000),
     betweenVFTAndSpAMInstructions,
     SpamTask("clothes"),
-    afterSpAMInstructions
-  );
-  timeline.push(
+  ],
+  [  
     VFTRedo("tools", "Name as many <strong>TOOLS</strong> as you can.", 180000),
     betweenVFTAndSpAMInstructions,
     SpamTask("tools"),
-    afterSpAMInstructions
-  );
-  timeline.push(
+  ],
+  [
     VFTRedo("sports", "Name as many <strong>SPORTS</strong> as you can.", 180000),
     betweenVFTAndSpAMInstructions,
     SpamTask("sports"),
-    afterSpAMInstructions
-  );
-  timeline.push(
+  ],
+  [
     VFTRedo("occupations", "Name as many <strong>OCCUPATIONS</strong> as you can.", 180000),
     betweenVFTAndSpAMInstructions,
     SpamTask("occupations"),
-    afterSpAMInstructions
-  );
-  timeline.push(
+  ],
+  [
     VFTRedo("foods", "Name as many <strong>FOODS</strong> as you can.", 180000),
     betweenVFTAndSpAMInstructions,
     SpamTask("foods"),
-    afterSpAMInstructions
-  );
-  timeline.push(
+  ],
+  [
     VFTRedo("music-genres", "Name as many <strong>MUSIC GENRES</strong> as you can.", 180000),
     betweenVFTAndSpAMInstructions,
     SpamTask("music-genres"),
-    afterSpAMInstructions
-  );
-   timeline.push(
+  ],
+  [
     VFTRedo("classroom-items", "Name as many items in a <strong>CLASSROOM</strong> as you can.", 180000),
     betweenVFTAndSpAMInstructions,
     SpamTask("classroom-items")
-  );
-  timeline.push(demographics)
+  ],
+];
+
+  randomize(trials);
+  trials.forEach((block, index) => {
+
+    if (index < trials.length - 1) {
+      block.push(afterSpAMInstructions)
+    }
+    timeline.push(...block);
+  });
+  timeline.push(demographics);
+  timeline.push(compensationpage1, compensation_procedure)
   timeline.push(save_data);
   timeline.push(endexperiment);
 
-  
   jsPsych.run(timeline);
 
 
