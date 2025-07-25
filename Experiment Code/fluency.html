@@ -41,6 +41,7 @@ var timeline = [];
 //creates random subject number 
 var subject_id = Math.floor(Math.random()*100000);
 
+//formats opening instruction page and tells participant about experiment
 var interestssurveyinstructions = {
  type: jsPsychHtmlButtonResponse,
  stimulus: `
@@ -73,7 +74,7 @@ var interestssurveyinstructions = {
 var maininstructions = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
-  <p style="font-size:20px;"> You will now proceed with the acutal experiment.</p>
+  <p style="font-size:20px;"> You will now proceed with the actual experiment.</p>
   <p style="font-size:20px;"> ‎</p>
   <p style="font-size:22px;"> <strong>This experiment has two tasks:</strong></p>
   <p style="font-size:18px;"> <u>In the first task</u>, you will be presented the name of a category and must type 
@@ -693,32 +694,21 @@ function SpamTask(domain) {
 
 
   var endexperiment = {
-    on_load: resetCountdown,
+    //on_load: resetCountdown,
       type: jsPsychHtmlButtonResponse,
-      stimulus: `<p>You have completed the experiment. Thank you for participating! </p>
-      <p> Please click <a href="https://bit.ly/3t1aLGU" target="_blank" rel="noopener noreferrer">here</a> to access the debriefing form and know more about our research.</p>
+      stimulus: `
+      <p>You have completed the experiment. Thank you for participating! </p>
+      <p> Please click <a href="https://drive.google.com/file/d/1yD8wzNc2l6z4PzHAHSpVsnpay0790VCZ/view" target="_blank" rel="noopener noreferrer">here</a> to access the debriefing form and know more about our research.</p>
       <p> Please click the button below to finish the experiment and save your data.</p>
       <p> IMPORTANT: Please do not leave this page without clicking the button below.</p>
         `,
-      choices: ['Finish and Save Data']
+      choices: ['Finish and Save Data'],
+      button_html: '<button class="jspsych-btn">%choice%</button>',
+      data: {
+        typeoftrial: "end"
+      }
   };
 
-
-  var save_data = {
-    type: jsPsychCallFunction,
-    func: function(){saveData(subject_id+".csv",
-      jsPsych.data.get().csv())}
-  }
-
-
-function saveData(filename, filedata){
-  	$.ajax({
-  		type:'post',
-  		cache: false,
-  		url: 'save_data.php', // this is the path to the above PHP script
-      //url: https://script.google.com/macros/s/AKfycbzV--xTooSkBLufMs4AnrCTdwZxVNtycTE4JNtaCze2UijXAg8/exec
-  		data: {filename: filename, filedata: filedata}})
-  };
 
  
   //compensation question 
@@ -733,6 +723,7 @@ function saveData(filename, filedata){
     on_finish: function(data){
         if(data.response == 0){data.compensation = "yes"}
         else{data.compensation = "no"}
+        console.log("Compensation choice:", data.response);
       }
     };
 
@@ -749,10 +740,14 @@ function saveData(filename, filedata){
           typeoftrial: 'follow_up_demographics'
       },
       on_finish: function(data){
-        let responseData = JSON.parse(data.responses)
-        data.compensation_name = responseData.compensation_name
-        data.compensation_email = responseData.compensation_email
-      }
+        try { 
+          let responseData = data.response
+          data.compensation_name = responseData.compensation_name
+          data.compensation_email = responseData.compensation_email
+        } catch(e) {
+          console.error("Failed to parse compensation form responses:", e);
+        }
+      } 
 };
 
 var compensation_procedure = {
@@ -760,7 +755,7 @@ var compensation_procedure = {
     conditional_function: function() {
         var lastTrialData = jsPsych.data.get().last(1).values()[0];
         //console.log("lastTrialData=",lastTrialData)
-        return lastTrialData.response === 0;
+        return lastTrialData && lastTrialData.response === 0;
     }
 };
 
@@ -916,9 +911,26 @@ var follow_up_procedure = {
     }
 };
 
+
 var demographics = {
     timeline: [demographics_intro, demographics_survey1, demographics_survey2, demographics_survey3, demographics_survey4, follow_up_procedure]
-}
+};
+
+var save_data = {
+    type: jsPsychCallFunction,
+    func: function(){saveData(subject_id+".csv",
+      jsPsych.data.get().csv())}
+  }
+
+
+function saveData(filename, filedata){
+  	$.ajax({
+  		type:'post',
+  		cache: false,
+  		url: 'save_data.php', // this is the path to the above PHP script
+      //url: https://script.google.com/macros/s/AKfycbzV--xTooSkBLufMs4AnrCTdwZxVNtycTE4JNtaCze2UijXAg8/exec
+  		data: {filename: filename, filedata: filedata}})
+  };
 
   timeline.push(interestssurveyinstructions);
   timeline.push(VFTRedoContinueButton("subreddits", "Please type in the names of the Subreddits you frequently engage with", 180000));
