@@ -22,17 +22,57 @@ library(jsonlite)
 #datafile <- read_csv("filepath") where filepath is the location of the csv file
 
 #Pilot participant csv data file:
-datafile <- read_csv("../Data/Pilot Data/fluency.csv")
+datafile <- read_csv("../Data/Pilot Data/fluency_32.csv")
 
 #Viewing the data file in seperate tab:
 View(datafile)
 ```
 
-##Working with Fluency Data from Datafile
+##Cleaning Subreddit/Interest Data
+```{r}
+#to isolate data on participants interests and subreddits interacted with 
+organized_interest_data <- datafile %>%
+  filter(
+    task == "VFT",
+    !is.na(tagged_responses),
+    tagged_responses != "[]",
+    tagged_responses != "",
+    domain != "furniture-practice",
+    domain %in% c("subreddits", "interest")
+    ) %>% 
+  select(subject, domain, tagged_responses) %>%
+  rowwise() %>%
+  mutate(parsed_responses = list(fromJSON(tagged_responses))) %>%
+  filter(length(parsed_responses) > 0) %>%
+  ungroup()%>%
+  arrange(domain, subject)
+
+subreddit_data <- organized_interest_data%>%
+  filter(domain == "subreddits")%>%
+  unnest_longer(parsed_responses)%>%
+  unnest_wider(parsed_responses)%>%
+  rename(subreddit_responses = response)%>%
+  select(subject, subreddit_responses)
+View(subreddit_data)
+
+interests_data <- organized_interest_data%>%
+  filter(domain == "interest")%>%
+  select(subject, interests_responses = parsed_responses)
+View(interests_data)
+  
+```
+
+##Cleaning Fluency Data 
 ```{r}
 #to make data analysis through Forager easier:
-forager_prep <- datafile %>% #initiates dplyr pipeline
-  filter(task == "VFT", !is.na(tagged_responses), tagged_responses != "[]", tagged_responses != "") %>% 
+organized_fluency <- datafile %>% #initiates dplyr pipeline
+  filter(
+    task == "VFT",
+    !is.na(tagged_responses),
+    tagged_responses != "[]",
+    tagged_responses != "",
+    domain != "furniture-practice"
+    ) %>% 
   select(-response) %>%
   rowwise() %>%
   mutate(
@@ -49,14 +89,20 @@ forager_prep <- datafile %>% #initiates dplyr pipeline
   rename(entry_number = tag) %>%
   arrange(domain, subject)
 #write_csv(forager_prep, "foragerreadyVFTdata.csv") #Creates new, cleaned data file
-View(forager_prep)
+View(organized_fluency)
 
 ```
 
 ##Cleaning SpAM Data
 ```{r}
 organized_spam <- datafile %>%
-  filter(task == "SpAM", !is.na(droppedwords), droppedwords != "[]", droppedwords != "") %>%
+  filter(
+    task == "SpAM",
+    !is.na(droppedwords),
+    droppedwords != "[]",
+    droppedwords != "",
+    domain != "furniture-practice"
+    ) %>%
   rowwise() %>%
   mutate(droppedwords = list(fromJSON(droppedwords))) %>%
   filter(length(droppedwords) > 0) %>% #ensures no empty responses are kept 
@@ -93,17 +139,17 @@ View(organized_spam)
 ```
 
 
-## demographics code: DRAFT
-
+## Cleaning demographics data
 ```{r}
 demographics = datafile %>%
   filter(typeoftrial == "demographics") %>%
-  select("ID","gender", "age", "education", "race", 
+  select("subject","gender", "age", "education", "race", 
          "hispanic", "dominant_hand", "alert_time", "english")%>%
-  mutate(across(c("age","education"), ~ replace_na(., NA)))%>%
- mutate(across(c("gender","race","hispanic",
-                 "dominant_hand","alert_time","english"),
-                 ~ replace_na(., "NOT_FOUND"))) %>%
+  filter(!if_all(everything(), is.na))%>%
+  mutate(
+    age = as.numeric(age),
+    education = as.numeric(education)
+    )%>%
 mutate(across(c("age","gender","education","race",
                 "hispanic", "dominant_hand", "alert_time", "english"),
               ~ifelse(. == "", "blank",.)))%>%
@@ -137,16 +183,31 @@ demographics%>%
 # if people answer that english is not their first language, there will be 
 # two additional columns called first_language and age_learned_english
 non_english_IDs = datafile %>%
-  select(ID, english, first_language, age_learned_english) %>%
+  select(subject, english, first_language, age_learned_english) %>%
   filter(!is.na(age_learned_english))
 
-1-(length(unique(non_english_IDs$ID))/length(unique(datafile$ID)))
+1-(length(unique(non_english_IDs$subject))/length(unique(datafile$subject)))
 
 after_age_five = non_english_IDs %>%
   filter(age_learned_english >5)
 
-after_age_five_IDs = after_age_five %>% pull(ID)
+after_age_five_IDs = after_age_five %>% pull(subject)
 
-final_data = final_data %>% filter(!ID %in% after_age_five_IDs)
+demographics_data = datafile %>% filter(!subject %in% after_age_five_IDs)
+demographics_data = demographics_data %>%
+  select(subject, age, gender, education, race, hispanic, dominant_hand, alert_time, english, first_language, age_learned_english) %>%
+  filter(!if_all(everything(), is.na))
+
+View(demographics_data)
 ```
 
+##Cleaning compensation data 
+```{r}
+#to isolate data on participants compensation  
+compensation_data <- datafile 
+compensation_data <- compensation_data %>%
+  select(compensation, compensation_name, compensation_email)%>%
+  filter(!if_all(everything(), is.na))
+View(compensation_data)
+  
+```
