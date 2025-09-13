@@ -714,7 +714,7 @@ function SpamTask(domain) {
   //compensation question 
   var compensationpage1 = {  
     type: jsPsychHtmlButtonResponse,
-    stimulus: "As a thank you for your participation, you may choose to enter a raffle for $(tbd..). Would you like to enter the raffle?",
+    stimulus: "As a thank you for your participation, you may choose to enter a raffle for a $100 Amazon gift card. Would you like to enter the raffle?",
     choices: ['Yes','No'],
 
     data: {
@@ -731,9 +731,9 @@ function SpamTask(domain) {
     type: jsPsychSurveyHtmlForm,
     preamble: "<h2>Compensation Questions</h2>",
     html: `
-      <label for="compensation_name">Type in your full name.</label>
+      <label for="compensation_name">Type in your full name:</label>
       <input type="text" id="compensation_name" name="compensation_name" required><br><br>
-      <label for="compensation_email">Type in your email address.</label>
+      <label for="compensation_email">Type in your email addres:</label>
       <input type="text" id="compensation_email" name="compensation_email" required><br><br>
     `,
     data: {
