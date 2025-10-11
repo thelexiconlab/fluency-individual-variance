@@ -1,0 +1,881 @@
+subject,word,entry_number,x,y,domain,pair,word1,x1,y1,word2,x2,y2,euclidean_distance
+11859,dog,1,253,16,animal,"dog, sheep",dog,253,16,sheep,159,68,107.42439201596628
+11859,sheep,10,159,68,animal,"sheep, hare",sheep,159,68,hare,158,11,57.0087712549569
+11859,hare,11,158,11,animal,"hare, wolf",hare,158,11,wolf,358,14,200.02249873451737
+11859,wolf,12,358,14,animal,"wolf, rhino",wolf,358,14,rhino,566,114,230.7899477880265
+11859,rhino,13,566,114,animal,"rhino, hippo",rhino,566,114,hippo,496,112,70.02856560004639
+11859,hippo,14,496,112,animal,"hippo, chimpanzee",hippo,496,112,chimpanzee,345,315,253.00197627686626
+11859,chimpanzee,15,345,315,animal,"chimpanzee, squirrel",chimpanzee,345,315,squirrel,247,125,213.78493866500511
+11859,squirrel,16,247,125,animal,"squirrel, cow",squirrel,247,125,cow,182,124,65.00769185258002
+11859,cow,17,182,124,animal,"cow, horse",cow,182,124,horse,107,122,75.02666192761077
+11859,horse,18,107,122,animal,"horse, pig",horse,107,122,pig,186,179,97.41663102366043
+11859,pig,19,186,179,animal,"pig, cat",pig,186,179,cat,309,17,203.40353979220717
+11859,cat,2,309,17,animal,"cat, donkey",cat,309,17,donkey,92,178,270.20362691866296
+11859,donkey,20,92,178,animal,"donkey, chicken",donkey,92,178,chicken,99,230,52.46903848937962
+11859,chicken,21,99,230,animal,"chicken, rooster",chicken,99,230,rooster,188,229,89.00561780022652
+11859,rooster,22,188,229,animal,"rooster, salamander",rooster,188,229,salamander,552,245,364.3514786576281
+11859,salamander,23,552,245,animal,"salamander, lizzard",salamander,552,245,lizzard,548,303,58.137767414994535
+11859,lizzard,24,548,303,animal,"lizzard, alligator",lizzard,548,303,alligator,632,301,84.02380615040002
+11859,alligator,25,632,301,animal,"alligator, crocodile",alligator,632,301,crocodile,552,357,97.65244492586962
+11859,crocodile,26,552,357,animal,"crocodile, fish",crocodile,552,357,fish,658,358,106.00471687618433
+11859,fish,27,658,358,animal,"fish, dolphin",fish,658,358,dolphin,713,357,55.00909015790027
+11859,dolphin,28,713,357,animal,"dolphin, shark",dolphin,713,357,shark,729,299,60.166435825965294
+11859,shark,29,729,299,animal,"shark, mouse",shark,729,299,mouse,250,69,531.3576949663945
+11859,mouse,3,250,69,animal,"mouse, whale",mouse,250,69,whale,724,242,504.5839870626098
+11859,whale,30,724,242,animal,"whale, octupus",whale,724,242,octupus,722,189,53.03772242470448
+11859,octupus,31,722,189,animal,"octupus, goat",octupus,722,189,goat,237,175,485.20201978145144
+11859,goat,32,237,175,animal,"goat, camel",goat,237,175,camel,621,10,417.9485614283174
+11859,camel,33,621,10,animal,"camel, crane",camel,621,10,crane,32,336,673.1990790249197
+11859,crane,34,32,336,animal,"crane, peacock",crane,32,336,peacock,87,331,55.226805085936306
+11859,peacock,35,87,331,animal,"peacock, flamingo",peacock,87,331,flamingo,179,335,92.0869154657707
+11859,flamingo,36,179,335,animal,"flamingo, rabbit",flamingo,179,335,rabbit,336,123,263.80485211610494
+11859,rabbit,37,336,123,animal,"rabbit, hamster",rabbit,336,123,hamster,328,68,55.57877292636101
+11859,hamster,38,328,68,animal,"hamster, chinchilla",hamster,328,68,chinchilla,547,192,251.66843266488547
+11859,chinchilla,39,547,192,animal,"chinchilla, hamster",chinchilla,547,192,hamster,331,67,249.56161563830284
+11859,hamster,4,331,67,animal,"hamster, hedgehog",hamster,331,67,hedgehog,297,175,113.22543883774529
+11859,hedgehog,40,297,175,animal,"hedgehog, ferret",hedgehog,297,175,ferret,363,178,66.06814663663572
+11859,ferret,41,363,178,animal,"ferret, chameleon",ferret,363,178,chameleon,583,248,230.8679276123039
+11859,chameleon,42,583,248,animal,"chameleon, giraffe",chameleon,583,248,giraffe,620,65,186.70297265978385
+11859,giraffe,43,620,65,animal,"giraffe, kangaroo",giraffe,620,65,kangaroo,695,9,93.60021367496978
+11859,kangaroo,44,695,9,animal,"kangaroo, rat",kangaroo,695,9,rat,230,67,468.60324369342555
+11859,rat,45,230,67,animal,"rat, grasshopper",rat,230,67,grasshopper,36,6,203.364205306637
+11859,grasshopper,46,36,6,animal,"grasshopper, skunk",grasshopper,36,6,skunk,202,20,166.5893153836704
+11859,skunk,47,202,20,animal,"skunk, moose",skunk,202,20,moose,737,79,538.2434393469185
+11859,moose,48,737,79,animal,"moose, bear",moose,737,79,bear,711,65,29.5296461204668
+11859,bear,49,711,65,animal,"bear, monkey",bear,711,65,monkey,393,328,412.6657242854075
+11859,monkey,5,393,328,animal,"monkey, polar bear",monkey,393,328,polar bear,651,95,347.6391807607422
+11859,polar bear,50,651,95,animal,"polar bear, snake",polar bear,651,95,snake,540,299,232.24340679554285
+11859,snake,51,540,299,animal,"snake, eph",snake,540,299,eph,767,111,294.7422602885443
+11859,eph,52,767,111,animal,"eph, cheetah",eph,767,111,cheetah,473,71,296.70861126701396
+11859,cheetah,53,473,71,animal,"cheetah, leopard",cheetah,473,71,leopard,474,77,6.082762530298219
+11859,leopard,54,474,77,animal,"leopard, panther",leopard,474,77,panther,470,86,9.848857801796104
+11859,panther,55,470,86,animal,"panther, bull",panther,470,86,bull,504,9,84.17244204607586
+11859,bull,6,504,9,animal,"bull, ram",bull,504,9,ram,557,9,53
+11859,ram,7,557,9,animal,"ram, tiger",ram,557,9,tiger,501,60,75.7429864739964
+11859,tiger,8,501,60,animal,"tiger, lion",tiger,501,60,lion,563,62,62.03224967708329
+11859,lion,9,563,62,animal,"lion, pizza",lion,563,62,pizza,183,96,NA
+34998,cat,1,380,160,animal,"cat, wolf",cat,380,160,wolf,154,156,226.03539545832197
+34998,wolf,2,154,156,animal,"wolf, panda",wolf,154,156,panda,619,312,490.47018257994034
+34998,panda,3,619,312,animal,"panda, otter",panda,619,312,otter,336,327,283.3972476930572
+34998,otter,4,336,327,animal,"otter, tiger",otter,336,327,tiger,410,221,129.2749008895385
+34998,tiger,5,410,221,animal,"tiger, vread",tiger,410,221,vread,499,241,NA
+70000,dog,1,604,21,animal,"dog, cheetah",dog,604,21,cheetah,441,115,188.16216410320115
+70000,cheetah,10,441,115,animal,"cheetah, alligator",cheetah,441,115,alligator,317,221,163.1318485152424
+70000,alligator,11,317,221,animal,"alligator, crocodile",alligator,317,221,crocodile,313,187,34.23448553724738
+70000,crocodile,12,313,187,animal,"crocodile, fish",crocodile,313,187,fish,220,194,93.26306878931231
+70000,fish,13,220,194,animal,"fish, salmon",fish,220,194,salmon,221,197,3.1622776601683795
+70000,salmon,14,221,197,animal,"salmon, tuna",salmon,221,197,tuna,176,183,47.12748667179272
+70000,tuna,15,176,183,animal,"tuna, fox",tuna,176,183,fox,641,145,466.5501044903966
+70000,fox,16,641,145,animal,"fox, coyote",fox,641,145,coyote,671,150,30.4138126514911
+70000,coyote,17,671,150,animal,"coyote, lynx",coyote,671,150,lynx,371,95,305
+70000,lynx,18,371,95,animal,"lynx, bobcat",lynx,371,95,bobcat,370,54,41.012193308819754
+70000,bobcat,19,370,54,animal,"bobcat, cat",bobcat,370,54,cat,484,20,118.96217886370441
+70000,cat,2,484,20,animal,"cat, jaguar",cat,484,20,jaguar,337,79,158.39823231336896
+70000,jaguar,20,337,79,animal,"jaguar, leopard",jaguar,337,79,leopard,364,13,71.30918594402827
+70000,leopard,21,364,13,animal,"leopard, falcon",leopard,364,13,falcon,157,30,207.6968945362448
+70000,falcon,22,157,30,animal,"falcon, eagle",falcon,157,30,eagle,111,58,53.85164807134504
+70000,eagle,23,111,58,animal,"eagle, songbird",eagle,111,58,songbird,186,91,81.93900170248598
+70000,songbird,24,186,91,animal,"songbird, squirrel",songbird,186,91,squirrel,264,301,224.01785643113362
+70000,squirrel,25,264,301,animal,"squirrel, hampster",squirrel,264,301,hampster,315,327,57.245087125446844
+70000,hampster,26,315,327,animal,"hampster, rate",hampster,315,327,rate,316,347,20.024984394500787
+70000,rate,27,316,347,animal,"rate, mouse",rate,316,347,mouse,351,356,36.138621999185304
+70000,mouse,28,351,356,animal,"mouse, gerbil",mouse,351,356,gerbil,340,349,13.038404810405298
+70000,gerbil,29,340,349,animal,"gerbil, hyena",gerbil,340,349,hyena,579,85,356.11374587342175
+70000,hyena,3,579,85,animal,"hyena, ant",hyena,579,85,ant,760,328,303.00165016052307
+70000,ant,30,760,328,animal,"ant, praying mantis",ant,760,328,praying mantis,706,272,77.79460135510689
+70000,praying mantis,31,706,272,animal,"praying mantis, hippo",praying mantis,706,272,hippo,467,265,239.10248848558643
+70000,hippo,32,467,265,animal,"hippo, dolphin",hippo,467,265,dolphin,21,169,456.2148616605996
+70000,dolphin,33,21,169,animal,"dolphin, great white shark",dolphin,21,169,great white shark,0,250,83.67795408588812
+70000,great white shark,34,0,250,animal,"great white shark, hammerhead",great white shark,0,250,hammerhead,0,263,13
+70000,hammerhead,35,0,263,animal,"hammerhead, bull shark",hammerhead,0,263,bull shark,21,257,21.840329667841555
+70000,bull shark,36,21,257,animal,"bull shark, tiger shark",bull shark,21,257,tiger shark,0,279,30.4138126514911
+70000,tiger shark,37,0,279,animal,"tiger shark, mako shark",tiger shark,0,279,mako shark,0,242,37
+70000,mako shark,38,0,242,animal,"mako shark, blue marlin",mako shark,0,242,blue marlin,9,269,28.460498941515414
+70000,blue marlin,39,9,269,animal,"blue marlin, wolf",blue marlin,9,269,wolf,652,73,672.209044866253
+70000,wolf,4,652,73,animal,"wolf, orca",wolf,652,73,orca,1,317,695.2244241969639
+70000,orca,40,1,317,animal,"orca, seal",orca,1,317,seal,69,348,74.73285756613352
+70000,seal,41,69,348,animal,"seal, polar bear",seal,69,348,polar bear,118,371,54.12947441089743
+70000,polar bear,42,118,371,animal,"polar bear, grizzly bear",polar bear,118,371,grizzly bear,136,373,18.110770276274835
+70000,grizzly bear,43,136,373,animal,"grizzly bear, brown bear",grizzly bear,136,373,brown bear,156,373,20
+70000,brown bear,44,156,373,animal,"brown bear, penguin",brown bear,156,373,penguin,0,373,156
+70000,penguin,45,0,373,animal,"penguin, lion",penguin,0,373,lion,466,72,554.7585060186099
+70000,lion,5,466,72,animal,"lion, giraffe",lion,466,72,giraffe,536,264,204.3624231604235
+70000,giraffe,6,536,264,animal,"giraffe, zebra",giraffe,536,264,zebra,488,210,72.24956747275377
+70000,zebra,7,488,210,animal,"zebra, tiger",zebra,488,210,tiger,414,78,151.32745950421557
+70000,tiger,8,414,78,animal,"tiger, wilderbeast",tiger,414,78,wilderbeast,543,306,261.9637379485947
+70000,wilderbeast,9,543,306,animal,"wilderbeast, banana",wilderbeast,543,306,banana,737,9,NA
+21466,dog,1,334,169,animals,"dog, cat",dog,334,169,cat,418,171,84.02380615040002
+21466,cat,2,418,171,animals,"cat, wolf",cat,418,171,wolf,272,168,146.03081866510234
+21466,wolf,3,272,168,animals,"wolf, hyena",wolf,272,168,hyena,260,114,55.31726674375732
+21466,hyena,4,260,114,animals,"hyena, beaver",hyena,260,114,beaver,574,74,316.53751752359466
+21466,beaver,5,574,74,animals,"beaver, aardvark",beaver,574,74,aardvark,670,149,121.82364302548172
+21466,aardvark,6,670,149,animals,"aardvark, pencil",aardvark,670,149,pencil,151,169,NA
+24628,Bat,1,178,277,animals,"Bat, cow",Bat,178,277,cow,453,156,300.4430062424486
+24628,cow,10,453,156,animals,"cow, horse",cow,453,156,horse,456,93,63.071388124885914
+24628,horse,11,456,93,animals,"horse, whale",horse,456,93,whale,82,287,421.321729798025
+24628,whale,12,82,287,animals,"whale, shark",whale,82,287,shark,88,229,58.309518948453004
+24628,shark,13,88,229,animals,"shark, dolphin",shark,88,229,dolphin,76,178,52.392747589718944
+24628,dolphin,14,76,178,animals,"dolphin, fly",dolphin,76,178,fly,182,214,111.94641575325224
+24628,fly,15,182,214,animals,"fly, bird",fly,182,214,bird,186,156,58.137767414994535
+24628,bird,16,186,156,animals,"bird, bee",bird,186,156,bee,177,96,60.67124524847005
+24628,bee,17,177,96,animals,"bee, squirrel",bee,177,96,squirrel,551,241,401.1246688998322
+24628,squirrel,18,551,241,animals,"squirrel, turtle",squirrel,551,241,turtle,685,235,134.13426109685773
+24628,turtle,19,685,235,animals,"turtle, Cat",turtle,685,235,Cat,270,278,417.22176357424115
+24628,Cat,2,270,278,animals,"Cat, zebra",Cat,270,278,zebra,458,35,307.23443817384793
+24628,zebra,20,458,35,animals,"zebra, ox",zebra,458,35,ox,472,8,30.4138126514911
+24628,ox,21,472,8,animals,"ox, dinosaur",ox,472,8,dinosaur,677.5,285,344.90469698164446
+24628,dinosaur,22,677.5,285,animals,"dinosaur, knat",dinosaur,677.5,285,knat,181,40,553.6580623453433
+24628,knat,23,181,40,animals,"knat, cougar",knat,181,40,cougar,351,94,178.3704011320264
+24628,cougar,24,351,94,animals,"cougar, deer",cougar,351,94,deer,480,63,132.67252918370102
+24628,deer,25,480,63,animals,"deer, eagle",deer,480,63,eagle,174,0,312.41798923877604
+24628,eagle,26,174,0,animals,"eagle, finch",eagle,174,0,finch,571,163,429.15964395548656
+24628,finch,27,571,163,animals,"finch, fish",finch,571,163,fish,95,129,477.2127408190188
+24628,fish,28,95,129,animals,"fish, horse",fish,95,129,horse,458,16,380.1815355853043
+24628,horse,29,458,16,animals,"horse, Dog",horse,458,16,Dog,264,212,275.7752708275345
+24628,Dog,3,264,212,animals,"Dog, kangaroo",Dog,264,212,kangaroo,338,44,183.5755975068582
+24628,kangaroo,30,338,44,animals,"kangaroo, lima",kangaroo,338,44,lima,360,183,140.73023839957068
+24628,lima,31,360,183,animals,"lima, lynx",lima,360,183,lynx,575,212,216.9469981354893
+24628,lynx,32,575,212,animals,"lynx, monkey",lynx,575,212,monkey,164,312,422.9905436295237
+24628,monkey,33,164,312,animals,"monkey, himan",monkey,164,312,himan,265,115,221.38202275704322
+24628,himan,34,265,115,animals,"himan, moose",himan,265,115,moose,263,194,79.02531240052139
+24628,moose,35,263,194,animals,"moose, mouse",moose,263,194,mouse,259,147,47.16990566028302
+24628,mouse,4,259,147,animals,"mouse, bear",mouse,259,147,bear,350,278,159.5054857990784
+24628,bear,5,350,278,animals,"bear, tiger",bear,350,278,tiger,356,213,65.27633568147036
+24628,tiger,6,356,213,animals,"tiger, lion",tiger,356,213,lion,363,149,64.38167441127949
+24628,lion,7,363,149,animals,"lion, goat",lion,363,149,goat,446,286,160.18114745499858
+24628,goat,8,446,286,animals,"goat, sheep",goat,446,286,sheep,447,218,68.00735254367721
+24628,sheep,9,447,218,animals,"sheep, Pencil",sheep,447,218,Pencil,137,352,NA
+33324,gorilla,1,745,9,animals,"gorilla, deer",gorilla,745,9,deer,776.49,295,287.72837903133575
+33324,deer,10,776.49,295,animals,"deer, turkey",deer,776.49,295,turkey,583,334,197.38130635903696
+33324,turkey,11,583,334,animals,"turkey, goffer",turkey,583,334,goffer,281,344,302.16551755618974
+33324,goffer,12,281,344,animals,"goffer, groundhig",goffer,281,344,groundhig,356,344,75
+33324,groundhig,13,356,344,animals,"groundhig, squirel",groundhig,356,344,squirel,357,290,54.00925846556311
+33324,squirel,14,357,290,animals,"squirel, ferret",squirel,357,290,ferret,211,304,146.66969693839283
+33324,ferret,15,211,304,animals,"ferret, rat",ferret,211,304,rat,453,285,242.7447218787671
+33324,rat,16,453,285,animals,"rat, mouse",rat,453,285,mouse,497,286,44.01136216933077
+33324,mouse,17,497,286,animals,"mouse, elephant",mouse,497,286,elephant,348,13,311.01446911679204
+33324,elephant,18,348,13,animals,"elephant, tiger",elephant,348,13,tiger,238,19,110.16351483136329
+33324,tiger,19,238,19,animals,"tiger, chimpanzee",tiger,238,19,chimpanzee,701,65,465.2794859006788
+33324,chimpanzee,2,701,65,animals,"chimpanzee, lion",chimpanzee,701,65,lion,243,68,458.00982522212337
+33324,lion,20,243,68,animals,"lion, dingo",lion,243,68,dingo,242,119,51.0098029794274
+33324,dingo,21,242,119,animals,"dingo, cheetah",dingo,242,119,cheetah,146,21,137.18600511714013
+33324,cheetah,22,146,21,animals,"cheetah, leapard",cheetah,146,21,leapard,155,74,53.75872022286245
+33324,leapard,23,155,74,animals,"leapard, puma",leapard,155,74,puma,164,120,46.87216658103186
+33324,puma,24,164,120,animals,"puma, rabbit",puma,164,120,rabbit,376,231,239.30106560565082
+33324,rabbit,25,376,231,animals,"rabbit, dog",rabbit,376,231,dog,534,9,272.48486196484384
+33324,dog,3,534,9,animals,"dog, cat",dog,534,9,cat,536,70,61.032778078668514
+33324,cat,4,536,70,animals,"cat, ardvark",cat,536,70,ardvark,8,274,566.0388679233962
+33324,ardvark,5,8,274,animals,"ardvark, anteater",ardvark,8,274,anteater,0,218,56.568542494923804
+33324,anteater,6,0,218,animals,"anteater, bird",anteater,0,218,bird,161,214,161.0496817755316
+33324,bird,7,161,214,animals,"bird, turtle",bird,161,214,turtle,8,374,221.37976420621646
+33324,turtle,8,8,374,animals,"turtle, snake",turtle,8,374,snake,99,373,91.00549433962765
+33324,snake,9,99,373,animals,"snake, desk",snake,99,373,desk,714,29,NA
+45042,cat,1,343,168,animals,"cat, dog",cat,343,168,dog,286,167,57.0087712549569
+45042,dog,2,286,167,animals,"dog, wolf",dog,286,167,wolf,225,168,61.00819617067857
+45042,wolf,3,225,168,animals,"wolf, desk",wolf,225,168,desk,273,217,NA
+45712,cat,1,563,220,animals,"cat, dog",cat,563,220,dog,503,219,60.00833275470999
+45712,dog,2,503,219,animals,"dog, wolf",dog,503,219,wolf,394,148,130.08458786497346
+45712,wolf,3,394,148,animals,"wolf, ape",wolf,394,148,ape,220,153,174.07182425654074
+45712,ape,4,220,153,animals,"ape, orangutang",ape,220,153,orangutang,98,152,122.00409829181969
+45712,orangutang,5,98,152,animals,"orangutang, otter",orangutang,98,152,otter,699,132,601.332686621973
+45712,otter,6,699,132,animals,"otter, deer",otter,699,132,deer,273,320,465.6393454166003
+45712,deer,7,273,320,animals,"deer, cat",deer,273,320,cat,373,129,NA
+56824,cat,1,373,129,animals,"cat, dog",cat,373,129,dog,275,121,98.32598842625484
+56824,dog,2,275,121,animals,"dog, wolf",dog,275,121,wolf,261,197,77.27871634544663
+56824,wolf,3,261,197,animals,"wolf, yeah",wolf,261,197,yeah,483,91,246.0081299469593
+56824,yeah,4,483,91,animals,"yeah, desk",yeah,483,91,desk,460,223,NA
+66985,fgfgfg,1,348,230,animals,"fgfgfg, gfg",fgfgfg,348,230,gfg,515,259,169.49926253526885
+66985,gfg,2,515,259,animals,"gfg, luy",gfg,515,259,luy,407,196,NA
+92156,dog,1,616,196,animals,"dog, hipp",dog,616,196,hipp,613,367,171.0263137648707
+92156,hipp,10,613,367,animals,"hipp, turtle",hipp,613,367,turtle,140,269,483.04554650674504
+92156,turtle,11,140,269,animals,"turtle, snake",turtle,140,269,snake,70,286,72.03471385380801
+92156,snake,12,70,286,animals,"snake, lizard",snake,70,286,lizard,26,328,60.8276253029822
+92156,lizard,13,26,328,animals,"lizard, bug",lizard,26,328,bug,171,373,151.82226450688975
+92156,bug,14,171,373,animals,"bug, beetle",bug,171,373,beetle,130,373,41
+92156,beetle,15,130,373,animals,"beetle, mosquito",beetle,130,373,mosquito,217,373,87
+92156,mosquito,16,217,373,animals,"mosquito, hawk",mosquito,217,373,hawk,294,36,345.6848275524976
+92156,hawk,17,294,36,animals,"hawk, dove",hawk,294,36,dove,331,98,72.20110802473879
+92156,dove,18,331,98,animals,"dove, eagle",dove,331,98,eagle,337,21,77.23341245859851
+92156,eagle,19,337,21,animals,"eagle, cat",eagle,337,21,cat,536,200,267.6602323842674
+92156,cat,2,536,200,animals,"cat, owl",cat,536,200,owl,407,57,192.5876423865249
+92156,owl,20,407,57,animals,"owl, cardinal",owl,407,57,cardinal,240,61,167.0478973228936
+92156,cardinal,21,240,61,animals,"cardinal, jay",cardinal,240,61,jay,276,76,39
+92156,jay,22,276,76,animals,"jay, hyena",jay,276,76,hyena,536,373,394.7264875834912
+92156,hyena,23,536,373,animals,"hyena, leopard",hyena,536,373,leopard,491,304,82.37718130647589
+92156,leopard,24,491,304,animals,"leopard, goat",leopard,491,304,goat,454,190,119.85407794480753
+92156,goat,25,454,190,animals,"goat, lamb",goat,454,190,lamb,409,176,47.12748667179272
+92156,lamb,26,409,176,animals,"lamb, cow",lamb,409,176,cow,731,225,325.70692347569155
+92156,cow,27,731,225,animals,"cow, buffalo",cow,731,225,buffalo,722,284,59.682493245507096
+92156,buffalo,28,722,284,animals,"buffalo, chicken",buffalo,722,284,chicken,441,109,331.03776219639957
+92156,chicken,29,441,109,animals,"chicken, rabbit",chicken,441,109,rabbit,349,224,147.27185746095552
+92156,rabbit,3,349,224,animals,"rabbit, turkey",rabbit,349,224,turkey,485,129,165.89454481688057
+92156,turkey,30,485,129,animals,"turkey, ostrich",turkey,485,129,ostrich,531,94,57.8013840664737
+92156,ostrich,31,531,94,animals,"ostrich, pigeon",ostrich,531,94,pigeon,403,19,148.35430563350698
+92156,pigeon,32,403,19,animals,"pigeon, shark",pigeon,403,19,shark,141,179,306.9918565695188
+92156,shark,33,141,179,animals,"shark, dolphin",shark,141,179,dolphin,224,218,91.706052144883
+92156,dolphin,34,224,218,animals,"dolphin, whale",dolphin,224,218,whale,258,267,59.64059020499378
+92156,whale,35,258,267,animals,"whale, eel",whale,258,267,eel,36,223,226.3183598385248
+92156,eel,36,36,223,animals,"eel, tuna",eel,36,223,tuna,171,136,160.60510577189007
+92156,tuna,37,171,136,animals,"tuna, cod",tuna,171,136,cod,51,175,126.17844506887855
+92156,cod,38,51,175,animals,"cod, bass",cod,51,175,bass,62,110,65.92419889539804
+92156,bass,39,62,110,animals,"bass, bear",bass,62,110,bear,641,291,606.6316839730678
+92156,bear,4,641,291,animals,"bear, sturgeon",bear,641,291,sturgeon,84,167,570.6356105256664
+92156,sturgeon,40,84,167,animals,"sturgeon, hamster",sturgeon,84,167,hamster,551,152,467.24083725633403
+92156,hamster,41,551,152,animals,"hamster, guinea pig",hamster,551,152,guinea pig,585,157,34.36568055487916
+92156,guinea pig,42,585,157,animals,"guinea pig, gerbil",guinea pig,585,157,gerbil,529,172,57.97413216254298
+92156,gerbil,43,529,172,animals,"gerbil, snail",gerbil,529,172,snail,188,312,368.62040095469484
+92156,snail,44,188,312,animals,"snail, squirrel",snail,188,312,squirrel,450,160,302.89932320822373
+92156,squirrel,45,450,160,animals,"squirrel, chipmunk",squirrel,450,160,chipmunk,455,184,24.515301344262525
+92156,chipmunk,46,455,184,animals,"chipmunk, otter",chipmunk,455,184,otter,326,288,165.70153891862321
+92156,otter,47,326,288,animals,"otter, groundhog",otter,326,288,groundhog,464,213,157.0636813525011
+92156,groundhog,48,464,213,animals,"groundhog, giraffe",groundhog,464,213,giraffe,665,327,231.07790893982056
+92156,giraffe,49,665,327,animals,"giraffe, tiger",giraffe,665,327,tiger,529,263,150.30635382444748
+92156,tiger,5,529,263,animals,"tiger, sloth",tiger,529,263,sloth,603,318,92.20086767487604
+92156,sloth,50,603,318,animals,"sloth, lion",sloth,603,318,lion,565,275,57.38466694161429
+92156,lion,6,565,275,animals,"lion, elephant",lion,565,275,elephant,701,360,160.37767924496225
+92156,elephant,7,701,360,animals,"elephant, camel",elephant,701,360,camel,438,370,263.1900454044567
+92156,camel,8,438,370,animals,"camel, rhino",camel,438,370,rhino,638,373,200.02249873451737
+92156,rhino,9,638,373,animals,"rhino, teacher",rhino,638,373,teacher,592,201,NA
+21466,pencil,1,151,169,classroom-items,"pencil, desk",pencil,151,169,desk,208,231,84.21995013059554
+21466,desk,2,208,231,classroom-items,"desk, computer",desk,208,231,computer,231,169,66.12866246946176
+21466,computer,3,231,169,classroom-items,"computer, whiteboard",computer,231,169,whiteboard,437,190,207.06762180505189
+21466,whiteboard,4,437,190,classroom-items,"whiteboard, shirt",whiteboard,437,190,shirt,262,194,NA
+24628,Pencil,1,137,352,classroom-items,"Pencil, heating units",Pencil,137,352,heating units,643,273,512.1298663425127
+24628,heating units,10,643,273,classroom-items,"heating units, plants",heating units,643,273,plants,509,316,140.73023839957068
+24628,plants,11,509,316,classroom-items,"plants, chalk",plants,509,316,chalk,130,334,379.42719986843326
+24628,chalk,12,130,334,classroom-items,"chalk, dry erase markers",chalk,130,334,dry erase markers,67,331,63.071388124885914
+24628,dry erase markers,13,67,331,classroom-items,"dry erase markers, dry erase board",dry erase markers,67,331,dry erase board,48,339,20.615528128088304
+24628,dry erase board,14,48,339,classroom-items,"dry erase board, bookshelf",dry erase board,48,339,bookshelf,389,324,341.3297525853848
+24628,bookshelf,15,389,324,classroom-items,"bookshelf, closet",bookshelf,389,324,closet,391,311,13.152946437965905
+24628,closet,16,391,311,classroom-items,"closet, coat rack",closet,391,311,coat rack,391,322,11
+24628,coat rack,17,391,322,classroom-items,"coat rack, floor mat",coat rack,391,322,floor mat,382,280,42.95346318982906
+24628,floor mat,18,382,280,classroom-items,"floor mat, speakers",floor mat,382,280,speakers,261,341,135.50645741070792
+24628,speakers,19,261,341,classroom-items,"speakers, Pens",speakers,261,341,Pens,149,342,112.0044641967453
+24628,Pens,2,149,342,classroom-items,"Pens, projector",Pens,149,342,projector,260,334,111.28791488746656
+24628,projector,20,260,334,classroom-items,"projector, water bottles",projector,260,334,water bottles,497,302,239.1505801790997
+24628,water bottles,21,497,302,classroom-items,"water bottles, paper",water bottles,497,302,paper,127,341,372.0497278590592
+24628,paper,22,127,341,classroom-items,"paper, color pensils",paper,127,341,color pensils,95,317,40
+24628,color pensils,23,95,317,classroom-items,"color pensils, tape",color pensils,95,317,tape,87,308,12.041594578792296
+24628,tape,24,87,308,classroom-items,"tape, tabs",tape,87,308,tabs,118,347,49.8196748283246
+24628,tabs,25,118,347,classroom-items,"tabs, scanners",tabs,118,347,scanners,272,321,156.1793840428371
+24628,scanners,26,272,321,classroom-items,"scanners, doors",scanners,272,321,doors,734,287,463.24939287601876
+24628,doors,27,734,287,classroom-items,"doors, computer",doors,734,287,computer,260,352,478.4359936292419
+24628,computer,3,260,352,classroom-items,"computer, chairs",computer,260,352,chairs,396,343,136.2974687952788
+24628,chairs,4,396,343,classroom-items,"chairs, pictures",chairs,396,343,pictures,507,348,111.11255554616679
+24628,pictures,5,507,348,classroom-items,"pictures, lights",pictures,507,348,lights,634,346,127.01574705523721
+24628,lights,6,634,346,classroom-items,"lights, windows",lights,634,346,windows,642,317,30.083217912982647
+24628,windows,7,642,317,classroom-items,"windows, walls",windows,642,317,walls,669,292,36.796738985948195
+24628,walls,8,669,292,classroom-items,"walls, floor",walls,669,292,floor,677,286,10
+24628,floor,9,677,286,classroom-items,"floor, hat",floor,677,286,hat,263,248,NA
+33324,desk,1,714,29,classroom-items,"desk, computer",desk,714,29,computer,143,63,572.0113635234881
+33324,computer,10,143,63,classroom-items,"computer, chairs",computer,143,63,chairs,704,134,565.4750215526766
+33324,chairs,11,704,134,classroom-items,"chairs, tables",chairs,704,134,tables,644,104,67.08203932499369
+33324,tables,12,644,104,classroom-items,"tables, cabinets",tables,644,104,cabinets,140,205,514.0204276096428
+33324,cabinets,13,140,205,classroom-items,"cabinets, drawers",cabinets,140,205,drawers,648.49,62,528.2149942021714
+33324,drawers,14,648.49,62,classroom-items,"drawers, pencil",drawers,648.49,62,pencil,576,18,84.79858548348552
+33324,pencil,2,576,18,classroom-items,"pencil, eraser",pencil,576,18,eraser,557,60,46.09772228646444
+33324,eraser,3,557,60,classroom-items,"eraser, chalkboard",eraser,557,60,chalkboard,388,14,175.1485084150019
+33324,chalkboard,4,388,14,classroom-items,"chalkboard, chalk",chalkboard,388,14,chalk,402,63,50.96076922496363
+33324,chalk,5,402,63,classroom-items,"chalk, stapler",chalk,402,63,stapler,718,82,316.5706872090339
+33324,stapler,6,718,82,classroom-items,"stapler, notebook",stapler,718,82,notebook,255,15,467.8226159560908
+33324,notebook,7,255,15,classroom-items,"notebook, books",notebook,255,15,books,272,59,47.16990566028302
+33324,books,8,272,59,classroom-items,"books, projector",books,272,59,projector,144,14,135.67977004697494
+33324,projector,9,144,14,classroom-items,"projector, socks",projector,144,14,socks,762,4,NA
+45042,desk,1,273,217,classroom-items,"desk, chair",desk,273,217,chair,186,177,95.75489543621255
+45042,chair,2,186,177,classroom-items,"chair, window",chair,186,177,window,460,218,277.0505369061753
+45042,window,3,460,218,classroom-items,"window, pencil",window,460,218,pencil,317,158,155.07740002979156
+45042,pencil,4,317,158,classroom-items,"pencil, shirt",pencil,317,158,shirt,351,218,NA
+56824,desk,1,460,223,classroom-items,"desk, chalk",desk,460,223,chalk,280,171,187.3606148580859
+56824,chalk,2,280,171,classroom-items,"chalk, marker",chalk,280,171,marker,268,229,59.22837157984339
+56824,marker,3,268,229,classroom-items,"marker, shirt",marker,268,229,shirt,303,149,NA
+66985,luy,1,407,196,classroom-items,"luy, 8t",luy,407,196,8t,373,187,35.17101079013795
+66985,8t,2,373,187,classroom-items,"8t, liug",8t,373,187,liug,343,98,NA
+92156,teacher,1,592,201,classroom-items,"teacher, pens",teacher,592,201,pens,339,222,253.87004549572208
+92156,pens,10,339,222,classroom-items,"pens, bag",pens,339,222,bag,179,166,169.51696080333673
+92156,bag,11,179,166,classroom-items,"bag, locker",bag,179,166,locker,93,30,160.90991268408544
+92156,locker,12,93,30,classroom-items,"locker, door",locker,93,30,door,358,62,266.925083122587
+92156,door,13,358,62,classroom-items,"door, speaker",door,358,62,speaker,380,27,41.340053217188775
+92156,speaker,14,380,27,classroom-items,"speaker, television",speaker,380,27,television,454,16,74.81310045707235
+92156,television,15,454,16,classroom-items,"television, decorations",television,454,16,decorations,155,27,299.202272718641
+92156,decorations,16,155,27,classroom-items,"decorations, windows",decorations,155,27,windows,308,54,155.36408851468863
+92156,windows,17,308,54,classroom-items,"windows, student",windows,308,54,student,525,205,264.3671689147501
+92156,student,2,525,205,classroom-items,"student, desk",student,525,205,desk,326,258,205.9368835347374
+92156,desk,3,326,258,classroom-items,"desk, chair",desk,326,258,chair,267,266,59.53990258641679
+92156,chair,4,267,266,classroom-items,"chair, book",chair,267,266,book,226,125,146.84004903295286
+92156,book,5,226,125,classroom-items,"book, notebook",book,226,125,notebook,254,158,43.278170016764804
+92156,notebook,6,254,158,classroom-items,"notebook, pencil",notebook,254,158,pencil,334,225,104.35037134576953
+92156,pencil,7,334,225,classroom-items,"pencil, chalkboard",pencil,334,225,chalkboard,400,136,110.80162453682708
+92156,chalkboard,8,400,136,classroom-items,"chalkboard, laptop",chalkboard,400,136,laptop,292,233,145.16542288024377
+92156,laptop,9,292,233,classroom-items,"laptop, shirt",laptop,292,233,shirt,498,189,NA
+21466,shirt,1,262,194,clothes,"shirt, pants",shirt,262,194,pants,261,278,84.00595217006948
+21466,pants,2,261,278,clothes,"pants, blouse",pants,261,278,blouse,177,191,120.93386622447825
+21466,blouse,3,177,191,clothes,"blouse, jacket",blouse,177,191,jacket,327,194,150.02999700059985
+21466,jacket,4,327,194,clothes,"jacket, puffer",jacket,327,194,puffer,325,140,54.037024344425184
+21466,puffer,5,325,140,clothes,"puffer, apple",puffer,325,140,apple,295,151,NA
+24628,hat,1,263,248,clothes,"hat, shorts",hat,263,248,shorts,43,292,224.35685859808254
+24628,shorts,10,43,292,clothes,"shorts, socks",shorts,43,292,socks,617,55,621.003220603565
+24628,socks,11,617,55,clothes,"socks, shoes",socks,617,55,shoes,595,80,33.301651610693426
+24628,shoes,12,595,80,clothes,"shoes, slippers",shoes,595,80,slippers,605,100,22.360679774997898
+24628,slippers,13,605,100,clothes,"slippers, pajamas",slippers,605,100,pajamas,42,273,588.9804750583843
+24628,pajamas,14,42,273,clothes,"pajamas, gloves",pajamas,42,273,gloves,325,272,283.0017667789373
+24628,gloves,15,325,272,clothes,"gloves, raincoat",gloves,325,272,raincoat,700,283,375.16129864366343
+24628,raincoat,16,700,283,clothes,"raincoat, panties",raincoat,700,283,panties,343,88,406.78495547401945
+24628,panties,17,343,88,clothes,"panties, bra",panties,343,88,bra,347,98,10.770329614269007
+24628,bra,18,347,98,clothes,"bra, vest",bra,347,98,vest,492,257,215.18828964420902
+24628,vest,19,492,257,clothes,"vest, scarf",vest,492,257,scarf,285,314,214.70444802099468
+24628,scarf,2,285,314,clothes,"scarf, boxers",scarf,285,314,boxers,306,75,239.92082027202224
+24628,boxers,20,306,75,clothes,"boxers, tights",boxers,306,75,tights,331,67,26.248809496813376
+24628,tights,21,331,67,clothes,"tights, stockings",tights,331,67,stockings,288,95,51.31276644267
+24628,stockings,22,288,95,clothes,"stockings, boots",stockings,288,95,boots,648,72,360.73397400300405
+24628,boots,23,648,72,clothes,"boots, ear muffs",boots,648,72,ear muffs,283,284,422.1006988859412
+24628,ear muffs,3,283,284,clothes,"ear muffs, shirt",ear muffs,283,284,shirt,516,340,239.63513932643517
+24628,shirt,4,516,340,clothes,"shirt, blouse",shirt,516,340,blouse,507,306,35.17101079013795
+24628,blouse,5,507,306,clothes,"blouse, t-shirt",blouse,507,306,t-shirt,513,289,18.027756377319946
+24628,t-shirt,6,513,289,clothes,"t-shirt, dress",t-shirt,513,289,dress,674,306,161.89502771858065
+24628,dress,7,674,306,clothes,"dress, coat",dress,674,306,coat,304,255,373.4983266361444
+24628,coat,8,304,255,clothes,"coat, pants",coat,304,255,pants,59,320,253.4758371127315
+24628,pants,9,59,320,clothes,"pants, tofu",pants,59,320,tofu,263,287,NA
+33324,socks,1,762,4,clothes,"socks, yoga pants",socks,762,4,yoga pants,564,86,214.30818929756276
+33324,yoga pants,10,564,86,clothes,"yoga pants, jacket",yoga pants,564,86,jacket,202,306,423.60830964465276
+33324,jacket,11,202,306,clothes,"jacket, coat",jacket,202,306,coat,216,346,42.37924020083418
+33324,coat,12,216,346,clothes,"coat, hat",coat,216,346,hat,770,225,567.059961556095
+33324,hat,13,770,225,clothes,"hat, gloves",hat,770,225,gloves,648,257,126.1269202034205
+33324,gloves,14,648,257,clothes,"gloves, shoes",gloves,648,257,shoes,428,179,233.4180798481557
+33324,shoes,15,428,179,clothes,"shoes, boots",shoes,428,179,boots,444,227,50.59644256269407
+33324,boots,16,444,227,clothes,"boots, sandals",boots,444,227,sandals,447,281,54.08326913195984
+33324,sandals,17,447,281,clothes,"sandals, shower shoes",sandals,447,281,shower shoes,420,325,51.62363799656123
+33324,shower shoes,18,420,325,clothes,"shower shoes, blouse",shower shoes,420,325,blouse,176,96,334.62964602676794
+33324,blouse,19,176,96,clothes,"blouse, pants",blouse,176,96,pants,554,6,388.56659660861226
+33324,pants,2,554,6,clothes,"pants, suit",pants,554,6,suit,59,118,507.51256142089727
+33324,suit,20,59,118,clothes,"suit, dress",suit,59,118,dress,57,180,62.03224967708329
+33324,dress,21,57,180,clothes,"dress, dress shoes",dress,57,180,dress shoes,432,365,418.1506905411015
+33324,dress shoes,22,432,365,clothes,"dress shoes, tunic",dress shoes,432,365,tunic,52,240,400.03124877939223
+33324,tunic,23,52,240,clothes,"tunic, jumpers",tunic,52,240,jumpers,274,242,222.00900882621858
+33324,jumpers,24,274,242,clothes,"jumpers, underwear",jumpers,274,242,underwear,376,0,262.6175927084855
+33324,underwear,3,376,0,clothes,"underwear, bra",underwear,376,0,bra,434,39,69.8927750200262
+33324,bra,4,434,39,clothes,"bra, shorts",bra,434,39,shorts,181,6,255.14309710435043
+33324,shorts,5,181,6,clothes,"shorts, t shirt",shorts,181,6,t shirt,184,148,142.03168660548954
+33324,t shirt,6,184,148,clothes,"t shirt, long sleeve shirt",t shirt,184,148,long sleeve shirt,171,191,44.9221548904324
+33324,long sleeve shirt,7,171,191,clothes,"long sleeve shirt, sweater",long sleeve shirt,171,191,sweater,184,232,43.01162633521314
+33324,sweater,8,184,232,clothes,"sweater, sweat pants",sweater,184,232,sweat pants,552,50,410.54597793669836
+33324,sweat pants,9,552,50,clothes,"sweat pants, spaghetti",sweat pants,552,50,spaghetti,733,19,NA
+45042,shirt,1,351,218,clothes,"shirt, pants",shirt,351,218,pants,376,228,26.92582403567252
+45042,pants,2,376,228,clothes,"pants, shoes",pants,376,228,shoes,340,306,85.90692637965812
+45042,shoes,3,340,306,clothes,"shoes, cake",shoes,340,306,cake,293,209,NA
+56824,shirt,1,303,149,clothes,"shirt, pants",shirt,303,149,pants,381,163,79.2464510246358
+56824,pants,2,381,163,clothes,"pants, apple",pants,381,163,apple,430,257,NA
+66985,liug,1,343,98,clothes,"liug, dhu",liug,343,98,dhu,404,125,66.70832032063167
+66985,dhu,2,404,125,clothes,"dhu, hh",dhu,404,125,hh,320,315,207.74022239325728
+66985,hh,3,320,315,clothes,"hh, kgl",hh,320,315,kgl,460,293,NA
+92156,shirt,1,498,189,clothes,"shirt, bra",shirt,498,189,bra,648,241,158.75767697972907
+92156,bra,10,648,241,clothes,"bra, swimsuit",bra,648,241,swimsuit,1,8,687.6757957060871
+92156,swimsuit,11,1,8,clothes,"swimsuit, shoes",swimsuit,1,8,shoes,227,373,429.30292335366175
+92156,shoes,12,227,373,clothes,"shoes, socks",shoes,227,373,socks,184,373,43
+92156,socks,13,184,373,clothes,"socks, belt",socks,184,373,belt,126,328,73.40980860893181
+92156,belt,14,126,328,clothes,"belt, coat",belt,126,328,coat,381,83,353.62409420173844
+92156,coat,15,381,83,clothes,"coat, suit",coat,381,83,suit,201,102,181
+92156,suit,16,201,102,clothes,"suit, tuxedo",suit,201,102,tuxedo,120,78,84.48076704197234
+92156,tuxedo,17,120,78,clothes,"tuxedo, pants",tuxedo,120,78,pants,238,189,162.00308639035245
+92156,pants,2,238,189,clothes,"pants, jacket",pants,238,189,jacket,581,119,350.06999300139967
+92156,jacket,3,581,119,clothes,"jacket, sweatshirt",jacket,581,119,sweatshirt,462,106,119.70797801316336
+92156,sweatshirt,4,462,106,clothes,"sweatshirt, underwear",sweatshirt,462,106,underwear,132,265,366.30724808553816
+92156,underwear,5,132,265,clothes,"underwear, hat",underwear,132,265,hat,753,98,643.0629829184696
+92156,hat,6,753,98,clothes,"hat, shorts",hat,753,98,shorts,279,250,497.7750495956984
+92156,shorts,7,279,250,clothes,"shorts, skirt",shorts,279,250,skirt,311,254,32.2490309931942
+92156,skirt,8,311,254,clothes,"skirt, dress",skirt,311,254,dress,262,303,69.29646455628166
+92156,dress,9,262,303,clothes,"dress, carrot",dress,262,303,carrot,127,112,NA
+11859,pizza,1,183,96,food,"pizza, soup",pizza,183,96,soup,302,175,142.8355697996826
+11859,soup,10,302,175,food,"soup, beans",soup,302,175,beans,358,180,56.22277118748239
+11859,beans,11,358,180,food,"beans, toast",beans,358,180,toast,368,218,39.293765408777
+11859,toast,12,368,218,food,"toast, eggs",toast,368,218,eggs,423,219,55.00909015790027
+11859,eggs,13,423,219,food,"eggs, cereal",eggs,423,219,cereal,428,264,45.27692569068709
+11859,cereal,14,428,264,food,"cereal, avacad",cereal,428,264,avacad,474,208,72.47068372797375
+11859,avacad,15,474,208,food,"avacad, tomato",avacad,474,208,tomato,518,230,49.193495504995376
+11859,tomato,16,518,230,food,"tomato, cucumber",tomato,518,230,cucumber,509,265,36.138621999185304
+11859,cucumber,17,509,265,food,"cucumber, carrot",cucumber,509,265,carrot,562,247,55.97320787662612
+11859,carrot,18,562,247,food,"carrot, spinach",carrot,562,247,spinach,537,281,42.20189569201838
+11859,spinach,19,537,281,food,"spinach, pasta",spinach,537,281,pasta,182,123,388.57303045888295
+11859,pasta,2,182,123,food,"pasta, brownie",pasta,182,123,brownie,592,104,410.440007796511
+11859,brownie,20,592,104,food,"brownie, cake",brownie,592,104,cake,652,84,63.245553203367585
+11859,cake,21,652,84,food,"cake, cupcake",cake,652,84,cupcake,692,60,46.647615158762406
+11859,cupcake,22,692,60,food,"cupcake, creme brulee",cupcake,692,60,creme brulee,617,142,111.12605455067681
+11859,creme brulee,23,617,142,food,"creme brulee, crepe",creme brulee,617,142,crepe,709,168,95.60334722173695
+11859,crepe,24,709,168,food,"crepe, dosa",crepe,709,168,dosa,740,197,42.44997055358225
+11859,dosa,25,740,197,food,"dosa, tortilla",dosa,740,197,tortilla,113,236,628.2117477411578
+11859,tortilla,26,113,236,food,"tortilla, wrap",tortilla,113,236,wrap,88,265,38.28837943815329
+11859,wrap,27,88,265,food,"wrap, burrito",wrap,88,265,burrito,142,274,54.74486277268398
+11859,burrito,28,142,274,food,"burrito, sandwich",burrito,142,274,sandwich,53,307,94.92101980067429
+11859,sandwich,29,53,307,food,"sandwich, chicken tikka masala",sandwich,53,307,chicken tikka masala,389,0,455.1318490283887
+11859,chicken tikka masala,3,389,0,food,"chicken tikka masala, panini",chicken tikka masala,389,0,panini,29,272,451.2028368705144
+11859,panini,30,29,272,food,"panini, chicken",panini,29,272,chicken,42,133,139.60659010233005
+11859,chicken,31,42,133,food,"chicken, beef",chicken,42,133,beef,28,99,36.76955262170047
+11859,beef,32,28,99,food,"beef, fish",beef,28,99,fish,24,158,59.135437767890075
+11859,fish,33,24,158,food,"fish, potato",fish,24,158,potato,162,59,169.83815825661793
+11859,potato,34,162,59,food,"potato, pork",potato,162,59,pork,75,105,98.41239759298622
+11859,pork,35,75,105,food,"pork, ribs",pork,75,105,ribs,67,165,60.530983801686226
+11859,ribs,36,67,165,food,"ribs, lasagna",ribs,67,165,lasagna,233,109,175.1913239860924
+11859,lasagna,37,233,109,food,"lasagna, kebab",lasagna,233,109,kebab,21,60,217.5890622251036
+11859,kebab,38,21,60,food,"kebab, fufu",kebab,21,60,fufu,435,98,415.74030355499576
+11859,fufu,39,435,98,food,"fufu, chole",fufu,435,98,chole,371,37,88.41379982785493
+11859,chole,4,371,37,food,"chole, curry",chole,371,37,curry,349,0,43.04648650006177
+11859,curry,40,349,0,food,"curry, paneer",curry,349,0,paneer,295,0,54
+11859,paneer,41,295,0,food,"paneer, tofu",paneer,295,0,tofu,304,0,9
+11859,tofu,42,304,0,food,"tofu, gravy",tofu,304,0,gravy,308,304,304.0263146505578
+11859,gravy,43,308,304,food,"gravy, mashed potato",gravy,308,304,mashed potato,275,340,48.83646178829912
+11859,mashed potato,44,275,340,food,"mashed potato, stuffing",mashed potato,275,340,stuffing,304,328,31.38470965295043
+11859,stuffing,45,304,328,food,"stuffing, oatmeal",stuffing,304,328,oatmeal,455,302,153.22206107476822
+11859,oatmeal,46,455,302,food,"oatmeal, ice cream",oatmeal,455,302,ice cream,651,175,233.54871012274933
+11859,ice cream,47,651,175,food,"ice cream, yogurt",ice cream,651,175,yogurt,660,217,42.95346318982906
+11859,yogurt,48,660,217,food,"yogurt, cottage cheese",yogurt,660,217,cottage cheese,665,258,41.30375285612676
+11859,cottage cheese,49,665,258,food,"cottage cheese, naan",cottage cheese,665,258,naan,417,38,331.5177219998955
+11859,naan,5,417,38,food,"naan, feta cheese",naan,417,38,feta cheese,684,262,348.5182922028627
+11859,feta cheese,50,684,262,food,"feta cheese, grape",feta cheese,684,262,grape,547,310,145.16542288024377
+11859,grape,51,547,310,food,"grape, orange",grape,547,310,orange,551,315,6.4031242374328485
+11859,orange,52,551,315,food,"orange, watermelon",orange,551,315,watermelon,563,320,13
+11859,watermelon,53,563,320,food,"watermelon, mango",watermelon,563,320,mango,576,328,15.264337522473747
+11859,mango,54,576,328,food,"mango, lychee",mango,576,328,lychee,583,333,8.602325267042627
+11859,lychee,55,583,333,food,"lychee, burger",lychee,583,333,burger,181,233,414.2511315615203
+11859,burger,56,181,233,food,"burger, kulfi",burger,181,233,kulfi,472,37,350.85182057387135
+11859,kulfi,6,472,37,food,"kulfi, gulab jamun",kulfi,472,37,gulab jamun,520,39,48.041648597857254
+11859,gulab jamun,7,520,39,food,"gulab jamun, jalebi",gulab jamun,520,39,jalebi,500,70,36.89173349139343
+11859,jalebi,8,500,70,food,"jalebi, roti",jalebi,500,70,roti,424,67,76.05918747922567
+11859,roti,9,424,67,food,"roti, dog",roti,424,67,dog,334,169,NA
+34998,vread,1,499,241,food,"vread, cake",vread,499,241,cake,418,249,81.39410298049853
+34998,cake,2,418,249,food,"cake, tofu",cake,418,249,tofu,403,120,129.86916493148019
+34998,tofu,3,403,120,food,"tofu, apple",tofu,403,120,apple,178,224,247.87295132789296
+34998,apple,4,178,224,food,"apple, cherry",apple,178,224,cherry,182,144,80.09993757800315
+34998,cherry,5,182,144,food,"cherry, cat",cherry,182,144,cat,343,168,NA
+70000,banana,1,737,9,food,"banana, cherry",banana,737,9,cherry,578,103,184.70787747142785
+70000,cherry,10,578,103,food,"cherry, rice",cherry,578,103,rice,319,25,270.4902955745363
+70000,rice,11,319,25,food,"rice, bread",rice,319,25,bread,322,37,12.36931687685298
+70000,bread,12,322,37,food,"bread, pancakes",bread,322,37,pancakes,300,103,69.57010852370435
+70000,pancakes,13,300,103,food,"pancakes, pizza",pancakes,300,103,pizza,323,178,78.44743462982075
+70000,pizza,14,323,178,food,"pizza, hamburger",pizza,323,178,hamburger,334,195,20.248456731316587
+70000,hamburger,15,334,195,food,"hamburger, french fries",hamburger,334,195,french fries,354,207,23.323807579381203
+70000,french fries,16,354,207,food,"french fries, mash potatoes",french fries,354,207,mash potatoes,325,273,72.09022125087424
+70000,mash potatoes,17,325,273,food,"mash potatoes, gravy",mash potatoes,325,273,gravy,398,271,73.02739212103907
+70000,gravy,18,398,271,food,"gravy, turkey",gravy,398,271,turkey,371,327,62.16912416947821
+70000,turkey,19,371,327,food,"turkey, apple",turkey,371,327,apple,762,31,490.404934722317
+70000,apple,2,762,31,food,"apple, stuffing",apple,762,31,stuffing,387,346,489.74483151943525
+70000,stuffing,20,387,346,food,"stuffing, fried rice",stuffing,387,346,fried rice,263,10,358.150806225534
+70000,fried rice,21,263,10,food,"fried rice, broccoli",fried rice,263,10,broccoli,130,97,158.927656498169
+70000,broccoli,22,130,97,food,"broccoli, spinach",broccoli,130,97,spinach,121,110,15.811388300841896
+70000,spinach,23,121,110,food,"spinach, kale",spinach,121,110,kale,133,121,16.278820596099706
+70000,kale,24,133,121,food,"kale, lettuce",kale,133,121,lettuce,126,110,13.038404810405298
+70000,lettuce,25,126,110,food,"lettuce, carrot",lettuce,126,110,carrot,118,110,8
+70000,carrot,26,118,110,food,"carrot, butter",carrot,118,110,butter,158,222,118.92854997854805
+70000,butter,27,158,222,food,"butter, peanut butter",butter,158,222,peanut butter,94,267,78.2368199762746
+70000,peanut butter,28,94,267,food,"peanut butter, whipped cream",peanut butter,94,267,whipped cream,36,243,62.76941930590086
+70000,whipped cream,29,36,243,food,"whipped cream, strawberry",whipped cream,36,243,strawberry,723.492,95,703.2419569849342
+70000,strawberry,3,723.492,95,food,"strawberry, waffle",strawberry,723.492,95,waffle,383,118,341.26793295591074
+70000,waffle,30,383,118,food,"waffle, steak",waffle,383,118,steak,752,259,395.0215184012132
+70000,steak,31,752,259,food,"steak, sashimi",steak,752,259,sashimi,702,346,100.34440691936945
+70000,sashimi,32,702,346,food,"sashimi, hot dog",sashimi,702,346,hot dog,400,186,341.76600181995866
+70000,hot dog,33,400,186,food,"hot dog, mozzarella sticks",hot dog,400,186,mozzarella sticks,508,208,110.21796586763884
+70000,mozzarella sticks,34,508,208,food,"mozzarella sticks, buns",mozzarella sticks,508,208,buns,504,178,30.265491900843113
+70000,buns,35,504,178,food,"buns, chocolate",buns,504,178,chocolate,106,354,435.1781244502072
+70000,chocolate,36,106,354,food,"chocolate, raspberry",chocolate,106,354,raspberry,675,97,624.347659561562
+70000,raspberry,4,675,97,food,"raspberry, blackberry",raspberry,675,97,blackberry,726.492,124,58.14143156132291
+70000,blackberry,5,726.492,124,food,"blackberry, blueberry",blackberry,726.492,124,blueberry,688,118,38.95682307375689
+70000,blueberry,6,688,118,food,"blueberry, mango",blueberry,688,118,mango,608,0,142.56226709757388
+70000,mango,7,608,0,food,"mango, pineapple",mango,608,0,pineapple,614,26,26.68332812825267
+70000,pineapple,8,614,26,food,"pineapple, watermelon",pineapple,614,26,watermelon,565,31,49.25444142409901
+70000,watermelon,9,565,31,food,"watermelon, test1",watermelon,565,31,test1,328,118,NA
+21466,apple,1,295,151,foods,"apple, cherry",apple,295,151,cherry,213,152,82.00609733428362
+21466,cherry,2,213,152,foods,"cherry, cookie",cherry,213,152,cookie,533,154,320.00624993896605
+21466,cookie,3,533,154,foods,"cookie, tofu",cookie,533,154,tofu,416,53,154.5639026422405
+21466,tofu,4,416,53,foods,"tofu, lemon",tofu,416,53,lemon,219,215,255.05489605181077
+21466,lemon,5,219,215,foods,"lemon, pop",lemon,219,215,pop,337,196,NA
+24628,tofu,1,263,287,foods,"tofu, tomato",tofu,263,287,tomato,585,245,324.72757813280964
+24628,tomato,10,585,245,foods,"tomato, ocra",tomato,585,245,ocra,241,235,344.14531814336806
+24628,ocra,11,241,235,foods,"ocra, basil",ocra,241,235,basil,750,295,512.5241457726651
+24628,basil,12,750,295,foods,"basil, thyme",basil,750,295,thyme,738,270,27.730849247724095
+24628,thyme,13,738,270,foods,"thyme, sage",thyme,738,270,sage,751,311,43.01162633521314
+24628,sage,14,751,311,foods,"sage, squash",sage,751,311,squash,224,216,535.4941643006018
+24628,squash,15,224,216,foods,"squash, garlic",squash,224,216,garlic,736,246,512.8781531709067
+24628,garlic,16,736,246,foods,"garlic, ginger",garlic,736,246,ginger,755,227,26.870057685088806
+24628,ginger,17,755,227,foods,"ginger, pasta",ginger,755,227,pasta,48,259,707.7238161882077
+24628,pasta,18,48,259,foods,"pasta, flour",pasta,48,259,flour,52,303,44.181444068749045
+24628,flour,19,52,303,foods,"flour, peas",flour,52,303,peas,240,260,192.85486771144772
+24628,peas,2,240,260,foods,"peas, sugar",peas,240,260,sugar,3,296,239.7185850116757
+24628,sugar,20,3,296,foods,"sugar, pepper",sugar,3,296,pepper,558,244,557.4307131832619
+24628,pepper,21,558,244,foods,"pepper, banana",pepper,558,244,banana,713,124,196.02295783912658
+24628,banana,22,713,124,foods,"banana, grapes",banana,713,124,grapes,695,107,24.758836806279895
+24628,grapes,23,695,107,foods,"grapes, apple",grapes,695,107,apple,731,87,41.182520563948
+24628,apple,24,731,87,foods,"apple, strawberry",apple,731,87,strawberry,689,140,67.62396025078685
+24628,strawberry,25,689,140,foods,"strawberry, kiwi",strawberry,689,140,kiwi,677,62,78.91767862779544
+24628,kiwi,26,677,62,foods,"kiwi, fish",kiwi,677,62,fish,425,221,297.9681191000138
+24628,fish,27,425,221,foods,"fish, eggroll",fish,425,221,eggroll,240,42,257.42183279589943
+24628,eggroll,28,240,42,foods,"eggroll, egg",eggroll,240,42,egg,427,226,262.3451924468981
+24628,egg,29,427,226,foods,"egg, rice",egg,427,226,rice,34,282,396.9697721489635
+24628,rice,3,34,282,foods,"rice, ham",rice,34,282,ham,393,275,359.06823863995544
+24628,ham,30,393,275,foods,"ham, cheese",ham,393,275,cheese,380,220,56.515484603779164
+24628,cheese,31,380,220,foods,"cheese, ice cream",cheese,380,220,ice cream,25,234,355.27594908746636
+24628,ice cream,32,25,234,foods,"ice cream, walnuts",ice cream,25,234,walnuts,471,49,482.84676658335405
+24628,walnuts,33,471,49,foods,"walnuts, pineapple",walnuts,471,49,pineapple,731.5,50,260.5019193787255
+24628,pineapple,34,731.5,50,foods,"pineapple, cranberry",pineapple,731.5,50,cranberry,665,34,68.39773388058994
+24628,cranberry,35,665,34,foods,"cranberry, beef",cranberry,665,34,beef,434,279,336.7283771825594
+24628,beef,4,434,279,foods,"beef, pork",beef,434,279,pork,426,254,26.248809496813376
+24628,pork,5,426,254,foods,"pork, lettuce",pork,426,254,lettuce,587,263,161.25135658344087
+24628,lettuce,6,587,263,foods,"lettuce, spinach",lettuce,587,263,spinach,560,284,34.20526275297414
+24628,spinach,7,560,284,foods,"spinach, broccoli",spinach,560,284,broccoli,596,288,36.22154055254967
+24628,broccoli,8,596,288,foods,"broccoli, avocado",broccoli,596,288,avocado,200,256,397.290825466685
+24628,avocado,9,200,256,foods,"avocado, jazz",avocado,200,256,jazz,415,307,NA
+33324,spaghetti,1,733,19,foods,"spaghetti, potato chips",spaghetti,733,19,potato chips,337,166,422.4038352098617
+33324,potato chips,10,337,166,foods,"potato chips, fish",potato chips,337,166,fish,476,351,231.40008643040736
+33324,fish,11,476,351,foods,"fish, shrimp",fish,476,351,shrimp,405,339,72.00694410957877
+33324,shrimp,12,405,339,foods,"shrimp, crab",shrimp,405,339,crab,354,350,52.172789842982326
+33324,crab,13,354,350,foods,"crab, apple",crab,354,350,apple,6,366,348.36762191684807
+33324,apple,14,6,366,foods,"apple, orange",apple,6,366,orange,0,316,50.35871324805669
+33324,orange,15,0,316,foods,"orange, cherries",orange,0,316,cherries,70,370,88.40814442120137
+33324,cherries,16,70,370,foods,"cherries, strawberries",cherries,70,370,strawberries,78,316,54.589376255824725
+33324,strawberries,17,78,316,foods,"strawberries, grapes",strawberries,78,316,grapes,4,272,86.09297300012354
+33324,grapes,18,4,272,foods,"grapes, lettuce",grapes,4,272,lettuce,22,163,110.47624178980746
+33324,lettuce,19,22,163,foods,"lettuce, steak",lettuce,22,163,steak,758,172,736.0550251170085
+33324,steak,2,758,172,foods,"steak, tomatoes",steak,758,172,tomatoes,102,188,656.1950929411161
+33324,tomatoes,20,102,188,foods,"tomatoes, nectarines",tomatoes,102,188,nectarines,166,284,115.37764081484765
+33324,nectarines,21,166,284,foods,"nectarines, avocados",nectarines,166,284,avocados,94,149,153
+33324,avocados,22,94,149,foods,"avocados, mangos",avocados,94,149,mangos,89,274,125.09996003196804
+33324,mangos,23,89,274,foods,"mangos, lemons",mangos,89,274,lemons,160,365,115.42096863222038
+33324,lemons,24,160,365,foods,"lemons, limes",lemons,160,365,limes,216,328,67.11929677819934
+33324,limes,25,216,328,foods,"limes, bananas",limes,216,328,bananas,8,238,226.6362724719942
+33324,bananas,26,8,238,foods,"bananas, waffles",bananas,8,238,waffles,226,85,266.33249895572266
+33324,waffles,27,226,85,foods,"waffles, bread",waffles,226,85,bread,226,31,54
+33324,bread,28,226,31,foods,"bread, hash browns",bread,226,31,hash browns,346,216,220.51077071199947
+33324,hash browns,29,346,216,foods,"hash browns, hamburger",hash browns,346,216,hamburger,698,214,352.00568177232594
+33324,hamburger,3,698,214,foods,"hamburger, chicken wings",hamburger,698,214,chicken wings,715.49,332,119.28914493783581
+33324,chicken wings,4,715.49,332,foods,"chicken wings, chicken nuggets",chicken wings,715.49,332,chicken nuggets,578,357,139.74440990608534
+33324,chicken nuggets,5,578,357,foods,"chicken nuggets, yogurt",chicken nuggets,578,357,yogurt,463,18,357.97485945244813
+33324,yogurt,6,463,18,foods,"yogurt, cream cheese",yogurt,463,18,cream cheese,442,59,46.06517122512408
+33324,cream cheese,7,442,59,foods,"cream cheese, sour cream",cream cheese,442,59,sour cream,354,10,100.72239075796404
+33324,sour cream,8,354,10,foods,"sour cream, cereal",sour cream,354,10,cereal,530,162,232.55106965997814
+33324,cereal,9,530,162,foods,"cereal, alternative",cereal,530,162,alternative,725.49,18,NA
+45042,cake,1,293,209,foods,"cake, oatmeal",cake,293,209,oatmeal,183,210,110.00454536063498
+45042,oatmeal,2,183,210,foods,"oatmeal, blueberry",oatmeal,183,210,blueberry,422,123,254.34228905158497
+45042,blueberry,3,422,123,foods,"blueberry, tuna",blueberry,422,123,tuna,712,274,326.95718374123544
+45042,tuna,4,712,274,foods,"tuna, pop",tuna,712,274,pop,577,304,NA
+56824,apple,1,430,257,foods,"apple, orange",apple,430,257,orange,343,253,87.09190547921202
+56824,orange,2,343,253,foods,"orange, leaf",orange,343,253,leaf,312,101,155.12897859523216
+56824,leaf,3,312,101,foods,"leaf, pop",leaf,312,101,pop,494,230,NA
+66985,kgl,1,460,293,foods,"kgl, lu",kgl,460,293,lu,395,250,77.93587107359485
+66985,lu,2,395,250,foods,"lu, fg",lu,395,250,fg,398,203,NA
+82201,test1,1,328,118,foods,"test1, test2",test1,328,118,test2,350,205,89.73850901368932
+82201,test2,2,350,205,foods,"test2, test3",test2,350,205,test3,532,121,200.44949488586894
+82201,test3,3,532,121,foods,"test3, test4",test3,532,121,test4,426,186,124.34226956268733
+82201,test4,4,426,186,foods,"test4, test5",test4,426,186,test5,392,78,113.22543883774529
+82201,test5,5,392,78,foods,"test5, dog",test5,392,78,dog,616,196,NA
+92156,carrot,1,127,112,foods,"carrot, hamburger",carrot,127,112,hamburger,468,172,346.2383572049752
+92156,hamburger,2,468,172,foods,"hamburger, rock",hamburger,468,172,rock,544,201,NA
+21466,pop,1,337,196,music-genres,"pop, rock",pop,337,196,rock,499,191,162.077142126828
+21466,rock,2,499,191,music-genres,"rock, indie",rock,499,191,indie,414,117,112.69871339105873
+21466,indie,3,414,117,music-genres,"indie, metal",indie,414,117,metal,521,257,176.207264322445
+21466,metal,4,521,257,music-genres,"metal, doctor",metal,521,257,doctor,344,169,NA
+24628,jazz,1,415,307,music-genres,"jazz, calypso",jazz,415,307,calypso,654,117,305.32114240582814
+24628,calypso,10,654,117,music-genres,"calypso, reggae",calypso,654,117,reggae,604,80,62.20128616033595
+24628,reggae,11,604,80,music-genres,"reggae, christian",reggae,604,80,christian,733,345,294.7303852676205
+24628,christian,12,733,345,music-genres,"christian, easy listening",christian,733,345,easy listening,258,64,551.8931055920159
+24628,easy listening,13,258,64,music-genres,"easy listening, disco",easy listening,258,64,disco,109,204,204.45292856792244
+24628,disco,14,109,204,music-genres,"disco, pop",disco,109,204,pop,114,61,143.0873858870865
+24628,pop,15,114,61,music-genres,"pop, country",pop,114,61,country,740,288,665.8866269869069
+24628,country,16,740,288,music-genres,"country, dance hall",country,740,288,dance hall,703,76,215.20455385516357
+24628,dance hall,17,703,76,music-genres,"dance hall, orchestral",dance hall,703,76,orchestral,360,191,361.76511716858494
+24628,orchestral,18,360,191,music-genres,"orchestral, christmas",orchestral,360,191,christmas,163,29,255.05489605181077
+24628,christmas,19,163,29,music-genres,"christmas, rock",christmas,163,29,rock,39,295,293.48253781102545
+24628,rock,2,39,295,music-genres,"rock, holiday",rock,39,295,holiday,168,87,244.7549795203358
+24628,holiday,20,168,87,music-genres,"holiday, r&b",holiday,168,87,r&b,493,307,392.4601890638081
+24628,r&b,3,493,307,music-genres,"r&b, alternative",r&b,493,307,alternative,131,296,362.1670885102621
+24628,alternative,4,131,296,music-genres,"alternative, jive",alternative,131,296,jive,419,277,288.62605564986677
+24628,jive,5,419,277,music-genres,"jive, jazz",jive,419,277,jazz,418,334,57.0087712549569
+24628,jazz,6,418,334,music-genres,"jazz, classical",jazz,418,334,classical,305,252,139.61733416735902
+24628,classical,7,305,252,music-genres,"classical, rap",classical,305,252,rap,541,189,244.2642012248213
+24628,rap,8,541,189,music-genres,"rap, reggaeton",rap,541,189,reggaeton,636,34,181.79658962697843
+24628,reggaeton,9,636,34,music-genres,"reggaeton, teacher",reggaeton,636,34,teacher,42,339,NA
+33324,alternative,1,725.49,18,music-genres,"alternative, pop",alternative,725.49,18,pop,747,355,337.68577124303
+33324,pop,10,747,355,music-genres,"pop, classical",pop,747,355,classical,27,177,741.6764793358354
+33324,classical,11,27,177,music-genres,"classical, swing",classical,27,177,swing,484,360,492.27837653100306
+33324,swing,12,484,360,music-genres,"swing, disco",swing,484,360,disco,301,361,183.0027322200409
+33324,disco,13,301,361,music-genres,"disco, techno",disco,301,361,techno,500,122,311.00160771288625
+33324,techno,14,500,122,music-genres,"techno, opera",techno,500,122,opera,40,283,487.3612623095931
+33324,opera,15,40,283,music-genres,"opera, jazz",opera,40,283,jazz,520,2,556.2023013256957
+33324,jazz,2,520,2,music-genres,"jazz, heavy metal",jazz,520,2,heavy metal,613,110,142.52368224263643
+33324,heavy metal,3,613,110,music-genres,"heavy metal, rap",heavy metal,613,110,rap,325,4,306.88760157425713
+33324,rap,4,325,4,music-genres,"rap, hip hop",rap,325,4,hip hop,325,62,58
+33324,hip hop,5,325,62,music-genres,"hip hop, smooth listening",hip hop,325,62,smooth listening,410,238,195.45076106272904
+33324,smooth listening,6,410,238,music-genres,"smooth listening, country",smooth listening,410,238,country,214,240,196.01020381602586
+33324,country,7,214,240,music-genres,"country, rock n roll",country,214,240,rock n roll,706,245,492.0254058481127
+33324,rock n roll,8,706,245,music-genres,"rock n roll, grunge",rock n roll,706,245,grunge,744,70,179.07819521091898
+33324,grunge,9,744,70,music-genres,"grunge, firefighter",grunge,744,70,firefighter,702,25,NA
+45042,pop,1,577,304,music-genres,"pop, indie",pop,577,304,indie,409,264,172.69626515938322
+45042,indie,2,409,264,music-genres,"indie, shoegaze",indie,409,264,shoegaze,277,271,132.1854757528224
+45042,shoegaze,3,277,271,music-genres,"shoegaze, jrock",shoegaze,277,271,jrock,186,237,97.14422267947796
+45042,jrock,4,186,237,music-genres,"jrock, doctor",jrock,186,237,doctor,356,168,NA
+56824,pop,1,494,230,music-genres,"pop, jpop",pop,494,230,jpop,414,231,80.00624975587844
+56824,jpop,2,414,231,music-genres,"jpop, rock",jpop,414,231,rock,88,181,329.81206769916713
+56824,rock,3,88,181,music-genres,"rock, indie",rock,88,181,indie,245,338,222.03152929257593
+56824,indie,4,245,338,music-genres,"indie, shoegaze",indie,245,338,shoegaze,150,255,126.15070352558483
+56824,shoegaze,5,150,255,music-genres,"shoegaze, metal",shoegaze,150,255,metal,10,125,191.049731745428
+56824,metal,6,10,125,music-genres,"metal, doctor",metal,10,125,doctor,327,171,NA
+66985,fg,1,398,203,music-genres,"fg, gfk",fg,398,203,gfk,392,246,43.41658669218482
+66985,gfk,2,392,246,music-genres,"gfk, df",gfk,392,246,df,307,123,149.5125412799876
+66985,df,3,307,123,music-genres,"df, dsgjh",df,307,123,dsgjh,388,100,84.20213774008353
+66985,dsgjh,4,388,100,music-genres,"dsgjh, kjjgf",dsgjh,388,100,kjjgf,255,155,NA
+92156,rock,1,544,201,music-genres,"rock, pop punk",rock,544,201,pop punk,398,256,156.01602481796542
+92156,pop punk,10,398,256,music-genres,"pop punk, punk",pop punk,398,256,punk,503,239,106.36728820459794
+92156,punk,11,503,239,music-genres,"punk, death metal",punk,503,239,death metal,475,147,96.16652224137046
+92156,death metal,12,475,147,music-genres,"death metal, kpop",death metal,475,147,kpop,353,129,123.32072007574396
+92156,kpop,13,353,129,music-genres,"kpop, parody",kpop,353,129,parody,3,368,423.8171775659878
+92156,parody,14,3,368,music-genres,"parody, instrumental",parody,3,368,instrumental,172,346,170.42593699317015
+92156,instrumental,15,172,346,music-genres,"instrumental, hip hop",instrumental,172,346,hip hop,108,152,204.2841158778626
+92156,hip hop,16,108,152,music-genres,"hip hop, r and b",hip hop,108,152,r and b,123,253,102.1077861869505
+92156,r and b,17,123,253,music-genres,"r and b, bluegrass",r and b,123,253,bluegrass,704,216,582.176949045563
+92156,bluegrass,18,704,216,music-genres,"bluegrass, reggae",bluegrass,704,216,reggae,701,64,152.029602380589
+92156,reggae,19,701,64,music-genres,"reggae, rap",reggae,701,64,rap,185,204,534.6550289672772
+92156,rap,2,185,204,music-genres,"rap, country",rap,185,204,country,603,253,420.86221023037933
+92156,country,3,603,253,music-genres,"country, pop",country,603,253,pop,364,209,243.0164603478538
+92156,pop,4,364,209,music-genres,"pop, electronic",pop,364,209,electronic,226,61,202.35612172603032
+92156,electronic,5,226,61,music-genres,"electronic, classical",electronic,226,61,classical,293,373,319.11283270968596
+92156,classical,6,293,373,music-genres,"classical, classic rock",classical,293,373,classic rock,585,163,359.672072866382
+92156,classic rock,7,585,163,music-genres,"classic rock, jazz",classic rock,585,163,jazz,201,295,406.0541835765271
+92156,jazz,8,201,295,music-genres,"jazz, bollywood",jazz,201,295,bollywood,470,6,394.8189458473339
+92156,bollywood,9,470,6,music-genres,"bollywood, lawyer",bollywood,470,6,lawyer,665,219,NA
+21466,doctor,1,344,169,occupations,"doctor, physician",doctor,344,169,physician,233,170,111.00450441310929
+21466,physician,2,233,170,occupations,"physician, volleyball",physician,233,170,volleyball,336,162,NA
+24628,teacher,1,42,339,occupations,"teacher, priest",teacher,42,339,priest,281,216,268.79360111431225
+24628,priest,10,281,216,occupations,"priest, nurse",priest,281,216,nurse,563,324,301.97350877187887
+24628,nurse,11,563,324,occupations,"nurse, doctor",nurse,563,324,doctor,553,353,30.675723300355934
+24628,doctor,12,553,353,occupations,"doctor, caregiver",doctor,553,353,caregiver,36,276,522.7025923027358
+24628,caregiver,13,36,276,occupations,"caregiver, data entry",caregiver,36,276,data entry,263,190,242.7447218787671
+24628,data entry,14,263,190,occupations,"data entry, programmer",data entry,263,190,programmer,414,295,183.91846019364124
+24628,programmer,15,414,295,occupations,"programmer, psychologist",programmer,414,295,psychologist,575,309,161.60754932861275
+24628,psychologist,16,575,309,occupations,"psychologist, manager",psychologist,575,309,manager,660,48,274.4922585429323
+24628,manager,17,660,48,occupations,"manager, inspector",manager,660,48,inspector,632,76,39.59797974644666
+24628,inspector,18,632,76,occupations,"inspector, factory worker",inspector,632,76,factory worker,268,181,378.8416555765746
+24628,factory worker,19,268,181,occupations,"factory worker, soldier",factory worker,268,181,soldier,54,300,244.86118516416602
+24628,soldier,2,54,300,occupations,"soldier, postal worker",soldier,54,300,postal worker,272,172,252.80031645549812
+24628,postal worker,20,272,172,occupations,"postal worker, tree cutter",postal worker,272,172,tree cutter,33,106,247.94555854057964
+24628,tree cutter,21,33,106,occupations,"tree cutter, gardener",tree cutter,33,106,gardener,39,138,32.55764119219941
+24628,gardener,22,39,138,occupations,"gardener, musician",gardener,39,138,musician,592,281,571.1899859066158
+24628,musician,23,592,281,occupations,"musician, influencer",musician,592,281,influencer,506,182,131.13733259449805
+24628,influencer,24,506,182,occupations,"influencer, actor",influencer,506,182,actor,492,168,19.79898987322333
+24628,actor,25,492,168,occupations,"actor, senator",actor,492,168,senator,631,25,199.42417105255822
+24628,senator,26,631,25,occupations,"senator, driver",senator,631,25,driver,53,246,618.8093405888441
+24628,driver,27,53,246,occupations,"driver, athlete",driver,53,246,athlete,457,268,404.5985664828782
+24628,athlete,28,457,268,occupations,"athlete, mother",athlete,457,268,mother,32,243,425.73465914816
+24628,mother,29,32,243,occupations,"mother, police",mother,32,243,police,170,342,169.83815825661793
+24628,police,3,170,342,occupations,"police, cook",police,170,342,cook,282,341,112.0044641967453
+24628,cook,4,282,341,occupations,"cook, waiter",cook,282,341,waiter,282,300,41
+24628,waiter,5,282,300,occupations,"waiter, cleaner",waiter,282,300,cleaner,286,268,32.2490309931942
+24628,cleaner,6,286,268,occupations,"cleaner, investor",cleaner,286,268,investor,398,347,137.05838172107534
+24628,investor,7,398,347,occupations,"investor, entrepreneur",investor,398,347,entrepreneur,392,312,35.510561809129406
+24628,entrepreneur,8,392,312,occupations,"entrepreneur, delivery person",entrepreneur,392,312,delivery person,249,248,156.66843970627906
+24628,delivery person,9,249,248,occupations,"delivery person, hockey",delivery person,249,248,hockey,379,117,NA
+33324,firefighter,1,702,25,occupations,"firefighter, bank teller",firefighter,702,25,bank teller,315,20,387.03229839381623
+33324,bank teller,10,315,20,occupations,"bank teller, astronaut",bank teller,315,20,astronaut,718,152,424.0672116540018
+33324,astronaut,11,718,152,occupations,"astronaut, bus driver",astronaut,718,152,bus driver,104,88,617.3264938426018
+33324,bus driver,12,104,88,occupations,"bus driver, cab driver",bus driver,104,88,cab driver,106,143,55.036351623268054
+33324,cab driver,13,106,143,occupations,"cab driver, security guard",cab driver,106,143,security guard,551,74,450.3176656539248
+33324,security guard,14,551,74,occupations,"security guard, construction worker",security guard,551,74,construction worker,568,283,209.69024774652732
+33324,construction worker,15,568,283,occupations,"construction worker, electrician",construction worker,568,283,electrician,501,366,106.66770832824712
+33324,electrician,16,501,366,occupations,"electrician, plumber",electrician,501,366,plumber,470,297,75.64390259630977
+33324,plumber,17,470,297,occupations,"plumber, landscaper",plumber,470,297,landscaper,539,210,111.04053313993049
+33324,landscaper,18,539,210,occupations,"landscaper, policeman",landscaper,539,210,policeman,580,27,187.5366630821824
+33324,policeman,2,580,27,occupations,"policeman, doctor",policeman,580,27,doctor,15,354,652.8047181202047
+33324,doctor,3,15,354,occupations,"doctor, nurse",doctor,15,354,nurse,100,349,85.14693182963201
+33324,nurse,4,100,349,occupations,"nurse, accountant",nurse,100,349,accountant,202,25,339.67631651323586
+33324,accountant,5,202,25,occupations,"accountant, mechanic",accountant,202,25,mechanic,729,358,623.3923323237141
+33324,mechanic,6,729,358,occupations,"mechanic, engineer",mechanic,729,358,engineer,615,355,114.03946685248927
+33324,engineer,7,615,355,occupations,"engineer, psychologist",engineer,615,355,psychologist,23,295,595.0327722067079
+33324,psychologist,8,23,295,occupations,"psychologist, cashier",psychologist,23,295,cashier,116,26,284.6225570821821
+33324,cashier,9,116,26,occupations,"cashier, soccer",cashier,116,26,soccer,761.49,372,NA
+45042,doctor,1,356,168,occupations,"doctor, physician",doctor,356,168,physician,242,163,114.10959644131601
+45042,physician,2,242,163,occupations,"physician, researcher",physician,242,163,researcher,217,223,65
+45042,researcher,3,217,223,occupations,"researcher, volleyball",researcher,217,223,volleyball,417,188,NA
+56824,doctor,1,327,171,occupations,"doctor, researcher",doctor,327,171,researcher,268,246,95.42536350467836
+56824,researcher,2,268,246,occupations,"researcher, psychologist",researcher,268,246,psychologist,181,175,112.29425630903836
+56824,psychologist,3,181,175,occupations,"psychologist, volleyball",psychologist,181,175,volleyball,325,186,NA
+66985,kjjgf,1,255,155,occupations,"kjjgf, kkhgfss",kjjgf,255,155,kkhgfss,315,155,60
+66985,kkhgfss,2,315,155,occupations,"kkhgfss, sakdf",kkhgfss,315,155,sakdf,451,228,NA
+92156,lawyer,1,665,219,occupations,"lawyer, physical therapist",lawyer,665,219,physical therapist,374,209,291.171770609721
+92156,physical therapist,10,374,209,occupations,"physical therapist, occupational therapist",physical therapist,374,209,occupational therapist,385,209,11
+92156,occupational therapist,11,385,209,occupations,"occupational therapist, speech therapist",occupational therapist,385,209,speech therapist,283,255,111.89280584559492
+92156,speech therapist,12,283,255,occupations,"speech therapist, dietitian",speech therapist,283,255,dietitian,275,233,23.40939982143925
+92156,dietitian,13,275,233,occupations,"dietitian, social worker",dietitian,275,233,social worker,368,282,105.11898020814318
+92156,social worker,14,368,282,occupations,"social worker, chef",social worker,368,282,chef,174,149,235.2126697267815
+92156,chef,15,174,149,occupations,"chef, server",chef,174,149,server,106,122,73.16419889536138
+92156,server,16,106,122,occupations,"server, flight attendant",server,106,122,flight attendant,170,115,64.38167441127949
+92156,flight attendant,17,170,115,occupations,"flight attendant, pilot",flight attendant,170,115,pilot,292,100,122.9186723000212
+92156,pilot,18,292,100,occupations,"pilot, clerk",pilot,292,100,clerk,122,60,174.64249196572982
+92156,clerk,19,122,60,occupations,"clerk, doctor",clerk,122,60,doctor,346,178,253.17977802344325
+92156,doctor,2,346,178,occupations,"doctor, cashier",doctor,346,178,cashier,77,78,286.98606237934274
+92156,cashier,20,77,78,occupations,"cashier, delivery driver",cashier,77,78,delivery driver,290,45,215.5411793602327
+92156,delivery driver,21,290,45,occupations,"delivery driver, engineer",delivery driver,290,45,engineer,221,359,321.49183504406454
+92156,engineer,22,221,359,occupations,"engineer, consultant",engineer,221,359,consultant,633,299,416.3460099484562
+92156,consultant,23,633,299,occupations,"consultant, mechanic",consultant,633,299,mechanic,187,333,447.29408670359146
+92156,mechanic,24,187,333,occupations,"mechanic, accountant",mechanic,187,333,accountant,562,320,375.22526567383494
+92156,accountant,25,562,320,occupations,"accountant, realtor",accountant,562,320,realtor,533,355,45.45327270945405
+92156,realtor,26,533,355,occupations,"realtor, contractor",realtor,533,355,contractor,148,29,504.4809213439097
+92156,contractor,27,148,29,occupations,"contractor, lawn care",contractor,148,29,lawn care,75,14,74.52516353554684
+92156,lawn care,28,75,14,occupations,"lawn care, gardener",lawn care,75,14,gardener,0,40,79.37883848986453
+92156,gardener,29,0,40,occupations,"gardener, teacher",gardener,0,40,teacher,89,243,221.65288177689007
+92156,teacher,3,89,243,occupations,"teacher, farmer",teacher,89,243,farmer,19,119,142.3938200906205
+92156,farmer,30,19,119,occupations,"farmer, taxi",farmer,19,119,taxi,382,25,374.97333238511777
+92156,taxi,31,382,25,occupations,"taxi, bus driver",taxi,382,25,bus driver,330,0,57.697486947006624
+92156,bus driver,32,330,0,occupations,"bus driver, spy",bus driver,330,0,spy,577,132,280.0589223717038
+92156,spy,33,577,132,occupations,"spy, athlete",spy,577,132,athlete,699,45,149.84325143295575
+92156,athlete,34,699,45,occupations,"athlete, announcer",athlete,699,45,announcer,617,19,86.02325267042627
+92156,announcer,35,617,19,occupations,"announcer, usher",announcer,617,19,usher,426,0,191.94269978303421
+92156,usher,36,426,0,occupations,"usher, coach",usher,426,0,coach,752,92,338.73293314940605
+92156,coach,37,752,92,occupations,"coach, trainer",coach,752,92,trainer,491,235,297.6071235706565
+92156,trainer,38,491,235,occupations,"trainer, business owner",trainer,491,235,business owner,633,336,174.25555945220228
+92156,business owner,39,633,336,occupations,"business owner, trashman",business owner,633,336,trashman,201,28,530.5544269912372
+92156,trashman,4,201,28,occupations,"trashman, ceo",trashman,201,28,ceo,768,227,600.9076468143836
+92156,ceo,40,768,227,occupations,"ceo, hr",ceo,768,227,hr,649,369,185.27007313648906
+92156,hr,41,649,369,occupations,"hr, day care",hr,649,369,day care,71,292,583.1063367860103
+92156,day care,42,71,292,occupations,"day care, nanny",day care,71,292,nanny,27,334,60.8276253029822
+92156,nanny,43,27,334,occupations,"nanny, dog walker",nanny,27,334,dog walker,5,367,39.66106403010388
+92156,dog walker,44,5,367,occupations,"dog walker, it",dog walker,5,367,it,476,373,471.03821501020485
+92156,it,45,476,373,occupations,"it, salesperson",it,476,373,salesperson,713.5,366,237.60313550119662
+92156,salesperson,46,713.5,366,occupations,"salesperson, receptionist",salesperson,713.5,366,receptionist,544,373,169.6444811952337
+92156,receptionist,47,544,373,occupations,"receptionist, insurance sales",receptionist,544,373,insurance sales,719,286,195.4328529188478
+92156,insurance sales,48,719,286,occupations,"insurance sales, dancer",insurance sales,719,286,dancer,649,96,202.48456731316588
+92156,dancer,49,649,96,occupations,"dancer, firefighter",dancer,649,96,firefighter,530,40,131.51805959639154
+92156,firefighter,5,530,40,occupations,"firefighter, singer",firefighter,530,40,singer,649,134,151.64761785138597
+92156,singer,50,649,134,occupations,"singer, actor",singer,649,134,actor,664,130,15.524174696260024
+92156,actor,51,664,130,occupations,"actor, director",actor,664,130,director,631,54,82.85529554590944
+92156,director,52,631,54,occupations,"director, writer",director,631,54,writer,113,249,553.4880305842214
+92156,writer,53,113,249,occupations,"writer, editor",writer,113,249,editor,168,274,60.41522986797286
+92156,editor,54,168,274,occupations,"editor, reporter",editor,168,274,reporter,198,288,33.1058907144937
+92156,reporter,55,198,288,occupations,"reporter, cameraman",reporter,198,288,cameraman,513,12,418.80902569070787
+92156,cameraman,56,513,12,occupations,"cameraman, police",cameraman,513,12,police,528,79,68.65857557508748
+92156,police,6,528,79,occupations,"police, military",police,528,79,military,494,115,49.51767361255979
+92156,military,7,494,115,occupations,"military, psychologist",military,494,115,psychologist,388,238,162.3730273167314
+92156,psychologist,8,388,238,occupations,"psychologist, nurse",psychologist,388,238,nurse,300,207,93.30058949438637
+92156,nurse,9,300,207,occupations,"nurse, baseball",nurse,300,207,baseball,503,282,NA
+21466,volleyball,1,336,162,sports,"volleyball, soccer",volleyball,336,162,soccer,114,162,222
+21466,soccer,2,114,162,sports,"soccer, baseball",soccer,114,162,baseball,349,276,261.19150062741323
+21466,baseball,3,349,276,sports,"baseball, hammer",baseball,349,276,hammer,362,169,NA
+24628,hockey,1,379,117,sports,"hockey, netball",hockey,379,117,netball,399,203,88.29496021857646
+24628,netball,10,399,203,sports,"netball, cricket",netball,399,203,cricket,389,177,27.85677655436824
+24628,cricket,11,389,177,sports,"cricket, lacross",cricket,389,177,lacross,371,150,32.449961479175904
+24628,lacross,12,371,150,sports,"lacross, bobsled racing",lacross,371,150,bobsled racing,505,285,190.21303845951255
+24628,bobsled racing,13,505,285,sports,"bobsled racing, eating",bobsled racing,505,285,eating,9,313,496.78969393496885
+24628,eating,14,9,313,sports,"eating, breakdancing",eating,9,313,breakdancing,0,283,31.32091952673165
+24628,breakdancing,15,0,283,sports,"breakdancing, swimming",breakdancing,0,283,swimming,0,256,27
+24628,swimming,16,0,256,sports,"swimming, golf",swimming,0,256,golf,697,293,697.9813751096801
+24628,golf,17,697,293,sports,"golf, chess",golf,697,293,chess,708,263,31.953090617340916
+24628,chess,18,708,263,sports,"chess, crossfit",chess,708,263,crossfit,247,272,461.0878441251732
+24628,crossfit,19,247,272,sports,"crossfit, soccer",crossfit,247,272,soccer,378,313,137.26616480400406
+24628,soccer,2,378,313,sports,"soccer, ironman challenge",soccer,378,313,ironman challenge,197,234,197.48924021323288
+24628,ironman challenge,20,197,234,sports,"ironman challenge, marathon",ironman challenge,197,234,marathon,225,209,37.53664875824692
+24628,marathon,21,225,209,sports,"marathon, sprining",marathon,225,209,sprining,244,190,26.870057685088806
+24628,sprining,22,244,190,sports,"sprining, archery",sprining,244,190,archery,718,232,475.85712141356044
+24628,archery,23,718,232,sports,"archery, football",archery,718,232,football,373,274,347.5471191076111
+24628,football,3,373,274,sports,"football, weight lifting",football,373,274,weight lifting,99,322,278.1726082848561
+24628,weight lifting,4,99,322,sports,"weight lifting, track",weight lifting,99,322,track,134,277,57.0087712549569
+24628,track,5,134,277,sports,"track, dog sled racing",track,134,277,dog sled racing,492,316,360.1180362047977
+24628,dog sled racing,6,492,316,sports,"dog sled racing, skating",dog sled racing,492,316,skating,254,300,238.53720883753127
+24628,skating,7,254,300,sports,"skating, gymnastics",skating,254,300,gymnastics,0,231,263.20524310887123
+24628,gymnastics,8,0,231,sports,"gymnastics, basketball",gymnastics,0,231,basketball,367,237,367.0490430446591
+24628,basketball,9,367,237,sports,"basketball, toothbrush",basketball,367,237,toothbrush,32,351,NA
+33324,soccer,1,761.49,372,sports,"soccer, weight lifting",soccer,761.49,372,weight lifting,289,73,559.149175175999
+33324,weight lifting,10,289,73,sports,"weight lifting, body building",weight lifting,289,73,body building,292,124,51.088159097779204
+33324,body building,11,292,124,sports,"body building, skating",body building,292,124,skating,755.49,258,482.4717402086883
+33324,skating,12,755.49,258,sports,"skating, gymnastics",skating,755.49,258,gymnastics,463,128,320.0787404686541
+33324,gymnastics,13,463,128,sports,"gymnastics, shooting",gymnastics,463,128,shooting,742,120,279.1146717748818
+33324,shooting,14,742,120,sports,"shooting, hunting",shooting,742,120,hunting,630,195,134.79243302203577
+33324,hunting,15,630,195,sports,"hunting, racecar driving",hunting,630,195,racecar driving,514,337,183.35757415498276
+33324,racecar driving,16,514,337,sports,"racecar driving, baseball",racecar driving,514,337,baseball,364,360,151.75308893067054
+33324,baseball,17,364,360,sports,"baseball, softball",baseball,364,360,softball,332,327,45.967379738244816
+33324,softball,18,332,327,sports,"softball, hockey",softball,332,327,hockey,746.49,305,415.07343940560685
+33324,hockey,2,746.49,305,sports,"hockey, football",hockey,746.49,305,football,750.49,2,303.0264014900352
+33324,football,3,750.49,2,sports,"football, swimming",football,750.49,2,swimming,582,8,168.5967974191681
+33324,swimming,4,582,8,sports,"swimming, shotput",swimming,582,8,shotput,453,4,129.0620006043607
+33324,shotput,5,453,4,sports,"shotput, track",shotput,453,4,track,482,68,70.26378868236469
+33324,track,6,482,68,sports,"track, archery",track,482,68,archery,706,162,242.92385638302386
+33324,archery,7,706,162,sports,"archery, rugby",archery,706,162,rugby,761,49,125.67418191498204
+33324,rugby,8,761,49,sports,"rugby, crossfit",rugby,761,49,crossfit,307,12,455.50521402065203
+33324,crossfit,9,307,12,sports,"crossfit, wrench",crossfit,307,12,wrench,728,20,NA
+45042,volleyball,1,417,188,sports,"volleyball, soccer",volleyball,417,188,soccer,348,306,136.69308687713507
+45042,soccer,2,348,306,sports,"soccer, spade",soccer,348,306,spade,332,162,NA
+56824,volleyball,1,325,186,sports,"volleyball, soccer",volleyball,325,186,soccer,177,184,148.0135128966271
+56824,soccer,2,177,184,sports,"soccer, spade",soccer,177,184,spade,248,260,NA
+66985,sakdf,1,451,228,sports,"sakdf, asg",sakdf,451,228,asg,333,165,133.76471881628578
+66985,asg,2,333,165,sports,"asg, dfh",asg,333,165,dfh,398,126,75.8023746329889
+66985,dfh,3,398,126,sports,"dfh, df",dfh,398,126,df,467,101,NA
+92156,baseball,1,503,282,sports,"baseball, table tennis",baseball,503,282,table tennis,71,29,500.6325998174709
+92156,table tennis,10,71,29,sports,"table tennis, squash",table tennis,71,29,squash,91,64,40.311288741492746
+92156,squash,11,91,64,sports,"squash, badminton",squash,91,64,badminton,231,2,153.11433636338563
+92156,badminton,12,231,2,sports,"badminton, lacrosse",badminton,231,2,lacrosse,330,239,256.8462575160479
+92156,lacrosse,13,330,239,sports,"lacrosse, volleyball",lacrosse,330,239,volleyball,132,300,207.18349355100662
+92156,volleyball,14,132,300,sports,"volleyball, field hockey",volleyball,132,300,field hockey,241,338,115.43396380615195
+92156,field hockey,15,241,338,sports,"field hockey, gymnastics",field hockey,241,338,gymnastics,637,41,495
+92156,gymnastics,16,637,41,sports,"gymnastics, swimming",gymnastics,637,41,swimming,459,119,194.33990840792325
+92156,swimming,17,459,119,sports,"swimming, diving",swimming,459,119,diving,461,125,6.324555320336759
+92156,diving,18,461,125,sports,"diving, softball",diving,461,125,softball,524,299,185.05404615949362
+92156,softball,19,524,299,sports,"softball, basketball",softball,524,299,basketball,95,240,433.03810455894063
+92156,basketball,2,95,240,sports,"basketball, cricket",basketball,95,240,cricket,512,262,417.5799324680246
+92156,cricket,20,512,262,sports,"cricket, rugby",cricket,512,262,rugby,247,169,280.84515306481615
+92156,rugby,21,247,169,sports,"rugby, polo",rugby,247,169,polo,247,224,55
+92156,polo,22,247,224,sports,"polo, bowling",polo,247,224,bowling,41,161,215.41819793137256
+92156,bowling,23,41,161,sports,"bowling, horseback racing",bowling,41,161,horseback racing,600,126,560.0946348609314
+92156,horseback racing,24,600,126,sports,"horseback racing, skiing",horseback racing,600,126,skiing,497,7,157.3848785620779
+92156,skiing,25,497,7,sports,"skiing, cycling",skiing,497,7,cycling,571,147,158.35403373454054
+92156,cycling,26,571,147,sports,"cycling, wrestling",cycling,571,147,wrestling,286,73,294.45033537083975
+92156,wrestling,27,286,73,sports,"wrestling, boxing",wrestling,286,73,boxing,286,76,3
+92156,boxing,28,286,76,sports,"boxing, martial arts",boxing,286,76,martial arts,288,81,5.385164807134504
+92156,martial arts,29,288,81,sports,"martial arts, american football",martial arts,288,81,american football,225,171,109.85900054160332
+92156,american football,3,225,171,sports,"american football, fencing",american football,225,171,fencing,278,77,107.91200118615167
+92156,fencing,30,278,77,sports,"fencing, jai alai",fencing,278,77,jai alai,450,372,341.4805997417716
+92156,jai alai,31,450,372,sports,"jai alai, soccer",jai alai,450,372,soccer,294,281,180.60177186284747
+92156,soccer,4,294,281,sports,"soccer, hockey",soccer,294,281,hockey,361,320,77.52418977325722
+92156,hockey,5,361,320,sports,"hockey, track and field",hockey,361,320,track and field,499,68,287.31167745150907
+92156,track and field,6,499,68,sports,"track and field, tennis",track and field,499,68,tennis,189,28,312.5699921617557
+92156,tennis,7,189,28,sports,"tennis, golf",tennis,189,28,golf,379,18,190.26297590440447
+92156,golf,8,379,18,sports,"golf, racquetball",golf,379,18,racquetball,75,65,307.6117683054405
+92156,racquetball,9,75,65,sports,"racquetball, hammer",racquetball,75,65,hammer,114,122,NA
+21466,hammer,1,362,169,tools,"hammer, screwdrive",hammer,362,169,screwdrive,237,166,125.03599481749245
+21466,screwdrive,2,237,166,tools,"screwdrive, Bat",screwdrive,237,166,Bat,178,277,NA
+24628,toothbrush,1,32,351,tools,"toothbrush, wisk",toothbrush,32,351,wisk,464,337,432.2267923208833
+24628,wisk,10,464,337,tools,"wisk, shears",wisk,464,337,shears,587,315,124.95199078045935
+24628,shears,11,587,315,tools,"shears, nail clipper",shears,587,315,nail clipper,596,278,38.07886552931954
+24628,nail clipper,12,596,278,tools,"nail clipper, paint brush",nail clipper,596,278,paint brush,44,260,552.2934002864781
+24628,paint brush,13,44,260,tools,"paint brush, nail file",paint brush,44,260,nail file,593,244,549.2331016972666
+24628,nail file,14,593,244,tools,"nail file, makeup brush",nail file,593,244,makeup brush,44,220,549.5243397703144
+24628,makeup brush,15,44,220,tools,"makeup brush, scalple",makeup brush,44,220,scalple,577,215,533.0234516416702
+24628,scalple,16,577,215,tools,"scalple, eyeglasses",scalple,577,215,eyeglasses,652,45,185.80904176062046
+24628,eyeglasses,17,652,45,tools,"eyeglasses, shovel",eyeglasses,652,45,shovel,721,351,313.68296096536704
+24628,shovel,2,721,351,tools,"shovel, saw",shovel,721,351,saw,609,335,113.13708498984761
+24628,saw,3,609,335,tools,"saw, knife",saw,609,335,knife,594,351,21.93171219946131
+24628,knife,4,594,351,tools,"knife, spoon",knife,594,351,spoon,732,320,141.4390328021229
+24628,spoon,5,732,320,tools,"spoon, comb",spoon,732,320,comb,108,325,624.0200317297514
+24628,comb,6,108,325,tools,"comb, fork",comb,108,325,fork,744,283,637.3852837962295
+24628,fork,7,744,283,tools,"fork, hammer",fork,744,283,hammer,246,343,501.60143540464475
+24628,hammer,8,246,343,tools,"hammer, strainer",hammer,246,343,strainer,49,293,203.24615617521528
+24628,strainer,9,49,293,tools,"strainer, gorilla",strainer,49,293,gorilla,745,9,NA
+33324,wrench,1,728,20,tools,"wrench, wood saw",wrench,728,20,wood saw,2,366,804.2337968526316
+33324,wood saw,10,2,366,tools,"wood saw, table saw",wood saw,2,366,table saw,2,311,55
+33324,table saw,11,2,311,tools,"table saw, drill",table saw,2,311,drill,295,3,425.1035168050248
+33324,drill,12,295,3,tools,"drill, sockets",drill,295,3,sockets,720,116,439.76584678667354
+33324,sockets,13,720,116,tools,"sockets, pipe wrench",sockets,720,116,pipe wrench,616,12,147.07821048680188
+33324,pipe wrench,14,616,12,tools,"pipe wrench, vise grips",pipe wrench,616,12,vise grips,657,228,219.85677155821242
+33324,vise grips,15,657,228,tools,"vise grips, hex wrench",vise grips,657,228,hex wrench,427,128,250.79872407968904
+33324,hex wrench,16,427,128,tools,"hex wrench, jig saw",hex wrench,427,128,jig saw,0,264,448.13502429513363
+33324,jig saw,17,0,264,tools,"jig saw, pliers",jig saw,0,264,pliers,763,231,763.7132969904347
+33324,pliers,2,763,231,tools,"pliers, hammer",pliers,763,231,hammer,459,7,377.6135590785903
+33324,hammer,3,459,7,tools,"hammer, socket wrench",hammer,459,7,socket wrench,664,70,214.46211786700232
+33324,socket wrench,4,664,70,tools,"socket wrench, regular screwdriver",socket wrench,664,70,regular screwdriver,648,357,287.4456470360962
+33324,regular screwdriver,5,648,357,tools,"regular screwdriver, philips screwdrive",regular screwdriver,648,357,philips screwdrive,476,359,172.01162751395617
+33324,philips screwdrive,6,476,359,tools,"philips screwdrive, shovel",philips screwdrive,476,359,shovel,322,358,154.00324671902212
+33324,shovel,7,322,358,tools,"shovel, pickaxe",shovel,322,358,pickaxe,235,363,87.14355971613737
+33324,pickaxe,8,235,363,tools,"pickaxe, sledgehammer",pickaxe,235,363,sledgehammer,245,307,56.88585061331157
+33324,sledgehammer,9,245,307,tools,"sledgehammer, cat",sledgehammer,245,307,cat,380,160,NA
+45042,spade,1,332,162,tools,"spade, rake",spade,332,162,rake,253,165,79.05694150420949
+45042,rake,2,253,165,tools,"rake, cat",rake,253,165,cat,563,220,NA
+56824,spade,1,248,260,tools,"spade, knife",spade,248,260,knife,554,113,339.4775397577872
+56824,knife,2,554,113,tools,"knife, fork",knife,554,113,fork,465,112,89.00561780022652
+56824,fork,3,465,112,tools,"fork, fgfgfg",fork,465,112,fgfgfg,348,230,NA
+66985,df,1,467,101,tools,"df, dg",df,467,101,dg,415,96,52.23983154643591
+66985,dg,2,415,96,tools,"dg, de",dg,415,96,de,460,211,123.4908903522847
+66985,de,3,460,211,tools,"de, dog",de,460,211,dog,604,21,NA
+92156,hammer,1,114,122,tools,"hammer, wrench",hammer,114,122,wrench,445,155,332.6409475695979
+92156,wrench,2,445,155,tools,NA,wrench,445,155,NA,NA,NA,NA

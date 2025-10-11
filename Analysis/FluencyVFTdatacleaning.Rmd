@@ -22,7 +22,7 @@ library(jsonlite)
 #datafile <- read_csv("filepath") where filepath is the location of the csv file
 
 #Pilot participant csv data file:
-datafile <- read_csv("../Data/Pilot Data/fluency_32.csv")
+datafile <- read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Data/Pilot Data/fluency.csv")
 
 #Viewing the data file in seperate tab:
 View(datafile)
@@ -54,11 +54,13 @@ subreddit_data <- organized_interest_data%>%
   rename(subreddit_responses = response)%>%
   select(subject, subreddit_responses)
 View(subreddit_data)
+write_csv(subreddit_data, "~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Data/Pilot Data/subreddit_data.csv")
 
 interests_data <- organized_interest_data%>%
   filter(domain == "interest")%>%
   select(subject, interests_responses = parsed_responses)
 View(interests_data)
+write_csv(interests_data, "~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Data/Pilot Data/interests_data.csv")
   
 ```
 
@@ -88,7 +90,7 @@ organized_fluency <- datafile %>% #initiates dplyr pipeline
   select(subject, response, tag, response_times, domain) %>%
   rename(entry_number = tag) %>%
   arrange(domain, subject)
-#write_csv(forager_prep, "foragerreadyVFTdata.csv") #Creates new, cleaned data file
+write_csv(organized_fluency, "~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Data/Pilot Data/organized_fluency.csv") 
 View(organized_fluency)
 
 ```
@@ -136,6 +138,7 @@ organized_spam <- organized_spam %>%
   ungroup()%>%
   select(-x_next, -y_next)
 View(organized_spam)
+write_csv(organized_spam, "~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Data/Pilot Data/organized_spam.csv")
 ```
 
 
@@ -198,6 +201,7 @@ demographics_data = demographics_data %>%
   select(subject, age, gender, education, race, hispanic, dominant_hand, alert_time, english, first_language, age_learned_english) %>%
   filter(!if_all(everything(), is.na))
 
+write_csv(demographics_data, "~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Data/Pilot Data/demographics_data.csv")
 View(demographics_data)
 ```
 
@@ -209,5 +213,6 @@ compensation_data <- compensation_data %>%
   select(compensation, compensation_name, compensation_email)%>%
   filter(!if_all(everything(), is.na))
 View(compensation_data)
+write_csv(compensation_data, "~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Data/Pilot Data/ompensation_data.csv")
   
 ```
