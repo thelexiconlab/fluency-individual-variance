@@ -1,115 +1,35 @@
 subject,response,entry_number,response_times,domain
-11859,dog,1,2154.1,animal
-11859,cat,2,918,animal
-11859,mouse,3,1133.6,animal
-11859,hamster,4,1958.6,animal
-11859,monkey,5,1674.4,animal
-11859,bull,6,2180.1,animal
-11859,ram,7,647.9,animal
-11859,tiger,8,1654.2,animal
-11859,lion,9,1162.9,animal
-11859,sheep,10,1406.5,animal
-11859,hare,11,1259,animal
-11859,wolf,12,951.2,animal
-11859,rhino,13,5724.7,animal
-11859,hippo,14,1600.3,animal
-11859,chimpanzee,15,2678.9,animal
-11859,squirrel,16,4411,animal
-11859,cow,17,1304.5,animal
-11859,horse,18,1033.6,animal
-11859,pig,19,2999.3,animal
-11859,donkey,20,2983.4,animal
-11859,chicken,21,1396.8,animal
-11859,rooster,22,2633.5,animal
-11859,salamander,23,1937,animal
-11859,lizzard,24,3696.1,animal
-11859,alligator,25,3598.9,animal
-11859,crocodile,26,3538.1,animal
-11859,fish,27,2019,animal
-11859,dolphin,28,2562.3,animal
-11859,shark,29,1832.6,animal
-11859,whale,30,1064.1,animal
-11859,octupus,31,2156.5,animal
-11859,goat,32,3398.4,animal
-11859,camel,33,9163.4,animal
-11859,crane,34,5763.3,animal
-11859,peacock,35,4433.7,animal
-11859,flamingo,36,1472,animal
-11859,rabbit,37,9515.1,animal
-11859,hamster,38,1506.5,animal
-11859,chinchilla,39,2476.2,animal
-11859,hedgehog,40,4567.1,animal
-11859,ferret,41,998.5,animal
-11859,chameleon,42,6704.9,animal
-11859,giraffe,43,5629.5,animal
-11859,kangaroo,44,4056.5,animal
-11859,rat,45,4547.3,animal
-11859,grasshopper,46,16130,animal
-11859,skunk,47,2334.1,animal
-11859,moose,48,1648.7,animal
-11859,bear,49,1138.7,animal
-11859,polar bear,50,3954.3,animal
-11859,snake,51,1956.9,animal
-11859,eph,52,5100.7,animal
-11859,cheetah,53,2699.2,animal
-11859,leopard,54,1457.4,animal
-11859,panther,55,5625.8,animal
-34998,cat,1,2530.2,animal
-34998,wolf,2,1626,animal
-34998,panda,3,2132.4,animal
-34998,otter,4,1843.6,animal
-34998,tiger,5,1223,animal
-70000,dog,1,2619.5,animal
-70000,cat,2,694.6,animal
-70000,hyena,3,1439.2,animal
-70000,wolf,4,1261.8,animal
-70000,lion,5,1230.8,animal
-70000,giraffe,6,1472.9,animal
-70000,zebra,7,1068.1,animal
-70000,tiger,8,1653.9,animal
-70000,wilderbeast,9,5339.7,animal
-70000,cheetah,10,3721.9,animal
-70000,alligator,11,2585.6,animal
-70000,crocodile,12,1843.4,animal
-70000,fish,13,1786.1,animal
-70000,salmon,14,3929.5,animal
-70000,tuna,15,1099.6,animal
-70000,fox,16,6236.4,animal
-70000,coyote,17,3484.9,animal
-70000,lynx,18,3014,animal
-70000,bobcat,19,1765.6,animal
-70000,jaguar,20,5386.3,animal
-70000,leopard,21,2618.5,animal
-70000,falcon,22,20216.9,animal
-70000,eagle,23,1780.1,animal
-70000,songbird,24,5297.9,animal
-70000,squirrel,25,6071.8,animal
-70000,hampster,26,2494.3,animal
-70000,rate,27,691.1,animal
-70000,mouse,28,1394.9,animal
-70000,gerbil,29,8539.9,animal
-70000,ant,30,3909.6,animal
-70000,praying mantis,31,4449.7,animal
-70000,hippo,32,8969,animal
-70000,dolphin,33,13313.8,animal
-70000,great white shark,34,3724,animal
-70000,hammerhead,35,4813.6,animal
-70000,bull shark,36,2682,animal
-70000,tiger shark,37,2022.3,animal
-70000,mako shark,38,4725.1,animal
-70000,blue marlin,39,3248.6,animal
-70000,orca,40,2325.8,animal
-70000,seal,41,1759.9,animal
-70000,polar bear,42,2114.3,animal
-70000,grizzly bear,43,2063.6,animal
-70000,brown bear,44,1636.4,animal
-70000,penguin,45,6824.4,animal
 21466,dog,1,2451.9,animals
 21466,cat,2,923.9,animals
 21466,wolf,3,1541.8,animals
 21466,hyena,4,1416.5,animals
 21466,beaver,5,1457.4,animals
 21466,aardvark,6,2116.5,animals
+21466,pencil,1,2239.7,classroom-items
+21466,desk,2,1491.5,classroom-items
+21466,computer,3,2075.1,classroom-items
+21466,whiteboard,4,2218.6,classroom-items
+21466,shirt,1,2029.7,clothes
+21466,pants,2,2072.2,clothes
+21466,blouse,3,2201.8,clothes
+21466,jacket,4,1410.4,clothes
+21466,puffer,5,1805.4,clothes
+21466,apple,1,2510.5,foods
+21466,cherry,2,1416.1,foods
+21466,cookie,3,1232.7,foods
+21466,tofu,4,2016.7,foods
+21466,lemon,5,1264.8,foods
+21466,pop,1,1952.3,music-genres
+21466,rock,2,3478.6,music-genres
+21466,indie,3,1279.9,music-genres
+21466,metal,4,1803.4,music-genres
+21466,doctor,1,3955.6,occupations
+21466,physician,2,4591.8,occupations
+21466,volleyball,1,3753.8,sports
+21466,soccer,2,1390.5,sports
+21466,baseball,3,2213.2,sports
+21466,hammer,1,6465.1,tools
+21466,screwdrive,2,2159.9,tools
 24628,Bat,1,6377,animals
 24628,Cat,2,3347,animals
 24628,Dog,3,2557,animals
@@ -145,6 +65,180 @@ subject,response,entry_number,response_times,domain
 24628,monkey,33,5960,animals
 24628,himan,34,1993,animals
 24628,moose,35,12128,animals
+24628,Pencil,1,8126,classroom-items
+24628,Pens,2,3454,classroom-items
+24628,computer,3,4493,classroom-items
+24628,chairs,4,2463,classroom-items
+24628,pictures,5,6342,classroom-items
+24628,lights,6,4090,classroom-items
+24628,windows,7,2904,classroom-items
+24628,walls,8,1639,classroom-items
+24628,floor,9,2916,classroom-items
+24628,heating units,10,8855,classroom-items
+24628,plants,11,1938,classroom-items
+24628,chalk,12,6472,classroom-items
+24628,dry erase markers,13,6763,classroom-items
+24628,dry erase board,14,6343,classroom-items
+24628,bookshelf,15,4377,classroom-items
+24628,closet,16,5434,classroom-items
+24628,coat rack,17,5256,classroom-items
+24628,floor mat,18,5794,classroom-items
+24628,speakers,19,7397,classroom-items
+24628,projector,20,4469,classroom-items
+24628,water bottles,21,8805,classroom-items
+24628,paper,22,9542,classroom-items
+24628,color pensils,23,10957,classroom-items
+24628,tape,24,1457,classroom-items
+24628,tabs,25,4739,classroom-items
+24628,scanners,26,8484,classroom-items
+24628,doors,27,2527,classroom-items
+24628,hat,1,5738,clothes
+24628,scarf,2,4220,clothes
+24628,ear muffs,3,4429,clothes
+24628,shirt,4,11359,clothes
+24628,blouse,5,2325,clothes
+24628,t-shirt,6,5617,clothes
+24628,dress,7,5186,clothes
+24628,coat,8,2692,clothes
+24628,pants,9,1655,clothes
+24628,shorts,10,5061,clothes
+24628,socks,11,2187,clothes
+24628,shoes,12,2207,clothes
+24628,slippers,13,8713,clothes
+24628,pajamas,14,6734,clothes
+24628,gloves,15,5568,clothes
+24628,raincoat,16,19658,clothes
+24628,panties,17,8896,clothes
+24628,bra,18,3002,clothes
+24628,vest,19,2953,clothes
+24628,boxers,20,4341,clothes
+24628,tights,21,10409,clothes
+24628,stockings,22,3054,clothes
+24628,boots,23,8543,clothes
+24628,tofu,1,6364,foods
+24628,peas,2,2932,foods
+24628,rice,3,1783,foods
+24628,beef,4,2524,foods
+24628,pork,5,3226,foods
+24628,lettuce,6,5150,foods
+24628,spinach,7,13350,foods
+24628,broccoli,8,5089,foods
+24628,avocado,9,4002,foods
+24628,tomato,10,3277,foods
+24628,ocra,11,1704,foods
+24628,basil,12,8524,foods
+24628,thyme,13,1907,foods
+24628,sage,14,3334,foods
+24628,squash,15,3623,foods
+24628,garlic,16,6194,foods
+24628,ginger,17,2952,foods
+24628,pasta,18,8888,foods
+24628,flour,19,9631,foods
+24628,sugar,20,8918,foods
+24628,pepper,21,2557,foods
+24628,banana,22,8456,foods
+24628,grapes,23,2263,foods
+24628,apple,24,13046,foods
+24628,strawberry,25,4550,foods
+24628,kiwi,26,3359,foods
+24628,fish,27,4593,foods
+24628,eggroll,28,7300,foods
+24628,egg,29,1533,foods
+24628,ham,30,2460,foods
+24628,cheese,31,4651,foods
+24628,ice cream,32,7537,foods
+24628,walnuts,33,4686,foods
+24628,pineapple,34,5492,foods
+24628,cranberry,35,3637,foods
+24628,jazz,1,5317,music-genres
+24628,rock,2,1767,music-genres
+24628,r&b,3,8489,music-genres
+24628,alternative,4,2849,music-genres
+24628,jive,5,7145,music-genres
+24628,jazz,6,2767,music-genres
+24628,classical,7,8460,music-genres
+24628,rap,8,3764,music-genres
+24628,reggaeton,9,14723,music-genres
+24628,calypso,10,3170,music-genres
+24628,reggae,11,7843,music-genres
+24628,christian,12,18915,music-genres
+24628,easy listening,13,9458,music-genres
+24628,disco,14,28885,music-genres
+24628,pop,15,5511,music-genres
+24628,country,16,2259,music-genres
+24628,dance hall,17,13511,music-genres
+24628,orchestral,18,16809,music-genres
+24628,christmas,19,10838,music-genres
+24628,holiday,20,6566,music-genres
+24628,teacher,1,5371,occupations
+24628,soldier,2,2578,occupations
+24628,police,3,2739,occupations
+24628,cook,4,3434,occupations
+24628,waiter,5,4034,occupations
+24628,cleaner,6,4545,occupations
+24628,investor,7,6430,occupations
+24628,entrepreneur,8,5772,occupations
+24628,delivery person,9,9079,occupations
+24628,priest,10,7127,occupations
+24628,nurse,11,3491,occupations
+24628,doctor,12,2312,occupations
+24628,caregiver,13,7276,occupations
+24628,data entry,14,6648,occupations
+24628,programmer,15,3828,occupations
+24628,psychologist,16,7413,occupations
+24628,manager,17,15255,occupations
+24628,inspector,18,18103,occupations
+24628,factory worker,19,9851,occupations
+24628,postal worker,20,5251,occupations
+24628,tree cutter,21,6721,occupations
+24628,gardener,22,3746,occupations
+24628,musician,23,5706,occupations
+24628,influencer,24,6341,occupations
+24628,actor,25,3749,occupations
+24628,senator,26,5256,occupations
+24628,driver,27,6421,occupations
+24628,athlete,28,4719,occupations
+24628,mother,29,5278,occupations
+24628,hockey,1,5375,sports
+24628,soccer,2,2127,sports
+24628,football,3,3073,sports
+24628,weight lifting,4,6798,sports
+24628,track,5,5482,sports
+24628,dog sled racing,6,12925,sports
+24628,skating,7,5860,sports
+24628,gymnastics,8,8432,sports
+24628,basketball,9,10450,sports
+24628,netball,10,9289,sports
+24628,cricket,11,3075,sports
+24628,lacross,12,4945,sports
+24628,bobsled racing,13,9152,sports
+24628,eating,14,4760,sports
+24628,breakdancing,15,7051,sports
+24628,swimming,16,6710,sports
+24628,golf,17,6679,sports
+24628,chess,18,6280,sports
+24628,crossfit,19,11864,sports
+24628,ironman challenge,20,9692,sports
+24628,marathon,21,4545,sports
+24628,sprining,22,5085,sports
+24628,archery,23,30231,sports
+24628,toothbrush,1,8711,tools
+24628,shovel,2,4144,tools
+24628,saw,3,1368,tools
+24628,knife,4,4748,tools
+24628,spoon,5,4757,tools
+24628,comb,6,4575,tools
+24628,fork,7,3866,tools
+24628,hammer,8,4951,tools
+24628,strainer,9,9064,tools
+24628,wisk,10,7925,tools
+24628,shears,11,12944,tools
+24628,nail clipper,12,47605,tools
+24628,paint brush,13,5720,tools
+24628,nail file,14,6726,tools
+24628,makeup brush,15,14423,tools
+24628,scalple,16,24006,tools
+24628,eyeglasses,17,7072,tools
 33324,gorilla,1,6907.7,animals
 33324,chimpanzee,2,6008.5,animals
 33324,dog,3,2910.6,animals
@@ -170,22 +264,217 @@ subject,response,entry_number,response_times,domain
 33324,leapard,23,3972.7,animals
 33324,puma,24,4535.9,animals
 33324,rabbit,25,8238.6,animals
+33324,desk,1,8255.7,classroom-items
+33324,pencil,2,6633.4,classroom-items
+33324,eraser,3,6485.9,classroom-items
+33324,chalkboard,4,5638.6,classroom-items
+33324,chalk,5,2598.1,classroom-items
+33324,stapler,6,4565.9,classroom-items
+33324,notebook,7,19449.7,classroom-items
+33324,books,8,4092.2,classroom-items
+33324,projector,9,10283.1,classroom-items
+33324,computer,10,4288.3,classroom-items
+33324,chairs,11,32745.8,classroom-items
+33324,tables,12,9480.2,classroom-items
+33324,cabinets,13,15671.5,classroom-items
+33324,drawers,14,3817.2,classroom-items
+33324,socks,1,6084.3,clothes
+33324,pants,2,4263.5,clothes
+33324,underwear,3,4118.4,clothes
+33324,bra,4,2965.8,clothes
+33324,shorts,5,5947.8,clothes
+33324,t shirt,6,7196.7,clothes
+33324,long sleeve shirt,7,8814.7,clothes
+33324,sweater,8,3511,clothes
+33324,sweat pants,9,5779.7,clothes
+33324,yoga pants,10,15366.6,clothes
+33324,jacket,11,4568.1,clothes
+33324,coat,12,2746,clothes
+33324,hat,13,4056.7,clothes
+33324,gloves,14,5843.8,clothes
+33324,shoes,15,8849.8,clothes
+33324,boots,16,5011.6,clothes
+33324,sandals,17,4735.5,clothes
+33324,shower shoes,18,8322.6,clothes
+33324,blouse,19,9549.8,clothes
+33324,suit,20,13237.6,clothes
+33324,dress,21,8272.2,clothes
+33324,dress shoes,22,6224,clothes
+33324,tunic,23,21155.4,clothes
+33324,jumpers,24,8318,clothes
+33324,spaghetti,1,7960.8,foods
+33324,steak,2,7530.8,foods
+33324,hamburger,3,8172,foods
+33324,chicken wings,4,6296.4,foods
+33324,chicken nuggets,5,6806,foods
+33324,yogurt,6,4764.4,foods
+33324,cream cheese,7,6675.1,foods
+33324,sour cream,8,6291.2,foods
+33324,cereal,9,3079.1,foods
+33324,potato chips,10,10718.4,foods
+33324,fish,11,6388,foods
+33324,shrimp,12,4551.8,foods
+33324,crab,13,11079.9,foods
+33324,apple,14,6639.1,foods
+33324,orange,15,4497.1,foods
+33324,cherries,16,2902.5,foods
+33324,strawberries,17,4964,foods
+33324,grapes,18,4667.9,foods
+33324,lettuce,19,3072.3,foods
+33324,tomatoes,20,3133.8,foods
+33324,nectarines,21,7143.8,foods
+33324,avocados,22,6672.7,foods
+33324,mangos,23,8257.9,foods
+33324,lemons,24,4597,foods
+33324,limes,25,1785.6,foods
+33324,bananas,26,7535.4,foods
+33324,waffles,27,12190.5,foods
+33324,bread,28,3347.4,foods
+33324,hash browns,29,7251.1,foods
+33324,alternative,1,16374.9,music-genres
+33324,jazz,2,4560.8,music-genres
+33324,heavy metal,3,11937,music-genres
+33324,rap,4,2648,music-genres
+33324,hip hop,5,3919.2,music-genres
+33324,smooth listening,6,9503.3,music-genres
+33324,country,7,3600.6,music-genres
+33324,rock n roll,8,8000.3,music-genres
+33324,grunge,9,7083.8,music-genres
+33324,pop,10,8418.1,music-genres
+33324,classical,11,10039.7,music-genres
+33324,swing,12,6409.5,music-genres
+33324,disco,13,14134,music-genres
+33324,techno,14,18557.2,music-genres
+33324,opera,15,43179.1,music-genres
+33324,firefighter,1,7702.2,occupations
+33324,policeman,2,5333.2,occupations
+33324,doctor,3,2637.8,occupations
+33324,nurse,4,3598.3,occupations
+33324,accountant,5,6378.1,occupations
+33324,mechanic,6,7421.1,occupations
+33324,engineer,7,4372.8,occupations
+33324,psychologist,8,7736.9,occupations
+33324,cashier,9,12154.7,occupations
+33324,bank teller,10,6519.8,occupations
+33324,astronaut,11,19425.3,occupations
+33324,bus driver,12,7185,occupations
+33324,cab driver,13,4393.4,occupations
+33324,security guard,14,21000.8,occupations
+33324,construction worker,15,16438.4,occupations
+33324,electrician,16,3887.3,occupations
+33324,plumber,17,3757.1,occupations
+33324,landscaper,18,9481.1,occupations
+33324,janitor,19,15850.7,occupations
+33324,principal,20,5446.1,occupations
+33324,teacher,21,3139.8,occupations
+33324,soccer,1,10480.6,sports
+33324,hockey,2,3446.8,sports
+33324,football,3,3010.3,sports
+33324,swimming,4,7373.7,sports
+33324,shotput,5,7008.7,sports
+33324,track,6,5265.4,sports
+33324,archery,7,3175.7,sports
+33324,rugby,8,7936.4,sports
+33324,crossfit,9,6910.7,sports
+33324,weight lifting,10,12309.5,sports
+33324,body building,11,4802.7,sports
+33324,skating,12,12048.1,sports
+33324,gymnastics,13,3174.1,sports
+33324,shooting,14,17639.8,sports
+33324,hunting,15,2655.9,sports
+33324,racecar driving,16,18107,sports
+33324,baseball,17,38755.8,sports
+33324,softball,18,4891.5,sports
+33324,wrench,1,11053.1,tools
+33324,pliers,2,2922.7,tools
+33324,hammer,3,4243.6,tools
+33324,socket wrench,4,7429.1,tools
+33324,regular screwdriver,5,10858.9,tools
+33324,philips screwdrive,6,6442.1,tools
+33324,shovel,7,3020.1,tools
+33324,pickaxe,8,10663.6,tools
+33324,sledgehammer,9,10640.3,tools
+33324,wood saw,10,7946.5,tools
+33324,table saw,11,4453.1,tools
+33324,drill,12,5619.3,tools
+33324,sockets,13,11374.5,tools
+33324,pipe wrench,14,8133.8,tools
+33324,vise grips,15,7315.3,tools
+33324,hex wrench,16,28615.3,tools
+33324,jig saw,17,22878,tools
 45042,cat,1,2010.3,animals
 45042,dog,2,716.5,animals
 45042,wolf,3,1393.7,animals
-45712,cat,1,2081.7,animals
-45712,dog,2,681,animals
-45712,wolf,3,1096.9,animals
-45712,ape,4,1190.8,animals
-45712,orangutang,5,4063.9,animals
-45712,otter,6,2466.3,animals
-45712,deer,7,129973.6,animals
+45042,desk,1,2583.7,classroom-items
+45042,chair,2,1605,classroom-items
+45042,window,3,1297.3,classroom-items
+45042,pencil,4,2155.4,classroom-items
+45042,shirt,1,2821.8,clothes
+45042,pants,2,1254.9,clothes
+45042,shoes,3,1265.4,clothes
+45042,cake,1,2291.8,foods
+45042,oatmeal,2,1918.9,foods
+45042,blueberry,3,2732.5,foods
+45042,tuna,4,2133.4,foods
+45042,pop,1,2253.1,music-genres
+45042,indie,2,1240.4,music-genres
+45042,shoegaze,3,2200,music-genres
+45042,jrock,4,1500.1,music-genres
+45042,doctor,1,3022.2,occupations
+45042,physician,2,3341.8,occupations
+45042,researcher,3,2116.6,occupations
+45042,volleyball,1,3743.3,sports
+45042,soccer,2,2557.8,sports
+45042,football,3,2537.4,sports
+45042,spade,1,4664.9,tools
+45042,rake,2,2176.7,tools
 56824,cat,1,1191.4,animals
 56824,dog,2,758.3,animals
 56824,wolf,3,1627,animals
 56824,yeah,4,1939.8,animals
+56824,desk,1,3061.8,classroom-items
+56824,chalk,2,2180,classroom-items
+56824,marker,3,1690.5,classroom-items
+56824,shirt,1,3201.6,clothes
+56824,pants,2,1550.2,clothes
+56824,apple,1,3956.4,foods
+56824,orange,2,1606.2,foods
+56824,leaf,3,1030,foods
+56824,pop,1,2077,music-genres
+56824,jpop,2,1234.3,music-genres
+56824,rock,3,941.7,music-genres
+56824,indie,4,1144.9,music-genres
+56824,shoegaze,5,2272,music-genres
+56824,metal,6,1365.6,music-genres
+56824,doctor,1,3063.9,occupations
+56824,researcher,2,2313,occupations
+56824,psychologist,3,2764.7,occupations
+56824,volleyball,1,5101.6,sports
+56824,soccer,2,1336.4,sports
+56824,spade,1,3265.4,tools
+56824,knife,2,3606.7,tools
+56824,fork,3,1101.4,tools
 66985,fgfgfg,1,1651,animals
 66985,gfg,2,794.5,animals
+66985,luy,1,1191.4,classroom-items
+66985,8t,2,1014.1,classroom-items
+66985,liug,1,1439.8,clothes
+66985,dhu,2,1151,clothes
+66985,hh,3,1306.7,clothes
+66985,kgl,1,1880.3,foods
+66985,lu,2,938,foods
+66985,fg,1,1442.2,music-genres
+66985,gfk,2,629.1,music-genres
+66985,df,3,905.1,music-genres
+66985,dsgjh,4,824.8,music-genres
+66985,kjjgf,1,1579,occupations
+66985,kkhgfss,2,2255.7,occupations
+66985,sakdf,1,1300.8,sports
+66985,asg,2,480.4,sports
+66985,dfh,3,603.7,sports
+66985,df,1,993.6,tools
+66985,dg,2,864.3,tools
+66985,de,3,625.4,tools
 92156,dog,1,2546.9,animals
 92156,cat,2,712,animals
 92156,rabbit,3,2024,animals
@@ -236,60 +525,6 @@ subject,response,entry_number,response_times,domain
 92156,groundhog,48,3552.1,animals
 92156,giraffe,49,5240,animals
 92156,sloth,50,29840.2,animals
-21466,pencil,1,2239.7,classroom-items
-21466,desk,2,1491.5,classroom-items
-21466,computer,3,2075.1,classroom-items
-21466,whiteboard,4,2218.6,classroom-items
-24628,Pencil,1,8126,classroom-items
-24628,Pens,2,3454,classroom-items
-24628,computer,3,4493,classroom-items
-24628,chairs,4,2463,classroom-items
-24628,pictures,5,6342,classroom-items
-24628,lights,6,4090,classroom-items
-24628,windows,7,2904,classroom-items
-24628,walls,8,1639,classroom-items
-24628,floor,9,2916,classroom-items
-24628,heating units,10,8855,classroom-items
-24628,plants,11,1938,classroom-items
-24628,chalk,12,6472,classroom-items
-24628,dry erase markers,13,6763,classroom-items
-24628,dry erase board,14,6343,classroom-items
-24628,bookshelf,15,4377,classroom-items
-24628,closet,16,5434,classroom-items
-24628,coat rack,17,5256,classroom-items
-24628,floor mat,18,5794,classroom-items
-24628,speakers,19,7397,classroom-items
-24628,projector,20,4469,classroom-items
-24628,water bottles,21,8805,classroom-items
-24628,paper,22,9542,classroom-items
-24628,color pensils,23,10957,classroom-items
-24628,tape,24,1457,classroom-items
-24628,tabs,25,4739,classroom-items
-24628,scanners,26,8484,classroom-items
-24628,doors,27,2527,classroom-items
-33324,desk,1,8255.7,classroom-items
-33324,pencil,2,6633.4,classroom-items
-33324,eraser,3,6485.9,classroom-items
-33324,chalkboard,4,5638.6,classroom-items
-33324,chalk,5,2598.1,classroom-items
-33324,stapler,6,4565.9,classroom-items
-33324,notebook,7,19449.7,classroom-items
-33324,books,8,4092.2,classroom-items
-33324,projector,9,10283.1,classroom-items
-33324,computer,10,4288.3,classroom-items
-33324,chairs,11,32745.8,classroom-items
-33324,tables,12,9480.2,classroom-items
-33324,cabinets,13,15671.5,classroom-items
-33324,drawers,14,3817.2,classroom-items
-45042,desk,1,2583.7,classroom-items
-45042,chair,2,1605,classroom-items
-45042,window,3,1297.3,classroom-items
-45042,pencil,4,2155.4,classroom-items
-56824,desk,1,3061.8,classroom-items
-56824,chalk,2,2180,classroom-items
-56824,marker,3,1690.5,classroom-items
-66985,luy,1,1191.4,classroom-items
-66985,8t,2,1014.1,classroom-items
 92156,teacher,1,4505.4,classroom-items
 92156,student,2,2039.7,classroom-items
 92156,desk,3,1216,classroom-items
@@ -307,69 +542,6 @@ subject,response,entry_number,response_times,domain
 92156,television,15,2112.1,classroom-items
 92156,decorations,16,7015.8,classroom-items
 92156,windows,17,1176.1,classroom-items
-21466,shirt,1,2029.7,clothes
-21466,pants,2,2072.2,clothes
-21466,blouse,3,2201.8,clothes
-21466,jacket,4,1410.4,clothes
-21466,puffer,5,1805.4,clothes
-24628,hat,1,5738,clothes
-24628,scarf,2,4220,clothes
-24628,ear muffs,3,4429,clothes
-24628,shirt,4,11359,clothes
-24628,blouse,5,2325,clothes
-24628,t-shirt,6,5617,clothes
-24628,dress,7,5186,clothes
-24628,coat,8,2692,clothes
-24628,pants,9,1655,clothes
-24628,shorts,10,5061,clothes
-24628,socks,11,2187,clothes
-24628,shoes,12,2207,clothes
-24628,slippers,13,8713,clothes
-24628,pajamas,14,6734,clothes
-24628,gloves,15,5568,clothes
-24628,raincoat,16,19658,clothes
-24628,panties,17,8896,clothes
-24628,bra,18,3002,clothes
-24628,vest,19,2953,clothes
-24628,boxers,20,4341,clothes
-24628,tights,21,10409,clothes
-24628,stockings,22,3054,clothes
-24628,boots,23,8543,clothes
-33324,socks,1,6084.3,clothes
-33324,pants,2,4263.5,clothes
-33324,underwear,3,4118.4,clothes
-33324,bra,4,2965.8,clothes
-33324,shorts,5,5947.8,clothes
-33324,t shirt,6,7196.7,clothes
-33324,long sleeve shirt,7,8814.7,clothes
-33324,sweater,8,3511,clothes
-33324,sweat pants,9,5779.7,clothes
-33324,yoga pants,10,15366.6,clothes
-33324,jacket,11,4568.1,clothes
-33324,coat,12,2746,clothes
-33324,hat,13,4056.7,clothes
-33324,gloves,14,5843.8,clothes
-33324,shoes,15,8849.8,clothes
-33324,boots,16,5011.6,clothes
-33324,sandals,17,4735.5,clothes
-33324,shower shoes,18,8322.6,clothes
-33324,blouse,19,9549.8,clothes
-33324,suit,20,13237.6,clothes
-33324,dress,21,8272.2,clothes
-33324,dress shoes,22,6224,clothes
-33324,tunic,23,21155.4,clothes
-33324,jumpers,24,8318,clothes
-45042,shirt,1,2821.8,clothes
-45042,pants,2,1254.9,clothes
-45042,shoes,3,1265.4,clothes
-56824,shirt,1,3201.6,clothes
-56824,pants,2,1550.2,clothes
-66985,liug,1,1439.8,clothes
-66985,dhu,2,1151,clothes
-66985,hh,3,1306.7,clothes
-67768,shirt,1,2709.8,clothes
-67768,pNTS,2,1258.7,clothes
-67768,pants,3,3257.6,clothes
 92156,shirt,1,8832.1,clothes
 92156,pants,2,896.1,clothes
 92156,jacket,3,2495.9,clothes
@@ -391,286 +563,8 @@ subject,response,entry_number,response_times,domain
 92156,rain jacket,19,5335.7,clothes
 92156,undershirt,20,5647.7,clothes
 92156,tank top,21,2096.9,clothes
-11859,pizza,1,3123.7,food
-11859,pasta,2,1176.5,food
-11859,chicken tikka masala,3,4031,food
-11859,chole,4,1004.2,food
-11859,naan,5,2600.8,food
-11859,kulfi,6,1613.5,food
-11859,gulab jamun,7,2930.8,food
-11859,jalebi,8,6593.1,food
-11859,roti,9,2238.2,food
-11859,soup,10,2810.9,food
-11859,beans,11,1529.7,food
-11859,toast,12,1679.8,food
-11859,eggs,13,889.7,food
-11859,cereal,14,3000.4,food
-11859,avacad,15,2676.1,food
-11859,tomato,16,6580.1,food
-11859,cucumber,17,2259.5,food
-11859,carrot,18,927,food
-11859,spinach,19,1955.4,food
-11859,brownie,20,2648.9,food
-11859,cake,21,937.3,food
-11859,cupcake,22,1974.4,food
-11859,creme brulee,23,2525.5,food
-11859,crepe,24,1025.6,food
-11859,dosa,25,2887.8,food
-11859,tortilla,26,5949.8,food
-11859,wrap,27,1346.2,food
-11859,burrito,28,2271.8,food
-11859,sandwich,29,1974.5,food
-11859,panini,30,2004,food
-11859,chicken,31,3392.8,food
-11859,beef,32,641.7,food
-11859,fish,33,2695.3,food
-11859,potato,34,3071.8,food
-11859,pork,35,6397.7,food
-11859,ribs,36,5917.7,food
-11859,lasagna,37,6837.1,food
-11859,kebab,38,3761.7,food
-11859,fufu,39,2369.6,food
-11859,curry,40,4794.6,food
-11859,paneer,41,2104.3,food
-11859,tofu,42,2979.9,food
-11859,gravy,43,4073,food
-11859,mashed potato,44,3983.6,food
-11859,stuffing,45,3097.9,food
-11859,oatmeal,46,7271.4,food
-11859,ice cream,47,1747.4,food
-11859,yogurt,48,4660.5,food
-11859,cottage cheese,49,2170.8,food
-11859,feta cheese,50,6672.4,food
-11859,grape,51,6507.8,food
-11859,orange,52,2139.6,food
-11859,watermelon,53,2443.3,food
-11859,mango,54,7035.5,food
-11859,lychee,55,1005.6,food
-11859,burger,56,6244.9,food
-34998,vread,1,5386.9,food
-34998,cake,2,4201,food
-34998,tofu,3,2714.8,food
-34998,apple,4,8095.6,food
-34998,cherry,5,2644.1,food
-70000,banana,1,2777.6,food
-70000,apple,2,1213,food
-70000,strawberry,3,3495.9,food
-70000,raspberry,4,1850,food
-70000,blackberry,5,2184.3,food
-70000,blueberry,6,1453.5,food
-70000,mango,7,1816.7,food
-70000,pineapple,8,1764.4,food
-70000,watermelon,9,2198.2,food
-70000,cherry,10,2346.3,food
-70000,rice,11,3083.2,food
-70000,bread,12,1346.1,food
-70000,pancakes,13,6852.3,food
-70000,pizza,14,10334.1,food
-70000,hamburger,15,1614.2,food
-70000,french fries,16,3056.3,food
-70000,mash potatoes,17,4146.3,food
-70000,gravy,18,4051.8,food
-70000,turkey,19,2704.7,food
-70000,stuffing,20,1690.4,food
-70000,fried rice,21,11092.5,food
-70000,broccoli,22,18145.2,food
-70000,spinach,23,3639.5,food
-70000,kale,24,1134.2,food
-70000,lettuce,25,2076.5,food
-70000,carrot,26,2648.9,food
-70000,butter,27,4488.4,food
-70000,peanut butter,28,3685.3,food
-70000,whipped cream,29,3788,food
-70000,waffle,30,6036,food
-70000,steak,31,8069.1,food
-70000,sashimi,32,3799.1,food
-70000,hot dog,33,22050.5,food
-70000,mozzarella sticks,34,12683.2,food
-70000,buns,35,4019,food
-70000,chocolate,36,5997.5,food
-21466,apple,1,2510.5,foods
-21466,cherry,2,1416.1,foods
-21466,cookie,3,1232.7,foods
-21466,tofu,4,2016.7,foods
-21466,lemon,5,1264.8,foods
-24628,tofu,1,6364,foods
-24628,peas,2,2932,foods
-24628,rice,3,1783,foods
-24628,beef,4,2524,foods
-24628,pork,5,3226,foods
-24628,lettuce,6,5150,foods
-24628,spinach,7,13350,foods
-24628,broccoli,8,5089,foods
-24628,avocado,9,4002,foods
-24628,tomato,10,3277,foods
-24628,ocra,11,1704,foods
-24628,basil,12,8524,foods
-24628,thyme,13,1907,foods
-24628,sage,14,3334,foods
-24628,squash,15,3623,foods
-24628,garlic,16,6194,foods
-24628,ginger,17,2952,foods
-24628,pasta,18,8888,foods
-24628,flour,19,9631,foods
-24628,sugar,20,8918,foods
-24628,pepper,21,2557,foods
-24628,banana,22,8456,foods
-24628,grapes,23,2263,foods
-24628,apple,24,13046,foods
-24628,strawberry,25,4550,foods
-24628,kiwi,26,3359,foods
-24628,fish,27,4593,foods
-24628,eggroll,28,7300,foods
-24628,egg,29,1533,foods
-24628,ham,30,2460,foods
-24628,cheese,31,4651,foods
-24628,ice cream,32,7537,foods
-24628,walnuts,33,4686,foods
-24628,pineapple,34,5492,foods
-24628,cranberry,35,3637,foods
-33324,spaghetti,1,7960.8,foods
-33324,steak,2,7530.8,foods
-33324,hamburger,3,8172,foods
-33324,chicken wings,4,6296.4,foods
-33324,chicken nuggets,5,6806,foods
-33324,yogurt,6,4764.4,foods
-33324,cream cheese,7,6675.1,foods
-33324,sour cream,8,6291.2,foods
-33324,cereal,9,3079.1,foods
-33324,potato chips,10,10718.4,foods
-33324,fish,11,6388,foods
-33324,shrimp,12,4551.8,foods
-33324,crab,13,11079.9,foods
-33324,apple,14,6639.1,foods
-33324,orange,15,4497.1,foods
-33324,cherries,16,2902.5,foods
-33324,strawberries,17,4964,foods
-33324,grapes,18,4667.9,foods
-33324,lettuce,19,3072.3,foods
-33324,tomatoes,20,3133.8,foods
-33324,nectarines,21,7143.8,foods
-33324,avocados,22,6672.7,foods
-33324,mangos,23,8257.9,foods
-33324,lemons,24,4597,foods
-33324,limes,25,1785.6,foods
-33324,bananas,26,7535.4,foods
-33324,waffles,27,12190.5,foods
-33324,bread,28,3347.4,foods
-33324,hash browns,29,7251.1,foods
-45042,cake,1,2291.8,foods
-45042,oatmeal,2,1918.9,foods
-45042,blueberry,3,2732.5,foods
-45042,tuna,4,2133.4,foods
-56824,apple,1,3956.4,foods
-56824,orange,2,1606.2,foods
-56824,leaf,3,1030,foods
-66985,kgl,1,1880.3,foods
-66985,lu,2,938,foods
-82201,test1,1,2646.3,foods
-82201,test2,2,1748.2,foods
-82201,test3,3,1332.4,foods
-82201,test4,4,1539.6,foods
-82201,test5,5,1302,foods
 92156,carrot,1,8186.1,foods
 92156,hamburger,2,4840.1,foods
-2417,animals,1,2817.1,interest
-2417,jewlery,2,2311.1,interest
-18952,plants,1,3540.3,interest
-18952,flowers,2,2066.7,interest
-21466,animals,1,2302.5,interest
-21466,plants,2,1897.7,interest
-24628,DIY,1,13166,interest
-24628,Gardening,2,4167,interest
-24628,Current events,3,8958,interest
-24628,News,4,6560,interest
-24628,Politics,5,2963,interest
-24628,True crime,6,4536,interest
-33324,guides to gaming,1,33740.3,interest
-45042,plants,1,2211.3,interest
-45712,animals,1,1832.4,interest
-45712,plants,2,1058.6,interest
-45712,clothes,3,1116.7,interest
-45712,fashion,4,1717.4,interest
-47362,ln,1,1644.4,interest
-47362,lm,2,999.5,interest
-50986,test,1,3455.5,interest
-56824,plants,1,2050,interest
-66985,dfv,1,756.4,interest
-66985,sb,2,566.8,interest
-66985,sdf,3,1145.7,interest
-67768,plants,1,2488.3,interest
-67768,fashion,2,1880.4,interest
-67768,animals,3,1932.8,interest
-82201,test1,1,2104.6,interest
-82201,Test2,2,2056.6,interest
-82201,Test3,3,1303.9,interest
-92156,video games,1,9354.3,interest
-92156,baseball,2,2335.9,interest
-92156,news,3,1640.4,interest
-92156,fantasy sports,4,4175.6,interest
-92156,shows,5,3360.1,interest
-92156,movies,6,896.3,interest
-92156,music,7,2151.8,interest
-92156,stories,8,3736,interest
-92156,random stories,9,16343.9,interest
-21466,pop,1,1952.3,music-genres
-21466,rock,2,3478.6,music-genres
-21466,indie,3,1279.9,music-genres
-21466,metal,4,1803.4,music-genres
-24628,jazz,1,5317,music-genres
-24628,rock,2,1767,music-genres
-24628,r&b,3,8489,music-genres
-24628,alternative,4,2849,music-genres
-24628,jive,5,7145,music-genres
-24628,jazz,6,2767,music-genres
-24628,classical,7,8460,music-genres
-24628,rap,8,3764,music-genres
-24628,reggaeton,9,14723,music-genres
-24628,calypso,10,3170,music-genres
-24628,reggae,11,7843,music-genres
-24628,christian,12,18915,music-genres
-24628,easy listening,13,9458,music-genres
-24628,disco,14,28885,music-genres
-24628,pop,15,5511,music-genres
-24628,country,16,2259,music-genres
-24628,dance hall,17,13511,music-genres
-24628,orchestral,18,16809,music-genres
-24628,christmas,19,10838,music-genres
-24628,holiday,20,6566,music-genres
-33324,alternative,1,16374.9,music-genres
-33324,jazz,2,4560.8,music-genres
-33324,heavy metal,3,11937,music-genres
-33324,rap,4,2648,music-genres
-33324,hip hop,5,3919.2,music-genres
-33324,smooth listening,6,9503.3,music-genres
-33324,country,7,3600.6,music-genres
-33324,rock n roll,8,8000.3,music-genres
-33324,grunge,9,7083.8,music-genres
-33324,pop,10,8418.1,music-genres
-33324,classical,11,10039.7,music-genres
-33324,swing,12,6409.5,music-genres
-33324,disco,13,14134,music-genres
-33324,techno,14,18557.2,music-genres
-33324,opera,15,43179.1,music-genres
-45042,pop,1,2253.1,music-genres
-45042,indie,2,1240.4,music-genres
-45042,shoegaze,3,2200,music-genres
-45042,jrock,4,1500.1,music-genres
-56824,pop,1,2077,music-genres
-56824,jpop,2,1234.3,music-genres
-56824,rock,3,941.7,music-genres
-56824,indie,4,1144.9,music-genres
-56824,shoegaze,5,2272,music-genres
-56824,metal,6,1365.6,music-genres
-66985,fg,1,1442.2,music-genres
-66985,gfk,2,629.1,music-genres
-66985,df,3,905.1,music-genres
-66985,dsgjh,4,824.8,music-genres
-82201,test1,1,2024.1,music-genres
-82201,test2,2,1381.1,music-genres
-82201,test3,3,1312.7,music-genres
-82201,test4,4,1570.1,music-genres
-82201,test5,5,1158.8,music-genres
 92156,rock,1,3252.8,music-genres
 92156,rap,2,936.4,music-genres
 92156,country,3,1199.5,music-genres
@@ -690,66 +584,6 @@ subject,response,entry_number,response_times,domain
 92156,r and b,17,2016,music-genres
 92156,bluegrass,18,2440.6,music-genres
 92156,reggae,19,34264,music-genres
-21466,doctor,1,3955.6,occupations
-21466,physician,2,4591.8,occupations
-24628,teacher,1,5371,occupations
-24628,soldier,2,2578,occupations
-24628,police,3,2739,occupations
-24628,cook,4,3434,occupations
-24628,waiter,5,4034,occupations
-24628,cleaner,6,4545,occupations
-24628,investor,7,6430,occupations
-24628,entrepreneur,8,5772,occupations
-24628,delivery person,9,9079,occupations
-24628,priest,10,7127,occupations
-24628,nurse,11,3491,occupations
-24628,doctor,12,2312,occupations
-24628,caregiver,13,7276,occupations
-24628,data entry,14,6648,occupations
-24628,programmer,15,3828,occupations
-24628,psychologist,16,7413,occupations
-24628,manager,17,15255,occupations
-24628,inspector,18,18103,occupations
-24628,factory worker,19,9851,occupations
-24628,postal worker,20,5251,occupations
-24628,tree cutter,21,6721,occupations
-24628,gardener,22,3746,occupations
-24628,musician,23,5706,occupations
-24628,influencer,24,6341,occupations
-24628,actor,25,3749,occupations
-24628,senator,26,5256,occupations
-24628,driver,27,6421,occupations
-24628,athlete,28,4719,occupations
-24628,mother,29,5278,occupations
-33324,firefighter,1,7702.2,occupations
-33324,policeman,2,5333.2,occupations
-33324,doctor,3,2637.8,occupations
-33324,nurse,4,3598.3,occupations
-33324,accountant,5,6378.1,occupations
-33324,mechanic,6,7421.1,occupations
-33324,engineer,7,4372.8,occupations
-33324,psychologist,8,7736.9,occupations
-33324,cashier,9,12154.7,occupations
-33324,bank teller,10,6519.8,occupations
-33324,astronaut,11,19425.3,occupations
-33324,bus driver,12,7185,occupations
-33324,cab driver,13,4393.4,occupations
-33324,security guard,14,21000.8,occupations
-33324,construction worker,15,16438.4,occupations
-33324,electrician,16,3887.3,occupations
-33324,plumber,17,3757.1,occupations
-33324,landscaper,18,9481.1,occupations
-33324,janitor,19,15850.7,occupations
-33324,principal,20,5446.1,occupations
-33324,teacher,21,3139.8,occupations
-45042,doctor,1,3022.2,occupations
-45042,physician,2,3341.8,occupations
-45042,researcher,3,2116.6,occupations
-56824,doctor,1,3063.9,occupations
-56824,researcher,2,2313,occupations
-56824,psychologist,3,2764.7,occupations
-66985,kjjgf,1,1579,occupations
-66985,kkhgfss,2,2255.7,occupations
 92156,lawyer,1,4436.7,occupations
 92156,doctor,2,1016.3,occupations
 92156,teacher,3,1104,occupations
@@ -806,58 +640,6 @@ subject,response,entry_number,response_times,domain
 92156,editor,54,1832.1,occupations
 92156,reporter,55,1495.8,occupations
 92156,cameraman,56,2344.2,occupations
-21466,volleyball,1,3753.8,sports
-21466,soccer,2,1390.5,sports
-21466,baseball,3,2213.2,sports
-24628,hockey,1,5375,sports
-24628,soccer,2,2127,sports
-24628,football,3,3073,sports
-24628,weight lifting,4,6798,sports
-24628,track,5,5482,sports
-24628,dog sled racing,6,12925,sports
-24628,skating,7,5860,sports
-24628,gymnastics,8,8432,sports
-24628,basketball,9,10450,sports
-24628,netball,10,9289,sports
-24628,cricket,11,3075,sports
-24628,lacross,12,4945,sports
-24628,bobsled racing,13,9152,sports
-24628,eating,14,4760,sports
-24628,breakdancing,15,7051,sports
-24628,swimming,16,6710,sports
-24628,golf,17,6679,sports
-24628,chess,18,6280,sports
-24628,crossfit,19,11864,sports
-24628,ironman challenge,20,9692,sports
-24628,marathon,21,4545,sports
-24628,sprining,22,5085,sports
-24628,archery,23,30231,sports
-33324,soccer,1,10480.6,sports
-33324,hockey,2,3446.8,sports
-33324,football,3,3010.3,sports
-33324,swimming,4,7373.7,sports
-33324,shotput,5,7008.7,sports
-33324,track,6,5265.4,sports
-33324,archery,7,3175.7,sports
-33324,rugby,8,7936.4,sports
-33324,crossfit,9,6910.7,sports
-33324,weight lifting,10,12309.5,sports
-33324,body building,11,4802.7,sports
-33324,skating,12,12048.1,sports
-33324,gymnastics,13,3174.1,sports
-33324,shooting,14,17639.8,sports
-33324,hunting,15,2655.9,sports
-33324,racecar driving,16,18107,sports
-33324,baseball,17,38755.8,sports
-33324,softball,18,4891.5,sports
-45042,volleyball,1,3743.3,sports
-45042,soccer,2,2557.8,sports
-45042,football,3,2537.4,sports
-56824,volleyball,1,5101.6,sports
-56824,soccer,2,1336.4,sports
-66985,sakdf,1,1300.8,sports
-66985,asg,2,480.4,sports
-66985,dfh,3,603.7,sports
 92156,baseball,1,4976.1,sports
 92156,basketball,2,1648,sports
 92156,american football,3,4928,sports
@@ -889,103 +671,5 @@ subject,response,entry_number,response_times,domain
 92156,martial arts,29,3240.1,sports
 92156,fencing,30,2608.1,sports
 92156,jai alai,31,24463.9,sports
-2417,r/animals,1,4145.2,subreddits
-2417,r/jewlery,2,3625.2,subreddits
-18952,animals,1,3105.4,subreddits
-18952,plants,2,2614.3,subreddits
-18952,flowers,3,2157.8,subreddits
-20300,animals,1,2125.8,subreddits
-20300,fashion,2,3787.8,subreddits
-21466,r/animals,1,2593.1,subreddits
-21466,r/plants,2,2641.2,subreddits
-21466,r/jewlery,3,4199.2,subreddits
-24628,Gardening,1,12770,subreddits
-24628,True crime,2,7495,subreddits
-24628,House plants,3,7060,subreddits
-24628,Maine,4,4897,subreddits
-33324,gaming information,1,8670.9,subreddits
-45042,animals,1,4389.2,subreddits
-45042,plants,2,1786.6,subreddits
-45042,furniture,3,2381.5,subreddits
-45712,animals,1,2014.2,subreddits
-45712,fashion,2,2987.4,subreddits
-45712,jewlery,3,1902.6,subreddits
-45712,plants,4,1267.3,subreddits
-45712,gardening,5,1989.8,subreddits
-45712,flowers,6,1767.7,subreddits
-47362,lkn,1,3006.5,subreddits
-47362,lnjk,2,952,subreddits
-50986,test,1,1705.8,subreddits
-56824,fashion,1,2143.6,subreddits
-56824,plants,2,1151.6,subreddits
-66985,asdf,1,4718,subreddits
-66985,asdf,2,535.9,subreddits
-66985,sdf,3,703.1,subreddits
-67768,animals,1,3806.7,subreddits
-67768,plants,2,1816.6,subreddits
-82201,test1,1,3006.5,subreddits
-82201,test2,2,2055.9,subreddits
-82201,test3,3,991.4,subreddits
-92156,OOTP,1,8617.6,subreddits
-92156,Dota2,2,1232,subreddits
-92156,baseball,3,2712.2,subreddits
-92156,fantasybaseball,4,3167.9,subreddits
-92156,alignmentcharts,5,9352,subreddits
-92156,firsttimehomebuyer,6,2743.9,subreddits
-92156,hearthstone,7,5552.4,subreddits
-92156,pokemon,8,9263.6,subreddits
-92156,pokemonradicalred,9,5632.1,subreddits
-92156,cardinals,10,4743.9,subreddits
-92156,foodnetwork,11,14999.8,subreddits
-92156,fednews,12,23704.4,subreddits
-92156,nostupidquestions,13,6175.9,subreddits
-92156,iasip,14,31943.6,subreddits
-92156,sitcoms,15,11800,subreddits
-92156,maine,16,1864.4,subreddits
-92156,theoffice,17,12527.7,subreddits
-21466,hammer,1,6465.1,tools
-21466,screwdrive,2,2159.9,tools
-24628,toothbrush,1,8711,tools
-24628,shovel,2,4144,tools
-24628,saw,3,1368,tools
-24628,knife,4,4748,tools
-24628,spoon,5,4757,tools
-24628,comb,6,4575,tools
-24628,fork,7,3866,tools
-24628,hammer,8,4951,tools
-24628,strainer,9,9064,tools
-24628,wisk,10,7925,tools
-24628,shears,11,12944,tools
-24628,nail clipper,12,47605,tools
-24628,paint brush,13,5720,tools
-24628,nail file,14,6726,tools
-24628,makeup brush,15,14423,tools
-24628,scalple,16,24006,tools
-24628,eyeglasses,17,7072,tools
-33324,wrench,1,11053.1,tools
-33324,pliers,2,2922.7,tools
-33324,hammer,3,4243.6,tools
-33324,socket wrench,4,7429.1,tools
-33324,regular screwdriver,5,10858.9,tools
-33324,philips screwdrive,6,6442.1,tools
-33324,shovel,7,3020.1,tools
-33324,pickaxe,8,10663.6,tools
-33324,sledgehammer,9,10640.3,tools
-33324,wood saw,10,7946.5,tools
-33324,table saw,11,4453.1,tools
-33324,drill,12,5619.3,tools
-33324,sockets,13,11374.5,tools
-33324,pipe wrench,14,8133.8,tools
-33324,vise grips,15,7315.3,tools
-33324,hex wrench,16,28615.3,tools
-33324,jig saw,17,22878,tools
-45042,spade,1,4664.9,tools
-45042,rake,2,2176.7,tools
-56824,spade,1,3265.4,tools
-56824,knife,2,3606.7,tools
-56824,fork,3,1101.4,tools
-66985,df,1,993.6,tools
-66985,dg,2,864.3,tools
-66985,de,3,625.4,tools
 92156,hammer,1,10105.7,tools
 92156,wrench,2,3864,tools
