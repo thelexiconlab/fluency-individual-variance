@@ -775,6 +775,20 @@ function SpamTask(domain) {
       }
   };
 
+  var totaltime = {
+            type: jsPsychCallFunction,
+            func: function() {
+                var total_ms = jsPsych.getTotalTime();
+                var total_minutes = total_ms / 60000;
+
+                jsPsych.data.addProperties({
+                total_time_ms: total_ms,
+                total_time_minutes: total_minutes
+                });
+
+            }
+            };
+
 
  
   //compensation question 
@@ -1076,6 +1090,7 @@ const trials = [
   // timeline.push(compensationpage1, compensation_procedure)
   timeline.push(save_data);
   timeline.push(endexperiment);
+  timeline.push(totaltime);
 
   jsPsych.run(timeline);
 
