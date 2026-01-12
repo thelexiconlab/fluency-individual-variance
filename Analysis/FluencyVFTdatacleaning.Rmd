@@ -120,7 +120,7 @@ library(stringr)
 
 organized_spam <- datafile %>%
   filter(
-    subject %in% good_domain_counts$subject,
+    #subject %in% good_domain_counts$subject,
     task == "SpAM",
     !is.na(droppedwords),
     droppedwords != "[]",
@@ -131,7 +131,7 @@ organized_spam <- datafile %>%
   mutate(droppedwords = list(fromJSON(droppedwords))) %>%
   filter(length(droppedwords) > 0) %>%
   unnest_longer(droppedwords) %>%
-  unnest_wider(droppedwords) %>%
+  unnest_wider(droppedwords)# %>%
   ungroup() %>%
   group_by(subject, domain, id) %>%
   slice_tail(n = 1) %>%                     # keep only most recent position per id
@@ -169,7 +169,6 @@ organized_spam <- organized_spam %>%
 View(organized_spam)
 write_csv(organized_spam, "../Data/Pilot Data/organized_spam.csv")
 ```
-
 
 ## Cleaning demographics data
 ```{r}
