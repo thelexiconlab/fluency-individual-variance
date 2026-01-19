@@ -1,8 +1,7 @@
-run_id,age,gender,education,race,hispanic,dominant_hand,alert_time,english,first_language,age_learned_english
-10,19,female,13,multiracial,No,Right,Morning,yes,NA,NA
-14,19,female,13,multiracial,No,Right,Morning,yes,NA,NA
-18,19,femals,13,multiracial,No,Right,Morning,no,spanish,3
-37,19,female,13,Asian,No,Right,Morning,yes,NA,NA
-44,32,male,20,White/Caucasian,No,Right,Afternoon,yes,NA,NA
-50,49,male,16,White/Caucasian,No,Right,Morning,yes,NA,NA
-53,53,female,20,multiracial,No,Right,Morning,yes,NA,NA
+subject,age,gender,education,race,hispanic,dominant_hand,alert_time,english,first_language,age_learned_english
+41393,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,19,female,13,NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,Asian,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,No,Right,Morning,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA,no,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA,NA,spanish,5
