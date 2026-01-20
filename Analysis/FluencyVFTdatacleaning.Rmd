@@ -22,7 +22,7 @@ library(jsonlite)
 #datafile <- read_csv("filepath") where filepath is the location of the csv file
 
 #Pilot participant csv data file:
-datafile <- read_csv("../Data/Pilot Data/fluency.csv")
+datafile <- read_csv("../Data/Pilot Data/fluency_193.csv")
 
 #Viewing the data file in seperate tab:
 View(datafile)
@@ -41,38 +41,27 @@ good_domain_counts <- datafile %>%
 
 #to isolate data on participants interests and subreddits interacted with 
 organized_interest_data <- datafile %>% 
-  filter(
-    subject %in% good_domain_counts$subject,
-    task == "VFT",
-    !is.na(tagged_responses),
-    tagged_responses != "[]",
-    tagged_responses != "",
-    domain != "furniture-practice",
-    domain %in% c("subreddits", "interest")
-    ) %>% 
-  select(subject, domain, tagged_responses) %>%
+  filter(domain %in% c("subreddits", "interest")) %>%
+  filter(!is.na(tagged_responses), tagged_responses != "", tagged_responses != "[]") %>%
   rowwise() %>%
   mutate(parsed_responses = list(fromJSON(tagged_responses))) %>%
-  filter(length(parsed_responses) > 0) %>%
-  ungroup()%>%
-  arrange(domain, subject)
+  ungroup() %>%
+  unnest_longer(parsed_responses) %>%
+  unnest_wider(parsed_responses, names_sep = "_")
 
 subreddit_data <- organized_interest_data%>%
-  filter(domain == "subreddits",
-         subject %in% good_domain_counts$subject)%>%
-  unnest_longer(parsed_responses)%>%
-  unnest_wider(parsed_responses)%>%
-  rename(subreddit_responses = response)%>%
-  select(subject, subreddit_responses)
+  filter(domain == "subreddits") %>%
+  select(subject, parsed_responses_response, parsed_responses_tag) %>%
+  rename(subreddit_responses = parsed_responses_response,
+         tag = parsed_responses_tag)
 View(subreddit_data)
 write_csv(subreddit_data, "../Data/Pilot Data/subreddit_data.csv")
 
 interests_data <- organized_interest_data%>%
   filter(domain == "interest")%>%
-  unnest_longer(parsed_responses)%>%
-  unnest_wider(parsed_responses)%>%
-  rename(interests_responses = response)%>%
-  select(subject, interests_responses)
+  select(subject, parsed_responses_response, parsed_responses_tag) %>%
+  rename(interests_responses = parsed_responses_response,
+         tag = parsed_responses_tag)
 View(interests_data)
 write_csv(interests_data, "../Data/Pilot Data/interests_data.csv")
   
@@ -80,32 +69,38 @@ write_csv(interests_data, "../Data/Pilot Data/interests_data.csv")
 
 ##Cleaning Fluency Data 
 ```{r}
-
+safe_fromJSON <- function(x) {
+  tryCatch(fromJSON(x), error = function(e) NULL)
+}
 #to make data analysis through Forager easier:
 organized_fluency <- datafile %>% #initiates dplyr pipeline
   filter(
-    subject %in% good_domain_counts$subject, # only keeping subjects with full data
     task == "VFT",
-    !is.na(tagged_responses),
-    tagged_responses != "[]",
-    tagged_responses != "",
-   !domain %in% c("furniture-practice", "subreddits", "interest")
+   !domain %in% c("furniture-practice", "subreddits", "interest"),
+   !is.na(tagged_responses),
+   !is.na(response_times)
     ) %>% 
-  select(-response) %>%
-  rowwise() %>%
   mutate(
-    parsed_responses = list(fromJSON(tagged_responses)),
-    response_times = list(fromJSON(response_times))
+    parsed_responses = map(tagged_responses, safe_fromJSON),
+    parsed_times = map(response_times, safe_fromJSON)
+  ) %>%
+  filter(
+    !map_lgl(parsed_responses, is.null),
+    !map_lgl(parsed_times, is.null)
+  ) %>%
+  unnest_longer(parsed_responses, indices_to = "idx") %>%
+  unnest_longer(parsed_times, indices_to = "idx_time") %>%
+  filter(idx == idx_time) %>%
+  unnest_wider(parsed_responses, names_sep = "_") %>%
+  transmute(
+    subject,
+    response = parsed_responses_response,
+    entry_number = parsed_responses_tag,
+    response_times = parsed_times,
+    domain
     ) %>%
-  filter(length(parsed_responses) > 0) %>%
-  unnest_longer(parsed_responses, indices_to = "response_index") %>%
-  unnest_longer(response_times, indices_to = "time_index") %>%
-  filter(response_index == time_index) %>%
-  unnest_wider(parsed_responses) %>%
-  select(-time_index) %>%
-  select(subject, response, tag, response_times, domain) %>%
-  rename(entry_number = tag) %>%
-  arrange(subject,domain)
+  arrange(subject, domain, entry_number)
+
 write_csv(organized_fluency, "../Data/Pilot Data/organized_fluency.csv") 
 View(organized_fluency)
 
@@ -131,7 +126,7 @@ organized_spam <- datafile %>%
   mutate(droppedwords = list(fromJSON(droppedwords))) %>%
   filter(length(droppedwords) > 0) %>%
   unnest_longer(droppedwords) %>%
-  unnest_wider(droppedwords)# %>%
+  unnest_wider(droppedwords) %>%
   ungroup() %>%
   group_by(subject, domain, id) %>%
   slice_tail(n = 1) %>%                     # keep only most recent position per id
@@ -140,15 +135,15 @@ organized_spam <- datafile %>%
   arrange(subject, domain, entry_number) %>%
   group_by(subject, domain) %>%              # only pair up within domain
   mutate(
-    x  = as.numeric(str_remove(left, "px")),
-    y  = as.numeric(str_remove(top,  "px")),
+    x  = x_norm,
+    y  = y_norm,
     word1 = word,
     x1 = x,
     y1 = y,
-    word2 = dplyr::lead(word),
-    x2    = dplyr::lead(x),
-    y2    = dplyr::lead(y),
-    pair  = dplyr::if_else(is.na(word2), NA_character_,
+    word2 = lead(word),
+    x2    = lead(x),
+    y2    = lead(y),
+    pair  = if_else(is.na(word2), NA_character_,
                            stringr::str_c(word1, word2, sep = ", "))
   ) %>%
   ungroup() %>%
@@ -172,81 +167,44 @@ write_csv(organized_spam, "../Data/Pilot Data/organized_spam.csv")
 
 ## Cleaning demographics data
 ```{r}
-demographics = datafile %>%
+cols_to_select <- c("run_id", "age", "gender", "education", "question_order", "race", "hispanic", "dominant_hand", "alert_time", "english", "additional_languages")
+
+optional_cols <- c("first_language", "age_learned_english")
+cols_to_select <- c(cols_to_select, optional_cols[optional_cols %in% colnames(datafile)])
+
+demographics_cleaned <- datafile %>%
   filter(typeoftrial == "demographics",
-         run_id %in% good_domain_counts$run_id) %>%
-  select("subject","run_id","gender", "age", "education", "race", 
-         "hispanic", "dominant_hand", "alert_time", "english")%>%
-  filter(!if_all(everything(), is.na))%>%
+         run_id %in% good_domain_counts$run_id
+         ) %>%
+  select(all_of(cols_to_select)) %>%
+  filter(!if_all(everything(), is.na)) %>%
   mutate(
     age = as.numeric(age),
-    education = as.numeric(education)
-    )%>%
-mutate(across(c("age","gender","education","race",
-                "hispanic", "dominant_hand", "alert_time", "english"),
-              ~ifelse(. == "", "blank",.)))%>%
-  # people fill in gender in different ways, will need to look at data and recode this
-  mutate(gender = ifelse(gender == "Cis-female", "F",
-                         ifelse(gender %in% c("cis male", "i am a boy"), 
-                                "M", gender)))%>%
-  mutate(Gender_Abbrev = str_to_upper(str_sub(gender, 1, 1))) %>%
-  mutate(Gender_Abbrev = ifelse(Gender_Abbrev == "W", "F", 
-                                ifelse(Gender_Abbrev %in% 
-                                         c("T", "N"), "N", Gender_Abbrev)))
-demographics%>%
-  summarise(mean_age= mean(age, na.rm = TRUE),
-            sd_age=sd(age, na.rm = TRUE))
-
-demographics%>%
-    filter(Gender_Abbrev != "B")%>%
-  group_by(Gender_Abbrev) %>% count %>%
-  ungroup() %>%
-  mutate(Percentage = (n / sum(n)) * 100)
-
-demographics%>%
-  filter(race != "blank")%>%
-  count(race) %>%
-  mutate(Percentage = (n / sum(n)) * 100)
-
-demographics%>%
-  filter(education != "blank")%>%
-  summarise(mean_ed= mean(education, na.rm = TRUE),
-            sd_ed=sd(education, na.rm = TRUE))
-# if people answer that english is not their first language, there will be 
-# two additional columns called first_language and age_learned_english
-non_english_IDs = datafile %>%
-  select(run_id, english, first_language, age_learned_english) %>%
-  filter(!is.na(age_learned_english))
-
-1-(length(unique(non_english_IDs$run_id))/length(unique(datafile$run_id)))
-
-after_age_five = non_english_IDs %>%
-  filter(age_learned_english >5)
-
-after_age_five_IDs = after_age_five %>% pull(run_id)
-
-
-
-# cleaning up the csv 
-demographics_data = datafile %>% filter(run_id %in% good_domain_counts$run_id)%>%
-  select(run_id, age, gender, education, race, hispanic, dominant_hand, alert_time, english, first_language, age_learned_english) %>%
-  group_by(run_id) %>% 
-  fill(everything(), .direction = "downup") %>%  
-  slice(1) %>% filter(gender!="NA")%>%
+    education = as.numeric(education),
+    gender = as.character(gender),
+    english = as.character(english),
+    additional_languages = as.character(additional_languages),
+    across(any_of(c("first_language", "age_learned_english")), as.character)
+  ) %>%
+  mutate(across(c(age, gender, education, race, hispanic, dominant_hand, alert_time, english),
+                ~ifelse(. == "" | is.na(.), "blank", .))) %>%
+  mutate(gender = case_when(
+    gender %in% c("Cis-female", "Female", "F") ~ "F",
+    gender %in% c("cis male", "i am a boy", "M") ~ "M",
+    gender == "blank" | is.na(gender) ~ "blank",
+    TRUE ~ as.character(gender)
+  )) %>%
+  mutate(Gender_Abbrev = str_to_upper(str_sub(gender, 1, 1)),
+         Gender_Abbrev = case_when(
+           Gender_Abbrev == "W" ~ "F",
+           Gender_Abbrev %in% c("T", "N") ~ "N",
+           TRUE ~ Gender_Abbrev
+         )) %>%
+  group_by(run_id) %>%
+  fill(everything(), .direction = "downup") %>%
+  slice(1) %>%
   ungroup()
 
 write_csv(demographics_data, "../Data/Pilot Data/demographics_data.csv")
 View(demographics_data)
-```
-
-##Cleaning compensation data 
-```{r}
-#to isolate data on participants compensation  
-compensation_data <- datafile 
-compensation_data <- compensation_data %>%
-  select(compensation, compensation_name, compensation_email)%>%
-  filter(!if_all(everything(), is.na))
-View(compensation_data)
-write_csv(compensation_data, "../Data/Pilot Data/compensation_data.csv")
-  
 ```
