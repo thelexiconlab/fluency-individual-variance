@@ -1,0 +1,214 @@
+"value","trial_type","trial_index","time_elapsed","internal_node_id","run_id","condition","recorded_at","source_code_version","ip","user_agent","device","browser","browser_version","platform","platform_version","referer","accept_language","subject_id","total_time_ms","total_time_minutes","rt","stimulus","response","typeoftrial","subject","taggedResponses","response_times","ended_early","task","domain","tagged_responses","slider_start","category_interest","estimate","droppedwords","viewport_width","viewport_height","device_pixel_ratio","view_history","age","gender","education","question_order","race","hispanic","dominant_hand","alert_time","english","additional_languages","completion_code"
+"","call-function","0","1","0.0-0.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""
+"","html-button-response","1","2566","0.0-1.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","2565","
+ <p style=""font-size:20px;""> Thank you for taking part in this experiment!</p>
+ <p style=""font-size:20px;""> ‎</p>
+ <p style=""font-size:18px;""> Before we walk you through the tasks you will be doing, we would like to get a sense of what</p>
+ <p style=""font-size:18px;""> content you typically consume on the Reddit platform. On the preceeding page, we ask that you</p>
+ <p style=""font-size:18px;""> input the names of the Subreddits you typically engage with in any capacity. (i.e. writing posts,</p>
+ <p style=""font-size:18px;""> reading posts, upvoting, commenting, sharing, etc.) On the page following that, we ask that you input</p>
+ <p style=""font-size:18px;""> your general interests, independent of specific Subreddits. To input a response, type it within the </p>
+ <p style=""font-size:18px;""> provided box and <strong>press ENTER</strong> after every response. Keep in mind, there will be a three minute</p>
+ <p style=""font-size:18px;""> time limit. However, if you feel you are done before time runs out, <strong>press Continue</strong>. This data</p>
+ <p style=""font-size:18px;""> is crucial to the experiment, so please be as accurate possible when typing your responses.</p>
+
+
+ <p style=""font-size:20px;""> ‎</p>
+ <p style=""font-size:18px;""> After you complete these tasks, you will be provided further instructions and continue to the actual experiment.</p>
+ <p style=""font-size:18px;""> When you are ready to start, <strong>press Continue.</strong></p>
+
+
+ ","0","instructions","Z6NZ9EYF","","","","","","","","","","","","","","","","","","","","","","","","",""
+"","html-keyboard-response","2","7492","0.0-2.0-0.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","","","","","Z6NZ9EYF","[{""response"":""kjhgfd"",""tag"":1},{""response"":""jhg"",""tag"":2}]","[2238.3,1447.9]","false","VFT","subreddits","[{""response"":""kjhgfd"",""tag"":1},{""response"":""jhg"",""tag"":2}]","","","","","","","","","","","","","","","","","","",""
+"","html-keyboard-response","3","13401","0.0-3.0-0.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","","","","","Z6NZ9EYF","[{""response"":""jhgf"",""tag"":1},{""response"":""kjhgf"",""tag"":2}]","[3298.3,1586.3]","false","VFT","interest","[{""response"":""jhgf"",""tag"":1},{""response"":""kjhgf"",""tag"":2}]","","","","","","","","","","","","","","","","","","",""
+"","html-button-response","4","21393","0.0-4.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","7989","
+  <p style=""font-size:20px;""> You will now proceed with the actual experiment.</p>
+  <p style=""font-size:20px;""> ‎</p>
+  <p style=""font-size:22px;""> <strong>This experiment has two tasks:</strong></p>
+  <p style=""font-size:18px;""> <u>In the first task</u>, you will be presented the name of a category and must type 
+  <p style=""font-size:18px;""> in as many items that correspond to that category as you can within the time limit. </p>
+  <p style=""font-size:18px;""> <u>In the second task</u>, you will move each of the words that you typed in the first </p>
+  <p style=""font-size:18px;""> task around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:18px;""> The experiment will consist of only 5 ""trials,"" so please be as accurate/precise as 
+  <p style=""font-size:18px;""> possible when typing in items and placing the objects, rather than trying to speed through.</p>
+  <p style=""font-size:20px;""> ‎</p>
+
+
+
+  ","0","instructions","Z6NZ9EYF","","","","","","","","","","","","","","","","","","","","","","","","",""
+"","html-button-response","5","27076","0.0-5.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","5678","
+  <p style=""font-size:22px;""><strong>You will begin with a verbal fluency task.</strong></p>
+  <p style=""font-size:17px;""> In this task, you will be presented the name of a category (e.g., FURNITURE) in capital</p>
+  <p style=""font-size:17px;""> letters. Your job is to type in as many items as you can think of that correspond to that</p>
+  <p style=""font-size:17px;""> category in one minute. You will be doing this five times on five separate domains.</p> 
+  
+
+  <video width = ""600"" height = ""300"" autoplay muted loop style = ""margin-top: 10px;"">
+    <source src = ""VFTTutorial.mp4"" type = ""video/mp4"">
+  </video>
+
+  <p style=""font-size:17px;""> After you type in each word, press <strong>ENTER</strong> to type in the next </p>
+  <p style=""font-size:17px;""> word. When the timer runs out, you will automatically proceed to the next task.</p>
+  <p style=""font-size:17px;""> You will be given 1 minute for each category.</p> 
+
+
+
+
+
+  ","0","instructions","Z6NZ9EYF","","","","","","","","","","","","","","","","","","","","","","","","",""
+"","html-button-response","6","44835","0.0-6.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","17757","
+  <p style=""font-size:22px;""> <strong>Then, you will perform a spatial arrangement task.</strong></p>
+  <p style=""font-size:17px;""> In this task, you will be shown the set of words you typed in the last verbal fluency task you performed.</p>
+  <p style=""font-size:17px;""> We need to know how similar you think these words are to one another. Your job is to move each word</p>
+  <p style=""font-size:17px;""> around so that the similar words are proportionately closer together. That is, you should move them into</p>
+  <p style=""font-size:17px;""> space such that the distance between each pair of items represents how similar you think the pair is.</p>
+  <p style=""font-size:17px;""> (with closer in space meaning more similar, and farther away in space meaning more dissimilar)</p>
+
+  <video width = ""600"" height = ""400"" autoplay muted loop style = ""margin-top: 10px;"">
+    <source src = ""SpAMTutorial.mp4"" type = ""video/mp4"">
+  </video>
+
+  <p style=""font-size:17px;""> The words will appear one by one in the top left corner of a box. You can move the words by simply</p>
+  <p style=""font-size:17px;""> click/dragging them. If the words seem similar, place them close together. If they seem dissimilar,</p>
+  <p style=""font-size:17px;""> place them farther away from each other. You will be doing this five times on five separate domains,</p> 
+  <p style=""font-size:17px;""> with a different set of words each time, based the words you typed in the corresponding verbal fluency </p>
+  <p style=""font-size:17px;""> task. After dragging each word, the next word will appear. You may rearrange previously placed items.</p>
+  <p style=""font-size:17px;""> Note, to complete the trial, <u>all items</u> must be moved into the ""active arena,"" the large central box. </p>
+  <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+  
+    <p style=""font-size:5px;""> ‎</p>
+
+  ","0","instructions","Z6NZ9EYF","","","","","","","","","","","","","","","","","","","","","","","","",""
+"","html-button-response","7","49251","0.0-7.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","4414","
+  <p style=""font-size:18x;""> Now, you will begin the task, consisting of five rounds with different categories.</p>
+  <p before each trial, you will be asked about your interest in the category and the number of items you believe you could produce</p> 
+  <p style=""font-size:18x;""> Again, your first task is to first type in as many items as you can think of that correspond to the given category</p>
+  <p style=""font-size:18x;""> within the time limit. Then, you will arrange the items you input previously in the box provided based on how related they are.</p>
+
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> When you're ready, <strong>press Begin</strong> to start the verbal fluency task.</p>
+
+  ","0","instructions","Z6NZ9EYF","","","","","","","","","","","","","","","","","","","","","","","","",""
+"","html-slider-response","8","61526","0.0-8.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","12272","
+      <p>
+        How interested are you in the category <strong>Animals</strong>?
+      </p>
+    ","60","","Z6NZ9EYF","","","","VFT_category_interest","animals","","50","60","","","","","","","","","","","","","","","","",""
+"","survey-html-form","9","70658","0.0-9.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","9129","","{""estimate"":""4""}","","Z6NZ9EYF","","","","VFT_estimate","animals","","","","null","","","","","","","","","","","","","","","",""
+"","html-keyboard-response","10","130660","0.0-10.0-0.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","null","
+    <div id = ""timer-box""></div>
+    <div id = ""response-input-box"">
+      <p style = ""font-size:30px;"">Name as many <strong>ANIMALS</strong> as you can.</p>
+      <div id = ""responses"">
+        <input type = ""text"" class = ""animals-response active"" autofocus />
+      </div>
+      <p id = ""below-input-text"" style = ""font-size: 14px; margin-top: 10px; color: gray; text-align: left;""> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .animals-response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .animals-response.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    ","null","","Z6NZ9EYF","","[2503.3,1107.9,635.5,1317.1,1304.8,908.4]","","VFT","animals","[{""response"":""ddhjdf"",""tag"":1},{""response"":""cat"",""tag"":2},{""response"":""dog"",""tag"":3},{""response"":""worlf"",""tag"":4},{""response"":""sheep"",""tag"":5},{""response"":""bear"",""tag"":6}]","","","","","","","","","","","","","","","","","","",""
+"","html-button-response","11","133360","0.0-11.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","2697","
+  <p style=""font-size:20px;""> <strong>You are moving to the spatial arrangement task.</strong></p>
+  <p style=""font-size:16px;""> As a reminder, in this task, you will be shown a set of words.</p>
+  <p style=""font-size:16px;""> We need to know how similar you think these words are to one another.</p>
+  <p style=""font-size:16px;""> To indicate your perception of similarity, you will move each word</p> 
+  <p style=""font-size:16px;""> around so that the similar ones are proportionately closer together.</p>
+  <p style=""font-size:16px;""> If the words seem similar, place them close together, if they seem</p>
+  <p style=""font-size:16px;""> dissimilar, place them farther away from each other.</p>
+  <p style=""font-size:10px;""> ‎</p>
+  <p style=""font-size:18px;""> Press <strong>Begin</strong> to start.</p>
+
+  ","0","instructions","Z6NZ9EYF","","","","","","","","","","","","","","","","","","","","","","","","",""
+"","html-button-response","12","160498","0.0-12.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","27136","
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:17px;""> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ","0","","Z6NZ9EYF","","","","SpAM","animals","","","","","[{""word"":""ddhjdf"",""id"":""word-1"",""x_px"":696,""y_px"":477,""x_norm"":0.5833726229765833,""y_norm"":0.07773179058034496,""canvas_width"":1253.59375,""canvas_height"":544,""first_move_latency_ms"":973.2999999970198,""move_count"":1},{""word"":""cat"",""id"":""word-2"",""x_px"":5,""y_px"":512,""x_norm"":0.004111445879881539,""y_norm"":0.01006011902963655,""canvas_width"":1253.59375,""canvas_height"":544,""first_move_latency_ms"":2424.2000000029802,""move_count"":1},{""word"":""dog"",""id"":""word-3"",""x_px"":1201,""y_px"":9,""x_norm"":0.9917423616845582,""y_norm"":0.9825987130298178,""canvas_width"":1253.59375,""canvas_height"":544,""first_move_latency_ms"":1023.2999999970198,""move_count"":1},{""word"":""worlf"",""id"":""word-4"",""x_px"":1188,""y_px"":506,""x_norm"":0.9880637552712458,""y_norm"":0.021660977009757998,""canvas_width"":1253.59375,""canvas_height"":544,""first_move_latency_ms"":2919.5,""move_count"":1},{""word"":""sheep"",""id"":""word-5"",""x_px"":9,""y_px"":9,""x_norm"":0.007524788691914771,""y_norm"":0.9825987130298178,""canvas_width"":1253.59375,""canvas_height"":544,""first_move_latency_ms"":1716,""move_count"":1},{""word"":""bear"",""id"":""word-6"",""x_px"":616,""y_px"":8,""x_norm"":0.5109217560343431,""y_norm"":0.9845321893598381,""canvas_width"":1253.59375,""canvas_height"":544,""first_move_latency_ms"":2589.5999999940395,""move_count"":1}]","1512","827","2","","","","","","","","","","","",""
+"","instructions","13","161990","0.0-13.0-0.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","1491","","","","","","","","","","","","","","","","","","[{""page_index"":0,""viewing_time"":1490}]","","","","","","","","","","",""
+"","survey-html-form","14","169680","0.0-13.0-1.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","7689","","{""gender"":""female"",""age"":""19"",""education"":""13""}","demographics","","","","","","","","","","","","","","","","19","female","13","","","","","","","",""
+"","survey-multi-select","15","171548","0.0-13.0-2.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","1864","","{""race"":[""Asian""]}","demographics","","","","","","","","","","","","","","","","","","","[0]","Asian","","","","","",""
+"","survey-multi-choice","16","175026","0.0-13.0-3.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","3476","","{""hispanic"":""No"",""dominant_hand"":""Right"",""alert_time"":""Morning""}","demographics","","","","","","","","","","","","","","","","","","","[0,1,2]","","No","Right","Morning","","",""
+"","html-button-response","17","176301","0.0-13.0-4.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","1274","Is English your first language?","0","demographics","","","","","","","","","","","","","","","","","","","","","","","","yes","",""
+"","survey-text","18","178097","0.0-13.0-5.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","1780","","{""additional_languages"":""kjhg""}","demographics","","","","","","","","","","","","","","","","","","","","","","","","","kjhg",""
+"","html-button-response","19","182948","0.0-14.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","4849","
+      <h2>Thank you for participating!</h2>
+      <p>
+        Your completion code is 
+      </p>
+
+      <p style = ""font-size: 28px; font-weight: bold; letter-spacing: 2px;"">
+        Z6NZ9EYF
+      </p>
+
+      <p>
+        To recieve compensation, please cfollow the link below to the compensation form and copy and paste the code above.
+      </p>
+
+      <p>
+        <a href = ""https://docs.google.com/forms/d/e/1FAIpQLSc8UGDrLaJgDIt7itpYr5u4Mt0LjjfXINBq9XZmaVx0b_rVlg/viewform?usp=header""
+          target = ""_blank""
+          rel = ""noopener noreferrer"">
+          Open compensation form
+        </a>
+      </p>
+
+      <p style = ""color: gray; font-size: 14px; margin-top: 20px;"">
+        After submitting the form, you may close this window.
+      </p>
+    ","0","compensation","","","","","","","","","","","","","","","","","","","","","","","","","","Z6NZ9EYF"
+"","html-button-response","20","184130","0.0-15.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","1182","
+      <p>You have completed the experiment. Thank you for participating! </p>
+      <p> Please click <a href=""https://drive.google.com/file/d/1yD8wzNc2l6z4PzHAHSpVsnpay0790VCZ/view"" target=""_blank"" rel=""noopener noreferrer"">here</a> to access the debriefing form and know more about our research.</p>
+      <p> Please click the button below to finish the experiment and save your data.</p>
+      <p> IMPORTANT: Please do not leave this page without clicking the button below.</p>
+        ","0","end","","","","","","","","","","","","","","","","","","","","","","","","","",""
+"","call-function","21","184131","0.0-16.0","193","1","2026-01-19 14:57:39","31a12eacf9ca9c64fa5784328de34dc0","24.59.125.53","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","Macintosh","Chrome","144.0.0.0","OS X","10_15_7","null","en-US,en;q=0.9","Z6NZ9EYF","184131","3.06885","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""

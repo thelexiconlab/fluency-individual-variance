@@ -1,13 +1,19 @@
 // Credit: Mateusz Rybczonec
+let timerInterval = null;
+
 function resetCountdown(){
   // hide app
-  document.getElementById("app").style.display = "none";
+  clearInterval(timerInterval);
+  const timerEl = document.getElementById("timer-box");
+  if (timerEl) {
+    timerEl.innerHTML = "";
+  }
 }
 
-function countDown(){
+function countDown(duration){
 const FULL_DASH_ARRAY = 283;
-const WARNING_THRESHOLD = 10;
-const ALERT_THRESHOLD = 5;
+const WARNING_THRESHOLD = 30;
+const ALERT_THRESHOLD = 10;
 
 const COLOR_CODES = {
   info: {
@@ -23,14 +29,14 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 15;
 let timePassed = 0;
 let endCalled = 0;
-let timeLeft = TIME_LIMIT;
-let timerInterval = null;
+let timeLeft = Math.ceil(duration/1000);
 let remainingPathColor = COLOR_CODES.info.color;
 
-document.getElementById("app").innerHTML = `
+const timerEl = document.getElementById("timer-box");
+
+timerEl.innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
@@ -60,15 +66,14 @@ function onTimesUp() {
   clearInterval(timerInterval);
   endCalled = 1;
   timePassed = 0;
-  timeLeft = TIME_LIMIT
-  startTimer();
-
+  timeLeft = Math.ceil(duration/1000) - timePassed;
+  jsPsych.finishTrial();
 }
 
 function startTimer() {
   timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
-    timeLeft = TIME_LIMIT - timePassed;
+    timeLeft = Math.ceil(duration/1000) - timePassed;
     document.getElementById("base-timer-label").innerHTML = formatTime(
       timeLeft
     );
@@ -76,7 +81,8 @@ function startTimer() {
     setRemainingPathColor(timeLeft);
 
     if (timeLeft === 0) {
-      onTimesUp();
+      clearInterval(timerInterval);
+      jsPsych.finishTrial();
     }
   }, 1000);
 }
@@ -84,36 +90,24 @@ function startTimer() {
 function formatTime(time) {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
-
-  if (seconds < 10) {
-    seconds = `0${seconds}`;
-  }
-
-  return `${minutes}:${seconds}`;
+  return `${minutes}:${seconds < 10 ? "0": ""}${seconds}`;
 }
 
 function setRemainingPathColor(timeLeft) {
   const { alert, warning, info } = COLOR_CODES;
+  const path = document.getElementById("base-timer-path-remaining");
   if (timeLeft <= alert.threshold) {
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.remove(warning.color);
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.add(alert.color);
+      path.classList.remove(warning.color);
+      path.classList.add(alert.color);
   } else if (timeLeft <= warning.threshold) {
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.remove(info.color);
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.add(warning.color);
+      path.classList.remove(info.color);
+      path.classList.add(warning.color);
   }
 }
 
 function calculateTimeFraction() {
-  const rawTimeFraction = timeLeft / TIME_LIMIT;
-  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+  const rawTimeFraction = timeLeft / Math.ceil(duration / 1000);
+  return rawTimeFraction - (1 / Math.ceil(duration / 1000)) * (1 - rawTimeFraction);
 }
 
 function setCircleDasharray() {

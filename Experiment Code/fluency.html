@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Language experiment</title>
+    <script src="https://unpkg.com/jspsych@7.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@1.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-select@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.1.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-slider-response@1.1.3"></script>
+
+    <link href="https://unpkg.com/jspsych@7.1.2/css/jspsych.css" rel="stylesheet" type="text/css" />
+    <link href="timerstyle.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src = "timer.js"></script> 
+
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="jspsych-target"></div>
+    
+    <script>
+
+// should be window.jsPsych (instead of var) if running in cognition.run
+var jsPsych = initJsPsych({
+  display_element: 'jspsych-target',
+      on_finish: function() {
+        jsPsych.data.displayData();
+      },
+      on_trial_start: function(trial) {
+        jsPsych.data.addProperties({subject: subject_id});
+      }
+    });
+
+//creates random subject number + letter code
+var subject_id = createSubjectID();
+
+//enables sequence of events in experiment 
+var timeline = [];
+
+function createSubjectID(length = 8) {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let subjectCode = "";
+  for (let i = 0; i < length; i++){
+    subjectCode += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return subjectCode;
+}
+
+//formats opening instruction page and tells participant about experiment
+var interestssurveyinstructions = {
+ type: jsPsychHtmlButtonResponse,
+ stimulus: `
+ <p style="font-size:20px;"> Welcome to the experiment! <br><br></p>
+ <p style="font-size:18px;"> Before we walk you through the tasks you will be doing, we would like to get a sense of what</p>
+ <p style="font-size:18px;"> content you typically consume on the Reddit platform. On the next page, we ask that you</p>
+ <p style="font-size:18px;"> input the names of the Subreddits you typically engage with in any capacity. (i.e. writing posts,</p>
+ <p style="font-size:18px;"> reading posts, upvoting, commenting, sharing, etc.) On the page following that, we ask that you input</p>
+ <p style="font-size:18px;"> your general interests, independent of specific Subreddits. To input a response, type it within the </p>
+ <p style="font-size:18px;"> provided box and <strong>press ENTER</strong> after every response. Keep in mind, there will be a three minute</p>
+ <p style="font-size:18px;"> time limit. However, if you feel you are done before time runs out, <strong>press Continue</strong>. This data</p>
+ <p style="font-size:18px;"> is crucial to the experiment, so please be as accurate possible when typing your responses.<br><br></p>
+ <p style="font-size:18px;"> After you complete these tasks, you will be provided further instructions and continue to the actual experiment.</p>
+ <p style="font-size:18px;"> When you are ready to start, <strong>press Continue.</strong></p>
+ `,
+ choices: ["Continue"],
+     data: {
+       typeoftrial: 'instructions',
+       subject: subject_id
+   }
+};   
+
+//formats opening instruction page and tells participant about experiment
+var maininstructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+  <p style="font-size:20px;"> You will now proceed with the actual experiment.<br><br></p>
+  <p style="font-size:22px;"> <strong>This experiment has two tasks:</strong></p>
+  <p style="font-size:18px;"> <u>In the first task</u>, you will be presented the name of a category and must type 
+  <p style="font-size:18px;"> in as many items that correspond to that category as you can within the time limit (1 minute). </p>
+  <p style="font-size:18px;"> <u>In the second task</u>, you will move each of the words that you typed in the first </p>
+  <p style="font-size:18px;"> task around so that the similar ones are proportionately closer together.</p>
+  <p style="font-size:18px;"> The experiment will consist of only 5 categories, so please be as accurate/precise as 
+  <p style="font-size:18px;"> possible when typing in items and placing the objects, rather than trying to speed through.</p>
+  `,
+  choices: ["Continue"],
+  on_load: function() {
+    clearInterval(timerInterval);
+    resetCountdown();
+    jsPsych.pluginAPI.clearAllTimeouts();
+
+  },
+      data: {
+        typeoftrial: 'instructions',
+        subject: subject_id
+    }
+};    
+
+//instructs participants on VFT task with video example
+var VFTInstructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+  <p style="font-size:22px;"><strong>You will begin with a verbal fluency task.</strong></p>
+  <p style="font-size:17px;"> In this task, you will be presented the name of a category (e.g., FURNITURE) in capital</p>
+  <p style="font-size:17px;"> letters. Your job is to type in as many items as you can think of that correspond to that</p>
+  <p style="font-size:17px;"> category in <b>one minute</b>. You will be presented with 5 such categories.</p> 
+  
+
+  <video width = "600" height = "300" autoplay muted loop style = "margin-top: 10px;">
+    <source src = "VFTTutorial.mp4" type = "video/mp4">
+  </video>
+
+  <p style="font-size:17px;"> After you type in each word, press <strong>ENTER</strong> to type in the next </p>
+  <p style="font-size:17px;"> word. When the timer runs out, you will automatically proceed to the next task.</p>
+  <p style="font-size:17px;"> You will be given 1 minute for each category.</p> 
+
+  `,
+  choices: ["Continue"],
+  on_load: function() {
+    clearInterval(timerInterval);
+    resetCountdown();
+    jsPsych.pluginAPI.clearAllTimeouts();
+
+  },
+      data: {
+        typeoftrial: 'instructions',
+        subject: subject_id
+    }
+};    
+
+//instructs participants on SpAM task with video example
+var SpAMInstructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+  <p style="font-size:22px;"> <strong>Next, you will perform a spatial arrangement task.</strong></p>
+  <p style="font-size:17px;"> In this task, you will be shown the set of words you typed in the last verbal fluency task you performed.</p>
+  <p style="font-size:17px;"> We need to know how similar you think these words are to one another. Your job is to move each word</p>
+  <p style="font-size:17px;"> around so that the similar words are proportionately closer together. That is, you should move them into</p>
+  <p style="font-size:17px;"> space such that the distance between each pair of items represents how similar you think the pair is.</p>
+  <p style="font-size:17px;"> (with closer in space meaning more similar, and farther away in space meaning more dissimilar)</p>
+
+  <video width = "600" height = "400" autoplay muted loop style = "margin-top: 10px;">
+    <source src = "SpAMTutorial.mp4" type = "video/mp4">
+  </video>
+
+  <p style="font-size:17px;"> The words will appear one by one in the top left corner of a box. You can move the words by simply</p>
+  <p style="font-size:17px;"> dragging them. If the words seem similar, place them close together. If they seem dissimilar,</p>
+  <p style="font-size:17px;"> place them farther away from each other. You will be doing this five times on five separate categories,</p> 
+  <p style="font-size:17px;"> based on the words you typed in the corresponding verbal fluency task.</p>
+  <p style="font-size:17px;"> After dragging each word, the next word will appear. You may rearrange previously placed items.</p>
+  <p style="font-size:17px;"> Note, to complete the trial, <u>all words</u> must be moved into the "active arena," the large central box. </p>
+  <p style="font-size:17px;"> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+  `,
+  choices: ["Continue"],
+      data: {
+        typeoftrial: 'instructions',
+        subject: subject_id
+    }
+};    
+
+//instructs participant after they complete the practice round
+var startInstructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+  <p style="font-size:18x;"> <br><br><br>Now, you will begin the task, consisting of five rounds with different categories.</p>
+  <p style="font-size:18x;"> Before each trial, you will also be asked about your interest in the category and the number of items you believe you could produce for that category.</p> 
+  <p style="font-size:18x;"> Again, your first task is to first type in as many items as you can within the given category.</p>
+  <p style="font-size:18x;"> within the time limit. Then, you will arrange the items you input previously in the box provided based on how related they are.</p>
+
+  <p style="font-size:18px;"> When you're ready, <strong>press Begin</strong> to start the verbal fluency task.</p>
+
+  `,
+  choices: ["Begin"],
+      data: {
+        typeoftrial: 'instructions',
+        subject: subject_id
+    }
+};    
+
+//provides reminder of instructions between VFT task and SpAM
+var betweenVFTAndSpAMInstructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+  <p style="font-size:20px;"> <strong>You are moving on to the spatial arrangement task.</strong></p>
+  <p style="font-size:16px;"> As a reminder, in this task, you will be shown the set of words you just produced in the fluency task.</p>
+  <p style="font-size:16px;"> We need to know how similar you think these words are to one another.</p>
+  <p style="font-size:16px;"> To indicate your perception of similarity, you will move each word</p> 
+  <p style="font-size:16px;"> around so that the similar ones are proportionately closer together.</p>
+  <p style="font-size:16px;"> If the words seem similar, place them close together, if they seem</p>
+  <p style="font-size:16px;"> dissimilar, place them farther away from each other.</p>
+  
+  <p style="font-size:18px;"> Press <strong>Begin</strong> to start.</p>
+
+  `,
+  choices: ["Begin"],
+      data: {
+        typeoftrial: 'instructions',
+        subject: subject_id
+    }
+};    
+
+//provides reminder of instructions for next VFT category
+var afterSpAMInstructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+  <p style="font-size:18px;"> <strong>You will now move to the next category.</strong></p>
+  <p style="font-size:16px;"> As a reminder, in this task, you will indicate your interest in the category then type as</p> 
+  <p style="font-size:16px;"> many words as you can think of that correspond to the category presented in capital letters.</p>
+  <p style="font-size:18px;"> Press <strong>Begin</strong> to start.</p>
+
+  `,
+  choices: ["Begin"],
+      data: {
+        typeoftrial: 'instructions',
+        subject: subject_id
+    }
+};    
+
+window.responseData = {};
+
+//tracks responses and reaction time, adding each to a seperate array
+function createResponseHandler(domain) {
+  return function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        const currentInput = document.activeElement;
+
+      if (
+        currentInput.classList.contains(`${domain}-response`) && 
+        currentInput.value.trim() !==""
+      ) {
+        const timeElapsed = Number((performance.now()- responseData[domain].startTime).toFixed(2));
+        
+        responseData[domain].responses.push(currentInput.value.trim());
+        responseData[domain].times.push(timeElapsed)
+
+        currentInput.disabled = true;
+        currentInput.classList.remove("active");
+
+        const newInput = document.createElement("input");
+        newInput.type = "text";
+        newInput.className = `${domain}-response active`;
+        document.getElementById("responses").appendChild(newInput);
+        newInput.focus();
+      }
+    }
+  };
+}
+
+//formats VFT and maps tag and response time to each item input 
+function VFTTask(domain, prompt, time = 10000) {
+  const className = `${domain}-response`;
+  const responseHandler = createResponseHandler(domain);
+  
+  return {
+  type: jsPsychHtmlKeyboardResponse,
+  data: {
+    task: "VFT",
+    domain: domain,
+    subject: subject_id
+  },
+  
+  stimulus:`
+    <div id = "timer-box"></div>
+    <div id = "response-input-box">
+      <p style = "font-size:30px;">${prompt}</p>
+      <div id = "responses">
+        <input type = "text" class = "${className} active" autofocus />
+      </div>
+      <p id = "below-input-text" style = "font-size: 14px; margin-top: 10px; color: gray; text-align: left;"> press <strong>enter</strong> after each word!</p>
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .${className} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .${className}.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    `,
+
+  choices: [],
+  trial_duration: time, 
+  response_ends_trial: false,
+
+  on_load: function () {
+    clearInterval(timerInterval);
+    resetCountdown();
+    countDown(time);
+    
+    responseData[domain]= {
+      responses: [],
+      times: [],
+      interitem_intervals: [],
+      startTime: performance.now()
+    };
+
+    document.addEventListener ("keydown", responseHandler);
+    document.querySelector(`.${className}.active`)?.focus();
+  },
+
+  on_finish: function(data) {
+    document.removeEventListener("keydown", responseHandler);
+   
+    const responses = responseData[domain].responses;
+
+    function responseTags(responses) {
+      return responses.map((word, index) => ({
+        response: word,
+        tag: index + 1
+      }))
+    }
+
+    const taggedResponses = responseTags(responses);
+    const times = responseData[domain].times;
+
+    const firstResponseThenIntervals = times.length > 0
+      ? [times[0], ...times.slice(1).map((time, i) => time - times[i])]
+      : [];
+
+    const roundedResponseIntervals = firstResponseThenIntervals.map(t => Number(t.toFixed(2)));
+
+      
+      data.tagged_responses = JSON.stringify(taggedResponses);
+      data.response_times = JSON.stringify(roundedResponseIntervals)
+  
+    
+    clearInterval(timerInterval);
+    }
+  };  
+}
+
+timeline.push({
+  type: jsPsychCallFunction,
+  func: () => {
+    console.log("All Data:", jsPsych.data.get().values());
+  }
+});
+
+//handles case where no words are input 
+function VFTRedo(domain, prompt, time = 10000) {
+  const VFTTrial = VFTTask(domain, prompt, time);
+  
+  return {
+    timeline: [VFTTrial],
+    loop_function: function() {
+      const trialData = jsPsych.data.get().filter({
+        task: "VFT",
+        domain: domain
+      }).last(1).values()[0];
+      let responses = [];
+
+      try {
+        responses = JSON.parse(trialData?.tagged_responses || "[]");
+      } catch (e) {
+        console.error("Error parsing tagged_responses:", e);
+    }
+
+      if (responses.length === 0) {
+        alert("You did not input any responses. Please try again.");
+        return true;
+      }
+      return false;
+    }
+  };
+}
+
+//handles pages where participants are asked about their interests and able to proceed with continue button or time running out
+
+function VFTTaskContinueButton(domain, prompt, time = 10000) {
+  const className = `${domain}-response`;
+  const responseHandler = createResponseHandler(domain);
+  
+  return {
+  type: jsPsychHtmlKeyboardResponse,
+  data: {
+    task: "VFT",
+    domain: domain,
+    subject: subject_id
+  },
+  
+  stimulus:`
+    <div id = "timer-box"></div>
+    <div id = "response-input-box">
+      <p style = "font-size:30px;">${prompt}</p>
+      <div id = "responses">
+        <input type = "text" class = "${className} active" autofocus />
+      </div>
+      <p id = "below-input-text" style = "font-size: 14px; margin-top: 10px; color: gray; text-align: left;"> press <strong>enter</strong> after each word!</p>
+      <button id = "continue-btn" style = "margin-top: 15px; padding: 10px 20px font-size:16px;">Continue</button> 
+    </div>
+    <style>
+      #responses {
+      position: relative;
+      width: 300px;
+      height: 40px; 
+      }
+
+      .${className} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        opacity: 0.5;
+      } 
+
+      .${className}.active {
+      opacity: 1;
+      z-index: 999;
+      }
+    </style>
+    `,
+
+  choices: [],
+  trial_duration: time, 
+  response_ends_trial: false,
+
+  on_load: function () {
+
+    document.addEventListener ("keydown", responseHandler);
+    document.querySelector(`.${className}.active`)?.focus();
+    
+    resetCountdown();
+    countDown(time);
+    // const continueButton = document.getElementById("continue-btn");
+    // const timerText = document.getElementById("time-remaining");
+    
+    
+    responseData[domain]= {
+      responses: [],
+      times: [],
+      interitem_intervals: [],
+      startTime: performance.now()
+    };
+
+    const continueButton = document.getElementById("continue-btn");
+    continueButton.addEventListener("click", () => {
+      clearInterval(timerInterval);
+      jsPsych.finishTrial({
+        taggedResponses: JSON.stringify(responseData[domain].responses.map((word, i) => ({response: word, tag: i + 1}))),
+        response_times: JSON.stringify(
+          responseData[domain].times.length > 0
+          ? [responseData[domain].times[0], ...responseData[domain].times.slice(1).map((t, i) => t - responseData[domain].times[i])]
+          : []
+        ),
+        ended_early: true
+      });
+    });
+  },
+
+
+  on_finish: function(data) {
+    document.removeEventListener("keydown", responseHandler);
+    clearInterval(timerInterval)
+    resetCountdown();
+
+    if (!data.tagged_responses) {
+      const responses = responseData[domain].responses;
+      const times = responseData[domain].times;
+      const tagged = responses.map((word, i) => ({ response: word, tag: i + 1}));
+      const intervals = times.length > 0
+        ? [times[0], ...times.slice(1).map((t, i) => t - times[i])]
+        : [];
+
+        data.tagged_responses = JSON.stringify(tagged)
+        data.response_times  = JSON.stringify(intervals.map(t => Number(t.toFixed(2))));
+        data.ended_early = false;
+      }
+
+      delete responseData[domain];
+      timerInterval = null;
+      jsPsych.pluginAPI.clearAllTimeouts();
+    }
+  };
+}
+   
+//ensures that in trials asking participants interests, they must input responses 
+    
+function VFTRedoContinueButton(domain, prompt, time = 10000) {
+  const VFTTrial = VFTTaskContinueButton(domain, prompt, time);
+  
+  return {
+    timeline: [VFTTrial],
+    loop_function: function() {
+      const trialData = jsPsych.data.get().filter({
+        task: "VFT",
+        domain: domain
+      }).last(1).values()[0];
+      let responses = [];
+
+      try {
+        responses = JSON.parse(trialData?.tagged_responses || "[]");
+      } catch (e) {
+        console.error("Error parsing tagged_responses:", e);
+    }
+
+      if (responses.length === 0) {
+        alert("You did not input any responses. Please try again.");
+        return true;
+      }
+      return false;
+    }
+  };
+}
+
+function VFT_category_interest(domain, displayName = domain) {
+  return {
+    type: jsPsychHtmlSliderResponse,
+    stimulus: `
+      <p>
+        How interested are you in the category <strong>${displayName}</strong>?
+      </p>
+    `,
+
+    labels: [
+      "0 (not interested at all)", 
+      "50 (moderately interested)", 
+      "100 (extremely interested)"
+    ],
+
+    min: 0,
+    max: 100,
+    start: 50,
+    step: 10,
+    require_movement: true,
+
+    data: {
+      task: "VFT_category_interest",
+      domain: domain,
+      subject: subject_id
+    },
+
+    on_finish: function (data) {
+      data.category_interest = data.response;
+    }
+  };
+}
+
+function VFT_category_response_estimate (domain, displayName = domain) {
+  return {
+    type: jsPsychSurveyHtmlForm,
+
+    preamble: `
+      <p>
+        Given the category <strong>${displayName}</strong>,
+      </p>
+      <p>How many items do you think you could produce in this category within a minute?
+      </p>
+    `,
+
+    html: `
+      <p>
+        <input
+          name = "estimate"
+          type = "text"
+          placeholder = "type numeric value here"
+          required
+          style = "font-size: 14px; width: 200px;"
+        />
+      </p>
+    `,
+
+    data: {
+      task: "VFT_estimate",
+      domain: domain,
+      subject: subject_id
+    },
+
+    on_finish: function (data) {
+      data.response = data.response.estimate
+    }
+  };
+}
+
+//creates SpAM task by gathering VFT responses and tracking item movement/coordinates
+function SpamTask(domain) {
+  return {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: function() {
+      let html = `
+        <p style="font-size:20px;">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style="font-size:18px;">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style="font-size:17px;"> When you are finished arranging the space, click on the little Continue button at the bottom of the screen.</p>
+       <div id="word-drop-area" style="
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          "></div>
+
+
+          <p style="font-size:14px; color: gray;">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      `;
+        return html;
+  },
+  
+  choices: ["Continue"], 
+  button_html: `
+  <button 
+    class="jspsych-btn" 
+    id="continue-button" 
+    style="
+      display: none;
+      margin-top: 20px;
+      background-color: #2e9f5e;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+    ">
+    %choice%
+  </button>
+`,
+  data: {
+    task: "SpAM",
+    domain: domain,
+    subject: subject_id
+  },
+  
+  on_load: function() {
+    const VFTResponses = jsPsych.data.get().filter({ task: "VFT", domain: domain }).last(1).values()[0];
+    const domainWords = JSON.parse(VFTResponses.tagged_responses || "[]");
+    const WordDropArea = document.getElementById("word-drop-area");
+    let currentIndex = 0;
+    window.WordsDropped = [];
+
+    //allows dragging and tracks mouse press onto a word (or rectangle the word is in)
+    function Draggable(element, onFirstMove) {
+      let offsetX, offsetY;
+      let currentlyDragging = false;
+      let hasMoved = false;
+      element.dataset.moveCount = "0";
+
+    
+      element.addEventListener("mousedown", (event) => {
+        currentlyDragging = true;
+        const rectangle = element.getBoundingClientRect();
+        offsetX = event.clientX - rectangle.left;
+        offsetY = event.clientY - rectangle.top;
+        element.style.cursor = "grabbing";
+
+        document.addEventListener("mousemove", OnMouseMove);
+        document.addEventListener("mouseup", OnMouseUp);
+
+        event.preventDefault();
+      });
+
+      //tracks mouse movement of the rectangle the word is in and calculates where it moves
+      function OnMouseMove (event) {
+        if (!currentlyDragging) return;
+
+        const dropRectangle = WordDropArea.getBoundingClientRect();
+        let left = event.clientX - dropRectangle.left - offsetX;
+        let top = event.clientY - dropRectangle.top - offsetY;
+
+        left = Math.max(0, Math.min(left, dropRectangle.width - element.offsetWidth));
+        top = Math.max(0, Math.min(top, dropRectangle.height - element.offsetHeight));
+
+        element.style.left = left + "px"
+        element.style.top = top + "px"
+    
+        if (!hasMoved) {
+          hasMoved = true;
+
+          const appearanceTime = parseFloat(element.dataset.appearanceTime);
+          element.dataset.firstMoveLatency = performance.now() - appearanceTime;
+
+          if (typeof onFirstMove === "function") {
+            onFirstMove();
+          }
+        }
+      }
+      
+      //tracks when mouse is no longer pressing on word box and records words positions
+      function OnMouseUp () {
+        if (currentlyDragging) {
+          currentlyDragging = false;
+          const newCount = parseInt(element.dataset.moveCount) + 1;
+          element.dataset.moveCount = newCount.toString();
+          element.style.cursor = "grab";
+          document.removeEventListener("mousemove", OnMouseMove)
+          document.removeEventListener("mouseup", OnMouseUp)
+
+          const dropRect = WordDropArea.getBoundingClientRect();
+          const elemRect = element.getBoundingClientRect();
+
+          // position of element *within drop area*
+          const x_px = elemRect.left - dropRect.left;
+          const y_px = elemRect.top - dropRect.top;
+
+          // normalized coordinates (0–1)
+          const x_norm = x_px / (dropRect.width - elemRect.width);
+          const y_norm = 1- (y_px / (dropRect.height - elemRect.height)); // invert y-axis so 0 is bottom, 1 is top
+
+          window.WordsDropped.push({
+            word: element.textContent,
+            id: element.id,
+
+            // raw pixel values (optional, for debugging)
+            x_px: x_px,
+            y_px: y_px,
+
+            // normalized coordinates (USE THESE FOR ANALYSIS)
+            x_norm: x_norm,
+            y_norm: y_norm,
+
+            // canvas size at time of drop (important metadata)
+            canvas_width: dropRect.width,
+            canvas_height: dropRect.height,
+
+            // timing + dynamics
+            first_move_latency_ms: parseFloat(element.dataset.firstMoveLatency),
+            move_count: parseInt(element.dataset.moveCount),
+
+          });
+
+          
+          if (window.WordsDropped.length === domainWords.length) {
+            const button = document.getElementById("continue-button");
+            if (button) button.style.display = "inline-block";
+          }
+
+        }
+      }
+    }
+      //handles the display of the next word by establishing placement and calling next index of animal VFT responses
+      function NextWord() {
+      if (currentIndex >= domainWords.length) return;
+
+      const words = domainWords[currentIndex];
+      const wordDiv = document.createElement("div");
+      wordDiv.textContent = words.response;
+      wordDiv.className = "draggable";
+      wordDiv.id = `word-${words.tag}`;
+      wordDiv.style.position = "absolute";
+      wordDiv.style.left = "20px";
+      wordDiv.style.top = "20px"
+
+      wordDiv.dataset.appearanceTime = performance.now();
+      
+      WordDropArea.appendChild(wordDiv);
+      Draggable(wordDiv, () => {
+        currentIndex ++; 
+        setTimeout(() => {
+          NextWord(); 
+        }, 2000); //2 second delay before next box appears
+      });
+    }
+
+    NextWord();
+  },  
+
+  on_finish: function (data) {
+      data.droppedwords = window.WordsDropped || [];
+      data.viewport_width = window.innerWidth;
+      data.viewport_height = window.innerHeight;
+      data.device_pixel_ratio = window.devicePixelRatio;
+
+    }
+  };
+}
+  var totaltime = {
+    type: jsPsychCallFunction,
+      func: function() {
+        var total_ms = jsPsych.getTotalTime();
+        var total_minutes = total_ms / 60000;
+
+        jsPsych.data.addProperties({
+        total_time_ms: total_ms,
+        total_time_minutes: total_minutes
+        });
+      }
+    };
+
+var compensationPage = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: function() {
+    return `
+      <h2>Thank you for participating! You have completed the experiment. </h2>
+      <p>
+        Your completion code is 
+      </p>
+
+      <p style = "font-size: 28px; font-weight: bold; letter-spacing: 2px;">
+        ${subject_id}
+      </p>
+
+      <p>
+        To receive compensation/credit, please follow the link below to the compensation form and copy and paste the code above.
+      </p>
+
+      <p>
+        <a href = "https://docs.google.com/forms/d/e/1FAIpQLSc8UGDrLaJgDIt7itpYr5u4Mt0LjjfXINBq9XZmaVx0b_rVlg/viewform?usp=header"
+          target = "_blank"
+          rel = "noopener noreferrer">
+          Open compensation form
+        </a>
+      </p>
+      <p>  After clicking the link, <b> please return to this page</b> and click the button below to finish the experiment and save your data.</p>
+      <p> You can also click <a href="https://drive.google.com/file/d/1yD8wzNc2l6z4PzHAHSpVsnpay0790VCZ/view" target="_blank" rel="noopener noreferrer">here</a> to access the debriefing form and know more about our research.</p>
+      <p> <b>IMPORTANT: Please do not leave this page without clicking the button below.</b></p>
+      
+    `; 
+  },
+
+  choices: ["Finish and Save Data"],
+
+  data: {
+    typeoftrial: "compensation",
+    completion_code: subject_id
+  }
+};
+
+  // demographics
+var demographics_intro = {
+        type: jsPsychInstructions,
+        pages: [
+            '<br><br><br>The experiment is now complete! We will now ask you a short series of demographics questions. <br><br> While some questions are required (*), you may skip any others you do not wish to answer. <br><br>Aftering filling out your responses, you may press CONTINUE to advance to the next page.'
+        ],
+        show_clickable_nav: true
+    }
+
+var demographics_survey1 = {
+        type: jsPsychSurveyHtmlForm,
+        preamble: "<h2><br><br><br>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+        html: `
+        <label for="gender">What is your gender(*)?</label>
+        <input type="text" id="gender" name="gender" required><br><br>
+        
+        <label for="age">What is your age?(*)</label>
+        <input type="number" id="age" name="age" min="0" max="120" required><br><br>
+
+        <label for="education">How many years of formal education have you had? (*consider graduating high school to be 12 years)</label>
+        <input type="number" id="education" name="education" min="0" max="120" required><br><br>
+    `,
+        data: {
+            typeoftrial: 'demographics',
+        },
+        on_finish: function(data){
+
+            data.age = data.response.age
+            data.gender = data.response.gender
+            data.education = data.response.education
+            
+        }
+    };
+        
+    var demographics_survey2 = {  
+    type: jsPsychSurveyMultiSelect,
+    preamble: "<h2><br><br><br>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+    questions: [  
+        {
+            prompt: "Please select all the racial categories that apply to you (*):",
+            name: 'race',
+            options: ['American Indian/Alaskan Native', 'Asian','Black/African American', 'Native Hawaiian or Other Pacific Islander', 'White/Caucasian', 'Other'
+            ],
+            required: true,
+            is_multiple: true 
+        },
+    ],
+    data: {
+        typeoftrial: 'demographics',
+    },
+    on_finish: function(data){
+        data.race = data.response.race
+        // if length of data.race is more than 1, then replace race with "multiracial"
+        if(data.race.length > 1){
+          data.race = "multiracial"
+      }
+      else{
+        data.race = data.race[0]
+      }
+    }
+    };
+
+    var demographics_survey3 = {  
+    type: jsPsychSurveyMultiChoice,
+    preamble: "<h2><br><br><br>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+    questions: [
+        {
+            prompt: "Are you of Hispanic, Latino/a/x or of Spanish origin?",
+            name: 'hispanic',
+            options: ['Yes', 'No'],
+        },
+        {
+            prompt: "What is your dominant hand?",
+            name: 'dominant_hand',
+            options: ['Right', 'Left', 'Ambidextrous'],
+        },
+        {
+            prompt: "Please indicate what time of the day you feel most alert:",
+            name: 'alert_time',
+            options: ['Morning', 'Afternoon', 'Evening', 'No differences'],
+        },
+    ],
+    data: {
+        typeoftrial: 'demographics',
+    },
+    on_finish: function(data){
+        data.hispanic = data.response.hispanic
+        data.dominant_hand = data.response.dominant_hand
+        data.alert_time = data.response.alert_time
+    }
+    };
+
+    var demographics_survey4 = {  
+    type: jsPsychHtmlButtonResponse,
+    preamble: "<h2><br><br><br>Demographics Questionnaire</h2>", name: 'heading', rows: 1, columns: 50,
+    stimulus: "<br><br><br>Is English your first language? (*)<br><br>",
+    choices: ['Yes','No'],
+
+    data: {
+        typeoftrial: 'demographics',
+    },
+    on_finish: function(data){
+        if(data.response == 0){data.english = "yes"}
+        else{data.english = "no"}
+    }
+    };
+
+
+  var follow_up_questions = {
+    type: jsPsychSurveyHtmlForm,
+    preamble: "<br><br><br>You indicated that English is not your first language. Please answer the following questions:<br><br>",
+    html: `
+      <label for="first_language_detail">What is your first language?</label>
+      <input type="text" id="first_language" name="first_language" required><br><br>
+      
+      <label for="age_learned_english">At what age did you learn English?</label>
+      <input type="number" id="age_learned_english" name="age_learned_english" min="0" max="120" required><br><br>
+    `,
+    data: {
+          typeoftrial: 'follow_up_demographics'
+      },
+      on_finish: function(data){
+          data.first_language = data.response.first_language
+          data.age_learned_english = data.response.age_learned_english
+      }
+  };
+
+  var follow_up_procedure = {
+          timeline: [follow_up_questions],
+      conditional_function: function() {
+          var lastTrialData = jsPsych.data.get().last(1).values()[0];
+          //console.log("lastTrialData=",lastTrialData)
+          return lastTrialData.response === 1;
+      }
+  };
+    var demographics_language_followup = {
+      type: jsPsychSurveyText,
+    questions: [
+        {prompt: "<br><br><br>Do you speak any languages other than English? If yes, please list them below, separated by commas.", name: 'additional_languages', 
+          rows: 2,
+          columns: 40
+        }
+    ],
+    data: {
+        typeoftrial: 'demographics'
+    },
+    on_finish: function(data){
+        data.additional_languages = data.response.additional_languages
+    }
+    };
+
+var additional_info_question = {
+    type: jsPsychSurveyText,
+    questions: [
+        {prompt: "<br><br><br>Is there anything else we should know about, which might have affected your performance during the experiment? (e.g., lack of sleep, feeling ill etc.)", name: 'additional_info'}
+    ],
+    data: {
+        typeoftrial: 'demographics'
+    },
+    on_finish: function(data){
+        data.other_info = data.response.additional_info
+    }
+};
+
+var demographics = {
+    timeline: [demographics_intro, demographics_survey1, demographics_survey2, demographics_survey3, demographics_survey4, follow_up_procedure,demographics_language_followup,additional_info_question]
+};
+
+var save_data = {
+    type: jsPsychCallFunction,
+    func: function(){saveData(subject_id+".csv",
+      jsPsych.data.get().csv())}
+  }
+
+function saveData(filename, filedata){
+  	$.ajax({
+  		type:'post',
+  		cache: false,
+  		url: 'save_data.php', // this is the path to the above PHP script
+      //url: https://script.google.com/macros/s/AKfycbzV--xTooSkBLufMs4AnrCTdwZxVNtycTE4JNtaCze2UijXAg8/exec
+  		data: {filename: filename, filedata: filedata}})
+  };
+
+  timeline.push(interestssurveyinstructions);
+  timeline.push(VFTRedoContinueButton("subreddits", "Please type in the names of the Subreddits you frequently engage with", 180000));
+  timeline.push(VFTRedoContinueButton("interest", "Please type in your general interests", 180000));
+  timeline.push(maininstructions);
+    timeline.push(
+    VFTInstructions,
+    SpAMInstructions,
+  );
+  timeline.push(startInstructions);
+
+//randomizes trials 
+function randomize(array) {
+  for (let index = array.length - 1; index > 0; index--) {
+    const randomindex = Math.floor(Math.random() * (index + 1));
+    [array[index], array[randomindex]] = [array[randomindex], array[index]]
+  }
+}
+
+const trials = [
+  
+  [
+  VFT_category_interest("animals", "Animals"),  
+  VFT_category_response_estimate("animals", "Animals"),
+   VFTRedo("animals", "Name as many <strong>ANIMALS</strong> as you can.", 60000),
+     betweenVFTAndSpAMInstructions,
+     SpamTask("animals"),
+  ],
+  [
+  VFT_category_interest("college_majors", "College Majors"),  
+  VFT_category_response_estimate("college_majors", "College Majors"),
+  VFTRedo("college_majors", "Name as many <strong>COLLEGE MAJORS</strong> as you can.", 60000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("college_majors"),
+  ],
+  [  
+  VFT_category_interest("sportspersons", "Sportspersons"),  
+  VFT_category_response_estimate("sportspersons", "Sportspersons"),  
+  VFTRedo("sportspersons", "Name as many <strong>SPORTSPERSONS</strong> as you can.", 60000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("sportspersons"),
+  ],
+  [
+  VFT_category_interest("musicians", "Musicians"),  
+  VFT_category_response_estimate("musicians", "Musicians"),  
+  VFTRedo("musicians", "Name as many <strong>MUSICIANS</strong> as you can.", 60000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("musicians"),
+  ],
+  [
+  VFT_category_interest("authors", "Authors"),  
+  VFT_category_response_estimate("authors", "Authors"),
+  VFTRedo("authors", "Name as many <strong>AUTHORS</strong> as you can.", 60000),
+    betweenVFTAndSpAMInstructions,
+    SpamTask("authors"),
+  ],
+];
+
+  randomize(trials);
+  trials.forEach((block, index) => {
+
+    if (index < trials.length - 1) {
+      block.push(afterSpAMInstructions)
+    }
+    timeline.push(...block);
+  });
+  timeline.push(demographics);
+  timeline.push(compensationPage)
+  timeline.push(save_data);
+  timeline.push(totaltime);
+
+  jsPsych.run(timeline);
+
+
+    </script>
+  </body>
+</html>
