@@ -14,6 +14,10 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(dplyr)
 library(jsonlite)
+library(dplyr)
+library(tidyr)
+library(jsonlite)
+library(stringr)
 ```
 
 ## Importing Data
@@ -22,7 +26,7 @@ library(jsonlite)
 #datafile <- read_csv("filepath") where filepath is the location of the csv file
 
 #Pilot participant csv data file:
-datafile <- read_csv("../Data/Pilot Data/fluency_193.csv")
+datafile <- read_csv("../Data/Pilot Data/fluency_reddit_pilot_channing.csv")
 
 #Viewing the data file in seperate tab:
 View(datafile)
@@ -34,10 +38,10 @@ View(datafile)
 good_domain_counts <- datafile %>%
     filter(
     task == "VFT",
-   !domain %in% c("furniture-practice", "subreddits", "interest")) %>% 
+   !domain %in% c("subreddits", "interest")) %>% 
   group_by(subject,run_id) %>%
   summarise(unique_domains = n_distinct(domain))%>%
-  filter(unique_domains==8)
+  filter(unique_domains==5)
 
 #to isolate data on participants interests and subreddits interacted with 
 organized_interest_data <- datafile %>% 
@@ -108,10 +112,6 @@ View(organized_fluency)
 
 ##Cleaning SpAM Data
 ```{r}
-library(dplyr)
-library(tidyr)
-library(jsonlite)
-library(stringr)
 
 organized_spam <- datafile %>%
   filter(
@@ -167,44 +167,37 @@ write_csv(organized_spam, "../Data/Pilot Data/organized_spam.csv")
 
 ## Cleaning demographics data
 ```{r}
-cols_to_select <- c("run_id", "age", "gender", "education", "question_order", "race", "hispanic", "dominant_hand", "alert_time", "english", "additional_languages")
+cols_to_select <- c("run_id", "age", "gender", "education", "question_order", "race", "hispanic", "english", "additional_languages","long_NewsArticles","long_FictionBooks","long_NonFictionBooks","long_EssaysBlogsNewsletters","long_Podcasts","social_Twitter","social_Facebook","social_TikTok","social_Reddit","social_YouTube","social_Instagram","social_Snapchat")
 
 optional_cols <- c("first_language", "age_learned_english")
 cols_to_select <- c(cols_to_select, optional_cols[optional_cols %in% colnames(datafile)])
 
 demographics_cleaned <- datafile %>%
-  filter(typeoftrial == "demographics",
-         run_id %in% good_domain_counts$run_id
-         ) %>%
+  filter(typeoftrial %in% c("demographics","long_form_exposure","social_media_exposure"),
+         run_id %in% good_domain_counts$run_id) %>%
   select(all_of(cols_to_select)) %>%
   filter(!if_all(everything(), is.na)) %>%
   mutate(
     age = as.numeric(age),
     education = as.numeric(education),
     gender = as.character(gender),
+    race = as.character(race),
     english = as.character(english),
     additional_languages = as.character(additional_languages),
     across(any_of(c("first_language", "age_learned_english")), as.character)
   ) %>%
-  mutate(across(c(age, gender, education, race, hispanic, dominant_hand, alert_time, english),
-                ~ifelse(. == "" | is.na(.), "blank", .))) %>%
-  mutate(gender = case_when(
-    gender %in% c("Cis-female", "Female", "F") ~ "F",
-    gender %in% c("cis male", "i am a boy", "M") ~ "M",
-    gender == "blank" | is.na(gender) ~ "blank",
-    TRUE ~ as.character(gender)
-  )) %>%
-  mutate(Gender_Abbrev = str_to_upper(str_sub(gender, 1, 1)),
-         Gender_Abbrev = case_when(
-           Gender_Abbrev == "W" ~ "F",
-           Gender_Abbrev %in% c("T", "N") ~ "N",
-           TRUE ~ Gender_Abbrev
-         )) %>%
   group_by(run_id) %>%
   fill(everything(), .direction = "downup") %>%
   slice(1) %>%
-  ungroup()
+  ungroup() %>%
+  mutate(across(c(age, gender, education, race, hispanic, english,additional_languages,long_NewsArticles,long_FictionBooks,long_NonFictionBooks,long_EssaysBlogsNewsletters,long_Podcasts,social_Twitter,social_Facebook,social_TikTok,social_Reddit,social_YouTube,
+                  social_Instagram,social_Snapchat),
+                ~ifelse(. == "" | is.na(.), "blank", .)))
 
-write_csv(demographics_data, "../Data/Pilot Data/demographics_data.csv")
-View(demographics_data)
+write_csv(demographics_cleaned, "../Data/Pilot Data/demographics_data.csv")
+View(demographics_cleaned)
+
+
+
+
 ```

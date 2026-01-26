@@ -1,0 +1,840 @@
+rt,stimulus,response,typeoftrial,trial_type,trial_index,time_elapsed,internal_node_id,run_id,condition,recorded_at,source_code_version,ip,user_agent,device,browser,browser_version,platform,platform_version,referer,accept_language,subject,total_time_ms,total_time_minutes,question_order,long_NewsArticles,long_FictionBooks,long_NonFictionBooks,long_EssaysBlogsNewsletters,long_Podcasts,social_Twitter,social_Facebook,social_TikTok,social_Reddit,social_YouTube,social_Instagram,social_Snapchat,task,domain,tagged_responses,response_times,ended_early,slider_start,category_interest,droppedwords,viewport_width,viewport_height,device_pixel_ratio,view_history,age,gender,education,hispanic,race,race_raw,english,additional_languages,other_info,completion_code,value
+1190,"
+ <p style=""font-size:20px;""> <b>Welcome to the experiment!</b><br><br></p>
+ <p style=""font-size:18px;""> In this study, we would like to understand how you engage with language in your daily life and how that affects your cognitive functioning. <br><br>
+  First, you will answer two questions about your language exposure. <br> 
+  Language exposure refers to time spent reading or listening to language-based content (not just scrolling or viewing images). <br>
+  For both questions, please estimate your typical use in an average week. 
+  </p>
+ ",0,language_exposure_instructions,html-button-response,0,1191,0.0-0.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+4916,,"{""NewsArticles"":3,""FictionBooks"":4,""NonFictionBooks"":4,""EssaysBlogsNewsletters"":5,""Podcasts"":5}",long_form_exposure,survey-likert,1,6108,0.0-1.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,"[0,1,2,3,4]",3,4,4,5,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+7962,,"{""Twitter"":5,""Facebook"":5,""TikTok"":3,""Reddit"":3,""YouTube"":3,""Instagram"":3,""Snapchat"":3}",social_media_exposure,survey-likert,2,14071,0.0-2.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,"[0,1,2,3,4,5,6]",,,,,,5,5,3,3,3,3,3,,,,,,,,,,,,,,,,,,,,,,,
+2082,"
+ <p style=""font-size:20px;""> Great! You will now move on to the next phase of the study. <br><br></p>
+ <p style=""font-size:18px;""> In this part, we would like to get a sense of what content you typically consume on the <b>Reddit</b> platform. <br>
+  On the next page, we ask that you input the names of the <b>Subreddits</b> you typically engage with in any capacity. <br>
+  (i.e. writing posts, reading posts, upvoting, commenting, sharing, etc.) <br>
+  Next, we ask that you input your general interests when you are consuming online content, independent of specific Subreddits. <br>
+  To input a response, type it within the provided box and <strong>press ENTER</strong> after every response. <br><br>
+  Note that there will be a three minute time limit for this part. However, if you feel you are done before time runs out, you can<br>
+  click the <strong>I'm done</strong> button. This data is crucial to the experiment, so please be as accurate possible when typing your responses.<br><br>
+  After you complete these tasks, you will be provided further instructions and continue to the actual experiment.<br>
+  When you are ready to start, <strong>press Continue.</strong>
+ </p>
+ ",0,interestssurveyinstructions,html-button-response,3,16153,0.0-3.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,html-keyboard-response,4,28203,0.0-4.0-0.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,VFT,subreddits,"[{""response"":""test1"",""tag"":1},{""response"":""test2"",""tag"":2},{""response"":""test3"",""tag"":3},{""response"":""test4"",""tag"":4},{""response"":""test5"",""tag"":5}]","[4822.4,1169.9,1001.3,1609.1,1440.1]",TRUE,,,,,,,,,,,,,,,,,,
+,,,,html-keyboard-response,5,34450,0.0-5.0-0.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,VFT,interest,"[{""response"":""test1"",""tag"":1},{""response"":""yesy2"",""tag"":2},{""response"":""test3"",""tag"":3},{""response"":""test4"",""tag"":4}]","[1829.3,1496.7,911,821.5]",TRUE,,,,,,,,,,,,,,,,,,
+1303,"
+  <p style=""font-size:20px;""> You will now proceed with the actual experiment.<br><br></p>
+  <p style=""font-size:18px;""> <strong>This experiment has two tasks:</strong><br><br>
+   1) A <u>verbal fluency task</u>, where you will type in as many items as you can think of that correspond to a given category within a minute.<br><br>
+   2) A <u>spatial arrangement task</u>, where you will move around the items you typed in the first task so that similar items are closer together.<br><br>
+   The experiment will consist of only 5 categories, so please be as accurate/precise as possible <br>
+   when typing in items and placing the objects, rather than trying to speed through.
+  </p>
+  ",0,maininstructions,html-button-response,6,35754,0.0-6.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+603,"
+  <p style=""font-size:20px;""><strong>You will begin with a verbal fluency task.</strong></p>
+  <p style=""font-size:18px;""> In this task, you will be presented the name of a category (e.g., FURNITURE) in capital letters. <br>
+  Your job is to type in as many items as you can think of that correspond to that category in <b>one minute</b>.<br>
+  You will be presented with 5 such categories.<br><br>
+  After you type in each word, press <strong>ENTER</strong> to type in the next word. <br>
+  When the timer runs out, you will automatically proceed to the next task. Press Continue for the next set of instructions.<br>
+  </p>  
+
+  ",0,VFTinstructions,html-button-response,7,36358,0.0-7.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1216,"
+  <p style=""font-size:20px;""> <strong>After each verbal fluency task, you will perform a spatial arrangement task.</strong></p>
+  <p style=""font-size:18px;""> In this task, you will be shown the set of words you typed in the last verbal fluency task you performed.<br>
+  We want to know how similar you think these words are to one another. <br>
+  Your job is to move each word around so that the similar words are proportionately closer together. <br>
+  That is, you should move them into space such that the distance between each pair of items represents how similar you think the pair is.<br>
+  (with closer in space meaning more similar, and farther away in space meaning more dissimilar)<br>
+  As shown in the video below, the words will appear one by one in the top left corner of a box. You can move the words by simply dragging them. <br>
+  If the words seem similar, place them close together. If they seem dissimilar, place them farther away from each other. <br>
+
+ <div style=""text-align: center; margin-top: 10px;"">
+  <video width=""600"" height=""400"" autoplay muted loop>
+    <source src=""SpAMTutorial.mp4"" type=""video/mp4"">
+  </video>
+</div>
+
+
+  After dragging each word, the next word will appear. You may rearrange previously placed items as needed.<br><br>
+  Note, to complete the trial, <u>all words</u> must be moved. <br>
+  When you are finished arranging the space, click on the little Continue button at the bottom of the screen.<br><br>
+  You will be doing this for five separate categories, based on the words you type in the corresponding verbal fluency task.<br><br>
+  Press Continue to proceed to the first verbal fluency task and begin the experiment.
+</p>
+  ",0,spaminstructions,html-button-response,8,37575,0.0-8.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+752,"
+  <p style=""font-size:18px;""> <br><br><br>Now, you will begin the task, consisting of five rounds with different categories.<br><br>
+  Again, your first task is to first type in as many items as you can within the given category in one minute. <br> 
+  Then, you will spatially arrange the words you typed in the box provided based on how related they are.<br><br>
+  <b>Before each round</b>, you will also be asked about how interesting you find the category <br>
+  and the number of items you believe you could produce for that category.<br><br>
+
+  When you're ready, <strong>press Begin</strong> to start the verbal fluency task.
+
+  </p>
+  ",0,start_instructions,html-button-response,9,38327,0.0-9.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1697,<p>How interesting do you find the category <strong>ANIMALS</strong>?</p>,62,VFT_category_interest,html-slider-response,10,40024,0.0-10.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,animals,,,,50,62,,,,,,,,,,,,,,,,
+2117,,32,VFT_estimate,survey-html-form,11,42142,0.0-11.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,animals,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Name as many <strong>ANIMALS</strong> as you can.</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,12,102419,0.0-12.0-0.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,VFT,animals,"[{""response"":""cat"",""tag"":1},{""response"":""dog"",""tag"":2},{""response"":""frog"",""tag"":3},{""response"":""salamander"",""tag"":4}]","[4991.3,1957.9,2576.1,3115.8]",FALSE,,,,,,,,,,,,,,,,,,
+669230,"
+  <p style=""font-size:20px;""> <strong>You are moving on to the spatial arrangement task.</strong></p>
+  <p style=""font-size:18px;""> As a reminder, in this task, you will be shown the set of words you just produced in the fluency task.<br>
+  We want to know how similar you think these words are to one another.<br>
+  To indicate your perception of similarity, you will move each word around so that the similar ones are proportionately closer together.<br>
+  If the words seem similar, place them close together, if they seem dissimilar, place them farther away from each other.<br><br>
+  Press <strong>Begin</strong> to start.
+  </p>
+
+  ",0,instructions,html-button-response,13,771650,0.0-13.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+11944,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:18px;""> When you are finished arranging the space, click the Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ",0,,html-button-response,14,783595,0.0-14.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,SpAM,animals,,,,,,"[{""word"":""cat"",""id"":""word-1"",""x_px"":615,""y_px"":161,""x_norm"":0.43704197201865425,""y_norm"":0.7754859016080895,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":2248,""move_count"":1},{""word"":""dog"",""id"":""word-2"",""x_px"":656,""y_px"":165,""x_norm"":0.46787866265149214,""y_norm"":0.7699079115859302,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":345.3000000715256,""move_count"":1},{""word"":""frog"",""id"":""word-3"",""x_px"":606,""y_px"":481,""x_norm"":0.4327927395687483,""y_norm"":0.32924669983534816,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":518.6999999284744,""move_count"":1},{""word"":""frog"",""id"":""word-3"",""x_px"":168,""y_px"":502,""x_norm"":0.11998214562301933,""y_norm"":0.29996225221901207,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":518.6999999284744,""move_count"":2},{""word"":""salamander"",""id"":""word-4"",""x_px"":196,""y_px"":503,""x_norm"":0.14524682597492225,""y_norm"":0.2985677547134722,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":939.8000000715256,""move_count"":1}]",2560,1271,1.5,,,,,,,,,,,,
+962,"
+    <p style=""font-size:20px;""><strong>You will now move to the next category.</strong></p>
+    <p style=""font-size:18px;"">As a reminder, you will:</p>
+    <ol style=""font-size:18px; padding-left: 20px; text-align: left;"">
+      <li>Indicate your interest in the category.</li>
+      <li>Estimate how many items you think you could produce in that category within a minute.</li>
+      <li>Complete the verbal fluency task, i.e., type in as many items as you can think of that correspond to the category in one minute.</li>
+      <li>Complete the spatial arrangement task, i.e., spatially arrange the words you typed in based on how related they are to one another.</li>
+    </ol>
+    <p style=""font-size:18px;"">Press <strong>Begin</strong> to start.</p>
+  ",0,instructions,html-button-response,15,784557,0.0-15.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1723,<p>How interesting do you find the category <strong>COLLEGE MAJORS</strong>?</p>,51,VFT_category_interest,html-slider-response,16,786281,0.0-16.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,college_majors,,,,50,51,,,,,,,,,,,,,,,,
+2616,,66,VFT_estimate,survey-html-form,17,788897,0.0-17.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,college_majors,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Name as many <strong>COLLEGE MAJORS</strong> as you can.</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,18,849419,0.0-18.0-0.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,VFT,college_majors,"[{""response"":""test1"",""tag"":1},{""response"":""test2"",""tag"":2},{""response"":""testfar1"",""tag"":3},{""response"":""testfar2"",""tag"":4}]","[2441.9,1091.7,2891.3,1495.8]",FALSE,,,,,,,,,,,,,,,,,,
+241827,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:18px;""> When you are finished arranging the space, click the Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ",0,,html-button-response,19,1091248,0.0-19.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,SpAM,college_majors,,,,,,"[{""word"":""test1"",""id"":""word-1"",""x_px"":532,""y_px"":134,""x_norm"":0.3815956607733342,""y_norm"":0.8131373342576645,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":232526.20000004768,""move_count"":1},{""word"":""test2"",""id"":""word-2"",""x_px"":528,""y_px"":128,""x_norm"":0.37872652046676775,""y_norm"":0.8215043192909035,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":759.6000000238419,""move_count"":1},{""word"":""testfar1"",""id"":""word-3"",""x_px"":1297,""y_px"":184,""x_norm"":0.9426371647924661,""y_norm"":0.7434124589806737,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":498.10000002384186,""move_count"":1},{""word"":""testfar2"",""id"":""word-4"",""x_px"":1316,""y_px"":196,""x_norm"":0.9564460361348384,""y_norm"":0.726678488914196,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":349.09999990463257,""move_count"":1}]",2560,1271,1.5,,,,,,,,,,,,
+971,"
+    <p style=""font-size:20px;""><strong>You will now move to the next category.</strong></p>
+    <p style=""font-size:18px;"">As a reminder, you will:</p>
+    <ol style=""font-size:18px; padding-left: 20px; text-align: left;"">
+      <li>Indicate your interest in the category.</li>
+      <li>Estimate how many items you think you could produce in that category within a minute.</li>
+      <li>Complete the verbal fluency task, i.e., type in as many items as you can think of that correspond to the category in one minute.</li>
+      <li>Complete the spatial arrangement task, i.e., spatially arrange the words you typed in based on how related they are to one another.</li>
+    </ol>
+    <p style=""font-size:18px;"">Press <strong>Begin</strong> to start.</p>
+  ",0,instructions,html-button-response,20,1092219,0.0-20.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1539,<p>How interesting do you find the category <strong>MUSICIANS</strong>?</p>,50,VFT_category_interest,html-slider-response,21,1093759,0.0-21.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,musicians,,,,50,50,,,,,,,,,,,,,,,,
+2240,,5,VFT_estimate,survey-html-form,22,1096000,0.0-22.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,musicians,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Name as many <strong>MUSICIANS</strong> as you can.</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,23,1156000,0.0-23.0-0.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,VFT,musicians,"[{""response"":""test"",""tag"":1},{""response"":""test1"",""tag"":2},{""response"":""test3"",""tag"":3},{""response"":""test66"",""tag"":4}]","[1982.5,1563.6,1305.2,1462.6]",FALSE,,,,,,,,,,,,,,,,,,
+43515,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:18px;""> When you are finished arranging the space, click the Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ",0,,html-button-response,24,1199516,0.0-24.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,SpAM,musicians,,,,,,"[{""word"":""test"",""id"":""word-1"",""x_px"":768,""y_px"":112,""x_norm"":0.54773189952054,""y_norm"":0.8438162793795405,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":34025.299999952316,""move_count"":1},{""word"":""test1"",""id"":""word-2"",""x_px"":590,""y_px"":132,""x_norm"":0.4231981952185473,""y_norm"":0.8159263292687442,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":464.90000009536743,""move_count"":1},{""word"":""test3"",""id"":""word-3"",""x_px"":397,""y_px"":553,""x_norm"":0.28476217542671745,""y_norm"":0.2288428794364814,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":400.10000002384186,""move_count"":1},{""word"":""test66"",""id"":""word-4"",""x_px"":759,""y_px"":204,""x_norm"":0.5475655497049124,""y_norm"":0.7155225088698773,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":466.7000000476837,""move_count"":1}]",2560,1271,1.5,,,,,,,,,,,,
+857,"
+    <p style=""font-size:20px;""><strong>You will now move to the next category.</strong></p>
+    <p style=""font-size:18px;"">As a reminder, you will:</p>
+    <ol style=""font-size:18px; padding-left: 20px; text-align: left;"">
+      <li>Indicate your interest in the category.</li>
+      <li>Estimate how many items you think you could produce in that category within a minute.</li>
+      <li>Complete the verbal fluency task, i.e., type in as many items as you can think of that correspond to the category in one minute.</li>
+      <li>Complete the spatial arrangement task, i.e., spatially arrange the words you typed in based on how related they are to one another.</li>
+    </ol>
+    <p style=""font-size:18px;"">Press <strong>Begin</strong> to start.</p>
+  ",0,instructions,html-button-response,25,1200374,0.0-25.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1329,<p>How interesting do you find the category <strong>AUTHORS</strong>?</p>,50,VFT_category_interest,html-slider-response,26,1201704,0.0-26.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,authors,,,,50,50,,,,,,,,,,,,,,,,
+1706,,34,VFT_estimate,survey-html-form,27,1203410,0.0-27.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,authors,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Name as many <strong>AUTHORS</strong> as you can.</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,28,1263419,0.0-28.0-0.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,VFT,authors,"[{""response"":""test"",""tag"":1},{""response"":""test"",""tag"":2},{""response"":""test"",""tag"":3},{""response"":""test"",""tag"":4},{""response"":""test"",""tag"":5},{""response"":""test"",""tag"":6},{""response"":""test"",""tag"":7},{""response"":""test"",""tag"":8},{""response"":""test"",""tag"":9},{""response"":""test"",""tag"":10},{""response"":""ets"",""tag"":11},{""response"":""test"",""tag"":12},{""response"":""test"",""tag"":13}]","[1473.3,663.7,675.1,697.2,720.1,663.9,709,686.1,652.7,697.4,731.2,1124.9,675.4]",FALSE,,,,,,,,,,,,,,,,,,
+130345,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:18px;""> When you are finished arranging the space, click the Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ",0,,html-button-response,29,1393765,0.0-29.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,SpAM,authors,,,,,,"[{""word"":""test"",""id"":""word-1"",""x_px"":632,""y_px"":37,""x_norm"":0.45073770898044435,""y_norm"":0.9484035922950268,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":95571.19999992847,""move_count"":1},{""word"":""test"",""id"":""word-2"",""x_px"":822,""y_px"":124,""x_norm"":0.5862442987055779,""y_norm"":0.8270823093130627,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":1027.8999999761581,""move_count"":1},{""word"":""test"",""id"":""word-3"",""x_px"":922,""y_px"":286,""x_norm"":0.6575635564556482,""y_norm"":0.6011737134156124,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":606.7999999523163,""move_count"":1},{""word"":""test"",""id"":""word-4"",""x_px"":650,""y_px"":390,""x_norm"":0.463575175375457,""y_norm"":0.45614597283947145,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":615.2000000476837,""move_count"":1},{""word"":""test"",""id"":""word-5"",""x_px"":589,""y_px"":545,""x_norm"":0.4200704281479141,""y_norm"":0.2399988594807999,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":457.7000000476837,""move_count"":1},{""word"":""test"",""id"":""word-6"",""x_px"":770,""y_px"":194,""x_norm"":0.5491582846755414,""y_norm"":0.7294674839252755,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":345,""move_count"":1},{""word"":""test"",""id"":""word-7"",""x_px"":227,""y_px"":369,""x_norm"":0.1618947150926596,""y_norm"":0.48543042045580764,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":457.2999999523163,""move_count"":1},{""word"":""test"",""id"":""word-8"",""x_px"":679,""y_px"":335,""x_norm"":0.4842577601229774,""y_norm"":0.5328433356441614,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":325.5,""move_count"":1},{""word"":""test"",""id"":""word-9"",""x_px"":619,""y_px"":353,""x_norm"":0.4414662054729352,""y_norm"":0.5077423805444448,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":319.09999990463257,""move_count"":1},{""word"":""test"",""id"":""word-10"",""x_px"":571,""y_px"":161,""x_norm"":0.40723296175290147,""y_norm"":0.7754859016080895,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":1961.8999999761581,""move_count"":1},{""word"":""ets"",""id"":""word-11"",""x_px"":894,""y_px"":99,""x_norm"":0.6353333098057569,""y_norm"":0.8619447469515582,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":1333.1999999284744,""move_count"":1},{""word"":""test"",""id"":""word-12"",""x_px"":1305,""y_px"":135,""x_norm"":0.9307163136384176,""y_norm"":0.8117428367521248,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":800.6000000238419,""move_count"":1},{""word"":""test"",""id"":""word-13"",""x_px"":244,""y_px"":719.2291870117188,""x_norm"":0.17401898891017156,""y_norm"":-0.0029633071992720694,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":731.8000000715256,""move_count"":1}]",2560,1271,1.5,,,,,,,,,,,,
+7087,"
+    <p style=""font-size:20px;""><strong>You will now move to the next category.</strong></p>
+    <p style=""font-size:18px;"">As a reminder, you will:</p>
+    <ol style=""font-size:18px; padding-left: 20px; text-align: left;"">
+      <li>Indicate your interest in the category.</li>
+      <li>Estimate how many items you think you could produce in that category within a minute.</li>
+      <li>Complete the verbal fluency task, i.e., type in as many items as you can think of that correspond to the category in one minute.</li>
+      <li>Complete the spatial arrangement task, i.e., spatially arrange the words you typed in based on how related they are to one another.</li>
+    </ol>
+    <p style=""font-size:18px;"">Press <strong>Begin</strong> to start.</p>
+  ",0,instructions,html-button-response,30,1400853,0.0-30.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1496,<p>How interesting do you find the category <strong>SPORTSPERSONS</strong>?</p>,57,VFT_category_interest,html-slider-response,31,1402350,0.0-31.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,sportspersons,,,,50,57,,,,,,,,,,,,,,,,
+4060,,3,VFT_estimate,survey-html-form,32,1406410,0.0-32.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,sportspersons,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Name as many <strong>SPORTSPERSONS</strong> as you can.</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,33,1466411,0.0-33.0-0.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,VFT,sportspersons,"[{""response"":""test"",""tag"":1},{""response"":""test"",""tag"":2},{""response"":""test"",""tag"":3},{""response"":""trest"",""tag"":4},{""response"":""test"",""tag"":5},{""response"":""test"",""tag"":6},{""response"":""test"",""tag"":7},{""response"":""test"",""tag"":8},{""response"":""test"",""tag"":9},{""response"":""test"",""tag"":10}]","[1848.9,629.4,709.2,787.9,741.7,675.5,730.9,799.1,719.9,686.5]",FALSE,,,,,,,,,,,,,,,,,,
+30459,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:18px;""> When you are finished arranging the space, click the Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ",0,,html-button-response,34,1496871,0.0-34.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,SpAM,sportspersons,,,,,,"[{""word"":""test"",""id"":""word-1"",""x_px"":846,""y_px"":122,""x_norm"":0.6033609205655949,""y_norm"":0.8298713043241424,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":3822.3000000715256,""move_count"":1},{""word"":""test"",""id"":""word-2"",""x_px"":1021,""y_px"":164,""x_norm"":0.7281696216282179,""y_norm"":0.7713024090914701,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":699.3000000715256,""move_count"":1},{""word"":""test"",""id"":""word-3"",""x_px"":943,""y_px"":328,""x_norm"":0.672540600583163,""y_norm"":0.5426048181829402,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":383.2999999523163,""move_count"":1},{""word"":""trest"",""id"":""word-4"",""x_px"":1054,""y_px"":418,""x_norm"":0.754783413713097,""y_norm"":0.41710004268435663,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":605.3999999761581,""move_count"":1},{""word"":""test"",""id"":""word-5"",""x_px"":534,""y_px"":380,""x_norm"":0.3808448363853755,""y_norm"":0.4700909478948697,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":540.4000000953674,""move_count"":1},{""word"":""test"",""id"":""word-6"",""x_px"":570,""y_px"":397,""x_norm"":0.4065197691754008,""y_norm"":0.4463844903006928,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":349.39999997615814,""move_count"":1},{""word"":""test"",""id"":""word-7"",""x_px"":661,""y_px"":486,""x_norm"":0.47142029372796473,""y_norm"":0.3222742123076491,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":1412.1000000238419,""move_count"":1},{""word"":""test"",""id"":""word-8"",""x_px"":571,""y_px"":195,""x_norm"":0.40723296175290147,""y_norm"":0.7280729864197357,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":502.60000002384186,""move_count"":1},{""word"":""test"",""id"":""word-9"",""x_px"":684,""y_px"":276,""x_norm"":0.48782372301048094,""y_norm"":0.6151186884710106,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":533.3999999761581,""move_count"":1},{""word"":""test"",""id"":""word-10"",""x_px"":797,""y_px"":380,""x_norm"":0.5684144842680604,""y_norm"":0.4700909478948697,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":2219.1999999284744,""move_count"":1}]",2560,1271,1.5,,,,,,,,,,,,
+2537,,,,instructions,35,1499408,0.0-35.0-0.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,"[{""page_index"":0,""viewing_time"":2537}]",,,,,,,,,,,
+5040,,"{""gender"":""F"",""age"":""29"",""education"":""22""}",demographics,survey-html-form,36,1504448,0.0-35.0-1.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,29,F,22,,,,,,,,
+1933,,"{""race"":[""White/Caucasian""]}",demographics,survey-multi-select,37,1506383,0.0-35.0-2.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,[0],,,,,,,,,,,,,,,,,,,,,,,,,,,,0,White/Caucasian,"[""White/Caucasian""]",,,,,
+1181,<br><br><br>Is English your first language? (*)<br><br>,0,demographics,html-button-response,38,1507564,0.0-35.0-3.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,yes,,,,
+3586,,"{""additional_languages"":""French""}",demographics,survey-text,39,1511152,0.0-35.0-5.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,French,,,
+1863,,"{""additional_info"":""""}",demographics,survey-text,40,1513015,0.0-35.0-6.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+51443,"
+      <h2>Thank you for participating! You have completed the experiment. </h2>
+      <p>Your completion code is </p>
+      <p style = ""font-size: 28px; font-weight: bold; letter-spacing: 2px;"">EYMS5NVR</p>
+      <p>To receive compensation/credit, please follow the link below to the compensation form and copy and paste the code above.</p>
+      <p>
+        <a href = ""https://docs.google.com/forms/d/e/1FAIpQLSc8UGDrLaJgDIt7itpYr5u4Mt0LjjfXINBq9XZmaVx0b_rVlg/viewform?usp=header""
+          target = ""_blank""
+          rel = ""noopener noreferrer"">
+          Open compensation form
+        </a>
+      </p>
+      <p>  After clicking the link, <b> please return to this page</b> and click the button below to finish the experiment and save your data.</p>
+      <p> You can also click <a href=""https://drive.google.com/file/d/1yD8wzNc2l6z4PzHAHSpVsnpay0790VCZ/view"" target=""_blank"" rel=""noopener noreferrer"">here</a> to access the debriefing form and know more about our research.</p>
+      <p> <b>IMPORTANT: Please do not leave this page without clicking the button below.</b></p>
+      
+    ",0,compensation,html-button-response,41,1564458,0.0-36.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EYMS5NVR,
+,,,,call-function,42,1564459,0.0-37.0,5,1,1/26/2026 21:16,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",EYMS5NVR,1564459,26.07431667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1223,"
+ <p style=""font-size:20px;""> <b>Welcome to the experiment!</b><br><br></p>
+ <p style=""font-size:18px;""> In this study, we would like to understand how you engage with language in your daily life and how that affects your cognitive functioning. <br><br>
+  First, you will answer two questions about your language exposure. <br> 
+  Language exposure refers to time spent reading or listening to language-based content (not just scrolling or viewing images). <br>
+  For both questions, please estimate your typical use in an average week. 
+  </p>
+ ",0,language_exposure_instructions,html-button-response,0,1224,0.0-0.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+10211,,"{""NewsArticles"":2,""FictionBooks"":2,""NonFictionBooks"":1,""EssaysBlogsNewsletters"":1,""Podcasts"":3}",long_form_exposure,survey-likert,1,11435,0.0-1.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,"[0,1,2,3,4]",2,2,1,1,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+10447,,"{""Twitter"":0,""Facebook"":0,""TikTok"":3,""Reddit"":2,""YouTube"":5,""Instagram"":2,""Snapchat"":0}",social_media_exposure,survey-likert,2,21883,0.0-2.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,"[0,1,2,3,4,5,6]",,,,,,0,0,3,2,5,2,0,,,,,,,,,,,,,,,,,,,,,,,
+979,"
+ <p style=""font-size:20px;""> Great! You will now move on to the next phase of the study. <br><br></p>
+ <p style=""font-size:18px;""> In this part, we would like to get a sense of what content you typically consume on the <b>Reddit</b> platform. <br>
+  On the next page, we ask that you input the names of the <b>Subreddits</b> you typically engage with in any capacity. <br>
+  (i.e. writing posts, reading posts, upvoting, commenting, sharing, etc.) <br>
+  Next, we ask that you input your general interests when you are consuming online content, independent of specific Subreddits. <br>
+  To input a response, type it within the provided box and <strong>press ENTER</strong> after every response. <br><br>
+  Note that there will be a three minute time limit for this part. However, if you feel you are done before time runs out, you can<br>
+  click the <strong>I'm done</strong> button. This data is crucial to the experiment, so please be as accurate possible when typing your responses.<br><br>
+  After you complete these tasks, you will be provided further instructions and continue to the actual experiment.<br>
+  When you are ready to start, <strong>press Continue.</strong>
+ </p>
+ ",0,interestssurveyinstructions,html-button-response,3,22863,0.0-3.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Type in the Subreddits you frequently engage with</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        <button id=""continue-btn"">I'm done</button>
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,4,202865,0.0-4.0-0.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,VFT,subreddits,"[{""response"":""/baking"",""tag"":1},{""response"":""/reddit"",""tag"":2},{""response"":""/AITA"",""tag"":3},{""response"":""/anime"",""tag"":4},{""response"":""/crochet"",""tag"":5},{""response"":""/crafts"",""tag"":6},{""response"":""/art"",""tag"":7},{""response"":""/painting"",""tag"":8},{""response"":""/gardening"",""tag"":9}]","[3147.1,2149.1,5591.5,1811.3,2520.3,2204.5,14457,2407.5,11532]",FALSE,,,,,,,,,,,,,,,,,,
+,,,,html-keyboard-response,5,271662,0.0-5.0-0.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,VFT,interest,"[{""response"":""crafts"",""tag"":1},{""response"":""painting"",""tag"":2},{""response"":""fiction"",""tag"":3},{""response"":""anime"",""tag"":4},{""response"":""books"",""tag"":5},{""response"":""cooking"",""tag"":6},{""response"":""baking"",""tag"":7},{""response"":""pastry"",""tag"":8},{""response"":""comedy"",""tag"":9},{""response"":""literature"",""tag"":10},{""response"":""tv"",""tag"":11},{""response"":""shopping"",""tag"":12},{""response"":""music"",""tag"":13}]","[5368.5,1732.4,16178.2,1136.2,1777.5,9450.3,1640.5,2927.7,9022.7,3217.4,798.9,12375.5,1473.2]",TRUE,,,,,,,,,,,,,,,,,,
+1119,"
+  <p style=""font-size:20px;""> You will now proceed with the actual experiment.<br><br></p>
+  <p style=""font-size:18px;""> <strong>This experiment has two tasks:</strong><br><br>
+   1) A <u>verbal fluency task</u>, where you will type in as many items as you can think of that correspond to a given category within a minute.<br><br>
+   2) A <u>spatial arrangement task</u>, where you will move around the items you typed in the first task so that similar items are closer together.<br><br>
+   The experiment will consist of only 5 categories, so please be as accurate/precise as possible <br>
+   when typing in items and placing the objects, rather than trying to speed through.
+  </p>
+  ",0,maininstructions,html-button-response,6,272782,0.0-6.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+647,"
+  <p style=""font-size:20px;""><strong>You will begin with a verbal fluency task.</strong></p>
+  <p style=""font-size:18px;""> In this task, you will be presented the name of a category (e.g., FURNITURE) in capital letters. <br>
+  Your job is to type in as many items as you can think of that correspond to that category in <b>one minute</b>.<br>
+  You will be presented with 5 such categories.<br><br>
+  After you type in each word, press <strong>ENTER</strong> to type in the next word. <br>
+  When the timer runs out, you will automatically proceed to the next task. Press Continue for the next set of instructions.<br>
+  </p>  
+
+  ",0,VFTinstructions,html-button-response,7,273429,0.0-7.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1225,"
+  <p style=""font-size:20px;""> <strong>After each verbal fluency task, you will perform a spatial arrangement task.</strong></p>
+  <p style=""font-size:18px;""> In this task, you will be shown the set of words you typed in the last verbal fluency task you performed.<br>
+  We want to know how similar you think these words are to one another. <br>
+  Your job is to move each word around so that the similar words are proportionately closer together. <br>
+  That is, you should move them into space such that the distance between each pair of items represents how similar you think the pair is.<br>
+  (with closer in space meaning more similar, and farther away in space meaning more dissimilar)<br>
+  As shown in the video below, the words will appear one by one in the top left corner of a box. You can move the words by simply dragging them. <br>
+  If the words seem similar, place them close together. If they seem dissimilar, place them farther away from each other. <br>
+
+ <div style=""text-align: center; margin-top: 10px;"">
+  <video width=""600"" height=""400"" autoplay muted loop>
+    <source src=""SpAMTutorial.mp4"" type=""video/mp4"">
+  </video>
+</div>
+
+
+  After dragging each word, the next word will appear. You may rearrange previously placed items as needed.<br><br>
+  Note, to complete the trial, <u>all words</u> must be moved. <br>
+  When you are finished arranging the space, click on the little Continue button at the bottom of the screen.<br><br>
+  You will be doing this for five separate categories, based on the words you type in the corresponding verbal fluency task.<br><br>
+  Press Continue to proceed to the first verbal fluency task and begin the experiment.
+</p>
+  ",0,spaminstructions,html-button-response,8,274655,0.0-8.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1032,"
+  <p style=""font-size:18px;""> <br><br><br>Now, you will begin the task, consisting of five rounds with different categories.<br><br>
+  Again, your first task is to first type in as many items as you can within the given category in one minute. <br> 
+  Then, you will spatially arrange the words you typed in the box provided based on how related they are.<br><br>
+  <b>Before each round</b>, you will also be asked about how interesting you find the category <br>
+  and the number of items you believe you could produce for that category.<br><br>
+
+  When you're ready, <strong>press Begin</strong> to start the verbal fluency task.
+
+  </p>
+  ",0,start_instructions,html-button-response,9,275687,0.0-9.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1819,<p>How interesting do you find the category <strong>AUTHORS</strong>?</p>,51,VFT_category_interest,html-slider-response,10,277507,0.0-10.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,authors,,,,50,51,,,,,,,,,,,,,,,,
+4200,,15,VFT_estimate,survey-html-form,11,281708,0.0-11.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,authors,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Name as many <strong>AUTHORS</strong> as you can.</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,12,341709,0.0-12.0-0.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,VFT,authors,"[{""response"":""Jane Austen"",""tag"":1},{""response"":""Emily Bronte"",""tag"":2},{""response"":""Charlotte Bronte"",""tag"":3},{""response"":""Dostoyevsky"",""tag"":4},{""response"":""Tolstoy"",""tag"":5},{""response"":""Brandon Sanderson"",""tag"":6},{""response"":""Rothfus"",""tag"":7},{""response"":""Martin"",""tag"":8}]","[4424.6,2441,5062.6,11655.6,5535.6,10620.3,4398.6,2362.7]",FALSE,,,,,,,,,,,,,,,,,,
+27247,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:18px;""> When you are finished arranging the space, click the Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ",0,,html-button-response,13,368957,0.0-13.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,SpAM,authors,,,,,,"[{""word"":""Jane Austen"",""id"":""word-1"",""x_px"":423,""y_px"":110,""x_norm"":0.3134518464006658,""y_norm"":0.8466052743906202,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":4914.100000023842,""move_count"":1},{""word"":""Emily Bronte"",""id"":""word-2"",""x_px"":571,""y_px"":81,""x_norm"":0.4249862393009653,""y_norm"":0.8870457020512749,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":765.3999999761581,""move_count"":1},{""word"":""Charlotte Bronte"",""id"":""word-3"",""x_px"":614,""y_px"":138,""x_norm"":0.4659641587187312,""y_norm"":0.8075593442355053,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":398.1999999284744,""move_count"":1},{""word"":""Dostoyevsky"",""id"":""word-4"",""x_px"":675,""y_px"":341,""x_norm"":0.5018276457858329,""y_norm"":0.5244763506109225,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":633.3000000715256,""move_count"":1},{""word"":""Tolstoy"",""id"":""word-5"",""x_px"":632,""y_px"":288,""x_norm"":0.4580055878586513,""y_norm"":0.5983847184045328,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":699.1000000238419,""move_count"":1},{""word"":""Brandon Sanderson"",""id"":""word-6"",""x_px"":309,""y_px"":363,""x_norm"":0.23834355275839736,""y_norm"":0.4937974054890465,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":2044.2000000476837,""move_count"":1},{""word"":""Rothfus"",""id"":""word-7"",""x_px"":372,""y_px"":412,""x_norm"":0.27033860555182226,""y_norm"":0.4254670277175955,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":1201.5,""move_count"":1},{""word"":""Martin"",""id"":""word-8"",""x_px"":293,""y_px"":404,""x_norm"":0.2117880916321796,""y_norm"":0.4366230077619141,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":446.1999999284744,""move_count"":1}]",2560,1271,1.5,,,,,,,,,,,,
+1758,"
+    <p style=""font-size:20px;""><strong>You will now move to the next category.</strong></p>
+    <p style=""font-size:18px;"">As a reminder, you will:</p>
+    <ol style=""font-size:18px; padding-left: 20px; text-align: left;"">
+      <li>Indicate your interest in the category.</li>
+      <li>Estimate how many items you think you could produce in that category within a minute.</li>
+      <li>Complete the verbal fluency task, i.e., type in as many items as you can think of that correspond to the category in one minute.</li>
+      <li>Complete the spatial arrangement task, i.e., spatially arrange the words you typed in based on how related they are to one another.</li>
+    </ol>
+    <p style=""font-size:18px;"">Press <strong>Begin</strong> to start.</p>
+  ",0,instructions,html-button-response,14,370716,0.0-14.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1907,<p>How interesting do you find the category <strong>ANIMALS</strong>?</p>,50,VFT_category_interest,html-slider-response,15,372623,0.0-15.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,animals,,,,50,50,,,,,,,,,,,,,,,,
+3185,,20,VFT_estimate,survey-html-form,16,375809,0.0-16.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,animals,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Name as many <strong>ANIMALS</strong> as you can.</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,17,435809,0.0-17.0-0.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,VFT,animals,"[{""response"":""cat"",""tag"":1},{""response"":""dog"",""tag"":2},{""response"":""frog"",""tag"":3},{""response"":""salamander"",""tag"":4},{""response"":""turtle"",""tag"":5},{""response"":""cheetah"",""tag"":6},{""response"":""jaguar"",""tag"":7},{""response"":""hog"",""tag"":8},{""response"":""cow"",""tag"":9},{""response"":""chicken"",""tag"":10},{""response"":""rooster"",""tag"":11},{""response"":""polar bear"",""tag"":12},{""response"":""panda"",""tag"":13},{""response"":""black ebar"",""tag"":14},{""response"":""grizzly"",""tag"":15}]","[2037.9,1473.3,866.1,1732.2,1125.2,1643,1642.3,2846.7,1068.3,1912.9,1923.8,3453.6,1282.9,1968.6,2441.7]",FALSE,,,,,,,,,,,,,,,,,,
+49054,"
+  <p style=""font-size:20px;""> <strong>You are moving on to the spatial arrangement task.</strong></p>
+  <p style=""font-size:18px;""> As a reminder, in this task, you will be shown the set of words you just produced in the fluency task.<br>
+  We want to know how similar you think these words are to one another.<br>
+  To indicate your perception of similarity, you will move each word around so that the similar ones are proportionately closer together.<br>
+  If the words seem similar, place them close together, if they seem dissimilar, place them farther away from each other.<br><br>
+  Press <strong>Begin</strong> to start.
+  </p>
+
+  ",0,instructions,html-button-response,18,484864,0.0-18.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+47907,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:18px;""> When you are finished arranging the space, click the Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ",0,,html-button-response,19,532772,0.0-19.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,SpAM,animals,,,,,,"[{""word"":""cat"",""id"":""word-1"",""x_px"":503,""y_px"":170,""x_norm"":0.35745058849655786,""y_norm"":0.7629354240582311,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":979.2000000476837,""move_count"":1},{""word"":""dog"",""id"":""word-2"",""x_px"":532,""y_px"":148,""x_norm"":0.3794381837356613,""y_norm"":0.7936143691801072,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":1599.3999999761581,""move_count"":1},{""word"":""frog"",""id"":""word-3"",""x_px"":568,""y_px"":368,""x_norm"":0.4056539209159225,""y_norm"":0.4868249179613474,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":348.7999999523163,""move_count"":1},{""word"":""salamander"",""id"":""word-4"",""x_px"":549,""y_px"":343,""x_norm"":0.40683932377669546,""y_norm"":0.5216873555998429,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":396.39999997615814,""move_count"":1},{""word"":""turtle"",""id"":""word-5"",""x_px"":723,""y_px"":331,""x_norm"":0.5197777354598744,""y_norm"":0.5384213256663206,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":973.7000000476837,""move_count"":1},{""word"":""cheetah"",""id"":""word-6"",""x_px"":416,""y_px"":256,""x_norm"":0.3027013921861391,""y_norm"":0.643008638581807,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":328.10000002384186,""move_count"":1},{""word"":""jaguar"",""id"":""word-7"",""x_px"":418,""y_px"":237,""x_norm"":0.3016621185809973,""y_norm"":0.6695040911870634,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":1347.7999999523163,""move_count"":1},{""word"":""hog"",""id"":""word-8"",""x_px"":597,""y_px"":213,""x_norm"":0.4258044388209104,""y_norm"":0.7029720313200191,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":519.2999999523163,""move_count"":1},{""word"":""cow"",""id"":""word-9"",""x_px"":620,""y_px"":185,""x_norm"":0.44263977511043684,""y_norm"":0.7420179614751339,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":7944.900000095367,""move_count"":1},{""word"":""chicken"",""id"":""word-10"",""x_px"":650,""y_px"":226,""x_norm"":0.4719299979218236,""y_norm"":0.6848435637480015,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":882.5,""move_count"":1},{""word"":""rooster"",""id"":""word-11"",""x_px"":675,""y_px"":220,""x_norm"":0.4895369050352485,""y_norm"":0.6932105487812403,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":465.7999999523163,""move_count"":1},{""word"":""polar bear"",""id"":""word-12"",""x_px"":501,""y_px"":221,""x_norm"":0.3686336434149999,""y_norm"":0.6918160512757006,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":665.5,""move_count"":1},{""word"":""panda"",""id"":""word-13"",""x_px"":533,""y_px"":232,""x_norm"":0.3847304833487097,""y_norm"":0.6764765787147625,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":649,""move_count"":1},{""word"":""black ebar"",""id"":""word-14"",""x_px"":532,""y_px"":240,""x_norm"":0.3914193088542984,""y_norm"":0.665320598670444,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":432.8000000715256,""move_count"":1},{""word"":""grizzly"",""id"":""word-15"",""x_px"":541,""y_px"":237,""x_norm"":0.3902937580900628,""y_norm"":0.6695040911870634,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":465.6999999284744,""move_count"":1}]",2560,1271,1.5,,,,,,,,,,,,
+1548,"
+    <p style=""font-size:20px;""><strong>You will now move to the next category.</strong></p>
+    <p style=""font-size:18px;"">As a reminder, you will:</p>
+    <ol style=""font-size:18px; padding-left: 20px; text-align: left;"">
+      <li>Indicate your interest in the category.</li>
+      <li>Estimate how many items you think you could produce in that category within a minute.</li>
+      <li>Complete the verbal fluency task, i.e., type in as many items as you can think of that correspond to the category in one minute.</li>
+      <li>Complete the spatial arrangement task, i.e., spatially arrange the words you typed in based on how related they are to one another.</li>
+    </ol>
+    <p style=""font-size:18px;"">Press <strong>Begin</strong> to start.</p>
+  ",0,instructions,html-button-response,20,534321,0.0-20.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1391,<p>How interesting do you find the category <strong>SPORTSPERSONS</strong>?</p>,50,VFT_category_interest,html-slider-response,21,535712,0.0-21.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,sportspersons,,,,50,50,,,,,,,,,,,,,,,,
+2152,,4,VFT_estimate,survey-html-form,22,537865,0.0-22.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,sportspersons,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Name as many <strong>SPORTSPERSONS</strong> as you can.</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,23,598007,0.0-23.0-0.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,VFT,sportspersons,"[{""response"":""lebron"",""tag"":1},{""response"":""kobe"",""tag"":2},{""response"":""mj"",""tag"":3},{""response"":""caitlin collins"",""tag"":4},{""response"":""steph curry"",""tag"":5}]","[4237.4,1215.4,2440.9,3555.2,2194]",FALSE,,,,,,,,,,,,,,,,,,
+45850,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:18px;""> When you are finished arranging the space, click the Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ",0,,html-button-response,24,643858,0.0-24.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,SpAM,sportspersons,,,,,,"[{""word"":""lebron"",""id"":""word-1"",""x_px"":678,""y_px"":162,""x_norm"":0.48989545464809087,""y_norm"":0.7740914041025497,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":31736,""move_count"":1},{""word"":""kobe"",""id"":""word-2"",""x_px"":732,""y_px"":121,""x_norm"":0.5249350110861369,""y_norm"":0.8312658018296821,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":2486.600000023842,""move_count"":1},{""word"":""mj"",""id"":""word-3"",""x_px"":753,""y_px"":164,""x_norm"":0.5339794360179505,""y_norm"":0.7713024090914701,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":716.6000000238419,""move_count"":1},{""word"":""caitlin collins"",""id"":""word-4"",""x_px"":577,""y_px"":235,""x_norm"":0.4295152135479669,""y_norm"":0.6722930861981431,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":465.89999997615814,""move_count"":1},{""word"":""steph curry"",""id"":""word-5"",""x_px"":774,""y_px"":142,""x_norm"":0.5722294966477048,""y_norm"":0.801981354213346,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":949,""move_count"":1}]",2560,1271,1.5,,,,,,,,,,,,
+1207,"
+    <p style=""font-size:20px;""><strong>You will now move to the next category.</strong></p>
+    <p style=""font-size:18px;"">As a reminder, you will:</p>
+    <ol style=""font-size:18px; padding-left: 20px; text-align: left;"">
+      <li>Indicate your interest in the category.</li>
+      <li>Estimate how many items you think you could produce in that category within a minute.</li>
+      <li>Complete the verbal fluency task, i.e., type in as many items as you can think of that correspond to the category in one minute.</li>
+      <li>Complete the spatial arrangement task, i.e., spatially arrange the words you typed in based on how related they are to one another.</li>
+    </ol>
+    <p style=""font-size:18px;"">Press <strong>Begin</strong> to start.</p>
+  ",0,instructions,html-button-response,25,645066,0.0-25.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1785,<p>How interesting do you find the category <strong>MUSICIANS</strong>?</p>,50,VFT_category_interest,html-slider-response,26,646851,0.0-26.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,musicians,,,,50,50,,,,,,,,,,,,,,,,
+2905,,10,VFT_estimate,survey-html-form,27,649756,0.0-27.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,musicians,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Name as many <strong>MUSICIANS</strong> as you can.</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,28,709757,0.0-28.0-0.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,VFT,musicians,"[{""response"":""front bottoms"",""tag"":1},{""response"":""carseat headrest"",""tag"":2},{""response"":""third eye blind"",""tag"":3},{""response"":""beyonce"",""tag"":4},{""response"":""taylor swift"",""tag"":5},{""response"":""sabrina carpenter"",""tag"":6}]","[3005.8,3003.9,3049.3,2103.3,2554.7,2676.7]",FALSE,,,,,,,,,,,,,,,,,,
+15837,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:18px;""> When you are finished arranging the space, click the Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ",0,,html-button-response,29,725595,0.0-29.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,SpAM,musicians,,,,,,"[{""word"":""front bottoms"",""id"":""word-1"",""x_px"":393,""y_px"":114,""x_norm"":0.29425574286814943,""y_norm"":0.8410272843684609,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":961.8999999761581,""move_count"":1},{""word"":""carseat headrest"",""id"":""word-2"",""x_px"":457,""y_px"":91,""x_norm"":0.3468745559281944,""y_norm"":0.8731007269958767,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":369.7000000476837,""move_count"":1},{""word"":""third eye blind"",""id"":""word-3"",""x_px"":830,""y_px"":322,""x_norm"":0.622903914256901,""y_norm"":0.550971803216179,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":391.89999997615814,""move_count"":1},{""word"":""beyonce"",""id"":""word-4"",""x_px"":728,""y_px"":110,""x_norm"":0.5307492539312179,""y_norm"":0.8466052743906202,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":799.7999999523163,""move_count"":1},{""word"":""taylor swift"",""id"":""word-5"",""x_px"":1160,""y_px"":186,""x_norm"":0.8562070397195184,""y_norm"":0.7406234639695941,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":1083.3999999761581,""move_count"":1},{""word"":""sabrina carpenter"",""id"":""word-6"",""x_px"":1186,""y_px"":209,""x_norm"":0.9049333555878777,""y_norm"":0.7085500213421783,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":615.7000000476837,""move_count"":1}]",2560,1271,1.5,,,,,,,,,,,,
+1128,"
+    <p style=""font-size:20px;""><strong>You will now move to the next category.</strong></p>
+    <p style=""font-size:18px;"">As a reminder, you will:</p>
+    <ol style=""font-size:18px; padding-left: 20px; text-align: left;"">
+      <li>Indicate your interest in the category.</li>
+      <li>Estimate how many items you think you could produce in that category within a minute.</li>
+      <li>Complete the verbal fluency task, i.e., type in as many items as you can think of that correspond to the category in one minute.</li>
+      <li>Complete the spatial arrangement task, i.e., spatially arrange the words you typed in based on how related they are to one another.</li>
+    </ol>
+    <p style=""font-size:18px;"">Press <strong>Begin</strong> to start.</p>
+  ",0,instructions,html-button-response,30,726724,0.0-30.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1854,<p>How interesting do you find the category <strong>COLLEGE MAJORS</strong>?</p>,50,VFT_category_interest,html-slider-response,31,728579,0.0-31.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,college_majors,,,,50,50,,,,,,,,,,,,,,,,
+3482,,20,VFT_estimate,survey-html-form,32,732062,0.0-32.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,college_majors,,,,,,,,,,,,,,,,,,,,,
+null,"
+      <div id=""timer-box""></div>
+      <div id=""response-input-box"">
+        <p style=""font-size:30px;"">Name as many <strong>COLLEGE MAJORS</strong> as you can.</p>
+        <div id=""responses"">
+          <input type=""text"" class=""vft-input active"" autofocus />
+        </div>
+        <p style=""font-size:14px; color:gray;"">Press <strong>enter</strong> after each word!</p>
+        
+      </div>
+      <style>
+        #responses{position:relative;width:300px;height:40px}
+        .vft-input{position:absolute;width:100%;font-size:20px;padding:5px;opacity:.5}
+        .vft-input.active{opacity:1;z-index:999}
+      </style>
+    ",null,,html-keyboard-response,33,793007,0.0-33.0-0.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,VFT,college_majors,"[{""response"":""art"",""tag"":1},{""response"":""art history"",""tag"":2},{""response"":""music"",""tag"":3},{""response"":""biology"",""tag"":4},{""response"":""history"",""tag"":5}]","[1647.3,2193.7,967.7,1755.3,3745.9]",FALSE,,,,,,,,,,,,,,,,,,
+116423,"
+        <p style=""font-size:20px;"">Arrange each word to the drop box below based on how related they are to one another.</p> 
+        <p style=""font-size:18px;"">A new word will appear after <strong>each word</strong> you move.</p>
+        <p style=""font-size:18px;""> When you are finished arranging the space, click the Continue button at the bottom of the screen.</p>
+       <div id=""word-drop-area"" style=""
+            margin: 40px auto;
+            width: 80vw;
+            max-width: 1400px;
+            height: 55vh;
+            min-height: 500px;
+            max-height: 750px;
+            border: 2px solid #aaa;
+            padding: 20px;
+            position: relative;
+          ""></div>
+
+
+          <p style=""font-size:14px; color: gray;"">Remember, previously placed words can be rearranged if needed!</p>
+          <style>       
+            .draggable {
+              display: inline-block;
+              background: #eef;
+              padding: 4px 8px;
+              border: 1px solid #aaa;
+              border-radius: 4px;
+              cursor: grab;
+              font-size: 14px;
+              line-height: 1.2;
+              margin-bottom: 4px;
+            }
+
+        </style>    
+      ",0,,html-button-response,34,909431,0.0-34.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,SpAM,college_majors,,,,,,"[{""word"":""art"",""id"":""word-1"",""x_px"":432,""y_px"":120,""x_norm"":0.30678186823069237,""y_norm"":0.832660299335222,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":104067.20000004768,""move_count"":1},{""word"":""art history"",""id"":""word-2"",""x_px"":461,""y_px"":90,""x_norm"":0.33907187349162204,""y_norm"":0.8744952245014165,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":371.40000009536743,""move_count"":1},{""word"":""music"",""id"":""word-3"",""x_px"":541,""y_px"":518,""x_norm"":0.3897138833705643,""y_norm"":0.27765029213037495,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":340.1999999284744,""move_count"":1},{""word"":""biology"",""id"":""word-4"",""x_px"":289,""y_px"":456,""x_norm"":0.20948512183830917,""y_norm"":0.36410913747384355,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":349.39999997615814,""move_count"":1},{""word"":""history"",""id"":""word-5"",""x_px"":116,""y_px"":635,""x_norm"":0.08395340947642203,""y_norm"":0.11449408398221639,""canvas_width"":1444,""canvas_height"":743.2291870117188,""first_move_latency_ms"":466.10000002384186,""move_count"":1}]",2560,1271,1.5,,,,,,,,,,,,
+1837,,,,instructions,35,911269,0.0-35.0-0.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,"[{""page_index"":0,""viewing_time"":1837}]",,,,,,,,,,,
+6370,,"{""gender"":""F"",""age"":""29"",""education"":""22""}",demographics,survey-html-form,36,917639,0.0-35.0-1.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,29,F,22,,,,,,,,
+1758,,"{""race"":[""White/Caucasian""]}",demographics,survey-multi-select,37,919398,0.0-35.0-2.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,[0],,,,,,,,,,,,,,,,,,,,,,,,,,,,0,White/Caucasian,"[""White/Caucasian""]",,,,,
+1373,<br><br><br>Is English your first language? (*)<br><br>,0,demographics,html-button-response,38,920772,0.0-35.0-3.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,yes,,,,
+891,,"{""additional_languages"":""""}",demographics,survey-text,39,921664,0.0-35.0-5.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1093,,"{""additional_info"":""""}",demographics,survey-text,40,922758,0.0-35.0-6.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1644,"
+      <h2>Thank you for participating! You have completed the experiment. </h2>
+      <p>Your completion code is </p>
+      <p style = ""font-size: 28px; font-weight: bold; letter-spacing: 2px;"">QGF59QEM</p>
+      <p>To receive compensation/credit, please follow the link below to the compensation form and copy and paste the code above.</p>
+      <p>
+        <a href = ""https://docs.google.com/forms/d/e/1FAIpQLSc8UGDrLaJgDIt7itpYr5u4Mt0LjjfXINBq9XZmaVx0b_rVlg/viewform?usp=header""
+          target = ""_blank""
+          rel = ""noopener noreferrer"">
+          Open compensation form
+        </a>
+      </p>
+      <p>  After clicking the link, <b> please return to this page</b> and click the button below to finish the experiment and save your data.</p>
+      <p> You can also click <a href=""https://drive.google.com/file/d/1yD8wzNc2l6z4PzHAHSpVsnpay0790VCZ/view"" target=""_blank"" rel=""noopener noreferrer"">here</a> to access the debriefing form and know more about our research.</p>
+      <p> <b>IMPORTANT: Please do not leave this page without clicking the button below.</b></p>
+      
+    ",0,compensation,html-button-response,41,924403,0.0-36.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,QGF59QEM,
+,,,,call-function,42,924403,0.0-37.0,4,1,1/26/2026 20:55,67a926eef7a8be1603782f62a89f42b5,76.37.174.171,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",WebKit,Chrome,144.0.0.0,Windows,10,https://0gyczeg7yh.cognition.run/,"en-US,en;q=0.9",QGF59QEM,924403,15.40671667,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
