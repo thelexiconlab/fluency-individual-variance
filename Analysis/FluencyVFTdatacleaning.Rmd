@@ -26,10 +26,14 @@ library(stringr)
 #datafile <- read_csv("filepath") where filepath is the location of the csv file
 
 #Pilot participant csv data file:
-datafile <- read_csv("../Data/Pilot Data/fluency_reddit_pilot_channing.csv")
+datafile <- read_csv("../Data/reddit_data.csv")
 
-#Viewing the data file in seperate tab:
-View(datafile)
+#Viewing the data file in separate tab:
+#View(datafile)
+
+#just complete runs 
+# Note: some people didn't click final save data button, but did finish the study
+
 ```
 
 ##Cleaning Subreddit/Interest Data
