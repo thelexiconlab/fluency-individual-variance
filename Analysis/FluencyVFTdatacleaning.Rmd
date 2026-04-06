@@ -26,7 +26,7 @@ library(stringr)
 #datafile <- read_csv("filepath") where filepath is the location of the csv file
 
 #Pilot participant csv data file:
-datafile <- read_csv("../Data/reddit_data.csv")
+datafile <- read_csv("../Data/reddit_data.csv") %>%filter(subject!="BYK6XPTX") #participant who completed it 2x
 
 #Viewing the data file in separate tab:
 #View(datafile)
@@ -47,8 +47,10 @@ good_domain_counts <- datafile %>%
   summarise(unique_domains = n_distinct(domain))%>%
   filter(unique_domains==5)
 
+datafile_clean<-datafile%>%filter(subject %in% good_domain_counts$subject)
+
 #to isolate data on participants interests and subreddits interacted with 
-organized_interest_data <- datafile %>% 
+organized_interest_data <- datafile_clean %>% 
   filter(domain %in% c("subreddits", "interest")) %>%
   filter(!is.na(tagged_responses), tagged_responses != "", tagged_responses != "[]") %>%
   rowwise() %>%
@@ -81,7 +83,7 @@ safe_fromJSON <- function(x) {
   tryCatch(fromJSON(x), error = function(e) NULL)
 }
 #to make data analysis through Forager easier:
-organized_fluency <- datafile %>% #initiates dplyr pipeline
+organized_fluency <- datafile_clean %>% #initiates dplyr pipeline
   filter(
     task == "VFT",
    !domain %in% c("furniture-practice", "subreddits", "interest"),
@@ -117,7 +119,8 @@ View(organized_fluency)
 ##Cleaning SpAM Data
 ```{r}
 
-organized_spam <- datafile %>%
+organized_spam <- datafile_clean %>%
+    filter(subject!="DUBYYHYX" & domain!="college_majors")%>% #this trial was incomplete in the downloaded data for some reason
   filter(
     #subject %in% good_domain_counts$subject,
     task == "SpAM",
@@ -176,7 +179,7 @@ cols_to_select <- c("run_id", "age", "gender", "education", "question_order", "r
 optional_cols <- c("first_language", "age_learned_english")
 cols_to_select <- c(cols_to_select, optional_cols[optional_cols %in% colnames(datafile)])
 
-demographics_cleaned <- datafile %>%
+demographics_cleaned <- datafile_clean %>%
   filter(typeoftrial %in% c("demographics","long_form_exposure","social_media_exposure"),
          run_id %in% good_domain_counts$run_id) %>%
   select(all_of(cols_to_select)) %>%
