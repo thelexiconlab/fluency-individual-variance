@@ -47,7 +47,19 @@ good_domain_counts <- datafile %>%
   summarise(unique_domains = n_distinct(domain))%>%
   filter(unique_domains==5)
 
+#only keep good participants
 datafile_clean<-datafile%>%filter(subject %in% good_domain_counts$subject)
+
+#ID dropped p's
+bad_domain_counts <- datafile %>%
+    filter(
+    task == "VFT",
+   !domain %in% c("subreddits", "interest")) %>% 
+  group_by(subject,run_id) %>%
+  summarise(unique_domains = n_distinct(domain))%>%
+  filter(unique_domains<5)
+bad_domain_counts
+
 
 #to isolate data on participants interests and subreddits interacted with 
 organized_interest_data <- datafile_clean %>% 
@@ -65,7 +77,7 @@ subreddit_data <- organized_interest_data%>%
   rename(subreddit_responses = parsed_responses_response,
          tag = parsed_responses_tag)
 View(subreddit_data)
-write_csv(subreddit_data, "../Data/Pilot Data/subreddit_data.csv")
+write_csv(subreddit_data, "../Data/subreddit_data.csv")
 
 interests_data <- organized_interest_data%>%
   filter(domain == "interest")%>%
@@ -73,7 +85,7 @@ interests_data <- organized_interest_data%>%
   rename(interests_responses = parsed_responses_response,
          tag = parsed_responses_tag)
 View(interests_data)
-write_csv(interests_data, "../Data/Pilot Data/interests_data.csv")
+write_csv(interests_data, "../Data/interests_data.csv")
   
 ```
 
@@ -111,7 +123,7 @@ organized_fluency <- datafile_clean %>% #initiates dplyr pipeline
     ) %>%
   arrange(subject, domain, entry_number)
 
-write_csv(organized_fluency, "../Data/Pilot Data/organized_fluency.csv") 
+write_csv(organized_fluency, "../Data/organized_fluency.csv") 
 View(organized_fluency)
 
 ```
@@ -169,7 +181,7 @@ organized_spam <- organized_spam %>%
   ungroup()%>%
   select(-x_next, -y_next)
 View(organized_spam)
-write_csv(organized_spam, "../Data/Pilot Data/organized_spam.csv")
+write_csv(organized_spam, "../Data/organized_spam.csv")
 ```
 
 ## Cleaning demographics data
@@ -201,7 +213,7 @@ demographics_cleaned <- datafile_clean %>%
                   social_Instagram,social_Snapchat),
                 ~ifelse(. == "" | is.na(.), "blank", .)))
 
-write_csv(demographics_cleaned, "../Data/Pilot Data/demographics_data.csv")
+write_csv(demographics_cleaned, "../Data/demographics_data.csv")
 View(demographics_cleaned)
 
 
