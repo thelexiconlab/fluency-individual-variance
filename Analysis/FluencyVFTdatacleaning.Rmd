@@ -26,7 +26,7 @@ library(stringr)
 #datafile <- read_csv("filepath") where filepath is the location of the csv file
 
 #Pilot participant csv data file:
-datafile <- read_csv("../Data/reddit_data.csv") %>%filter(subject!="BYK6XPTX") #participant who completed it 2x
+datafile <- read_csv("../Data/raw_data/reddit_data.csv") %>%filter(subject!="BYK6XPTX") #participant who completed it 2x
 
 #Viewing the data file in separate tab:
 #View(datafile)
@@ -77,7 +77,7 @@ subreddit_data <- organized_interest_data%>%
   rename(subreddit_responses = parsed_responses_response,
          tag = parsed_responses_tag)
 View(subreddit_data)
-write_csv(subreddit_data, "../Data/subreddit_data.csv")
+write_csv(subreddit_data, "../Data/raw_data/subreddit_data.csv")
 
 interests_data <- organized_interest_data%>%
   filter(domain == "interest")%>%
@@ -85,7 +85,7 @@ interests_data <- organized_interest_data%>%
   rename(interests_responses = parsed_responses_response,
          tag = parsed_responses_tag)
 View(interests_data)
-write_csv(interests_data, "../Data/interests_data.csv")
+write_csv(interests_data, "../Data/raw_data/interests_data.csv")
   
 ```
 
@@ -123,7 +123,7 @@ organized_fluency <- datafile_clean %>% #initiates dplyr pipeline
     ) %>%
   arrange(subject, domain, entry_number)
 
-write_csv(organized_fluency, "../Data/organized_fluency.csv") 
+write_csv(organized_fluency, "../Data/raw_data/organized_fluency.csv") 
 View(organized_fluency)
 
 ```
@@ -181,7 +181,7 @@ organized_spam <- organized_spam %>%
   ungroup()%>%
   select(-x_next, -y_next)
 View(organized_spam)
-write_csv(organized_spam, "../Data/organized_spam.csv")
+write_csv(organized_spam, "../Data/raw_data/organized_spam.csv")
 ```
 
 ## Cleaning demographics data
@@ -213,10 +213,36 @@ demographics_cleaned <- datafile_clean %>%
                   social_Instagram,social_Snapchat),
                 ~ifelse(. == "" | is.na(.), "blank", .)))
 
-write_csv(demographics_cleaned, "../Data/demographics_data.csv")
+write_csv(demographics_cleaned, "../Data/cleaned_data/demographics_data.csv")
 View(demographics_cleaned)
 
 
 
 
 ```
+
+# Cleaning Fluency Interest & Fluency Estimate
+
+```{r}
+fluency_cleaned = read_csv("../Data/cleaned_data/fluency_data.csv") %>%
+  group_by(Subject, domain) %>% count()
+
+fluency_interest = datafile %>% 
+  filter(subject %in% good_domain_counts$subject & 
+           typeoftrial %in% c("VFT_category_interest", "VFT_estimate")) %>%
+  select(subject, domain, typeoftrial, response, rt)
+
+
+fluency_interest_wide <- fluency_interest %>%
+  mutate(typeoftrial = recode(typeoftrial, 
+                         "VFT_category_interest" = "interest",
+                         "VFT_estimate" = "estimate")) %>%
+  pivot_wider(id_cols = c(subject, domain), names_from = typeoftrial,
+    values_from = c(response, rt), names_glue = "{typeoftrial}_{.value}")%>%
+  rename(Subject= subject) %>%
+  left_join(fluency_cleaned) %>%
+  rename(fluency_score= n)
+
+write_csv(fluency_interest, "../Data/cleaned_data/fluency_interest_estimate.csv")
+```
+
