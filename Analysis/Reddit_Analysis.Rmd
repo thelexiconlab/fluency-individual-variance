@@ -19,7 +19,7 @@ library(ggplot2)
 First, grouping demographics data of participants by calculating a short and long form score for each, finding the general median, then splitting participants based on that median.
 
 ```{r}
-demographics <- read.csv("YOUR_DEMOGRAPHICS_DRIVE_LINK")
+demographics <- read.csv("ADD PATH TO YOUR demographics.csv")
 demographics <- demographics %>% mutate (
   long_form_score = long_NewsArticles + long_FictionBooks + long_NonFictionBooks + long_EssaysBlogsNewsletters + long_Podcasts,
   short_form_score = social_Twitter + social_Facebook + social_TikTok + social_Reddit + social_YouTube + social_Instagram + social_Snapchat
@@ -36,6 +36,9 @@ demographics <- demographics %>% mutate (
     long_form_score >= median_long_form & short_form_score >= median_short_form ~ "high_long_high_short",
   )
   )
+
+demographics %>% 
+  count(language_exposure_group)
 ```
 
 Next, forming clusters for subreddits (entertainment, advice, academic, learning, geographic, creative, news, athletic, career, cosmetic, general, food, music, religion (NA, for any which didn't fit these categories))
@@ -55,7 +58,6 @@ top_150_subs <- subreddit_data %>%
 category_map <- read_csv("top_150_subs_categorized.csv")
 subreddit_data_categorized <- subreddit_data %>% left_join(category_map, by = "corrected_subreddit")
 view(subreddit_data_categorized)
-subreddit_data_categorized %>% count(category, sort = TRUE)
 
 subreddit_data_categorized <- subreddit_data %>% left_join(category_map, by = "corrected_subreddit") %>% left_join(category_map, by = c("alt_subreddit_1" = "corrected_subreddit"), suffix = c("", "_alt")) %>% dplyr::mutate(category = coalesce(category, category_alt)) %>% dplyr::select(-category_alt)
 subreddit_data_categorized %>% count(category, sort = TRUE)
@@ -76,4 +78,28 @@ ggplot(fluency_wide, aes(x = domain, y = VFT_estimate)) + geom_boxplot() + labs(
 ggsave("fluency_spread_by_domain_plot.png", width = 8, height = 6)
 
 fluency_wide %>% group_by(domain) %>% summarize(correlation = cor(VFT_category_interest, VFT_estimate, use = "complete.obs"))
+```
+
+Extra tests (1): Is there a connection between the variety of subreddit categories a person engaged with and their fluency?
+
+```{r}
+subreddit_variety_data <- subreddit_data_categorized %>%
+  group_by(Subject) %>%
+  summarize(unique_categories = n_distinct(category, na.rm = TRUE)) %>%
+  left_join(fluency_wide, by = c("Subject" = "subject"))
+
+ggplot(subreddit_variety_data, aes(x = unique_categories, y = VFT_estimate)) + geom_point() + geom_smooth(method = "lm") + labs(title = "Category Variety vs Fluency")
+
+cor(subreddit_variety_data$unique_categories, subreddit_variety_data$VFT_estimate, use = "complete.obs")
+```
+
+Extra tests (2): Are there different fluency scores based language exposure group?
+
+```{r}
+exposure_data <- demographics %>%
+  left_join(fluency_wide, by = c("run_id" = "subject"))
+
+ggplot(exposure_data, aes(x = language_exposure_group, y = VFT_estimate)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + labs(title = "Fluency by Language Exposure")
+
+summary(aov(VFT_estimate ~ language_exposure_group, data = exposure_data))
 ```
