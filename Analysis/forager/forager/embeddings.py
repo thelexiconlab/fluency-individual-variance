@@ -31,20 +31,20 @@ class embeddings:
         self.words.sort()
         # write to vocab.csv with column header 'vocab'
 
-        pd.DataFrame(self.words).to_csv(path_for_lexical_data + '/vocab.csv', index=False, header=['vocab'])
+    #    pd.DataFrame(self.words).to_csv(path_for_lexical_data + '/vocab.csv', index=False, header=['vocab'])
 
         # load USE model
         module_url = "https://tfhub.dev/google/universal-sentence-encoder/4" #@param ["https://tfhub.dev/google/universal-sentence-encoder/4", "https://tfhub.dev/google/universal-sentence-encoder-large/5"]
         model = hub.load(module_url)
         print ("module %s loaded" % module_url)
         
-        embeddings = []
+        embeddings_list = []
         
         for v in self.words:
-            embeddings.append(model([v]).numpy()[0])
+            embeddings_list.append(model([v]).numpy()[0])
         
         # create a dictionary of words and their embeddings without loop
-        self.dict = dict(zip(self.words, embeddings))
+        self.dict = dict(zip(self.words, embeddings_list))
         # convert dictionary to dataframe with column names as words and each column is the embedding
 
         self.df = pd.DataFrame(self.dict)
@@ -52,4 +52,9 @@ class embeddings:
         self.df.to_csv(self.path, index=False)
         
 #### SAMPLE RUN CODE ####
-# embeddings('../data/lexical_data/vocab.csv') 
+#embeddings('../data/lexical_data/authors/vocab.csv', '../data/lexical_data/authors') 
+
+words = pd.read_csv('../data/lexical_data/interests/vocab.csv')['vocab'].tolist()
+embeddings(words, '../data/lexical_data/interests')
+
+

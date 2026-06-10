@@ -314,10 +314,10 @@ class phonology_funcs:
     
 
 ### SAMPLE RUN CODE ###
-#create_semantic_matrix('../data/lexical_data/USE_embeddings.csv')
-# v = pd.read_csv('../data/lexical_data/animals/vocab_semantigories.csv')['word'].values.tolist()
-# print("length of v: ", len(v))
-# phonology_funcs.create_phonological_matrix(v, '../data/lexical_data/animals')
+#create_semantic_matrix('../data/lexical_data/sportspersons/USE_embeddings.csv', '../data/lexical_data/sportspersons')
+v = pd.read_csv('../data/lexical_data/sportspersons/vocab.csv')['word'].values.tolist()
+print("length of v: ", len(v))
+phonology_funcs.create_phonological_matrix(v, '../data/lexical_data/sportspersons')
 
 # phonology_funcs.get_phonological_similarity('able seaman', 'accounts payable')
 # phonology_funcs.check_phon_matrix('../data/lexical_data/occupations/')

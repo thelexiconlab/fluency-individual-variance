@@ -14,6 +14,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
+library(readr)
+library(Rtsne)
+library(ggrepel)
 ```
 
 First, grouping demographics data of participants by calculating a short and long form score for each, finding the general median, then splitting participants based on that median.
@@ -79,6 +82,28 @@ ggsave("fluency_spread_by_domain_plot.png", width = 8, height = 6)
 
 fluency_wide %>% group_by(domain) %>% summarize(correlation = cor(VFT_category_interest, VFT_estimate, use = "complete.obs"))
 ```
+t-SNE of interest data
+```{r}
+emb <- read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Analysis/forager/data/lexical_data/interests/USE_embeddings.csv")
+
+X <- t(as.matrix(emb))
+labels <- colnames(emb)
+dim(X)
+head(labels)
+
+dim(emb)
+dim(tsne_out$Y)
+ncol(emb)
+nrow(emb)
+
+set.seed(123)
+tsne_out <- Rtsne(X, perplexity = 15, check_duplicates = FALSE, pca = TRUE)
+tsne_df <- data.frame(interest = labels, x = tsne_out$Y[,1], y = tsne_out$Y[,2])
+
+ggplot(tsne_df, aes(x, y, label = interest)) + geom_point(size = 2) + geom_text_repel(size = 3) + theme_minimal()
+
+```
+
 
 Extra tests (1): Is there a connection between the variety of subreddit categories a person engaged with and their fluency?
 
