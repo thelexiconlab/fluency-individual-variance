@@ -17,12 +17,13 @@ library(ggplot2)
 library(readr)
 library(Rtsne)
 library(ggrepel)
+library(here)
 ```
 
-First, grouping demographics data of participants by calculating a short and long form score for each, finding the general median, then splitting participants based on that median.
+1) Grouping demographics data of participants by calculating a short and long form score for each, finding the general median, then splitting participants based on that median.
 
 ```{r}
-demographics <- read.csv("ADD PATH TO YOUR demographics.csv")
+demographics <- read.csv(here::here("../Data/cleaned_data/demographics_data.csv"))
 demographics <- demographics %>% mutate (
   long_form_score = long_NewsArticles + long_FictionBooks + long_NonFictionBooks + long_EssaysBlogsNewsletters + long_Podcasts,
   short_form_score = social_Twitter + social_Facebook + social_TikTok + social_Reddit + social_YouTube + social_Instagram + social_Snapchat
@@ -44,10 +45,10 @@ demographics %>%
   count(language_exposure_group)
 ```
 
-Next, forming clusters for subreddits (entertainment, advice, academic, learning, geographic, creative, news, athletic, career, cosmetic, general, food, music, religion (NA, for any which didn't fit these categories))
+2) Forming clusters for subreddits (entertainment, advice, academic, learning, geographic, creative, news, athletic, career, cosmetic, general, food, music, religion (NA, for any which didn't fit these categories))
 
 ```{r}
-subreddit_data <- read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Desktop/fluency-individual-variance/Data/subreddit_data (1).csv")
+subreddit_data <- read_csv("../Data/subreddit_data.csv")
 subreddit_counts <- subreddit_data %>% 
   count(corrected_subreddit, sort = TRUE)
 View(subreddit_counts)
@@ -66,25 +67,39 @@ subreddit_data_categorized <- subreddit_data %>% left_join(category_map, by = "c
 subreddit_data_categorized %>% count(category, sort = TRUE)
 ```
 
-Finally, fluency and interest correlations calculated and range box plots (interest and fluency spread) formed
+3) Fluency and interest correlations calculated and range box plots (interest and fluency spread) formed
 
 ```{r}
-fluency_wide <- read.csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Desktop/fluency-individual-variance/Data/fluency_interest_estimate.csv")%>%
+fluency_wide <- read.csv("../Data/fluency_interest_estimate.csv")%>%
   select(-rt)%>%
   pivot_wider(names_from = typeoftrial, values_from = response)
 View(fluency_wide)
 
+#Box plot of interest spread across domains
 ggplot(fluency_wide, aes(x = domain, y = VFT_category_interest)) + geom_boxplot() + labs(title = "Interest Spread by Domain")
 ggsave("interest_spread_by_domain_plot.png", width = 8, height = 6)
 
+#Box plot of fluency spread across domains
 ggplot(fluency_wide, aes(x = domain, y = VFT_estimate)) + geom_boxplot() + labs(title = "Fluency Spead by Domain")
 ggsave("fluency_spread_by_domain_plot.png", width = 8, height = 6)
 
+#Summary of correlation between fluency and interest per domain
 fluency_wide %>% group_by(domain) %>% summarize(correlation = cor(VFT_category_interest, VFT_estimate, use = "complete.obs"))
+
+#Plot of correlation, annotated ^
+correlation_labels <- fluency_wide %>%
+  group_by(domain) %>%
+  summarize(correlation = round(cor(VFT_category_interest, VFT_estimate, use = "complete.obs"), 2), x = 85, y = max(VFT_estimate, na.rm = TRUE) * 0.9)
+correlation_labels$y <- c(55, 50, 45, 40, 35)
+
+ggplot(fluency_wide, aes(x = VFT_category_interest, y = VFT_estimate, color = domain)) + geom_point(alpha = 0.4) + geom_smooth(method = "lm", se = FALSE) + geom_text(
+  data = correlation_labels, aes(x = x, y = y, label = paste0("r" = correlation), color = domain), show.legend = FALSE, size = 3.5) +
+  labs(title = "Fluency vs Interest Correlation by Domain", x = "Category Interest", y = "Fluency Estimate", color = "Domain") + theme_minimal()
+ggsave("fluency_interest_by_domain_correlation_plot.png", width = 8, height = 6)
 ```
-t-SNE of interest data
+4) t-SNE of interest data
 ```{r}
-emb <- read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Analysis/forager/data/lexical_data/interests/USE_embeddings.csv")
+emb <- read_csv("../Analysis/forager/data/lexical_data/interests/USE_embeddings.csv")
 
 X <- t(as.matrix(emb))
 labels <- colnames(emb)
@@ -104,6 +119,84 @@ ggplot(tsne_df, aes(x, y, label = interest)) + geom_point(size = 2) + geom_text_
 
 ```
 
+5) Preparation for Forager (semantic embeddings, cues, frequencies)
+```{r}
+#Unique vocab lists
+
+#Authors
+unique_author_enteries <- read.csv("../Data/fluency_data.csv") %>%
+  filter(domain == "authors") %>% distinct(corrected_response)
+View(unique_author_enteries)
+write.csv(unique_author_enteries, "Analysis/forager/data/lexical_data/authors/vocab.csv", row.names = FALSE)
+
+#Musicians
+unique_musician_enteries <- read.csv("../Data/fluency_data.csv") %>%
+  filter(domain == "musicians") %>% distinct(corrected_response)
+View(unique_musician_enteries)
+write.csv(unique_musician_enteries, "Analysis/forager/data/lexical_data/musicians/vocab.csv", row.names = FALSE)
+
+#Sportspersons
+unique_sportspersons_enteries <- read.csv("../Data/fluency_data.csv") %>%
+  filter(domain == "sportspersons") %>% distinct(corrected_response)
+View(unique_sportspersons_enteries)
+write.csv(unique_sportspersons_enteries, "Analysis/forager/data/lexical_data/sportspersons/vocab.csv", row.names = FALSE)
+
+#College Majors
+unique_college_majors_enteries <- read.csv("../Data/fluency_data.csv") %>%
+  filter(domain == "college_majors") %>% distinct(corrected_response)
+View(unique_college_majors_enteries)
+write.csv(unique_college_majors_enteries, "Analysis/forager/data/lexical_data/college majors/vocab.csv", row.names = FALSE)
+
+path <- "Analysis/forager/data/lexical_data/college majors/vocab.csv"
+read.csv(path) %>% rename(vocab = corrected_response) %>% write.csv(path, row.names = FALSE)
+
+#Interests
+unique_interest_enteries <- read.csv("../Data/cleaned_data/interests_data.csv") %>%
+  distinct(corrected_interest) %>% rename(vocab = corrected_interest)
+View(unique_interest_enteries)
+write.csv(unique_interest_enteries, "Analysis/forager/data/lexical_data/interests/vocab.csv", row.names = FALSE)
+
+```
+
+5) Preparation for Forager (phonological matricies)
+```{r}
+#Changing column name
+base_path <- "../Analysis/forager/forager/lexical_data"
+
+domains <- c("authors", "musicians", "sportspersons", "college majors")
+
+for(domain in domains) {
+  path <- file.path(base_path, domain, "vocab.csv")
+  df <- read.csv(path, stringsAsFactors = FALSE)
+  
+  if ("vocab" %in% names(df)) {
+    df <- df %>% rename(word = vocab)
+  }
+  
+  #Finding weird entries/duplicates
+  cat("\n---", domain, "---\n")
+  
+  duplicates <- df$word[duplicated(df$word)]
+  if (length(duplicates) > 0) cat("Duplicates:", paste(duplicates, collapse = ", "), "\n")
+  
+  weird_chars <- df$word[grepl("[^a-zA-Z0-9 ., '-]|\\(|\\)", df$word)]
+  if (length(weird_chars) > 0) cat("Weird Characters:", paste(weird_chars, collapse = ", "), "\n")
+  
+  #Cleaning data
+  df$word <- stri_trans_general(df$word, "Latin-ASCII")
+  df$word <- gsub("\\+", " and ", df$word)
+  df$word <- gsub("&", " and ", df$word)
+  df$word <- gsub("\\s*\\([^)]*\\)", "", df$word)
+  df$word <- gsub("[^a-zA-Z0-9 .,\\'-]", "", df$word)
+  df$word <- gsub("\\s+", " ", df$word)
+  df$word <- trimws(df$word)
+
+  write.csv(df, path, row.names = FALSE)
+
+  cat("Cleaned:", domain, "\n") 
+  
+}
+```
 
 Extra tests (1): Is there a connection between the variety of subreddit categories a person engaged with and their fluency?
 
@@ -116,15 +209,20 @@ subreddit_variety_data <- subreddit_data_categorized %>%
 ggplot(subreddit_variety_data, aes(x = unique_categories, y = VFT_estimate)) + geom_point() + geom_smooth(method = "lm") + labs(title = "Category Variety vs Fluency")
 
 cor(subreddit_variety_data$unique_categories, subreddit_variety_data$VFT_estimate, use = "complete.obs")
+
 ```
 
 Extra tests (2): Are there different fluency scores based language exposure group?
 
 ```{r}
 exposure_data <- demographics %>%
-  left_join(fluency_wide, by = c("run_id" = "subject"))
+  left_join(fluency_wide, by = "subject")
 
 ggplot(exposure_data, aes(x = language_exposure_group, y = VFT_estimate)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + labs(title = "Fluency by Language Exposure")
 
+#ANOVA testing if fluency differs across exposure, at least one group has a different mean fluency than the others
 summary(aov(VFT_estimate ~ language_exposure_group, data = exposure_data))
+
+#Tukey's test, reveling significant difference between low long, high short and other groups in fluency production
+TukeyHSD(aov(VFT_estimate ~ language_exposure_group, data = exposure_data))
 ```

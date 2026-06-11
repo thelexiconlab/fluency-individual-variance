@@ -186,14 +186,14 @@ write_csv(organized_spam, "../Data/raw_data/organized_spam.csv")
 
 ## Cleaning demographics data
 ```{r}
-cols_to_select <- c("run_id", "age", "gender", "education", "question_order", "race", "hispanic", "english", "additional_languages","long_NewsArticles","long_FictionBooks","long_NonFictionBooks","long_EssaysBlogsNewsletters","long_Podcasts","social_Twitter","social_Facebook","social_TikTok","social_Reddit","social_YouTube","social_Instagram","social_Snapchat")
+cols_to_select <- c("subject", "age", "gender", "education", "question_order", "race", "hispanic", "english", "additional_languages","long_NewsArticles","long_FictionBooks","long_NonFictionBooks","long_EssaysBlogsNewsletters","long_Podcasts","social_Twitter","social_Facebook","social_TikTok","social_Reddit","social_YouTube","social_Instagram","social_Snapchat")
 
 optional_cols <- c("first_language", "age_learned_english")
 cols_to_select <- c(cols_to_select, optional_cols[optional_cols %in% colnames(datafile)])
 
 demographics_cleaned <- datafile_clean %>%
   filter(typeoftrial %in% c("demographics","long_form_exposure","social_media_exposure"),
-         run_id %in% good_domain_counts$run_id) %>%
+         subject %in% good_domain_counts$subject) %>%
   select(all_of(cols_to_select)) %>%
   filter(!if_all(everything(), is.na)) %>%
   mutate(
@@ -205,7 +205,7 @@ demographics_cleaned <- datafile_clean %>%
     additional_languages = as.character(additional_languages),
     across(any_of(c("first_language", "age_learned_english")), as.character)
   ) %>%
-  group_by(run_id) %>%
+  group_by(subject) %>%
   fill(everything(), .direction = "downup") %>%
   slice(1) %>%
   ungroup() %>%

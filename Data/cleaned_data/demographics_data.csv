@@ -1,0 +1,115 @@
+subject,age,gender,education,question_order,race,hispanic,english,additional_languages,long_NewsArticles,long_FictionBooks,long_NonFictionBooks,long_EssaysBlogsNewsletters,long_Podcasts,social_Twitter,social_Facebook,social_TikTok,social_Reddit,social_YouTube,social_Instagram,social_Snapchat,first_language,age_learned_english
+00K73X1D,19,female,12,"[0,1,2,3,4]",Asian,0,yes,"Vietnamese, French
+",4,1,2,3,0,0,0,0,3,2,4,0,NA,NA
+0GMT2ITP,35,female,16,"[0,1,2,3,4]",White/Caucasian,0,yes,no,4,1,1,1,5,0,1,5,6,2,3,0,NA,NA
+0L28O7LJ,21,female,16,"[0,1,2,3,4]",Asian,0,yes,"french, italian, chinese
+",1,1,1,2,1,0,0,4,2,2,4,0,NA,NA
+0MGC7F4K,20,Male,14,"[0,1,2,3,4]",none_selected,1,yes,Spanish,3,1,1,4,0,0,0,0,1,4,3,0,NA,NA
+0PRAW6DO,22,Female,16,"[0,1,2,3,4]",multiracial,0,no,"Russian, Korean, Kyrgyz",1,0,2,1,2,0,0,0,2,3,4,0,NA,NA
+0QPSDFM3,19,female,14,"[0,1,2,3,4]",White/Caucasian,0,yes,arabic,1,1,1,1,0,0,0,3,0,0,4,0,NA,NA
+18HXK612,19,Female,13,"[0,1,2,3,4]",White/Caucasian,0,yes,No,3,4,1,3,0,0,0,0,5,5,0,0,NA,NA
+1KEVYYJ9,20,cis fem,14,"[0,1,2,3,4]",Black/African American,0,yes,"chinese, spanish",1,2,3,3,4,0,0,4,2,5,3,0,NA,NA
+20ISZCV2,22,Male,16,"[0,1,2,3,4]",White/Caucasian,0,yes,Italian,1,0,1,1,1,1,0,0,1,1,2,1,NA,NA
+2BD455O0,20,transfem nonbinary,15,"[0,1,2,3,4]",White/Caucasian,0,yes,french,1,4,1,1,0,0,0,0,5,3,0,0,NA,NA
+37UDZTHY,21,Male,15,"[0,1,2,3,4]",White/Caucasian,1,yes,Spanish,2,1,1,1,3,3,0,0,2,4,3,1,NA,NA
+3YX63NZD,26,male,16,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,2,0,0,0,0,0,3,0,2,6,0,0,NA,NA
+40SNDKQR,20,Female,14,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,3,1,1,2,6,0,1,3,3,4,4,0,NA,NA
+476LZI3N,21,female,13,"[0,1,2,3,4]",none_selected,1,no,blank,3,0,3,5,2,6,0,0,4,4,3,0,NA,NA
+4CA4DFWP,19,Female,13,"[0,1,2,3,4]",multiracial,0,yes,Japanese,1,0,3,0,4,0,0,5,4,5,6,0,NA,NA
+56M8U5A5,19,Male,13,"[0,1,2,3,4]",White/Caucasian,0,yes,Spanish,3,4,0,1,2,0,0,0,4,4,2,0,NA,NA
+5K82MZW1,18,Female,12,"[0,1,2,3,4]",Asian,0,yes,Chinese,0,3,0,4,0,0,0,0,2,4,1,0,NA,NA
+64LRAXDJ,21,Female,14,"[0,1,2,3,4]",White/Caucasian,0,yes,Spanish (basic),1,0,2,2,0,0,3,0,1,1,4,0,NA,NA
+6CDVQX7L,20,Male,13,"[0,1,2,3,4]",White/Caucasian,1,no,Spanish,1,3,1,5,0,5,0,4,2,1,2,0,NA,NA
+6D26ZXC8,19,questioning,13,"[0,1,2,3,4]",White/Caucasian,0,yes,"Japanese, Spanish",1,3,2,2,3,0,0,0,2,4,0,0,NA,NA
+6PJDUW9O,19,Woman,12,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,1,1,3,1,1,1,1,4,1,1,3,2,NA,NA
+6VBV95IL,22,man,16,"[0,1,2,3,4]",White/Caucasian,0,yes,Spanish,1,0,1,1,4,0,1,5,4,4,4,1,NA,NA
+6XD6NVVO,18,Female,12,"[0,1,2,3,4]",White/Caucasian,0,no,blank,2,3,2,3,1,0,0,0,1,2,1,0,NA,NA
+73N2RQWR,20,female,12,"[0,1,2,3,4]",Asian,0,yes,"Urdu, Spanish",2,6,6,5,3,0,0,0,2,3,5,0,NA,NA
+7SUXPU9Y,20,woman,13,"[0,1,2,3,4]",none_selected,1,no,Spanish,1,4,5,1,2,0,0,3,3,4,3,0,NA,NA
+86EKSDZC,19,Male,12,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,1,2,4,1,0,0,0,0,1,3,0,0,NA,NA
+8BL6X7AX,18,male,13,"[0,1,2,3,4]",Asian,0,yes,"no
+",2,0,0,0,0,0,0,0,1,5,4,0,NA,NA
+8JEQ20SU,19,female,12,"[0,1,2,3,4]",Asian,0,yes,chinese,2,3,2,2,2,0,2,4,3,3,4,0,NA,NA
+8PAKX1OM,23,woman,19,"[0,1,2,3,4]",Black/African American,0,yes,French,1,0,4,4,4,0,0,1,1,5,5,4,NA,NA
+8ZC5BFHF,19,female,12,"[0,1,2,3,4]",White/Caucasian,0,yes,Spanish,1,2,0,0,0,0,0,0,0,0,1,2,NA,NA
+97N7CQ49,19,Genderqueer,14,"[0,1,2,3,4]",White/Caucasian,1,yes,"Conversational Spanish, Intermediate Japanese",2,3,1,3,3,0,0,0,3,6,5,0,NA,NA
+9KZ4Q91O,19,female,14,"[0,1,2,3,4]",Asian,0,yes,blank,0,0,3,1,0,0,0,5,4,4,0,0,NA,NA
+9O2ABUMY,21,Female,16,"[0,1,2,3,4]",Black/African American,0,yes,blank,1,1,0,3,0,0,0,2,2,3,1,2,NA,NA
+A5YUTA1F,20,Male,13,"[0,1,2,3,4]",Asian,0,no,Vietnamese,3,0,2,4,1,4,0,0,6,6,0,0,NA,NA
+AJVNZ9CE,19,Female,14,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,2,0,0,2,4,0,0,5,1,3,4,2,NA,NA
+AWO2EA8Q,22,Nonbinary,15,"[0,1,2,3,4]",Asian,0,yes,Hindi,3,0,0,1,0,1,3,4,2,0,0,0,NA,NA
+B3MZX5TF,19,male,14,"[0,1,2,3,4]",White/Caucasian,0,yes,chinese,1,2,2,1,0,2,0,2,1,2,3,2,NA,NA
+BF3MN8ZR,19,F,12,"[0,1,2,3,4]",Black/African American,0,yes,Spanish,1,0,0,1,0,0,2,5,3,1,1,0,NA,NA
+BWQ1ZSYD,20,female,15,"[0,1,2,3,4]",Black/African American,0,yes,"spanish, chinese",2,1,1,1,1,0,0,0,2,4,4,0,NA,NA
+CI6QQA2Y,22,Female,15,"[0,1,2,3,4]",White/Caucasian,0,yes,spanish,1,3,3,4,2,0,0,0,1,3,0,1,NA,NA
+DUBYYHYX,20,male,15,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,4,0,1,2,0,1,3,0,1,1,3,0,NA,NA
+EA8GWQDV,20,Female,14,"[0,1,2,3,4]",multiracial,0,yes,Spanish,3,2,1,0,2,0,0,2,1,3,2,0,NA,NA
+ESNMRF10,21,male,14,"[0,1,2,3,4]",White/Caucasian,1,yes,"Italian, Latin",3,3,3,2,4,1,0,5,2,5,5,0,NA,NA
+FDULT82W,21,Male,15,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,0,0,0,2,2,1,0,3,3,4,0,0,NA,NA
+FJYUEQN8,20,Female,15,"[0,1,2,3,4]",multiracial,0,yes,blank,2,0,1,2,4,0,0,6,5,5,3,0,NA,NA
+FYE2JV3H,20,Female,15,"[0,1,2,3,4]",White/Caucasian,1,yes,Spanish,1,3,4,2,2,2,1,6,2,6,6,0,NA,NA
+G8B6AJJV,37,Female,18,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,2,2,2,3,3,2,1,4,4,4,4,0,NA,NA
+GNLFFB4P,22,female,15,"[0,1,2,3,4]",White/Caucasian,0,no,blank,1,1,3,0,2,0,1,3,1,1,2,1,NA,NA
+H6D2C4VR,20,Male,12,"[0,1,2,3,4]",Asian,0,yes,"Mandarin, Cantonese, Spanish",1,1,4,2,1,1,0,0,2,3,0,0,NA,NA
+HCBTBYHS,21,Female,15,"[0,1,2,3,4]",White/Caucasian,1,yes,Spanish,1,1,0,2,0,0,1,4,2,0,3,0,NA,NA
+HZP27937,19,Female,13,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,1,1,1,1,1,1,0,5,2,2,5,3,NA,NA
+IEOJ1IW3,19,agender,12,"[0,1,2,3,4]",Asian,0,no,"Mandarin, Cantonese, Taishanese, Japanese",0,4,0,1,0,1,0,0,2,3,1,0,NA,NA
+IN92PH3J,21,Male,14,"[0,1,2,3,4]",Asian,0,no,"Urdu, Hindi, Punjabi",1,0,0,3,2,1,0,0,1,5,5,0,NA,NA
+IRFHWRXF,18,She/her,12,"[0,1,2,3,4]",multiracial,0,yes,French,0,2,0,3,0,0,0,3,1,3,1,0,NA,NA
+J8N7DCDH,19,female,14,"[0,1,2,3,4]",Black/African American,0,yes,"Amharic, Spanish, Chinese",4,5,1,2,3,3,0,6,4,5,3,0,NA,NA
+JDVDZARM,30,Female,24,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,2,1,0,3,4,0,3,5,4,3,1,1,NA,NA
+JEW0DH9D,19,female,14,"[0,1,2,3,4]",Asian,0,no,"Korean, Spanish",0,0,1,2,3,0,0,4,2,2,4,0,NA,NA
+JIMIPV7S,19,male,13,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,2,2,1,2,0,0,0,5,3,3,5,2,NA,NA
+K6LTYZJH,18,female,12,"[0,1,2,3,4]",Black/African American,0,yes,blank,2,1,2,2,1,0,0,0,1,4,0,0,NA,NA
+KMXD4OZC,22,female,15,"[0,1,2,3,4]",none_selected,1,yes,"spanish
+",3,3,3,4,1,5,1,0,4,6,3,0,NA,NA
+KZ9S5MPC,20,Man,14,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,3,5,5,5,4,1,0,0,1,5,2,0,NA,NA
+LJSMGNV0,18,Male,12,"[0,1,2,3,4]",White/Caucasian,0,yes,None Fluently,3,3,4,3,0,0,0,0,1,1,2,1,NA,NA
+LN8REBYY,37,f,16,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,1,4,4,2,2,0,0,0,3,3,0,0,NA,NA
+LUKGQM9Q,18,Female,12,"[0,1,2,3,4]",Asian,0,yes,blank,1,3,0,0,4,0,0,5,1,6,3,0,NA,NA
+MCYP84X4,19,Woman,12,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,1,1,0,1,0,0,0,6,2,1,5,2,NA,NA
+N9V0QKO1,21,female,15,"[0,1,2,3,4]",multiracial,0,yes,"Japanese, latin, Ancient Greek",1,2,5,1,0,0,0,4,0,0,4,0,NA,NA
+NHCBLFL1,22,Female,15,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,1,4,1,1,1,0,0,0,3,1,1,0,NA,NA
+NRXHKYAS,19,male,13,"[0,1,2,3,4]",White/Caucasian,0,no,"german, french, polish",1,0,3,0,3,0,0,3,0,4,0,0,NA,NA
+NXGNLGFN,20,female,15,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,4,1,3,3,0,1,1,4,4,1,4,0,NA,NA
+NZ8ZTZHG,20,Famale,14,"[0,1,2,3,4]",none_selected,1,no,"Spanish, Italian and Portuguese",4,1,2,5,3,0,0,4,1,4,3,0,NA,NA
+O4NB1X6B,21,Female,15,"[0,1,2,3,4]",White/Caucasian,0,yes,No,4,3,1,4,1,3,5,6,5,4,5,6,NA,NA
+OEQ7A3BW,22,Female,16,"[0,1,2,3,4]",Black/African American,0,no,"Kinyarwanda, French, Spanish",1,2,4,2,1,0,0,4,1,1,2,1,NA,NA
+OUSZQD8K,19,female,12,"[0,1,2,3,4]",multiracial,0,yes,"""spanish""",2,5,3,1,3,0,0,1,2,6,2,0,NA,NA
+OX30M9NX,19,Non-Binary,14,"[0,1,2,3,4]",White/Caucasian,0,yes,Chinese (mild proficiency),3,2,5,0,0,0,0,0,5,5,0,0,NA,NA
+PBNU471N,19,Male,13,"[0,1,2,3,4]",White/Caucasian,0,no,Arabic,4,0,3,4,0,1,0,0,2,6,6,3,NA,NA
+PLC36LSR,31,Female,23,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,1,1,2,1,3,0,0,0,3,0,2,1,NA,NA
+PLW1S0CA,19,Female,13,"[0,1,2,3,4]",Asian,0,yes,"Chinese, Spanish",2,6,3,2,0,1,0,0,1,3,0,0,NA,NA
+Q3MFUDV9,21,Male,15,"[0,1,2,3,4]",multiracial,0,yes,blank,1,3,2,1,2,0,0,6,6,6,1,0,NA,NA
+QGT05169,19,female,13,"[0,1,2,3,4]",multiracial,0,no,"French, Kinyarwanda, Kirundi, Swahili",4,3,2,0,0,0,0,3,1,6,6,4,NA,NA
+RLHDN7YZ,19,female,12,"[0,1,2,3,4]",multiracial,0,yes,French,2,1,5,1,0,0,1,3,1,1,2,0,NA,NA
+RS0Z27EB,21,Female,16,"[0,1,2,3,4]",White/Caucasian,1,yes,Spanish,1,2,1,3,0,0,0,0,2,2,5,0,NA,NA
+S30LA614,20,female,15,"[0,1,2,3,4]",multiracial,0,yes,blank,2,3,0,1,0,0,0,5,2,1,4,0,NA,NA
+S87Q76NA,19,male,12,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,2,1,3,2,0,1,1,6,0,3,3,2,NA,NA
+SENRROOG,21,Male,16,"[0,1,2,3,4]",Asian,0,yes,"Cantonese, Mandarin",1,0,2,2,3,0,0,0,3,5,3,0,NA,NA
+T6E9EPOZ,22,Female,15,"[0,1,2,3,4]",White/Caucasian,0,no,Japanese,1,4,4,3,5,0,0,0,2,5,3,0,NA,NA
+TPWBA9PZ,19,female,14,"[0,1,2,3,4]",Asian,0,no,"chinese, italian",2,4,2,4,0,0,0,0,1,3,3,0,NA,NA
+U2N1A8VX,21,female,15,"[0,1,2,3,4]",White/Caucasian,0,yes,italian,2,0,0,3,1,0,0,0,2,6,6,0,NA,NA
+U4TQC9J3,18,non-binary,12,"[0,1,2,3,4]",White/Caucasian,0,yes,Mandarin Chinese,4,3,4,2,0,0,0,0,0,1,0,0,NA,NA
+U7RW6MVC,30,female,16,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,1,3,0,1,3,0,0,0,1,6,5,0,NA,NA
+UIBPJL1Q,21,Male,15,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,4,2,3,3,6,1,0,0,2,2,0,0,NA,NA
+UVAI5SO9,21,male,15,"[0,1,2,3,4]",multiracial,0,yes,"Italian, Russian",3,4,3,1,3,0,0,0,2,4,6,0,NA,NA
+VJJ2VCIY,20,Female,15,"[0,1,2,3,4]",Black/African American,0,yes,Igbo,1,3,2,3,3,0,1,4,3,4,0,1,NA,NA
+VNHTSXTP,20,Male,13,"[0,1,2,3,4]",White/Caucasian,0,yes,"French (basic proficiency), Italian (basic proficiency)",0,3,0,2,0,0,0,0,0,1,2,0,NA,NA
+VNSY2V6A,24,male,17,"[0,1,2,3,4]",White/Caucasian,0,no,blank,2,2,3,3,3,0,0,0,1,5,4,0,NA,NA
+W6Z3Y3K6,20,Male,14,"[0,1,2,3,4]",Black/African American,0,yes,French,2,0,3,2,0,0,0,4,2,3,5,2,NA,NA
+WU4Q5VLP,19,Male,6,"[0,1,2,3,4]",White/Caucasian,0,yes,"Some German, some Russian",1,2,3,1,0,0,0,0,2,2,5,0,NA,NA
+XAA8CS8F,22,female,16,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,1,4,1,2,3,1,1,4,1,3,2,1,NA,NA
+XI93MR3J,19,female,14,"[0,1,2,3,4]",Asian,0,no,"Burmese, Chinese, Pali, Japanese (some), Korean (some)",2,0,3,3,4,0,0,0,3,5,2,0,NA,NA
+XILQXDX5,20,female,15,"[0,1,2,3,4]",Asian,0,yes,mandarin chinese,2,0,3,4,0,6,0,0,5,6,5,0,NA,NA
+XJF7RLTQ,20,female,14,"[0,1,2,3,4]",Black/African American,0,no,French,1,1,4,1,0,0,0,6,3,2,6,0,NA,NA
+XV9JV4CP,19,Female,14,"[0,1,2,3,4]",Other,0,yes,Spanish,1,0,0,1,0,0,0,5,1,0,4,0,NA,NA
+Y0GQPG0K,22,M,15,"[0,1,2,3,4]",White/Caucasian,0,yes,"German, French",4,3,0,2,0,0,0,0,3,3,0,0,NA,NA
+YDKEN7JY,19,male,12,"[0,1,2,3,4]",Black/African American,0,yes,blank,2,2,4,4,4,6,0,6,5,4,4,0,NA,NA
+YMQ1DC06,19,Female,14,"[0,1,2,3,4]",Asian,0,no,"French, Cantonese, Taishanese, Mandarin",3,3,5,5,1,0,0,0,3,2,4,0,NA,NA
+YP5UHRSA,21,female,16,"[0,1,2,3,4]",Asian,0,yes,"chinese, french",2,0,0,0,1,0,3,4,1,3,5,0,NA,NA
+YQ5FHGIU,20,Male,14,"[0,1,2,3,4]",Asian,0,yes,"Vietnamese, Chinese",1,0,4,4,2,5,0,6,4,1,2,1,NA,NA
+YVQX6LL1,23,Female,14,"[0,1,2,3,4]",White/Caucasian,1,yes,Spanish,2,2,4,3,0,1,0,2,2,3,1,0,NA,NA
+ZERL6DH6,22,Female,16,"[0,1,2,3,4]",multiracial,1,yes,"Portuguese, Spanish, Arabic",2,4,2,2,2,2,0,0,3,2,1,0,NA,NA
+ZHMH16C4,57,female,19,"[0,1,2,3,4]",White/Caucasian,0,yes,no,4,3,3,4,4,0,5,1,4,3,4,0,NA,NA
+ZYQ1C8LT,22,female,22,"[0,1,2,3,4]",White/Caucasian,0,yes,blank,4,4,4,3,3,0,0,5,3,1,0,0,NA,NA
