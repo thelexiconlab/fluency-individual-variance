@@ -17,13 +17,12 @@ library(ggplot2)
 library(readr)
 library(Rtsne)
 library(ggrepel)
-library(here)
 ```
 
 1) Grouping demographics data of participants by calculating a short and long form score for each, finding the general median, then splitting participants based on that median.
 
 ```{r}
-demographics <- read.csv(here::here("../Data/cleaned_data/demographics_data.csv"))
+demographics <- read.csv("../Data/cleaned_data/demographics_data.csv")
 demographics <- demographics %>% mutate (
   long_form_score = long_NewsArticles + long_FictionBooks + long_NonFictionBooks + long_EssaysBlogsNewsletters + long_Podcasts,
   short_form_score = social_Twitter + social_Facebook + social_TikTok + social_Reddit + social_YouTube + social_Instagram + social_Snapchat
@@ -48,7 +47,7 @@ demographics %>%
 2) Forming clusters for subreddits (entertainment, advice, academic, learning, geographic, creative, news, athletic, career, cosmetic, general, food, music, religion (NA, for any which didn't fit these categories))
 
 ```{r}
-subreddit_data <- read_csv("../Data/subreddit_data.csv")
+subreddit_data <- read_csv("../Data/cleaned_data/subreddit_data.csv")
 subreddit_counts <- subreddit_data %>% 
   count(corrected_subreddit, sort = TRUE)
 View(subreddit_counts)
@@ -70,7 +69,7 @@ subreddit_data_categorized %>% count(category, sort = TRUE)
 3) Fluency and interest correlations calculated and range box plots (interest and fluency spread) formed
 
 ```{r}
-fluency_wide <- read.csv("../Data/fluency_interest_estimate.csv")%>%
+fluency_wide <- read.csv("../Data/cleaned_data/fluency_interest_estimate.csv")%>%
   select(-rt)%>%
   pivot_wider(names_from = typeoftrial, values_from = response)
 View(fluency_wide)
@@ -124,25 +123,25 @@ ggplot(tsne_df, aes(x, y, label = interest)) + geom_point(size = 2) + geom_text_
 #Unique vocab lists
 
 #Authors
-unique_author_enteries <- read.csv("../Data/fluency_data.csv") %>%
+unique_author_enteries <- read.csv("../Data/cleaned_data/fluency_data.csv") %>%
   filter(domain == "authors") %>% distinct(corrected_response)
 View(unique_author_enteries)
 write.csv(unique_author_enteries, "Analysis/forager/data/lexical_data/authors/vocab.csv", row.names = FALSE)
 
 #Musicians
-unique_musician_enteries <- read.csv("../Data/fluency_data.csv") %>%
+unique_musician_enteries <- read.csv("../Data/cleaned_data/fluency_data.csv") %>%
   filter(domain == "musicians") %>% distinct(corrected_response)
 View(unique_musician_enteries)
 write.csv(unique_musician_enteries, "Analysis/forager/data/lexical_data/musicians/vocab.csv", row.names = FALSE)
 
 #Sportspersons
-unique_sportspersons_enteries <- read.csv("../Data/fluency_data.csv") %>%
+unique_sportspersons_enteries <- read.csv("../Data/cleaned_data/fluency_data.csv") %>%
   filter(domain == "sportspersons") %>% distinct(corrected_response)
 View(unique_sportspersons_enteries)
 write.csv(unique_sportspersons_enteries, "Analysis/forager/data/lexical_data/sportspersons/vocab.csv", row.names = FALSE)
 
 #College Majors
-unique_college_majors_enteries <- read.csv("../Data/fluency_data.csv") %>%
+unique_college_majors_enteries <- read.csv("../Data/cleaned_data/fluency_data.csv") %>%
   filter(domain == "college_majors") %>% distinct(corrected_response)
 View(unique_college_majors_enteries)
 write.csv(unique_college_majors_enteries, "Analysis/forager/data/lexical_data/college majors/vocab.csv", row.names = FALSE)
@@ -161,7 +160,7 @@ write.csv(unique_interest_enteries, "Analysis/forager/data/lexical_data/interest
 5) Preparation for Forager (phonological matricies)
 ```{r}
 #Changing column name
-base_path <- "../Analysis/forager/forager/lexical_data"
+base_path <- "../Analysis/forager/Data/lexical_data"
 
 domains <- c("authors", "musicians", "sportspersons", "college majors")
 
