@@ -65,6 +65,201 @@ view(subreddit_data_categorized)
 subreddit_data_categorized <- subreddit_data %>% left_join(category_map, by = "corrected_subreddit") %>% left_join(category_map, by = c("alt_subreddit_1" = "corrected_subreddit"), suffix = c("", "_alt")) %>% dplyr::mutate(category = coalesce(category, category_alt)) %>% dplyr::select(-category_alt)
 subreddit_data_categorized %>% count(category, sort = TRUE)
 ```
+Categorizing Subreddit preferences by participant's first input
+```{r}
+subreddit_data <- read_csv("../Data/cleaned_data/subreddit_data.csv")
+subreddit_counts <- subreddit_data %>% 
+  count(corrected_subreddit, sort = TRUE)
+View(subreddit_counts)
+
+top_150_subs <- subreddit_data %>% 
+  count(corrected_subreddit, sort = TRUE) %>%
+  head(150)
+
+category_map <- read_csv("../Analysis/top_150_subs_categorized.csv")
+
+manually_added_categories <- tribble(
+  ~corrected_subreddit, ~category,
+  "r/BPD", "advice",
+  "r/Baking", "food",
+  "r/Barca", "athletic",
+  "r/BostonBruins", "athletic",
+  "r/Breath_of_the_Wild", "entertainment",
+  "r/Biohackers", "learning",
+  "r/BostonBruins", "athletic",
+  "r/Buddhism", "religion",
+  "r/CFB", "athletic",
+  "r/Catholicism", "religion",
+  "r/ChatGPT", "learning",
+  "r/Costco", "food",
+  "r/CozyPlaces", "entertainment",
+  "r/CrumblCookies", "food",
+  "r/Dreams", "advice",
+  "r/EDC", "advice",
+  "r/EDH", "entertainment",
+  "r/EngagementRings", "creative",
+  "r/FigureSkating", "athletic",
+  "r/FinancialCareers", "academic and career",
+  "r/Forex", "academic and career",
+  "r/FundieSnarkUncensored", "religion",
+  "r/GaySoundsShitposts", "entertainment",
+  "r/GaylorSwift", "entertainment",
+  "r/Hair", "creative",
+  "r/Handwriting", "creative",
+  "r/HomeworkHelp", "academic and career",
+  "r/HonkaiStarRail", "entertainment",
+  "r/IdiotsInCars", "entertainment",
+  "r/Indianapolis", "geographic",
+  "r/Jujutsufolk", "entertainment",
+  "r/MCFC", "athletic",
+  "r/Millennials", "advice",
+  "r/Mommit", "advice",
+  "r/MurderedByWords", "entertainment",
+  "r/NoSleep", "entertainment",
+  "r/NonCredibleDefense", "geographic", 
+  "r/Omaha", "geographic",
+  "r/OnePiece", "entertainment",
+  "r/Reverse1999", "entertainment",
+  "r/RoastMe", "advice", 
+  "r/StockMarket", "learning",
+"r/UXDesign", "academic and career",
+"r/math", "academic and career",
+"r/clinicalresearch", "academic and career",
+"r/celestegame", "entertainment",
+"r/surfing", "athletic",
+"r/TraderJoes", "food",
+"r/asexuality", "advice",
+"r/apples", "food",
+"r/ftm", "advice",
+"r/uswnt", "athletic",
+"r/sentinelsmultiverse", "entertainment",
+"r/deloitte", "academic and career",
+"r/peloton", "athletic",
+"r/philosophy", "learning",
+"r/vegan", "food",
+"r/rance", "geographic",
+"r/simpleliving", "learning",
+"r/tea", "food",
+"r/whatisthisbird", "learning",
+"r/vexillology", "learning",	
+"r/trees", "food",
+"r/foodiesnark", "food"			
+ )
+
+category_map_complete <- bind_rows(category_map, manually_added_categories)
+  
+
+subreddit_data_categorized <- subreddit_data %>%
+  left_join(category_map_complete, by = "corrected_subreddit") %>%
+  left_join(category_map_complete, by = c("alt_subreddit_1" = "corrected_subreddit"), suffix = c("", "_alt1")) %>%
+  left_join(category_map_complete, by = c("alt_subreddit_2" = "corrected_subreddit"), suffix = c("", "_alt2")) %>%
+  mutate(category = coalesce(category, category_alt1, category_alt2)) %>%
+  select(-category_alt1, -category_alt2)
+
+view(subreddit_data_categorized)
+subreddit_data_categorized %>% count(category, sort = TRUE)
+
+subreddit_data_categorized <- subreddit_data_categorized %>%
+  mutate(category = replace_na(category, "other"))
+
+primary_buckets <- subreddit_data_categorized %>%
+  filter(tag == 1) %>%
+  transmute(Subject, primary_subreddit = corrected_subreddit, primary_bucket = category)
+
+df_analysis <- subreddit_data_categorized %>%
+  left_join(primary_buckets, by = "Subject") %>%
+  mutate(matches_primary = (category == primary_bucket))
+
+other_subreddit_alignment_check <- df_analysis %>%
+  group_by(Subject, primary_subreddit, primary_bucket) %>%
+  summarise(
+    total_subreddits = n(),
+    matching_category = sum(matches_primary, na.rm = TRUE),
+    unknown_category = sum(is.na(category)),
+    percentage_match = round(100 * matching_category / total_subreddits, 1),
+    mismatched_subreddits = paste(corrected_subreddit[!matches_primary & !is.na(category)], collapse = ", "), .groups = "drop"
+  ) %>%
+  arrange(desc(percentage_match))
+
+print(other_subreddit_alignment_check, n = Inf)
+
+category_distribution <- df_analysis %>%
+  count(category, sort = TRUE) %>%
+  mutate(pct = round(100 * n / sum(n), 1))
+
+print(category_distribution)
+
+subreddit_data_categorized %>%
+  filter(is.na(category))%>%
+  count(corrected_subreddit, sort = TRUE)
+
+other_subreddit_alignment_check %>%
+  filter(primary_bucket == "other") %>%
+  select(Subject, primary_subreddit)
+
+primary_bucket_summary <- primary_buckets %>%
+  count(primary_bucket, sort = TRUE) %>%
+  mutate(pct = round(100 * n / sum(n), 1))
+print(primary_bucket_summary)
+
+participant_consistency_summary <- other_subreddit_alignment_check %>%
+  group_by(primary_bucket) %>%
+  summarise(
+    n_participants = n(),
+    average_pct_match = round(mean(percentage_match, na.rm = TRUE), 1),
+    median_pct_match = round(median(percentage_match, na.rm = TRUE), 1)) %>%
+  arrange(desc(n_participants))
+print(participant_consistency_summary)
+
+other_subreddit_alignment_check %>%
+  filter(primary_bucket == "religion")
+
+primary_buckets %>%
+  filter(primary_bucket == "religion")
+
+  
+```
+
+
+
+```{r}
+#distribution of subreddits listed per participant
+subreddit_count_per_participant <- subreddit_data_categorized %>%
+  group_by(Subject) %>%
+  summarise(n_subreddits = n())
+
+ggplot(subreddit_count_per_participant, aes(x = n_subreddits)) + 
+  geom_bar(fill = "steelblue") +
+  labs(
+    title = "Distribution of Subreddit Count Per Participant",
+    x = "Number of Subreddits Listed",
+    y = "Number of Participants") + theme_minimal()
+
+
+#distribution of primary buckets people's first subreddit input fell into
+ggplot(primary_bucket_summary, aes(x = reorder(primary_bucket, pct), y = pct)) +
+  geom_col(fill = "steelblue") +
+  coord_flip() + 
+  labs(
+    title = "First Subreddit Category Distribution",
+    x = "Category",
+    y = "Percentage of Participants (%)"
+  ) + theme_minimal()
+
+#Participant consistency based on primary bucket
+ggplot(participant_consistency_summary, aes(x = n_participants, y = average_pct_match, size = n_participants, label = primary_bucket)) +
+  geom_point(alpha = 0.6, color = "steelblue") +
+  geom_text(vjust = -1, size = 3) +
+  scale_size_continuous(range = c(3, 12)) + 
+  labs(
+    title = "Category Consistency vs. Popularity",
+    x = "Number of Participants",
+    y = "Average % of Subreddits in Same Category as Primary",
+    size = "N Participants",
+  ) +
+  theme_minimal() + theme(legend.position = "none")
+
+```
 
 3) Fluency and interest correlations calculated and range box plots (interest and fluency spread) formed
 
@@ -211,7 +406,7 @@ cor(subreddit_variety_data$unique_categories, subreddit_variety_data$VFT_estimat
 
 ```
 
-Extra tests (2): Are there different fluency scores based language exposure group?
+Extra tests (2): Do fluency scores differ by language exposure group?
 
 ```{r}
 exposure_data <- demographics %>%
@@ -225,3 +420,4 @@ summary(aov(VFT_estimate ~ language_exposure_group, data = exposure_data))
 #Tukey's test, reveling significant difference between low long, high short and other groups in fluency production
 TukeyHSD(aov(VFT_estimate ~ language_exposure_group, data = exposure_data))
 ```
+
