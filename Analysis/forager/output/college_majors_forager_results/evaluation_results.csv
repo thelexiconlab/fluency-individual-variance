@@ -1,0 +1,1786 @@
+SID,response,entry,entry_number,response_times,evaluation,replacement
+00K73X1D,psychology,psychology,1,4933.1,FOUND,psychology
+00K73X1D,political science,political science,2,3315.5,FOUND,political science
+00K73X1D,history,history,3,1350.9,FOUND,history
+00K73X1D,math,math,4,837.3,FOUND,math
+00K73X1D,chemistry,chemistry,5,3065.0,FOUND,chemistry
+00K73X1D,biology,biology,6,2117.3,FOUND,biology
+00K73X1D,physics,physics,7,3671.1,FOUND,physics
+00K73X1D,anthropology,anthropology,8,4645.6,FOUND,anthropology
+00K73X1D,french,french,9,1550.3,FOUND,french
+00K73X1D,spanish,spanish,10,9888.8,FOUND,spanish
+00K73X1D,computer science,computer science,11,4302.3,FOUND,computer science
+00K73X1D,english,english,12,3512.9,FOUND,english
+00K73X1D,art history,art history,13,4428.4,FOUND,art history
+00K73X1D,neuroscience,neuroscience,14,6683.8,FOUND,neuroscience
+00K73X1D,religion,religion,15,2035.0,FOUND,religion
+00K73X1D,economics,economics,16,2915.0,FOUND,economics
+0GMT2ITP,biology,biology,1,1586.8,FOUND,biology
+0GMT2ITP,pschology,psychology,2,2179.0,FOUND,psychology
+0GMT2ITP,english,english,3,2366.8,FOUND,english
+0GMT2ITP,environmental studies,environmental studies,4,2064.0,FOUND,environmental studies
+0GMT2ITP,political science,political science,5,3008.8,FOUND,political science
+0GMT2ITP,chemistry,chemistry,6,4823.3,FOUND,chemistry
+0GMT2ITP,anthropology,anthropology,7,2201.1,FOUND,anthropology
+0GMT2ITP,fashion design,fashion design,8,2733.0,FOUND,fashion design
+0GMT2ITP,literature,literature,9,5740.8,FOUND,literature
+0GMT2ITP,journalism,journalism,10,1428.8,FOUND,journalism
+0GMT2ITP,religious studies,religious studies,11,5418.3,FOUND,religious studies
+0GMT2ITP,gender studies,gender studies,12,3416.8,FOUND,gender studies
+0GMT2ITP,environmental science,environmental science,13,6937.4,FOUND,environmental science
+0GMT2ITP,geology,geology,14,2605.6,FOUND,geology
+0GMT2ITP,math,math,15,3114.7,FOUND,math
+0GMT2ITP,physics,physics,16,4217.7,FOUND,physics
+0L28O7LJ,communications,communications,1,2820.1,FOUND,communications
+0L28O7LJ,psychology,psychology,2,1537.1,FOUND,psychology
+0L28O7LJ,biology,biology,3,2087.5,FOUND,biology
+0L28O7LJ,chemistry,chemistry,4,2333.4,FOUND,chemistry
+0L28O7LJ,economics,economics,5,983.2,FOUND,economics
+0L28O7LJ,sociology,sociology,6,3216.8,FOUND,sociology
+0L28O7LJ,religion,religion,7,1850.4,FOUND,religion
+0L28O7LJ,physics,physics,8,2316.4,FOUND,physics
+0L28O7LJ,math,math,9,583.6,FOUND,math
+0L28O7LJ,computer science,computer science,10,2883.5,FOUND,computer science
+0L28O7LJ,gender studies,gender studies,11,8170.7,FOUND,gender studies
+0L28O7LJ,asian studies,asian studies,12,2812.3,FOUND,asian studies
+0L28O7LJ,biochemistry,biochemistry,13,8817.2,FOUND,biochemistry
+0L28O7LJ,romance languages,romance languages,14,5882.8,FOUND,romance languages
+0L28O7LJ,film,film,15,2900.3,FOUND,film
+0L28O7LJ,government,government,16,1049.6,FOUND,government
+0L28O7LJ,political science,political science,17,4900.8,FOUND,political science
+0MGC7F4K,Biology,biology,1,2150.9,FOUND,biology
+0MGC7F4K,Neuroscience,neuroscience,2,1792.3,FOUND,neuroscience
+0MGC7F4K,Economics,economics,3,2135.2,FOUND,economics
+0MGC7F4K,Government,government,4,2494.7,FOUND,government
+0MGC7F4K,Psychology,psychology,5,4094.3,FOUND,psychology
+0MGC7F4K,Sociology,sociology,6,1883.5,FOUND,sociology
+0MGC7F4K,Chemistry,chemistry,7,1465.5,FOUND,chemistry
+0MGC7F4K,Physics,physics,8,1157.3,FOUND,physics
+0MGC7F4K,Math,math,9,851.2,FOUND,math
+0MGC7F4K,Environmental Studies,environmental studies,10,9118.3,FOUND,environmental studies
+0MGC7F4K,Engineering,engineering,11,4985.4,FOUND,engineering
+0MGC7F4K,Art,art,12,2939.1,FOUND,art
+0MGC7F4K,Music,music,13,872.0,FOUND,music
+0MGC7F4K,Philosophy,philosophy,14,6220.4,FOUND,philosophy
+0MGC7F4K,Film Production,film production,15,6457.5,FOUND,film production
+0PRAW6DO,chemistry,chemistry,1,3314.9,FOUND,chemistry
+0PRAW6DO,math,math,2,1550.0,FOUND,math
+0PRAW6DO,biology,biology,3,1941.1,FOUND,biology
+0PRAW6DO,neuroscience,neuroscience,4,2539.5,FOUND,neuroscience
+0PRAW6DO,anthropology,anthropology,5,3743.9,FOUND,anthropology
+0PRAW6DO,psychology,psychology,6,2988.6,FOUND,psychology
+0PRAW6DO,political science,political science,7,7057.7,FOUND,political science
+0PRAW6DO,art,art,8,4461.6,FOUND,art
+0PRAW6DO,dance,dance,9,2547.2,FOUND,dance
+0PRAW6DO,theater,theater,10,1620.0,FOUND,theater
+0PRAW6DO,english,english,11,8024.4,FOUND,english
+0PRAW6DO,spanish,spanish,12,5280.1,FOUND,spanish
+0QPSDFM3,gov,government,1,1962.0,FOUND,government
+0QPSDFM3,bio,biology,2,1341.5,FOUND,biology
+0QPSDFM3,chem,chemistry,3,788.7,FOUND,chemistry
+0QPSDFM3,biochem,biochemistry,4,1520.0,FOUND,biochemistry
+0QPSDFM3,english,english,5,1998.6,FOUND,english
+0QPSDFM3,math,math,6,1031.0,FOUND,math
+0QPSDFM3,physics,physics,7,2887.1,FOUND,physics
+0QPSDFM3,astronomy,astronomy,8,1874.2,FOUND,astronomy
+0QPSDFM3,architecture,architecture,9,2372.4,FOUND,architecture
+0QPSDFM3,art,art,10,1351.7,FOUND,art
+0QPSDFM3,visual studies,visual studies,11,3301.2,FOUND,visual studies
+0QPSDFM3,french,french,12,1093.7,FOUND,french
+0QPSDFM3,spanish,spanish,13,1075.1,FOUND,spanish
+0QPSDFM3,italina,italian,14,1500.3,FOUND,italian
+0QPSDFM3,german,german,15,1917.1,FOUND,german
+0QPSDFM3,arabic,arabic,16,1122.6,FOUND,arabic
+0QPSDFM3,comp sci,computer science,17,6173.5,FOUND,computer science
+0QPSDFM3,dcs,data science,18,1191.3,FOUND,data science
+0QPSDFM3,data science,data science,19,2717.9,FOUND,data science
+0QPSDFM3,agriculture,agriculture,20,1891.5,FOUND,agriculture
+0QPSDFM3,accounting,accounting,21,1457.4,FOUND,accounting
+0QPSDFM3,econ,economics,22,790.1,FOUND,economics
+0QPSDFM3,finance,finance,23,933.6,FOUND,finance
+0QPSDFM3,business,business,24,1751.9,FOUND,business
+0QPSDFM3,criminal justice,criminal justice,25,3549.4,FOUND,criminal justice
+0QPSDFM3,geography,geography,26,5799.7,FOUND,geography
+18HXK612,pscyhology,psychology,1,3078.1,FOUND,psychology
+18HXK612,sociology,sociology,2,3203.9,FOUND,sociology
+18HXK612,mathematics,mathematics,3,3146.3,FOUND,mathematics
+18HXK612,enginearing,engineering,4,3452.7,FOUND,engineering
+18HXK612,pre med,premed,5,2017.9,FOUND,premed
+18HXK612,biology,biology,6,2351.2,FOUND,biology
+18HXK612,chemistry,chemistry,7,3016.9,FOUND,chemistry
+18HXK612,physics,physics,8,2385.5,FOUND,physics
+18HXK612,english,english,9,2825.7,FOUND,english
+18HXK612,history,history,10,2702.7,FOUND,history
+18HXK612,anthropology,anthropology,11,3197.2,FOUND,anthropology
+18HXK612,gender and sexuality studies,gender and sexuality studies,12,5191.9,FOUND,gender and sexuality studies
+18HXK612,asian studies,asian studies,13,2753.1,FOUND,asian studies
+18HXK612,accounting,accounting,14,5916.7,FOUND,accounting
+18HXK612,computer science,computer science,15,6521.5,FOUND,computer science
+18HXK612,dcs,data science,16,3884.0,FOUND,data science
+1KEVYYJ9,econ,economics,1,3214.8,FOUND,economics
+1KEVYYJ9,BIO,biology,2,2805.7,FOUND,biology
+1KEVYYJ9,BIOCHEM,biochemistry,3,2186.6,FOUND,biochemistry
+1KEVYYJ9,CHEM,chemistry,4,2963.8,FOUND,chemistry
+1KEVYYJ9,MATH,math,5,3116.9,FOUND,math
+1KEVYYJ9,ENGINEERING,engineering,6,2282.3,FOUND,engineering
+1KEVYYJ9,PHYSICS,physics,7,2012.2,FOUND,physics
+1KEVYYJ9,EDUCATION,education,8,5315.9,FOUND,education
+1KEVYYJ9,ENGLISH,english,9,3456.1,FOUND,english
+1KEVYYJ9,ENV STUDIES,environmental studies,10,6902.8,FOUND,environmental studies
+1KEVYYJ9,HISTORY,history,11,8559.1,FOUND,history
+1KEVYYJ9,ASIAN STUDIES,asian studies,12,9596.4,FOUND,asian studies
+20ISZCV2,neuroscience,neuroscience,1,3006.0,FOUND,neuroscience
+20ISZCV2,spanish,spanish,2,3033.0,FOUND,spanish
+20ISZCV2,italian,italian,3,1597.0,FOUND,italian
+20ISZCV2,French,french,4,1205.0,FOUND,french
+20ISZCV2,biology,biology,5,1893.0,FOUND,biology
+20ISZCV2,chemistry,chemistry,6,1807.0,FOUND,chemistry
+20ISZCV2,biochemistry,biochemistry,7,2571.0,FOUND,biochemistry
+20ISZCV2,communications,communications,8,4455.0,FOUND,communications
+20ISZCV2,English,english,9,4169.0,FOUND,english
+20ISZCV2,German,german,10,2195.0,FOUND,german
+20ISZCV2,russian,russian,11,1135.0,FOUND,russian
+20ISZCV2,Environmental science,environmental science,12,10777.0,FOUND,environmental science
+20ISZCV2,gov,government,13,8630.0,FOUND,government
+20ISZCV2,history,history,14,1946.0,FOUND,history
+20ISZCV2,comp sci,computer science,15,5125.0,FOUND,computer science
+20ISZCV2,math,math,16,2239.0,FOUND,math
+2BD455O0,chemistry,chemistry,1,3708.9,FOUND,chemistry
+2BD455O0,physics,physics,2,2209.8,FOUND,physics
+2BD455O0,biology,biology,3,1685.2,FOUND,biology
+2BD455O0,biochemistry,biochemistry,4,2410.0,FOUND,biochemistry
+2BD455O0,economics,economics,5,2349.7,FOUND,economics
+2BD455O0,political science,political science,6,2557.2,FOUND,political science
+2BD455O0,government,government,7,1455.4,FOUND,government
+2BD455O0,earth science,earth science,8,6614.1,FOUND,earth science
+2BD455O0,english,english,9,2098.1,FOUND,english
+2BD455O0,french,french,10,2835.5,FOUND,french
+2BD455O0,spanish,spanish,11,2111.3,FOUND,spanish
+2BD455O0,visual arts,visual arts,12,6470.8,FOUND,visual arts
+2BD455O0,art history,art history,13,2530.4,FOUND,art history
+2BD455O0,asian studies,asian studies,14,9037.4,FOUND,asian studies
+2BD455O0,oceanography,oceanography,15,4839.6,FOUND,oceanography
+2BD455O0,cinema studies,cinema studies,16,4537.6,FOUND,cinema studies
+37UDZTHY,Neuroscience,neuroscience,1,4512.3,FOUND,neuroscience
+37UDZTHY,Biochemistry,biochemistry,2,4487.3,FOUND,biochemistry
+37UDZTHY,Biology,biology,3,2797.5,FOUND,biology
+37UDZTHY,Chemistry,chemistry,4,4025.7,FOUND,chemistry
+37UDZTHY,Economics,economics,5,2523.4,FOUND,economics
+37UDZTHY,Hispanic,hispanic,6,4318.1,FOUND,hispanic
+37UDZTHY,Francophone,francophone,7,3371.9,FOUND,francophone
+37UDZTHY,Art History,art history,8,11528.8,FOUND,art history
+37UDZTHY,History,history,9,2115.3,FOUND,history
+37UDZTHY,Government,government,10,3025.8,FOUND,government
+37UDZTHY,Gender studies,gender studies,11,5909.2,FOUND,gender studies
+37UDZTHY,Religion,religion,12,3133.0,FOUND,religion
+37UDZTHY,Education,education,13,2767.9,FOUND,education
+37UDZTHY,math,math,14,4890.5,FOUND,math
+3YX63NZD,computer science,computer science,1,5140.6,FOUND,computer science
+3YX63NZD,art history,art history,2,2832.9,FOUND,art history
+3YX63NZD,music,music,3,2001.1,FOUND,music
+3YX63NZD,architecture,architecture,4,4582.0,FOUND,architecture
+3YX63NZD,industrial design,industrial design,5,6082.7,FOUND,industrial design
+3YX63NZD,graphic design,graphic design,6,4393.7,FOUND,graphic design
+3YX63NZD,electrical engineering,electrical engineering,7,4323.8,FOUND,electrical engineering
+3YX63NZD,mechanical engineering,mechanical engineering,8,5808.5,FOUND,mechanical engineering
+3YX63NZD,music technology,music technology,9,4766.6,FOUND,music technology
+3YX63NZD,biology,biology,10,2243.5,FOUND,biology
+3YX63NZD,chemistry,chemistry,11,2982.2,FOUND,chemistry
+3YX63NZD,english,english,12,13401.1,FOUND,english
+40SNDKQR,Chemistry,chemistry,1,4817.0,FOUND,chemistry
+40SNDKQR,Chinese,chinese,2,1238.0,FOUND,chinese
+40SNDKQR,Art History,art history,3,2360.0,FOUND,art history
+40SNDKQR,Biology,biology,4,2434.0,FOUND,biology
+40SNDKQR,History,history,5,2641.0,FOUND,history
+40SNDKQR,Film Production,film production,6,2917.0,FOUND,film production
+40SNDKQR,Screen Writing,screen writing,7,2105.0,FOUND,screen writing
+40SNDKQR,Visual Arts,visual arts,8,3840.0,FOUND,visual arts
+40SNDKQR,Political Science,political science,9,2887.0,FOUND,political science
+40SNDKQR,Gov and Legal Studies,government and legal studies,10,4915.0,FOUND,government and legal studies
+40SNDKQR,Biochemistry,biochemistry,11,5452.0,FOUND,biochemistry
+40SNDKQR,Business,business,12,1610.0,FOUND,business
+40SNDKQR,Economics,economics,13,1949.0,FOUND,economics
+40SNDKQR,Romance Languages,romance languages,14,9012.0,FOUND,romance languages
+40SNDKQR,Physics,physics,15,6681.0,FOUND,physics
+40SNDKQR,Psychology,psychology,16,2090.0,FOUND,psychology
+40SNDKQR,Sociology,sociology,17,2333.0,FOUND,sociology
+476LZI3N,economics,economics,1,2871.0,FOUND,economics
+476LZI3N,math,math,2,1595.0,FOUND,math
+476LZI3N,physics,physics,3,2442.0,FOUND,physics
+476LZI3N,chemistry,chemistry,4,2973.0,FOUND,chemistry
+476LZI3N,biology,biology,5,1991.0,FOUND,biology
+476LZI3N,government,government,6,8408.0,FOUND,government
+476LZI3N,environmental studies,environmental studies,7,7790.0,FOUND,environmental studies
+476LZI3N,education,education,8,1583.0,FOUND,education
+476LZI3N,visual arts,visual arts,9,3056.0,FOUND,visual arts
+476LZI3N,history,history,10,1431.0,FOUND,history
+476LZI3N,engineering,engineering,11,10625.0,FOUND,engineering
+476LZI3N,business,business,12,4004.0,FOUND,business
+476LZI3N,art history,art history,13,9769.0,FOUND,art history
+4CA4DFWP,art,art,1,1409.6,FOUND,art
+4CA4DFWP,computer science,computer science,2,3277.7,FOUND,computer science
+4CA4DFWP,asians studies,asian studies,3,3389.8,FOUND,asian studies
+4CA4DFWP,gender studies,gender studies,4,2050.1,FOUND,gender studies
+4CA4DFWP,hispanic studies,hispanic studies,5,2910.9,FOUND,hispanic studies
+4CA4DFWP,francaphone studies,francophone studies,6,3498.0,FOUND,francophone studies
+4CA4DFWP,economics,economics,7,6881.3,FOUND,economics
+4CA4DFWP,enviormental science,environmental science,8,4568.4,FOUND,environmental science
+4CA4DFWP,biology,biology,9,2551.3,FOUND,biology
+4CA4DFWP,psychology,psychology,10,2256.3,FOUND,psychology
+4CA4DFWP,sociology,sociology,11,1892.7,FOUND,sociology
+4CA4DFWP,chemistry,chemistry,12,1302.3,FOUND,chemistry
+4CA4DFWP,bio chem,biochemistry,13,1482.4,FOUND,biochemistry
+4CA4DFWP,neuro,neuroscience,14,1580.2,FOUND,neuroscience
+4CA4DFWP,accoutning,accounting,15,1862.2,FOUND,accounting
+4CA4DFWP,buisness,business,16,1150.2,FOUND,business
+4CA4DFWP,finance,finance,17,975.5,FOUND,finance
+4CA4DFWP,engineering,engineering,18,4197.3,FOUND,engineering
+4CA4DFWP,music,music,19,1632.7,FOUND,music
+4CA4DFWP,polysci,political science,20,5767.6,FOUND,political science
+4CA4DFWP,goverment,government,21,1234.3,FOUND,government
+56M8U5A5,biology,biology,1,2818.0,FOUND,biology
+56M8U5A5,chemistry,chemistry,2,2483.0,FOUND,chemistry
+56M8U5A5,economics,economics,3,2012.0,FOUND,economics
+56M8U5A5,physics,physics,4,2853.0,FOUND,physics
+56M8U5A5,neuroscience,neuroscience,5,5482.0,FOUND,neuroscience
+56M8U5A5,finance,finance,6,1738.0,FOUND,finance
+56M8U5A5,international relations,international relations,7,3856.0,FOUND,international relations
+56M8U5A5,government,government,8,3037.0,FOUND,government
+56M8U5A5,sociology,sociology,9,4239.0,FOUND,sociology
+56M8U5A5,anthropology,anthropology,10,3576.0,FOUND,anthropology
+56M8U5A5,gender and women's studies,gender and women's studies,11,4586.0,FOUND,gender and women's studies
+56M8U5A5,art,art,12,16995.0,FOUND,art
+56M8U5A5,music,music,13,1957.0,FOUND,music
+56M8U5A5,dance,dance,14,1249.0,FOUND,dance
+56M8U5A5,theater,theater,15,2599.0,FOUND,theater
+5K82MZW1,art history,art history,1,1959.0,FOUND,art history
+5K82MZW1,africana studies,africana studies,2,3965.0,FOUND,africana studies
+5K82MZW1,asian studies,asian studies,3,2415.0,FOUND,asian studies
+5K82MZW1,chinese,chinese,4,1606.0,FOUND,chinese
+5K82MZW1,japanese,japanese,5,1244.0,FOUND,japanese
+5K82MZW1,german,german,6,1976.0,FOUND,german
+5K82MZW1,french,french,7,1183.0,FOUND,french
+5K82MZW1,spanish,spanish,8,1400.0,FOUND,spanish
+5K82MZW1,italian,italian,9,2098.0,FOUND,italian
+5K82MZW1,mathematics,mathematics,10,2434.0,FOUND,mathematics
+5K82MZW1,physics,physics,11,1459.0,FOUND,physics
+5K82MZW1,chemistry,chemistry,12,2466.0,FOUND,chemistry
+5K82MZW1,biology,biology,13,2560.0,FOUND,biology
+5K82MZW1,neuroscience,neuroscience,14,1987.0,FOUND,neuroscience
+5K82MZW1,psychology,psychology,15,4071.0,FOUND,psychology
+5K82MZW1,visual arts,visual arts,16,3973.0,FOUND,visual arts
+5K82MZW1,english,english,17,1442.0,FOUND,english
+5K82MZW1,history,history,18,1626.0,FOUND,history
+5K82MZW1,political science,political science,19,3087.0,FOUND,political science
+5K82MZW1,classics,classics,20,7555.0,FOUND,classics
+5K82MZW1,creative writing,creative writing,21,3842.0,FOUND,creative writing
+5K82MZW1,theater,theater,22,1510.0,FOUND,theater
+5K82MZW1,dance,dance,23,3857.0,FOUND,dance
+64LRAXDJ,Anthropology,anthropology,1,2679.4,FOUND,anthropology
+64LRAXDJ,Psychology,psychology,2,4883.9,FOUND,psychology
+64LRAXDJ,Math,math,3,1311.8,FOUND,math
+64LRAXDJ,Physics,physics,4,1784.1,FOUND,physics
+64LRAXDJ,Sociology,sociology,5,6757.5,FOUND,sociology
+64LRAXDJ,Government,government,6,1683.0,FOUND,government
+64LRAXDJ,Visual Arts,visual arts,7,3783.5,FOUND,visual arts
+64LRAXDJ,Journalism,journalism,8,1790.9,FOUND,journalism
+64LRAXDJ,Chemistry,chemistry,9,9667.6,FOUND,chemistry
+64LRAXDJ,Biology,biology,10,2474.3,FOUND,biology
+64LRAXDJ,Human Rights,human rights,11,9391.0,FOUND,human rights
+64LRAXDJ,Biology,biology,12,1537.0,FOUND,biology
+64LRAXDJ,Film,film,13,4489.4,FOUND,film
+6CDVQX7L,psychology,psychology,1,3063.0,FOUND,psychology
+6CDVQX7L,education,education,2,1668.0,FOUND,education
+6CDVQX7L,finance,finance,3,1369.0,FOUND,finance
+6CDVQX7L,computer science,computer science,4,2932.0,FOUND,computer science
+6CDVQX7L,chemistry,chemistry,5,1756.0,FOUND,chemistry
+6CDVQX7L,biology,biology,6,1547.0,FOUND,biology
+6CDVQX7L,art,art,7,2632.0,FOUND,art
+6CDVQX7L,math,math,8,7365.0,FOUND,math
+6CDVQX7L,anthropology,anthropology,9,5154.0,FOUND,anthropology
+6CDVQX7L,history,history,10,904.0,FOUND,history
+6CDVQX7L,sociology,sociology,11,2549.0,FOUND,sociology
+6CDVQX7L,english,english,12,3862.0,FOUND,english
+6CDVQX7L,economics,economics,13,1566.0,FOUND,economics
+6CDVQX7L,history,history,14,10067.0,FOUND,history
+6CDVQX7L,asian studies,asian studies,15,3272.0,FOUND,asian studies
+6CDVQX7L,hispanic studies,hispanic studies,16,3359.0,FOUND,hispanic studies
+6CDVQX7L,latin american studies,latin american studies,17,3956.0,FOUND,latin american studies
+6D26ZXC8,Psychology,psychology,1,3253.0,FOUND,psychology
+6D26ZXC8,Biology,biology,2,3802.0,FOUND,biology
+6D26ZXC8,Chemistry,chemistry,3,2274.0,FOUND,chemistry
+6D26ZXC8,Physics,physics,4,2778.0,FOUND,physics
+6D26ZXC8,Asian Studies,asian studies,5,4057.0,FOUND,asian studies
+6D26ZXC8,Math,mathematics,6,3518.0,FOUND,mathematics
+6D26ZXC8,History,history,7,2838.0,FOUND,history
+6D26ZXC8,Romance Languages,romance languages,8,5196.0,FOUND,romance languages
+6D26ZXC8,Hispanic Studies,hispanic studies,9,4698.0,FOUND,hispanic studies
+6D26ZXC8,Anthropology,anthropology,10,15465.0,FOUND,anthropology
+6D26ZXC8,Environmental Studies,environmental studies,11,4276.0,FOUND,environmental studies
+6D26ZXC8,Education,education,12,3377.0,FOUND,education
+6PJDUW9O,math,mathematics,1,1459.0,FOUND,mathematics
+6PJDUW9O,bio,biology,2,1089.0,FOUND,biology
+6PJDUW9O,chem,chemistry,3,1151.0,FOUND,chemistry
+6PJDUW9O,biochem,biochemistry,4,2868.0,FOUND,biochemistry
+6PJDUW9O,anthropology,anthropology,5,4025.0,FOUND,anthropology
+6PJDUW9O,computer science,computer science,6,6597.0,FOUND,computer science
+6PJDUW9O,visual arts,visual arts,7,1997.0,FOUND,visual arts
+6PJDUW9O,theater,theater,8,1444.0,FOUND,theater
+6PJDUW9O,physics,physics,9,4417.0,FOUND,physics
+6PJDUW9O,engineering,engineering,10,1997.0,FOUND,engineering
+6PJDUW9O,teaching,education,11,2135.0,FOUND,education
+6PJDUW9O,business,business,12,2981.0,FOUND,business
+6PJDUW9O,finance,finance,13,3217.0,FOUND,finance
+6PJDUW9O,econ,economics,14,1335.0,FOUND,economics
+6PJDUW9O,government,government,15,2554.0,FOUND,government
+6PJDUW9O,cooking,cooking,16,4903.0,FOUND,cooking
+6PJDUW9O,sports management,sports management,17,3024.0,FOUND,sports management
+6PJDUW9O,arabic,arabic,18,3394.0,FOUND,arabic
+6PJDUW9O,spanish,spanish,19,1755.0,FOUND,spanish
+6PJDUW9O,asian studies,asian studies,20,3910.0,FOUND,asian studies
+6PJDUW9O,gsws,gsws,21,2094.0,FOUND,gsws
+6VBV95IL,neurosience,neuroscience,1,5047.4,FOUND,neuroscience
+6VBV95IL,chemesty,chemistry,2,3014.1,FOUND,chemistry
+6VBV95IL,biology,biology,3,1842.6,FOUND,biology
+6VBV95IL,religion,religion,4,2494.4,FOUND,religion
+6VBV95IL,physics,physics,5,1257.9,FOUND,physics
+6VBV95IL,biochemistry,biochemistry,6,3483.6,FOUND,biochemistry
+6VBV95IL,africana studies,africana studies,7,9519.6,FOUND,africana studies
+6VBV95IL,theater,theater,8,2310.6,FOUND,theater
+6VBV95IL,visual arts,visual arts,9,4009.6,FOUND,visual arts
+6VBV95IL,psychology,psychology,10,7133.6,FOUND,psychology
+6VBV95IL,philosphy,philosophy,11,2700.6,FOUND,philosophy
+6VBV95IL,government,government,12,5492.9,FOUND,government
+6VBV95IL,education,education,13,3600.6,FOUND,education
+6VBV95IL,math,math,14,3209.5,FOUND,math
+6VBV95IL,compsi,computer science,15,4879.1,FOUND,computer science
+6XD6NVVO,anthropology,anthropology,1,4236.0,FOUND,anthropology
+6XD6NVVO,philosophy,philosophy,2,4216.0,FOUND,philosophy
+6XD6NVVO,linguistics,linguistics,3,4530.0,FOUND,linguistics
+6XD6NVVO,math,math,4,1252.0,FOUND,math
+6XD6NVVO,physics,physics,5,2835.0,FOUND,physics
+6XD6NVVO,chemistry,chemistry,6,2683.0,FOUND,chemistry
+6XD6NVVO,musical studies,musical studies,7,3947.0,FOUND,musical studies
+6XD6NVVO,medival studies,medieval studies,8,6411.0,FOUND,medieval studies
+6XD6NVVO,asian studies,asian studies,9,3856.0,FOUND,asian studies
+6XD6NVVO,Latinx studies,latinx studies,10,5716.0,FOUND,latinx studies
+6XD6NVVO,psychology,psychology,11,4900.0,FOUND,psychology
+6XD6NVVO,sociology,sociology,12,2688.0,FOUND,sociology
+6XD6NVVO,biology,biology,13,2284.0,FOUND,biology
+6XD6NVVO,neurosience,neuroscience,14,3137.0,FOUND,neuroscience
+6XD6NVVO,comp pshy,computer science,15,6007.0,FOUND,computer science
+73N2RQWR,neuroscience,neuroscience,1,3136.2,FOUND,neuroscience
+73N2RQWR,psychology,psychology,2,2447.2,FOUND,psychology
+73N2RQWR,biochemistry,biochemistry,3,2620.0,FOUND,biochemistry
+73N2RQWR,biology,biology,4,2104.9,FOUND,biology
+73N2RQWR,chemistry,chemistry,5,3473.0,FOUND,chemistry
+73N2RQWR,anthropology,anthropology,6,4663.5,FOUND,anthropology
+73N2RQWR,sociology,sociology,7,4122.6,FOUND,sociology
+73N2RQWR,visual arts,visual arts,8,4532.6,FOUND,visual arts
+73N2RQWR,theater,theater,9,1428.3,FOUND,theater
+73N2RQWR,dance,dance,10,1166.3,FOUND,dance
+73N2RQWR,math,math,11,3732.8,FOUND,math
+73N2RQWR,physics,physics,12,2231.3,FOUND,physics
+73N2RQWR,government,government,13,4237.9,FOUND,government
+73N2RQWR,legal studies,legal studies,14,2239.0,FOUND,legal studies
+73N2RQWR,public health,public health,15,3659.3,FOUND,public health
+73N2RQWR,economics,economics,16,2441.0,FOUND,economics
+73N2RQWR,language,language,17,2533.6,FOUND,language
+73N2RQWR,latin america,latin american studies,18,6505.1,FOUND,latin american studies
+7SUXPU9Y,math,math,1,2780.0,FOUND,math
+7SUXPU9Y,history,history,2,1620.0,FOUND,history
+7SUXPU9Y,chemistry,chemistry,3,2200.0,FOUND,chemistry
+7SUXPU9Y,physics,physics,4,1605.0,FOUND,physics
+7SUXPU9Y,classics,classics,5,1628.0,FOUND,classics
+7SUXPU9Y,gender studies,gender studies,6,5713.0,FOUND,gender studies
+7SUXPU9Y,business,business,7,10675.0,FOUND,business
+7SUXPU9Y,economics,economics,8,1776.0,FOUND,economics
+7SUXPU9Y,music,music,9,4643.0,FOUND,music
+7SUXPU9Y,government,government,10,4755.0,FOUND,government
+7SUXPU9Y,nursing,nursing,11,2978.0,FOUND,nursing
+7SUXPU9Y,geology,geology,12,8073.0,FOUND,geology
+7SUXPU9Y,english,english,13,11294.0,FOUND,english
+86EKSDZC,History,history,1,2547.1,FOUND,history
+86EKSDZC,Art History,art history,2,2163.5,FOUND,art history
+86EKSDZC,Engineering,engineering,3,1627.1,FOUND,engineering
+86EKSDZC,Bio,biology,4,1305.9,FOUND,biology
+86EKSDZC,Physics,physics,5,1149.6,FOUND,physics
+86EKSDZC,Chem,chemistry,6,978.9,FOUND,chemistry
+86EKSDZC,Geology,geology,7,2104.4,FOUND,geology
+86EKSDZC,Neuroscience,neuroscience,8,3800.0,FOUND,neuroscience
+86EKSDZC,Psych,psychology,9,1272.5,FOUND,psychology
+86EKSDZC,English,english,10,8165.8,FOUND,english
+86EKSDZC,Italian,italian,11,1361.7,FOUND,italian
+86EKSDZC,japanese,japanese,12,1153.8,FOUND,japanese
+86EKSDZC,Chinese,chinese,13,1346.1,FOUND,chinese
+86EKSDZC,Asian Studies,asian studies,14,3703.6,FOUND,asian studies
+86EKSDZC,Russian,russian,15,3860.8,FOUND,russian
+86EKSDZC,French,french,16,4782.6,FOUND,french
+86EKSDZC,Gov,government,17,3794.7,FOUND,government
+86EKSDZC,Math,mathematics,18,3612.1,FOUND,mathematics
+86EKSDZC,EOS,eos,19,6137.6,FOUND,eos
+86EKSDZC,DCS,dcs,20,1270.9,FOUND,dcs
+8BL6X7AX,business,business,1,5245.0,FOUND,business
+8BL6X7AX,econ,econ,2,1403.0,FOUND,econ
+8BL6X7AX,gender studies,gender studies,3,6674.0,FOUND,gender studies
+8BL6X7AX,russian,russian,4,2501.0,FOUND,russian
+8BL6X7AX,gov,gov,5,5329.0,FOUND,gov
+8BL6X7AX,math,math,6,6609.0,FOUND,math
+8BL6X7AX,biochem,biochem,7,3494.0,FOUND,biochem
+8BL6X7AX,chem,chem,8,1671.0,FOUND,chem
+8BL6X7AX,bio,bio,9,847.0,FOUND,bio
+8BL6X7AX,comp sci,comp sci,10,11998.0,FOUND,comp sci
+8BL6X7AX,dcs,dcs,11,4559.0,FOUND,dcs
+8JEQ20SU,chemistry,chemistry,1,4920.0,FOUND,chemistry
+8JEQ20SU,biology,biology,2,2595.9,FOUND,biology
+8JEQ20SU,math,math,3,1981.3,FOUND,math
+8JEQ20SU,english,english,4,2491.9,FOUND,english
+8JEQ20SU,psychology,psychology,5,17495.4,FOUND,psychology
+8JEQ20SU,sociology,sociology,6,3100.3,FOUND,sociology
+8JEQ20SU,physics,physics,7,10022.1,FOUND,physics
+8PAKX1OM,anthropology,anthropology,1,2575.0,FOUND,anthropology
+8PAKX1OM,sociology,sociology,2,2735.0,FOUND,sociology
+8PAKX1OM,psychology,psychology,3,2664.0,FOUND,psychology
+8PAKX1OM,econ,econ,4,1252.0,FOUND,econ
+8PAKX1OM,math,math,5,929.0,FOUND,math
+8PAKX1OM,urban studies,urban studies,6,6768.0,FOUND,urban studies
+8PAKX1OM,english,english,7,5274.0,FOUND,english
+8PAKX1OM,music,music,8,1110.0,FOUND,music
+8PAKX1OM,EOS,eos,9,1881.0,FOUND,eos
+8PAKX1OM,arabic,arabic,10,3034.0,FOUND,arabic
+8PAKX1OM,french,french,11,1206.0,FOUND,french
+8PAKX1OM,italian,italian,12,2467.0,FOUND,italian
+8PAKX1OM,spanish,spanish,13,2018.0,FOUND,spanish
+8PAKX1OM,romance languages,romance languages,14,5212.0,FOUND,romance languages
+8PAKX1OM,Latinx studies,latinx studies,15,3496.0,FOUND,latinx studies
+8PAKX1OM,artic studies,arctic studies,16,7426.0,FOUND,arctic studies
+8PAKX1OM,philosophy,philosophy,17,4117.0,FOUND,philosophy
+8PAKX1OM,bio,bio,18,2174.0,FOUND,bio
+8ZC5BFHF,math,math,1,1111.0,FOUND,math
+8ZC5BFHF,econ,econ,2,945.1,FOUND,econ
+8ZC5BFHF,business,business,3,1529.0,FOUND,business
+8ZC5BFHF,accounting,accounting,4,3008.8,FOUND,accounting
+8ZC5BFHF,english,english,5,1716.2,FOUND,english
+8ZC5BFHF,visual arts,visual arts,6,2254.3,FOUND,visual arts
+8ZC5BFHF,performing arts,performing arts,7,2933.6,FOUND,performing arts
+8ZC5BFHF,hispanic studies,hispanic studies,8,4133.0,FOUND,hispanic studies
+8ZC5BFHF,french,french,9,2361.9,FOUND,french
+8ZC5BFHF,religion,religion,10,2710.7,FOUND,religion
+8ZC5BFHF,biology,biology,11,2607.1,FOUND,biology
+8ZC5BFHF,biochemistry,biochemistry,12,2590.6,FOUND,biochemistry
+8ZC5BFHF,chemistry,chemistry,13,2896.1,FOUND,chemistry
+8ZC5BFHF,earth and ocean studies,earth and ocean studies,14,4787.8,FOUND,earth and ocean studies
+8ZC5BFHF,anthropology,anthropology,15,7208.6,FOUND,anthropology
+8ZC5BFHF,sociology,sociology,16,1857.5,FOUND,sociology
+8ZC5BFHF,physcology,psychology,17,3599.8,FOUND,psychology
+8ZC5BFHF,neuroscience,neuroscience,18,3371.1,FOUND,neuroscience
+8ZC5BFHF,computer science,computer science,19,3895.9,FOUND,computer science
+97N7CQ49,Asian Studies,asian studies,1,2438.6,FOUND,asian studies
+97N7CQ49,Education,education,2,2318.7,FOUND,education
+97N7CQ49,Mathematics,mathematics,3,1914.3,FOUND,mathematics
+97N7CQ49,Envirnomental Studies,environmental studies,4,3464.0,FOUND,environmental studies
+97N7CQ49,Earth and Oceanographic Studies,earth and oceanographic studies,5,10369.2,FOUND,earth and oceanographic studies
+97N7CQ49,Hispanic Studies,hispanic studies,6,7235.7,FOUND,hispanic studies
+97N7CQ49,Anthropology,anthropology,7,3166.6,FOUND,anthropology
+97N7CQ49,Chemistry,chemistry,8,3779.7,FOUND,chemistry
+97N7CQ49,Biology,biology,9,3546.6,FOUND,biology
+97N7CQ49,Physics,physics,10,1341.2,FOUND,physics
+97N7CQ49,History,history,11,5443.5,FOUND,history
+97N7CQ49,Classics,classics,12,1222.5,FOUND,classics
+97N7CQ49,English,english,13,3798.8,FOUND,english
+97N7CQ49,Francophone,francophone studies,14,3615.4,FOUND,francophone studies
+97N7CQ49,Africana,africana studies,15,4535.7,FOUND,africana studies
+9KZ4Q91O,business,business,1,1752.4,FOUND,business
+9KZ4Q91O,marketing,marketing,2,1046.0,FOUND,marketing
+9KZ4Q91O,media studies,media studies,3,1646.4,FOUND,media studies
+9KZ4Q91O,cinema studies,cinema studies,4,1431.8,FOUND,cinema studies
+9KZ4Q91O,biology,biology,5,1238.6,FOUND,biology
+9KZ4Q91O,environmental science,environmental science,6,2141.2,FOUND,environmental science
+9KZ4Q91O,environmental studies,environmental studies,7,1615.8,FOUND,environmental studies
+9KZ4Q91O,bioinformatics,bioinformatics,8,1579.6,FOUND,bioinformatics
+9KZ4Q91O,evolutionary and ecological biology,evolutionary and ecological biology,9,5063.3,FOUND,evolutionary and ecological biology
+9KZ4Q91O,chemistry,chemistry,10,3848.7,FOUND,chemistry
+9KZ4Q91O,biochemistry,biochemistry,11,1218.8,FOUND,biochemistry
+9KZ4Q91O,archaeology,archaeology,12,1464.3,FOUND,archaeology
+9KZ4Q91O,anthropology,anthropology,13,1636.4,FOUND,anthropology
+9KZ4Q91O,sociology,sociology,14,1225.9,FOUND,sociology
+9KZ4Q91O,psychology,psychology,15,1480.0,FOUND,psychology
+9KZ4Q91O,physics,physics,16,4642.1,FOUND,physics
+9KZ4Q91O,biophysics,biophysics,17,5334.8,FOUND,biophysics
+9KZ4Q91O,civil engineering,civil engineering,18,2566.4,FOUND,civil engineering
+9KZ4Q91O,electrical and computer engineering,electrical and computer engineering,19,4229.8,FOUND,electrical and computer engineering
+9KZ4Q91O,bioengineering,bioengineering,20,10431.9,FOUND,bioengineering
+9KZ4Q91O,mechanical engineering,mechanical engineering,21,2834.6,FOUND,mechanical engineering
+9O2ABUMY,Poli Sci,political science,1,3691.0,FOUND,political science
+9O2ABUMY,Communications,communications,2,2991.0,FOUND,communications
+9O2ABUMY,Economics,economics,3,7054.0,FOUND,economics
+9O2ABUMY,Nursing,nursing,4,5533.0,FOUND,nursing
+9O2ABUMY,English,english,5,5300.0,FOUND,english
+9O2ABUMY,Math,math,6,4733.0,FOUND,math
+9O2ABUMY,Physics,physics,7,4934.0,FOUND,physics
+9O2ABUMY,Neuroscience,neuroscience,8,7939.0,FOUND,neuroscience
+9O2ABUMY,Environmental Science,environmental science,9,5333.0,FOUND,environmental science
+9O2ABUMY,Anthropology,anthropology,10,6613.0,FOUND,anthropology
+A5YUTA1F,DCS,dcs,1,2104.0,FOUND,dcs
+A5YUTA1F,Comp Sci,computer science,2,4090.0,FOUND,computer science
+A5YUTA1F,Political Sci,political science,3,3063.0,FOUND,political science
+A5YUTA1F,Biochem,biochemistry,4,1895.0,FOUND,biochemistry
+A5YUTA1F,Chem,chemistry,5,1172.0,FOUND,chemistry
+A5YUTA1F,Physics,physics,6,2746.0,FOUND,physics
+A5YUTA1F,Math,mathematics,7,1642.0,FOUND,mathematics
+A5YUTA1F,Education,education,8,1817.0,FOUND,education
+A5YUTA1F,English,english,9,2027.0,FOUND,english
+A5YUTA1F,Art History,art history,10,5323.0,FOUND,art history
+A5YUTA1F,Anthropology,anthropology,11,5324.0,FOUND,anthropology
+A5YUTA1F,Cinema Studies,cinema studies,12,3416.0,FOUND,cinema studies
+A5YUTA1F,Statistics,statistics,13,2419.0,FOUND,statistics
+A5YUTA1F,Business,business,14,2150.0,FOUND,business
+A5YUTA1F,Finance,finance,15,4230.0,FOUND,finance
+A5YUTA1F,Economics,economics,16,4283.0,FOUND,economics
+A5YUTA1F,Classics,classics,17,5093.0,FOUND,classics
+AJVNZ9CE,biology,biology,1,2761.2,FOUND,biology
+AJVNZ9CE,chemistry,chemistry,2,1912.7,FOUND,chemistry
+AJVNZ9CE,data science,data science,3,2236.0,FOUND,data science
+AJVNZ9CE,poltical science,political science,4,3650.6,FOUND,political science
+AJVNZ9CE,government,government,5,1587.6,FOUND,government
+AJVNZ9CE,law,law,6,891.8,FOUND,law
+AJVNZ9CE,hsitory,history,7,2186.4,FOUND,history
+AJVNZ9CE,art history,art history,8,2446.5,FOUND,art history
+AJVNZ9CE,european history,european history,9,3168.2,FOUND,european history
+AJVNZ9CE,psychology,psychology,10,6437.0,FOUND,psychology
+AJVNZ9CE,philosophy,philosophy,11,4529.7,FOUND,philosophy
+AJVNZ9CE,kinesiology,kinesiology,12,10408.5,FOUND,kinesiology
+AJVNZ9CE,economics,economics,13,2050.3,FOUND,economics
+AJVNZ9CE,education,education,14,1627.5,FOUND,education
+AJVNZ9CE,computer science,computer science,15,8825.7,FOUND,computer science
+AJVNZ9CE,math,math,16,1222.4,FOUND,math
+AJVNZ9CE,statistics,statistics,17,2424.1,FOUND,statistics
+AWO2EA8Q,biology,biology,1,1225.0,FOUND,biology
+AWO2EA8Q,chemistry,chemistry,2,825.0,FOUND,chemistry
+AWO2EA8Q,psychology,psychology,3,1294.0,FOUND,psychology
+AWO2EA8Q,physics,physics,4,849.0,FOUND,physics
+AWO2EA8Q,math,mathematics,5,576.0,FOUND,mathematics
+AWO2EA8Q,computer science,computer science,6,2008.0,FOUND,computer science
+AWO2EA8Q,neuroscience,neuroscience,7,1608.0,FOUND,neuroscience
+AWO2EA8Q,english,english,8,720.0,FOUND,english
+AWO2EA8Q,history,history,9,792.0,FOUND,history
+AWO2EA8Q,government,government,10,1176.0,FOUND,government
+AWO2EA8Q,philosophy,philosophy,11,1496.0,FOUND,philosophy
+AWO2EA8Q,religion,religion,12,3109.0,FOUND,religion
+AWO2EA8Q,education,education,13,1693.0,FOUND,education
+AWO2EA8Q,math,mathematics,14,1171.0,FOUND,mathematics
+AWO2EA8Q,environmental studies,environmental studies,15,4588.0,FOUND,environmental studies
+AWO2EA8Q,anthropology,anthropology,16,1492.0,FOUND,anthropology
+AWO2EA8Q,sociology,sociology,17,1189.0,FOUND,sociology
+AWO2EA8Q,theater and dance,theater and dance,18,1702.0,FOUND,theater and dance
+AWO2EA8Q,art,art,19,1025.0,FOUND,art
+AWO2EA8Q,art history,art history,20,1568.0,FOUND,art history
+AWO2EA8Q,asian studies,asian studies,21,11604.0,FOUND,asian studies
+AWO2EA8Q,chinese,chinese,22,1099.0,FOUND,chinese
+AWO2EA8Q,french,french,23,1180.0,FOUND,french
+AWO2EA8Q,spanish,spanish,24,1647.0,FOUND,spanish
+AWO2EA8Q,public health,public health,25,2969.0,FOUND,public health
+B3MZX5TF,econ,economics,1,1472.7,FOUND,economics
+B3MZX5TF,finance,finance,2,846.1,FOUND,finance
+B3MZX5TF,math,mathematics,3,483.2,FOUND,mathematics
+B3MZX5TF,cs,computer science,4,666.9,FOUND,computer science
+B3MZX5TF,bio,biology,5,1852.9,FOUND,biology
+B3MZX5TF,chemistry,chemistry,6,3622.3,FOUND,chemistry
+B3MZX5TF,physics,physics,7,1433.3,FOUND,physics
+B3MZX5TF,anthropology,anthropology,8,6883.5,FOUND,anthropology
+B3MZX5TF,music,music,9,769.5,FOUND,music
+B3MZX5TF,archaeology,archaeology,10,1897.8,FOUND,archaeology
+B3MZX5TF,engineering,engineering,11,9982.2,FOUND,engineering
+B3MZX5TF,business,business,12,3015.6,FOUND,business
+B3MZX5TF,hotel management,hotel management,13,6151.2,FOUND,hotel management
+B3MZX5TF,art,art,14,10644.3,FOUND,art
+B3MZX5TF,music,music,15,1075.4,FOUND,music
+BF3MN8ZR,biology,biology,1,2358.3,FOUND,biology
+BF3MN8ZR,political science,political science,2,6502.0,FOUND,political science
+BF3MN8ZR,math,mathematics,3,1070.4,FOUND,mathematics
+BF3MN8ZR,economics,economics,4,1552.0,FOUND,economics
+BF3MN8ZR,finance,finance,5,1254.0,FOUND,finance
+BF3MN8ZR,communication,communication,6,7504.8,FOUND,communication
+BF3MN8ZR,business,business,7,1570.4,FOUND,business
+BF3MN8ZR,physics,physics,8,5612.3,FOUND,physics
+BF3MN8ZR,neuroscience,neuroscience,9,10261.4,FOUND,neuroscience
+BF3MN8ZR,chemistry,chemistry,10,2785.8,FOUND,chemistry
+BF3MN8ZR,computer science,computer science,11,5533.7,FOUND,computer science
+BF3MN8ZR,education,education,12,4902.2,FOUND,education
+BF3MN8ZR,public health,public health,13,6415.0,FOUND,public health
+BF3MN8ZR,nursing,nursing,14,2429.9,FOUND,nursing
+BWQ1ZSYD,government and legal studies,government and legal studies,1,10281.1,FOUND,government and legal studies
+BWQ1ZSYD,political science,political science,2,4162.7,FOUND,political science
+BWQ1ZSYD,pyshcology,psychology,3,10917.1,FOUND,psychology
+BWQ1ZSYD,math,math,4,7126.6,FOUND,math
+BWQ1ZSYD,computer science,computer science,5,4983.9,FOUND,computer science
+BWQ1ZSYD,history,history,6,2588.3,FOUND,history
+BWQ1ZSYD,chinese,chinese,7,5895.5,FOUND,chinese
+BWQ1ZSYD,biology,biology,8,3555.2,FOUND,biology
+BWQ1ZSYD,chemisty,chemistry,9,2598.6,FOUND,chemistry
+BWQ1ZSYD,english,english,10,4316.4,FOUND,english
+BWQ1ZSYD,music,music,11,2153.2,FOUND,music
+CI6QQA2Y,history,history,1,2027.0,FOUND,history
+CI6QQA2Y,environmental science,environmental science,2,4130.0,FOUND,environmental science
+CI6QQA2Y,Environmental studies,environmental studies,3,3749.0,FOUND,environmental studies
+CI6QQA2Y,biology,biology,4,1818.0,FOUND,biology
+CI6QQA2Y,hispanic studies,hispanic studies,5,3617.0,FOUND,hispanic studies
+CI6QQA2Y,latin,latin,6,1071.0,FOUND,latin
+CI6QQA2Y,german,german,7,1717.0,FOUND,german
+CI6QQA2Y,french,french,8,3157.0,FOUND,french
+CI6QQA2Y,english,english,9,4008.0,FOUND,english
+CI6QQA2Y,math,math,10,1287.0,FOUND,math
+CI6QQA2Y,chemistry,chemistry,11,5210.0,FOUND,chemistry
+CI6QQA2Y,Sociology,sociology,12,9570.0,FOUND,sociology
+CI6QQA2Y,Psychology,psychology,13,4813.0,FOUND,psychology
+DUBYYHYX,anthropology,anthropology,1,2634.5,FOUND,anthropology
+DUBYYHYX,psychology,psychology,2,2441.9,FOUND,psychology
+DUBYYHYX,arabic,arabic,3,1196.3,FOUND,arabic
+DUBYYHYX,frencxh,french,4,1182.8,FOUND,french
+DUBYYHYX,spanish,spanish,5,1706.2,FOUND,spanish
+DUBYYHYX,german,german,6,2993.7,FOUND,german
+DUBYYHYX,russian,russian,7,1343.5,FOUND,russian
+DUBYYHYX,greek,greek,8,1037.0,FOUND,greek
+DUBYYHYX,neuroscience,neuroscience,9,5093.7,FOUND,neuroscience
+DUBYYHYX,government,government,10,1833.6,FOUND,government
+DUBYYHYX,pre-law,pre-law,11,1613.7,FOUND,pre-law
+DUBYYHYX,philosophy,philosophy,12,6749.5,FOUND,philosophy
+DUBYYHYX,music,music,13,3225.3,FOUND,music
+DUBYYHYX,literature,literature,14,2136.8,FOUND,literature
+DUBYYHYX,english,english,15,1757.9,FOUND,english
+DUBYYHYX,physics,physics,16,6114.2,FOUND,physics
+DUBYYHYX,africana studies,africana studies,17,6003.7,FOUND,africana studies
+DUBYYHYX,sociology,sociology,18,1700.9,FOUND,sociology
+DUBYYHYX,economics,economics,19,1998.4,FOUND,economics
+DUBYYHYX,chemistry,chemistry,20,4520.1,FOUND,chemistry
+DUBYYHYX,biology,biology,21,1514.2,FOUND,biology
+EA8GWQDV,philosophy,philosophy,1,2778.9,FOUND,philosophy
+EA8GWQDV,biology,biology,2,998.3,FOUND,biology
+EA8GWQDV,chemistry,chemistry,3,1614.2,FOUND,chemistry
+EA8GWQDV,biochemistry,biochemistry,4,1499.0,FOUND,biochemistry
+EA8GWQDV,education,education,5,925.7,FOUND,education
+EA8GWQDV,government,government,6,1243.8,FOUND,government
+EA8GWQDV,english,english,7,798.2,FOUND,english
+EA8GWQDV,history,history,8,2008.0,FOUND,history
+EA8GWQDV,psychology,psychology,9,2172.2,FOUND,psychology
+EA8GWQDV,neuroscience,neuroscience,10,2240.8,FOUND,neuroscience
+EA8GWQDV,sociology,sociology,11,8380.2,FOUND,sociology
+EA8GWQDV,spanish,spanish,12,6233.1,FOUND,spanish
+EA8GWQDV,french,french,13,1116.4,FOUND,french
+EA8GWQDV,italian,italian,14,2800.3,FOUND,italian
+EA8GWQDV,japanese,japanese,15,1362.6,FOUND,japanese
+EA8GWQDV,chinese,chinese,16,1670.2,FOUND,chinese
+EA8GWQDV,forestry,forestry,17,16457.8,FOUND,forestry
+EA8GWQDV,ecology,ecology,18,1276.1,FOUND,ecology
+ESNMRF10,history,history,1,1955.0,FOUND,history
+ESNMRF10,classics,classics,2,1679.0,FOUND,classics
+ESNMRF10,architecture,architecture,3,2267.0,FOUND,architecture
+ESNMRF10,archaeology,archaeology,4,2741.0,FOUND,archaeology
+ESNMRF10,zoology,zoology,5,2242.0,FOUND,zoology
+ESNMRF10,biology,biology,6,1833.0,FOUND,biology
+ESNMRF10,chemistry,chemistry,7,1834.0,FOUND,chemistry
+ESNMRF10,physics,physics,8,2849.0,FOUND,physics
+ESNMRF10,astronomy,astronomy,9,1855.0,FOUND,astronomy
+ESNMRF10,business,business,10,1621.0,FOUND,business
+ESNMRF10,finance,finance,11,1422.0,FOUND,finance
+ESNMRF10,economics,economics,12,2000.0,FOUND,economics
+ESNMRF10,art,art,13,1885.0,FOUND,art
+ESNMRF10,art history,art history,14,3104.0,FOUND,art history
+ESNMRF10,education,education,15,2822.0,FOUND,education
+ESNMRF10,english,english,16,4025.0,FOUND,english
+ESNMRF10,french,french,17,4284.0,FOUND,french
+ESNMRF10,russian,russian,18,1315.0,FOUND,russian
+ESNMRF10,italian,italian,19,1541.0,FOUND,italian
+ESNMRF10,latinx studies,latinx studies,20,3724.0,FOUND,latinx studies
+ESNMRF10,visual arts,visual arts,21,3891.0,FOUND,visual arts
+FDULT82W,Math,math,1,2171.3,FOUND,math
+FDULT82W,english,english,2,1822.8,FOUND,english
+FDULT82W,Art,art,3,993.8,FOUND,art
+FDULT82W,History,history,4,2137.0,FOUND,history
+FDULT82W,Music,music,5,1731.2,FOUND,music
+FDULT82W,Physics,physics,6,4781.6,FOUND,physics
+FDULT82W,Biology,biology,7,3371.3,FOUND,biology
+FDULT82W,History,history,8,5097.4,FOUND,history
+FDULT82W,Psychology,psychology,9,2883.3,FOUND,psychology
+FDULT82W,Gender Studies,gender studies,10,8748.1,FOUND,gender studies
+FDULT82W,Sociology,sociology,11,2620.9,FOUND,sociology
+FDULT82W,Engineering,engineering,12,13422.4,FOUND,engineering
+FDULT82W,Communications,communications,13,5456.6,FOUND,communications
+FDULT82W,Nursing,nursing,14,1569.1,FOUND,nursing
+FJYUEQN8,Government,government,1,1865.0,FOUND,government
+FJYUEQN8,english,english,2,1642.0,FOUND,english
+FJYUEQN8,math,math,3,725.0,FOUND,math
+FJYUEQN8,physics,physics,4,1931.0,FOUND,physics
+FJYUEQN8,neuroscience,neuroscience,5,1633.0,FOUND,neuroscience
+FJYUEQN8,biology,biology,6,1503.0,FOUND,biology
+FJYUEQN8,biochemistry,biochemistry,7,2126.0,FOUND,biochemistry
+FJYUEQN8,german,german,8,3566.0,FOUND,german
+FJYUEQN8,chinese,chinese,9,1456.0,FOUND,chinese
+FJYUEQN8,japanese,japanese,10,1502.0,FOUND,japanese
+FJYUEQN8,italian studies,italian studies,11,2060.0,FOUND,italian studies
+FJYUEQN8,hispanic studies,hispanic studies,12,2452.0,FOUND,hispanic studies
+FJYUEQN8,francophone studies,francophone studies,13,2871.0,FOUND,francophone studies
+FJYUEQN8,philosophy,philosophy,14,2590.0,FOUND,philosophy
+FJYUEQN8,education,education,15,4794.0,FOUND,education
+FJYUEQN8,theatre,theatre,16,6837.0,FOUND,theatre
+FJYUEQN8,asian studies,asian studies,17,1946.0,FOUND,asian studies
+FJYUEQN8,africana studies,africana studies,18,2939.0,FOUND,africana studies
+FJYUEQN8,meena,meena,19,993.0,FOUND,meena
+FJYUEQN8,reees,reees,20,2514.0,FOUND,reees
+FJYUEQN8,arabic,arabic,21,1637.0,FOUND,arabic
+FJYUEQN8,economics,economics,22,4313.0,FOUND,economics
+FYE2JV3H,Biology,biology,1,2732.0,FOUND,biology
+FYE2JV3H,Neuroscience,neuroscience,2,2556.0,FOUND,neuroscience
+FYE2JV3H,Psychology,psychology,3,10410.0,FOUND,psychology
+FYE2JV3H,Anthropology,anthropology,4,2646.0,FOUND,anthropology
+FYE2JV3H,Chemistry,chemistry,5,1679.0,FOUND,chemistry
+FYE2JV3H,Biochemistry,biochemistry,6,4090.0,FOUND,biochemistry
+FYE2JV3H,Dance,dance,7,872.0,FOUND,dance
+FYE2JV3H,Visual Arts,visual arts,8,2619.0,FOUND,visual arts
+FYE2JV3H,Religion,religion,9,4024.0,FOUND,religion
+FYE2JV3H,History,history,10,3493.0,FOUND,history
+FYE2JV3H,Math,math,11,6478.0,FOUND,math
+FYE2JV3H,Economics,economics,12,2061.0,FOUND,economics
+FYE2JV3H,Digital Computational Studies,digital computational studies,13,6957.0,FOUND,digital computational studies
+FYE2JV3H,Zoology,zoology,14,4395.0,FOUND,zoology
+G8B6AJJV,biology,biology,1,2183.0,FOUND,biology
+G8B6AJJV,chemistry,chemistry,2,1735.0,FOUND,chemistry
+G8B6AJJV,psychology,psychology,3,2320.0,FOUND,psychology
+G8B6AJJV,sociology,sociology,4,2271.0,FOUND,sociology
+G8B6AJJV,engineering,engineering,5,2179.0,FOUND,engineering
+G8B6AJJV,education,education,6,3139.0,FOUND,education
+G8B6AJJV,math,math,7,932.0,FOUND,math
+G8B6AJJV,physics,physics,8,1857.0,FOUND,physics
+G8B6AJJV,history,history,9,5094.0,FOUND,history
+G8B6AJJV,asian studies,asian studies,10,2342.0,FOUND,asian studies
+G8B6AJJV,spanish,spanish,11,6408.0,FOUND,spanish
+G8B6AJJV,french,french,12,2777.0,FOUND,french
+G8B6AJJV,arabic,arabic,13,1296.0,FOUND,arabic
+G8B6AJJV,hispanic studies,hispanic studies,14,9442.0,FOUND,hispanic studies
+G8B6AJJV,theology,theology,15,2502.0,FOUND,theology
+G8B6AJJV,dance,dance,16,1327.0,FOUND,dance
+G8B6AJJV,art,art,17,2118.0,FOUND,art
+G8B6AJJV,music,music,18,2871.0,FOUND,music
+GNLFFB4P,sociology,sociology,1,2442.7,FOUND,sociology
+GNLFFB4P,math,math,2,770.8,FOUND,math
+GNLFFB4P,government,government,3,1954.0,FOUND,government
+GNLFFB4P,biology,biology,4,2808.2,FOUND,biology
+GNLFFB4P,neurosciene,neuroscience,5,2593.9,FOUND,neuroscience
+GNLFFB4P,anthropology,anthropology,6,5616.8,FOUND,anthropology
+GNLFFB4P,psychology,psychology,7,2432.5,FOUND,psychology
+GNLFFB4P,art,art,8,724.5,FOUND,art
+GNLFFB4P,art history,art history,9,2614.8,FOUND,art history
+GNLFFB4P,political science,political science,10,3794.8,FOUND,political science
+GNLFFB4P,english,english,11,1404.1,FOUND,english
+GNLFFB4P,spanish,spanish,12,1777.0,FOUND,spanish
+GNLFFB4P,german,german,13,1556.1,FOUND,german
+GNLFFB4P,italian,italian,14,2846.1,FOUND,italian
+GNLFFB4P,economics,economics,15,3771.5,FOUND,economics
+GNLFFB4P,physics,physics,16,2988.9,FOUND,physics
+GNLFFB4P,history,history,17,3878.6,FOUND,history
+GNLFFB4P,biochemistry,biochemistry,18,4450.9,FOUND,biochemistry
+GNLFFB4P,chemistry,chemistry,19,1728.7,FOUND,chemistry
+GNLFFB4P,american studies,american studies,20,6121.2,FOUND,american studies
+GNLFFB4P,gender studies,gender studies,21,2360.8,FOUND,gender studies
+H6D2C4VR,Sociology,sociology,1,2348.0,FOUND,sociology
+H6D2C4VR,Math,math,2,561.0,FOUND,math
+H6D2C4VR,Biology,biology,3,989.0,FOUND,biology
+H6D2C4VR,Chemistry,chemistry,4,1359.0,FOUND,chemistry
+H6D2C4VR,Physics,physics,5,1157.0,FOUND,physics
+H6D2C4VR,English,english,6,2288.0,FOUND,english
+H6D2C4VR,Chinese,chinese,7,824.0,FOUND,chinese
+H6D2C4VR,French,french,8,1902.0,FOUND,french
+H6D2C4VR,German,german,9,1053.0,FOUND,german
+H6D2C4VR,Italian,italian,10,1995.0,FOUND,italian
+H6D2C4VR,Japanese,japanese,11,5013.0,FOUND,japanese
+H6D2C4VR,East Asian Studies,east asian studies,12,2561.0,FOUND,east asian studies
+H6D2C4VR,Middle East & North African,middle east & north african,13,4893.0,FOUND,middle east & north african
+HCBTBYHS,math,math,1,1296.0,FOUND,math
+HCBTBYHS,english,english,2,1032.0,FOUND,english
+HCBTBYHS,history,history,3,1639.0,FOUND,history
+HCBTBYHS,philosophy,philosophy,4,2254.0,FOUND,philosophy
+HCBTBYHS,nursing,nursing,5,2054.0,FOUND,nursing
+HCBTBYHS,spanish,spanish,6,2076.0,FOUND,spanish
+HCBTBYHS,german,german,7,3866.0,FOUND,german
+HCBTBYHS,cinema studies,cinema studies,8,4034.0,FOUND,cinema studies
+HCBTBYHS,environmental studies,environmental studies,9,3546.0,FOUND,environmental studies
+HCBTBYHS,engineering,engineering,10,2816.0,FOUND,engineering
+HCBTBYHS,art,art,11,5441.0,FOUND,art
+HCBTBYHS,music,music,12,942.0,FOUND,music
+HCBTBYHS,dance,dance,13,1477.0,FOUND,dance
+HCBTBYHS,philosophy,philosophy,14,2139.0,FOUND,philosophy
+HCBTBYHS,psychology,psychology,15,3136.0,FOUND,psychology
+HCBTBYHS,business,business,16,1499.0,FOUND,business
+HCBTBYHS,economics,economics,17,3116.0,FOUND,economics
+HCBTBYHS,gender studies,gender studies,18,3899.0,FOUND,gender studies
+HCBTBYHS,africana studies,africana studies,19,3148.0,FOUND,africana studies
+HCBTBYHS,biology,biology,20,1220.0,FOUND,biology
+HCBTBYHS,chemistry,chemistry,21,1181.0,FOUND,chemistry
+HCBTBYHS,physics,physics,22,1697.0,FOUND,physics
+HCBTBYHS,computer science,computer science,23,2844.0,FOUND,computer science
+HZP27937,biology,biology,1,2484.0,FOUND,biology
+HZP27937,biochemistry,biochemistry,2,2812.0,FOUND,biochemistry
+HZP27937,chemistry,chemistry,3,3012.0,FOUND,chemistry
+HZP27937,neuroscience,neuroscience,4,4128.0,FOUND,neuroscience
+HZP27937,anthropology,anthropology,5,3424.0,FOUND,anthropology
+HZP27937,sociology,sociology,6,2327.0,FOUND,sociology
+HZP27937,psychology,psychology,7,2090.0,FOUND,psychology
+HZP27937,math,math,8,2646.0,FOUND,math
+HZP27937,computer science,computer science,9,4083.0,FOUND,computer science
+HZP27937,phsyics,physics,10,2483.0,FOUND,physics
+HZP27937,english,english,11,2304.0,FOUND,english
+HZP27937,greek,greek,12,1735.0,FOUND,greek
+HZP27937,german,german,13,1321.0,FOUND,german
+HZP27937,spanish,spanish,14,2420.0,FOUND,spanish
+HZP27937,education,education,15,1780.0,FOUND,education
+HZP27937,philosophy,philosophy,16,2515.0,FOUND,philosophy
+HZP27937,government,government,17,2136.0,FOUND,government
+HZP27937,hater,hater,18,4911.0,FOUND,hater
+HZP27937,theater,theater,19,3075.0,FOUND,theater
+HZP27937,gender studies,gender studies,20,6367.0,FOUND,gender studies
+IEOJ1IW3,francophone studies,francophone studies,1,4136.7,FOUND,francophone studies
+IEOJ1IW3,english,english,2,2497.6,FOUND,english
+IEOJ1IW3,government and law,government and law,3,6901.1,FOUND,government and law
+IEOJ1IW3,asian studies,asian studies,4,3580.9,FOUND,asian studies
+IEOJ1IW3,computer science,computer science,5,3791.8,FOUND,computer science
+IEOJ1IW3,economics,economics,6,1733.1,FOUND,economics
+IEOJ1IW3,africana studies,africana studies,7,10418.0,FOUND,africana studies
+IEOJ1IW3,gender studies,gender studies,8,6607.1,FOUND,gender studies
+IEOJ1IW3,psychology,psychology,9,5417.7,FOUND,psychology
+IN92PH3J,communications,communications,1,4292.9,FOUND,communications
+IN92PH3J,math,math,2,962.5,FOUND,math
+IN92PH3J,physics,physics,3,1298.8,FOUND,physics
+IN92PH3J,fine arts,fine arts,4,3300.1,FOUND,fine arts
+IN92PH3J,music,music,5,1238.5,FOUND,music
+IN92PH3J,anthropology,anthropology,6,5085.5,FOUND,anthropology
+IN92PH3J,neuroscience,neuroscience,7,3171.3,FOUND,neuroscience
+IN92PH3J,premed,pre-med,8,1783.8,FOUND,pre-med
+IN92PH3J,biology,biology,9,2662.2,FOUND,biology
+IN92PH3J,chemistry,chemistry,10,2322.8,FOUND,chemistry
+IN92PH3J,english,english,11,4180.0,FOUND,english
+IN92PH3J,classics,classics,12,1221.8,FOUND,classics
+IN92PH3J,history,history,13,9227.3,FOUND,history
+IN92PH3J,philosophy,philosophy,14,3658.2,FOUND,philosophy
+IN92PH3J,archaeology,archaeology,15,7699.8,FOUND,archaeology
+IN92PH3J,architecture,architecture,16,2701.7,FOUND,architecture
+IN92PH3J,engineering,engineering,17,3262.3,FOUND,engineering
+IRFHWRXF,english,english,1,1467.0,FOUND,english
+IRFHWRXF,art history,art history,2,1409.4,FOUND,art history
+IRFHWRXF,sociology,sociology,3,2493.6,FOUND,sociology
+IRFHWRXF,biology,biology,4,2347.3,FOUND,biology
+IRFHWRXF,biochemistry,biochemistry,5,2817.8,FOUND,biochemistry
+IRFHWRXF,ecology,ecology,6,879.7,FOUND,ecology
+IRFHWRXF,physic,physics,7,1286.9,FOUND,physics
+IRFHWRXF,computer science,computer science,8,3498.5,FOUND,computer science
+IRFHWRXF,engineering,engineering,9,1263.9,FOUND,engineering
+IRFHWRXF,linguistics,linguistics,10,5141.4,FOUND,linguistics
+IRFHWRXF,hispanic studies,hispanic studies,11,2225.3,FOUND,hispanic studies
+IRFHWRXF,francophone studies,francophone studies,12,2820.0,FOUND,francophone studies
+IRFHWRXF,psychology,psychology,13,5063.2,FOUND,psychology
+IRFHWRXF,environmental studies,environmental studies,14,8049.8,FOUND,environmental studies
+IRFHWRXF,creative writing,creative writing,15,1908.6,FOUND,creative writing
+IRFHWRXF,visual arts,visual arts,16,1891.6,FOUND,visual arts
+IRFHWRXF,music,music,17,1586.1,FOUND,music
+IRFHWRXF,performing arts,performing arts,18,4247.1,FOUND,performing arts
+IRFHWRXF,dance,dance,19,2270.0,FOUND,dance
+IRFHWRXF,history,history,20,5166.9,FOUND,history
+J8N7DCDH,chem,chemistry,1,1360.0,FOUND,chemistry
+J8N7DCDH,psycholgy,psychology,2,1897.0,FOUND,psychology
+J8N7DCDH,government and legal studies,government and legal studies,3,7049.0,FOUND,government and legal studies
+J8N7DCDH,bio,biology,4,1306.0,FOUND,biology
+J8N7DCDH,neurochem,neurochemistry,5,2166.0,FOUND,neurochemistry
+J8N7DCDH,history,history,6,2083.0,FOUND,history
+J8N7DCDH,english,english,7,1637.0,FOUND,english
+J8N7DCDH,russian,russian,8,4712.0,FOUND,russian
+J8N7DCDH,russian,russian,9,8569.0,FOUND,russian
+J8N7DCDH,dance,dance,10,3123.0,FOUND,dance
+J8N7DCDH,film,film studies,11,1487.0,FOUND,film studies
+J8N7DCDH,computer science,computer science,12,6636.0,FOUND,computer science
+J8N7DCDH,music,music,13,6536.0,FOUND,music
+J8N7DCDH,latin,latin,14,7214.0,FOUND,latin
+JDVDZARM,mathematics,mathematics,1,3665.4,FOUND,mathematics
+JDVDZARM,chemistry,chemistry,2,2052.6,FOUND,chemistry
+JDVDZARM,biology,biology,3,1996.1,FOUND,biology
+JDVDZARM,finance,finance,4,1271.9,FOUND,finance
+JDVDZARM,business,business,5,3151.9,FOUND,business
+JDVDZARM,philosophy,philosophy,6,2830.8,FOUND,philosophy
+JDVDZARM,engineering,engineering,7,8322.8,FOUND,engineering
+JDVDZARM,physics,physics,8,4881.5,FOUND,physics
+JDVDZARM,music,music,9,4199.3,FOUND,music
+JDVDZARM,theatre,theatre,10,4527.9,FOUND,theatre
+JDVDZARM,art history,art history,11,4434.9,FOUND,art history
+JDVDZARM,computer science,computer science,12,7566.2,FOUND,computer science
+JDVDZARM,geology,geology,13,4050.6,FOUND,geology
+JDVDZARM,geophysics,geophysics,14,2699.6,FOUND,geophysics
+JEW0DH9D,math,math,1,1005.8,FOUND,math
+JEW0DH9D,chemistry,chemistry,2,3425.7,FOUND,chemistry
+JEW0DH9D,asian studies,asian studies,3,6153.0,FOUND,asian studies
+JEW0DH9D,urban studies,urban studies,4,2116.5,FOUND,urban studies
+JEW0DH9D,sociology,sociology,5,4035.4,FOUND,sociology
+JEW0DH9D,psychology,psychology,6,2752.8,FOUND,psychology
+JEW0DH9D,nueroscience,neuroscience,7,3156.7,FOUND,neuroscience
+JEW0DH9D,envrionmental science,environmental science,8,3276.4,FOUND,environmental science
+JEW0DH9D,government,government,9,1096.5,FOUND,government
+JEW0DH9D,theather,theatre,10,5234.6,FOUND,theatre
+JEW0DH9D,art,art,11,1098.5,FOUND,art
+JEW0DH9D,gender and sexualitiy studies,gender and sexuality studies,12,9951.1,FOUND,gender and sexuality studies
+JEW0DH9D,biology,biology,13,6603.0,FOUND,biology
+JEW0DH9D,biochemistry,biochemistry,14,3445.2,FOUND,biochemistry
+JEW0DH9D,education,education,15,2816.9,FOUND,education
+JIMIPV7S,spanish,spanish,4,1435.6,FOUND,spanish
+JIMIPV7S,french,french,5,4214.9,FOUND,french
+JIMIPV7S,math,math,6,3018.4,FOUND,math
+JIMIPV7S,economics,economics,7,3463.1,FOUND,economics
+JIMIPV7S,poly sci,poly sci,8,3308.8,EXCLUDE,EXCLUDE
+JIMIPV7S,environmental sciencw,environmental science,9,10326.6,FOUND,environmental science
+JIMIPV7S,EOS,eos,10,6864.2,FOUND,eos
+JIMIPV7S,compsci,compsci,11,6428.4,REPLACE,comp sci
+JIMIPV7S,chem,chem,12,11639.3,FOUND,chem
+JIMIPV7S,bio,bio,13,967.8,FOUND,bio
+JIMIPV7S,psychology,psychology,1,3922.9,FOUND,psychology
+JIMIPV7S,classics,classics,2,1841.9,FOUND,classics
+JIMIPV7S,italian,italian,3,1991.2,FOUND,italian
+K6LTYZJH,government,government,1,2315.0,FOUND,government
+K6LTYZJH,neuroscience,neuroscience,2,4334.0,FOUND,neuroscience
+K6LTYZJH,biochemistry,biochemistry,3,4664.0,FOUND,biochemistry
+K6LTYZJH,religious studies,religious studies,4,6647.0,FOUND,religious studies
+K6LTYZJH,communcations,communications,5,12109.0,FOUND,communications
+K6LTYZJH,acting,acting,6,1235.0,EXCLUDE,EXCLUDE
+K6LTYZJH,literature,literature,7,1729.0,FOUND,literature
+K6LTYZJH,computer science,computer science,8,3099.0,FOUND,computer science
+K6LTYZJH,undecided,undecided,9,1875.0,EXCLUDE,EXCLUDE
+K6LTYZJH,architecture,architecture,10,6295.0,FOUND,architecture
+K6LTYZJH,engineering,engineering,11,2100.0,FOUND,engineering
+K6LTYZJH,pre-med,pre-med,12,5078.0,FOUND,pre-med
+K6LTYZJH,biology,biology,13,2428.0,FOUND,biology
+KMXD4OZC,chinese,chinese,1,1169.5,FOUND,chinese
+KMXD4OZC,hispanic studies,hispanic studies,2,2570.4,FOUND,hispanic studies
+KMXD4OZC,asian studies,asian studies,3,2413.2,FOUND,asian studies
+KMXD4OZC,psychology,psychology,4,1840.3,FOUND,psychology
+KMXD4OZC,education,education,5,918.9,FOUND,education
+KMXD4OZC,history,history,6,2429.1,FOUND,history
+KMXD4OZC,english,english,7,1015.4,FOUND,english
+KMXD4OZC,econ,econ,8,2912.9,FOUND,econ
+KMXD4OZC,gov,gov,9,609.2,FOUND,gov
+KMXD4OZC,political science,political science,10,16823.0,FOUND,political science
+KMXD4OZC,anthro,anthropology,11,2041.4,FOUND,anthropology
+KMXD4OZC,law,law,12,1101.9,FOUND,law
+KMXD4OZC,urban studies,urban studies,13,3978.8,FOUND,urban studies
+KMXD4OZC,environmental,environmental,14,3233.0,EXCLUDE,EXCLUDE
+KMXD4OZC,music,music,15,682.6,FOUND,music
+KMXD4OZC,gender studies,gender studies,16,7362.1,FOUND,gender studies
+KZ9S5MPC,Biology,biology,1,2265.0,FOUND,biology
+KZ9S5MPC,Neuroscience,neuroscience,2,4293.0,FOUND,neuroscience
+KZ9S5MPC,communications,communications,3,2503.0,FOUND,communications
+KZ9S5MPC,Government and Legal studies,government and legal studies,4,7622.0,FOUND,government and legal studies
+KZ9S5MPC,sociology,sociology,5,1870.0,FOUND,sociology
+KZ9S5MPC,economics,economics,6,1770.0,FOUND,economics
+KZ9S5MPC,earth and oceanographic studies,earth and oceanographic studies,7,7053.0,FOUND,earth and oceanographic studies
+KZ9S5MPC,math,math,8,2624.0,FOUND,math
+KZ9S5MPC,english,english,9,3205.0,FOUND,english
+KZ9S5MPC,history,history,10,1380.0,FOUND,history
+KZ9S5MPC,French,french,11,4719.0,FOUND,french
+KZ9S5MPC,German,german,12,1767.0,FOUND,german
+KZ9S5MPC,Russian,russian,13,1569.0,FOUND,russian
+KZ9S5MPC,Spanish,spanish,14,4283.0,FOUND,spanish
+KZ9S5MPC,Theater and Dance,theater and dance,15,4578.0,FOUND,theater and dance
+KZ9S5MPC,Religion,religion,16,5141.0,FOUND,religion
+KZ9S5MPC,biology,biology,17,3024.0,FOUND,biology
+LJSMGNV0,Neuro,neuro,1,3182.0,EXCLUDE,EXCLUDE
+LJSMGNV0,Psych,psychology,2,1331.0,FOUND,psychology
+LJSMGNV0,Sneaker Design,sneaker design,3,2358.0,EXCLUDE,EXCLUDE
+LJSMGNV0,Visual Arts,visual arts,4,4467.0,FOUND,visual arts
+LJSMGNV0,Biology,biology,5,3762.0,FOUND,biology
+LJSMGNV0,Chemistry,chemistry,6,1482.0,FOUND,chemistry
+LJSMGNV0,English,english,7,7258.0,FOUND,english
+LJSMGNV0,History,history,8,2517.0,FOUND,history
+LJSMGNV0,Government/Poly Sci,government/political science,9,2807.0,EXCLUDE,EXCLUDE
+LJSMGNV0,Africana Studies,africana studies,10,6839.0,FOUND,africana studies
+LJSMGNV0,Sociology,sociology,11,1591.0,FOUND,sociology
+LJSMGNV0,Anthropology,anthropology,12,2814.0,FOUND,anthropology
+LJSMGNV0,Music,music,13,1098.0,FOUND,music
+LJSMGNV0,Italian,italian,14,7435.0,FOUND,italian
+LJSMGNV0,Spanish,spanish,15,1643.0,FOUND,spanish
+LJSMGNV0,French,french,16,867.0,FOUND,french
+LJSMGNV0,German,german,17,2313.0,FOUND,german
+LJSMGNV0,Russian,russian,18,919.0,FOUND,russian
+LN8REBYY,economic,economics,1,2872.8,FOUND,economics
+LN8REBYY,government,government,2,1799.9,FOUND,government
+LN8REBYY,ocean science,ocean science,3,2263.4,EXCLUDE,EXCLUDE
+LN8REBYY,nursing,nursing,4,885.8,FOUND,nursing
+LN8REBYY,education,education,5,3047.1,FOUND,education
+LN8REBYY,english,english,6,2811.7,FOUND,english
+LN8REBYY,history,history,7,1142.5,FOUND,history
+LN8REBYY,german,german,8,1121.0,FOUND,german
+LN8REBYY,russian,russian,9,1374.0,FOUND,russian
+LN8REBYY,french,french,10,2325.6,FOUND,french
+LN8REBYY,chemistry,chemistry,11,3625.5,FOUND,chemistry
+LN8REBYY,physics,physics,12,2737.7,FOUND,physics
+LN8REBYY,kinesiology,kinesiology,13,3558.9,FOUND,kinesiology
+LN8REBYY,studio art,studio art,14,13541.0,EXCLUDE,EXCLUDE
+LN8REBYY,visual art,visual art,15,1749.6,REPLACE,visual arts
+LN8REBYY,film,film,16,2985.6,FOUND,film
+LN8REBYY,philosophy,philosophy,17,10869.3,FOUND,philosophy
+LUKGQM9Q,Biology,biology,1,2587.4,FOUND,biology
+LUKGQM9Q,Chemistry,chemistry,2,1974.5,FOUND,chemistry
+LUKGQM9Q,Biochemistry,biochemistry,3,2749.8,FOUND,biochemistry
+LUKGQM9Q,Dance,dance,4,1312.3,FOUND,dance
+LUKGQM9Q,Theater,theater,5,2439.0,FOUND,theater
+LUKGQM9Q,Psychology,psychology,6,2952.7,FOUND,psychology
+LUKGQM9Q,Philosophy,philosophy,7,4041.6,FOUND,philosophy
+LUKGQM9Q,History,history,8,1450.0,FOUND,history
+LUKGQM9Q,Education,education,9,1649.9,FOUND,education
+LUKGQM9Q,English,english,10,1345.9,FOUND,english
+LUKGQM9Q,Genetics,genetics,11,11212.5,EXCLUDE,EXCLUDE
+LUKGQM9Q,Anthropology,anthropology,12,10299.9,FOUND,anthropology
+LUKGQM9Q,Sociology,sociology,13,1841.7,FOUND,sociology
+LUKGQM9Q,Archeology,archeology,14,3479.6,FOUND,archeology
+LUKGQM9Q,Spanish,spanish,15,6258.4,FOUND,spanish
+LUKGQM9Q,Latin,latin,16,1786.9,FOUND,latin
+MCYP84X4,Math,math,1,1051.0,FOUND,math
+MCYP84X4,Chemistry,chemistry,2,1998.0,FOUND,chemistry
+MCYP84X4,Biology,biology,3,1691.0,FOUND,biology
+MCYP84X4,BioChem,biochemistry,4,1400.0,FOUND,biochemistry
+MCYP84X4,Psychology,psychology,5,3567.0,FOUND,psychology
+MCYP84X4,Sociology,sociology,6,1853.0,FOUND,sociology
+MCYP84X4,Computer Science,computer science,7,3013.0,FOUND,computer science
+MCYP84X4,Political Science,political science,8,3610.0,FOUND,political science
+MCYP84X4,Physics,physics,9,2335.0,FOUND,physics
+MCYP84X4,Engineering,engineering,10,2298.0,FOUND,engineering
+MCYP84X4,Microbiology,microbiology,11,11533.0,EXCLUDE,EXCLUDE
+MCYP84X4,Communications,communications,12,5367.0,FOUND,communications
+MCYP84X4,Business,business,13,2298.0,FOUND,business
+MCYP84X4,Economics,economics,14,2661.0,FOUND,economics
+MCYP84X4,Finance,finance,15,3672.0,FOUND,finance
+MCYP84X4,Digital and Computational Studies,digital and computational studies,16,6642.0,EXCLUDE,EXCLUDE
+MCYP84X4,Data Science,data science,17,4559.0,FOUND,data science
+N9V0QKO1,gov,government,1,1571.0,FOUND,government
+N9V0QKO1,poli sci,political science,2,3342.0,FOUND,political science
+N9V0QKO1,classics,classics,3,1436.0,FOUND,classics
+N9V0QKO1,linguistics,linguistics,4,2242.0,FOUND,linguistics
+N9V0QKO1,econ,economics,5,1289.0,FOUND,economics
+N9V0QKO1,gsws,gsws,6,3816.0,FOUND,gsws
+N9V0QKO1,laclas,laclas,7,4021.0,FOUND,laclas
+N9V0QKO1,africana studies,africana studies,8,6051.0,FOUND,africana studies
+N9V0QKO1,mena,mena,9,4159.0,REPLACE,meena
+N9V0QKO1,film studies,film studies,10,6375.0,FOUND,film studies
+N9V0QKO1,visual arts,visual arts,11,2324.0,FOUND,visual arts
+N9V0QKO1,fine,fine arts,12,736.0,FOUND,fine arts
+N9V0QKO1,arts,arts,13,1175.0,REPLACE,art
+N9V0QKO1,studio art,studio art,14,4278.0,EXCLUDE,EXCLUDE
+N9V0QKO1,physics,physics,15,3788.0,FOUND,physics
+N9V0QKO1,chem,chemistry,16,858.0,FOUND,chemistry
+N9V0QKO1,bio,biology,17,788.0,FOUND,biology
+N9V0QKO1,biochem,biochemistry,18,1722.0,FOUND,biochemistry
+N9V0QKO1,business,business,19,5778.0,FOUND,business
+NHCBLFL1,mathematics,mathematics,1,3218.0,FOUND,mathematics
+NHCBLFL1,psychology,psychology,2,2009.0,FOUND,psychology
+NHCBLFL1,computer science,computer science,3,2819.0,FOUND,computer science
+NHCBLFL1,physics,physics,4,1375.0,FOUND,physics
+NHCBLFL1,chemistry,chemistry,5,2011.0,FOUND,chemistry
+NHCBLFL1,biology,biology,6,1852.0,FOUND,biology
+NHCBLFL1,biochem,biochemistry,7,3148.0,FOUND,biochemistry
+NHCBLFL1,neruro,neuro,8,1185.0,EXCLUDE,EXCLUDE
+NHCBLFL1,philosophy,philosophy,9,3419.0,FOUND,philosophy
+NHCBLFL1,psychology,psychology,10,1718.0,FOUND,psychology
+NHCBLFL1,sociology,sociology,11,1896.0,FOUND,sociology
+NHCBLFL1,economics,economics,12,2367.0,FOUND,economics
+NHCBLFL1,english,english,13,2580.0,FOUND,english
+NHCBLFL1,EOS,eos,14,2753.0,FOUND,eos
+NHCBLFL1,GSWS,gsws,15,2213.0,FOUND,gsws
+NHCBLFL1,urban studies,urban studies,16,4358.0,FOUND,urban studies
+NHCBLFL1,education,education,17,5452.0,FOUND,education
+NHCBLFL1,environmental studies,environmental studies,18,4681.0,FOUND,environmental studies
+NHCBLFL1,government,government,19,7960.0,FOUND,government
+NRXHKYAS,Biology,biology,1,2701.1,FOUND,biology
+NRXHKYAS,Philosophy,philosophy,2,3625.8,FOUND,philosophy
+NRXHKYAS,neuroscience,neuroscience,3,5240.8,FOUND,neuroscience
+NRXHKYAS,biochem,biochemistry,4,2162.9,FOUND,biochemistry
+NRXHKYAS,francophone studies,francophone studies,5,21976.7,FOUND,francophone studies
+NRXHKYAS,africana studies,africana studies,6,8300.4,FOUND,africana studies
+NXGNLGFN,biology,biology,1,1900.0,FOUND,biology
+NXGNLGFN,psychology,psychology,2,1386.0,FOUND,psychology
+NXGNLGFN,chemistry,chemistry,3,1520.0,FOUND,chemistry
+NXGNLGFN,physics,physics,4,989.0,FOUND,physics
+NXGNLGFN,neuroscience,neuroscience,5,1584.0,FOUND,neuroscience
+NXGNLGFN,government,government,6,1133.0,FOUND,government
+NXGNLGFN,econonomics,economics,7,3210.0,FOUND,economics
+NXGNLGFN,history,history,8,1128.0,FOUND,history
+NXGNLGFN,english,english,9,997.0,FOUND,english
+NXGNLGFN,gender studies,gender studies,10,5303.0,FOUND,gender studies
+NXGNLGFN,environmental studies,environmental studies,11,3115.0,FOUND,environmental studies
+NXGNLGFN,earth and oceonographic sciences,earth and oceanographic sciences,12,7393.0,EXCLUDE,EXCLUDE
+NXGNLGFN,hispanic studie,hispanic studies,13,5219.0,FOUND,hispanic studies
+NXGNLGFN,francophone studies,francophone studies,14,3098.0,FOUND,francophone studies
+NXGNLGFN,romance laanguages and literatures,romance languages and literatures,15,3665.0,EXCLUDE,EXCLUDE
+NXGNLGFN,asian studies,asian studies,16,3966.0,FOUND,asian studies
+NXGNLGFN,middle eastern and North African studies,middle eastern and north african studies,17,5584.0,EXCLUDE,EXCLUDE
+NXGNLGFN,cinema studies,cinema studies,18,1875.0,FOUND,cinema studies
+NZ8ZTZHG,accounting,accounting,1,5323.0,FOUND,accounting
+NZ8ZTZHG,Science,science,2,4084.0,EXCLUDE,EXCLUDE
+NZ8ZTZHG,chemistry,chemistry,3,4184.0,FOUND,chemistry
+NZ8ZTZHG,psychology,psychology,4,7711.0,FOUND,psychology
+NZ8ZTZHG,Math,math,5,2520.0,FOUND,math
+NZ8ZTZHG,Art history,art history,6,7624.0,FOUND,art history
+NZ8ZTZHG,Computer science,computer science,7,5922.0,FOUND,computer science
+NZ8ZTZHG,Biology,biology,8,4637.0,FOUND,biology
+O4NB1X6B,economics,economics,1,2428.9,FOUND,economics
+O4NB1X6B,biology,biology,2,1699.2,FOUND,biology
+O4NB1X6B,chemistry,chemistry,3,5621.6,FOUND,chemistry
+O4NB1X6B,mathematics,mathematics,4,2693.1,FOUND,mathematics
+O4NB1X6B,public policy,public policy,5,6517.8,EXCLUDE,EXCLUDE
+O4NB1X6B,government and legal studies,government and legal studies,6,3214.0,FOUND,government and legal studies
+O4NB1X6B,hispanic studies,hispanic studies,7,3283.8,FOUND,hispanic studies
+O4NB1X6B,chinese studies,chinese studies,8,6946.9,EXCLUDE,EXCLUDE
+O4NB1X6B,physics,physics,9,2375.1,FOUND,physics
+O4NB1X6B,psychology,psychology,10,3011.4,FOUND,psychology
+O4NB1X6B,arabic,arabic,11,1271.3,FOUND,arabic
+O4NB1X6B,francophone studies,francophone studies,12,3983.9,FOUND,francophone studies
+O4NB1X6B,italian studies,italian studies,13,2345.1,FOUND,italian studies
+O4NB1X6B,english,english,14,3806.9,FOUND,english
+O4NB1X6B,environmental science,environmental science,15,8500.5,FOUND,environmental science
+OEQ7A3BW,Psychology,psychology,1,7642.0,FOUND,psychology
+OEQ7A3BW,Film,film,2,1899.0,FOUND,film
+OEQ7A3BW,Sociology,sociology,3,3299.0,FOUND,sociology
+OEQ7A3BW,GSWS,gsws,4,2089.0,FOUND,gsws
+OEQ7A3BW,Govermental,governmental,5,3996.0,REPLACE,government
+OEQ7A3BW,Philosophy,philosophy,6,5615.0,FOUND,philosophy
+OEQ7A3BW,Maths,maths,7,1408.0,REPLACE,math
+OEQ7A3BW,Economics,economics,8,2580.0,FOUND,economics
+OEQ7A3BW,French,french,9,2717.0,FOUND,french
+OEQ7A3BW,English,english,10,2687.0,FOUND,english
+OEQ7A3BW,Italian,italian,11,2092.0,FOUND,italian
+OEQ7A3BW,Latinx Studies,latinx studies,12,6149.0,FOUND,latinx studies
+OEQ7A3BW,Anthropology,anthropology,13,8899.0,FOUND,anthropology
+OEQ7A3BW,Biochemistry,biochemistry,14,4468.0,FOUND,biochemistry
+OEQ7A3BW,Physics,physics,15,2284.0,FOUND,physics
+OUSZQD8K,engineering,engineering,1,2512.7,FOUND,engineering
+OUSZQD8K,math,math,2,1433.2,FOUND,math
+OUSZQD8K,physics,physics,3,2636.7,FOUND,physics
+OUSZQD8K,chemistry,chemistry,4,2775.4,FOUND,chemistry
+OUSZQD8K,chemical engineering,chemical engineering,5,4146.1,EXCLUDE,EXCLUDE
+OUSZQD8K,history,history,6,3380.4,FOUND,history
+OUSZQD8K,government,government,7,2151.0,FOUND,government
+OUSZQD8K,political science,political science,8,3773.9,FOUND,political science
+OUSZQD8K,english,english,9,6278.3,FOUND,english
+OUSZQD8K,spanish,spanish,10,1316.4,FOUND,spanish
+OUSZQD8K,latin american studies,latin american studies,11,4111.9,FOUND,latin american studies
+OUSZQD8K,french,french,12,2902.4,FOUND,french
+OUSZQD8K,german,german,13,1240.3,FOUND,german
+OUSZQD8K,communications,communications,14,3973.9,FOUND,communications
+OUSZQD8K,buisness,business,15,9143.2,FOUND,business
+OUSZQD8K,econ,econ,16,6440.6,FOUND,econ
+OX30M9NX,Psychology,psychology,1,3120.0,FOUND,psychology
+OX30M9NX,Philosophy,philosophy,2,1908.0,FOUND,philosophy
+OX30M9NX,Africana Studies,africana studies,3,2269.0,FOUND,africana studies
+OX30M9NX,History,history,4,1747.0,FOUND,history
+OX30M9NX,Government and Legal Studies,government and legal studies,5,4534.0,FOUND,government and legal studies
+OX30M9NX,Political Science,political science,6,2452.0,FOUND,political science
+OX30M9NX,engineering,engineering,7,1599.0,FOUND,engineering
+OX30M9NX,Chemistry,chemistry,8,5371.0,FOUND,chemistry
+OX30M9NX,Biology,biology,9,1557.0,FOUND,biology
+OX30M9NX,Physics,physics,10,1524.0,FOUND,physics
+OX30M9NX,Anthropology,anthropology,11,3310.0,FOUND,anthropology
+OX30M9NX,Romance Languages,romance languages,12,2072.0,FOUND,romance languages
+OX30M9NX,Mathematics,mathematics,13,4784.0,FOUND,mathematics
+OX30M9NX,Language,language,14,7385.0,FOUND,language
+OX30M9NX,Biochemistry,biochemistry,15,6694.0,FOUND,biochemistry
+OX30M9NX,Neuroscience,neuroscience,16,2940.0,FOUND,neuroscience
+PBNU471N,Neuroscience,neuroscience,1,5380.9,FOUND,neuroscience
+PBNU471N,Biology,biology,2,1825.0,FOUND,biology
+PBNU471N,Computer Science,computer science,3,7333.1,FOUND,computer science
+PBNU471N,Math,math,4,2133.1,FOUND,math
+PBNU471N,Economics,economics,5,8474.7,FOUND,economics
+PBNU471N,Business,business,6,2421.3,FOUND,business
+PBNU471N,Government,government,7,10573.4,FOUND,government
+PLC36LSR,Psychology,psychology,1,2718.9,FOUND,psychology
+PLC36LSR,Biology,biology,2,5521.9,FOUND,biology
+PLC36LSR,Philosophy,philosophy,3,6647.7,FOUND,philosophy
+PLC36LSR,Engineering,engineering,4,11532.7,FOUND,engineering
+PLC36LSR,Writing,writing,5,11840.0,EXCLUDE,EXCLUDE
+PLC36LSR,Business,business,6,4818.2,FOUND,business
+PLC36LSR,Math,math,7,2619.7,FOUND,math
+PLC36LSR,Spanish,spanish,8,5501.0,FOUND,spanish
+PLC36LSR,Biochemistry,biochemistry,9,8209.5,FOUND,biochemistry
+PLW1S0CA,Oceanography,oceanography,1,2688.0,FOUND,oceanography
+PLW1S0CA,English,english,2,1005.0,FOUND,english
+PLW1S0CA,Government and Legal Studies,government and legal studies,3,4174.0,FOUND,government and legal studies
+PLW1S0CA,Economics,economics,4,1537.0,FOUND,economics
+PLW1S0CA,Business,business,5,937.0,FOUND,business
+PLW1S0CA,Political Science,political science,6,3066.0,FOUND,political science
+PLW1S0CA,Chemistry,chemistry,7,4284.0,FOUND,chemistry
+PLW1S0CA,Biology,biology,8,1209.0,FOUND,biology
+PLW1S0CA,Physics,physics,9,1551.0,FOUND,physics
+PLW1S0CA,Environmental Studies,environmental studies,10,5405.0,FOUND,environmental studies
+PLW1S0CA,Cinema Studies,cinema studies,11,1887.0,FOUND,cinema studies
+PLW1S0CA,French,french,12,857.0,FOUND,french
+PLW1S0CA,German,german,13,908.0,FOUND,german
+PLW1S0CA,Gender and Women's Studies,gender and women's studies,14,12704.0,FOUND,gender and women's studies
+PLW1S0CA,Chinese,chinese,15,2279.0,FOUND,chinese
+PLW1S0CA,Asian Studies,asian studies,16,1926.0,FOUND,asian studies
+PLW1S0CA,Spanish,spanish,17,795.0,FOUND,spanish
+PLW1S0CA,Urban Studies,urban studies,18,10558.0,FOUND,urban studies
+Q3MFUDV9,Econ,econ,1,1377.8,FOUND,econ
+Q3MFUDV9,Gov,gov,2,3991.2,FOUND,gov
+Q3MFUDV9,English,english,3,2597.8,FOUND,english
+Q3MFUDV9,Physics,physics,4,3486.5,FOUND,physics
+Q3MFUDV9,Chem,chem,5,1345.9,FOUND,chem
+Q3MFUDV9,Biology,biology,6,1566.4,FOUND,biology
+Q3MFUDV9,Neuro,neuro,7,980.2,EXCLUDE,EXCLUDE
+Q3MFUDV9,Math,math,8,4149.1,FOUND,math
+Q3MFUDV9,Engineering,engineering,9,4039.9,FOUND,engineering
+Q3MFUDV9,Computer Science,computer science,10,3109.6,FOUND,computer science
+Q3MFUDV9,Chinese,chinese,11,6130.4,FOUND,chinese
+Q3MFUDV9,Franco Studies,franco studies,12,6427.7,EXCLUDE,EXCLUDE
+Q3MFUDV9,Psychology,psychology,13,7233.2,FOUND,psychology
+Q3MFUDV9,Philosophy,philosophy,14,3097.5,FOUND,philosophy
+Q3MFUDV9,Art,art,15,6052.0,FOUND,art
+QGT05169,Nursing,nursing,1,2802.0,FOUND,nursing
+QGT05169,Government and Legal Studies,government and legal studies,2,7858.0,FOUND,government and legal studies
+QGT05169,Economics,economics,3,3533.0,FOUND,economics
+QGT05169,Mathematics,mathematics,4,4171.0,FOUND,mathematics
+QGT05169,Psychology,psychology,5,6013.0,FOUND,psychology
+QGT05169,Film Studies,film studies,6,4759.0,FOUND,film studies
+QGT05169,Theater,theater,7,2761.0,FOUND,theater
+QGT05169,Computer Science,computer science,8,3637.0,FOUND,computer science
+QGT05169,Architecture,architecture,9,3134.0,FOUND,architecture
+QGT05169,music,music,10,3415.0,FOUND,music
+QGT05169,Romance languages,romance languages,11,6043.0,FOUND,romance languages
+QGT05169,Physics,physics,12,2190.0,FOUND,physics
+QGT05169,Mechanical engineering,mechanical engineering,13,5344.0,FOUND,mechanical engineering
+RLHDN7YZ,anthropology,anthropology,1,1904.1,FOUND,anthropology
+RLHDN7YZ,sociology,sociology,2,1225.0,FOUND,sociology
+RLHDN7YZ,art history,art history,3,1691.6,FOUND,art history
+RLHDN7YZ,french,french,4,1795.1,FOUND,french
+RLHDN7YZ,spanish,spanish,5,1519.2,FOUND,spanish
+RLHDN7YZ,italian,italian,6,816.1,FOUND,italian
+RLHDN7YZ,government,government,7,2153.1,FOUND,government
+RLHDN7YZ,biology,biology,8,1474.8,FOUND,biology
+RLHDN7YZ,chemistry,chemistry,9,1283.7,FOUND,chemistry
+RLHDN7YZ,biochemistry,biochemistry,10,1741.7,FOUND,biochemistry
+RLHDN7YZ,math,math,11,687.1,FOUND,math
+RLHDN7YZ,economics,economics,12,2145.6,FOUND,economics
+RLHDN7YZ,urban studies,urban studies,13,6539.5,FOUND,urban studies
+RLHDN7YZ,cinema studies,cinema studies,14,6880.8,FOUND,cinema studies
+RLHDN7YZ,russian,russian,15,2396.1,FOUND,russian
+RLHDN7YZ,middle eastern studies,middle eastern studies,16,5670.4,EXCLUDE,EXCLUDE
+RLHDN7YZ,asian studies,asian studies,17,2582.9,FOUND,asian studies
+RLHDN7YZ,art,art,18,2461.3,FOUND,art
+RLHDN7YZ,neuroscience,neuroscience,19,7810.9,FOUND,neuroscience
+RLHDN7YZ,law,law,20,3021.8,FOUND,law
+RS0Z27EB,math,math,1,2060.4,FOUND,math
+RS0Z27EB,comp sci,comp sci,2,3242.8,FOUND,comp sci
+RS0Z27EB,english,english,3,2430.4,FOUND,english
+RS0Z27EB,engineering,engineering,4,1946.4,FOUND,engineering
+RS0Z27EB,environmental science,environmental science,5,6589.3,FOUND,environmental science
+RS0Z27EB,physics,physics,6,2647.0,FOUND,physics
+RS0Z27EB,hispanic studies,hispanic studies,7,5092.1,FOUND,hispanic studies
+RS0Z27EB,marketing,marketing,8,10035.2,FOUND,marketing
+RS0Z27EB,business,business,9,1584.0,FOUND,business
+RS0Z27EB,econ,econ,10,1533.9,FOUND,econ
+RS0Z27EB,government,government,11,2950.4,FOUND,government
+RS0Z27EB,biology,biology,12,7172.3,FOUND,biology
+RS0Z27EB,chemistry,chemistry,13,3898.4,FOUND,chemistry
+RS0Z27EB,statistics,statistics,14,6475.2,FOUND,statistics
+S30LA614,biology,biology,1,2896.0,FOUND,biology
+S30LA614,english,english,2,2504.0,FOUND,english
+S30LA614,biochemistry,biochemistry,3,4907.0,FOUND,biochemistry
+S30LA614,neuroscience,neuroscience,4,2959.0,FOUND,neuroscience
+S30LA614,psychology,psychology,5,4137.0,FOUND,psychology
+S30LA614,classics,classics,6,6098.0,FOUND,classics
+S30LA614,philosophy,philosophy,7,5145.0,FOUND,philosophy
+S30LA614,education,education,8,1787.0,FOUND,education
+S30LA614,sociology,sociology,9,2116.0,FOUND,sociology
+S30LA614,africana studies,africana studies,10,3555.0,FOUND,africana studies
+S30LA614,gsws,gsws,11,2299.0,FOUND,gsws
+S30LA614,economics,economics,12,3002.0,FOUND,economics
+S30LA614,theatre,theatre,13,1393.0,FOUND,theatre
+S30LA614,mathematics,mathematics,14,4358.0,FOUND,mathematics
+S30LA614,rees,rees,15,1612.0,REPLACE,reees
+S30LA614,francophone,francophone,16,4668.0,FOUND,francophone
+S30LA614,latinx,latinx,17,1463.0,REPLACE,latin
+S87Q76NA,philosophy,philosophy,1,2423.3,FOUND,philosophy
+S87Q76NA,bio,bio,2,1234.1,FOUND,bio
+S87Q76NA,chem,chem,3,667.8,FOUND,chem
+S87Q76NA,biochem,biochem,4,1316.4,FOUND,biochem
+S87Q76NA,chemical physics,chemical physics,5,2064.9,EXCLUDE,EXCLUDE
+S87Q76NA,english,english,6,1199.1,FOUND,english
+S87Q76NA,history,history,7,1258.9,FOUND,history
+S87Q76NA,sociology,sociology,8,1683.1,FOUND,sociology
+S87Q76NA,psych,psych,9,1299.7,EXCLUDE,EXCLUDE
+S87Q76NA,math,math,10,1151.4,FOUND,math
+S87Q76NA,DCS,dcs,11,1207.2,FOUND,dcs
+S87Q76NA,Comp sci.,comp sci.,12,2269.9,REPLACE,comp sci
+S87Q76NA,latin studies,latin studies,13,4922.0,REPLACE,latinx studies
+S87Q76NA,francophone studies,francophone studies,14,4234.9,FOUND,francophone studies
+S87Q76NA,spanish,spanish,15,1543.3,FOUND,spanish
+S87Q76NA,Africana,africana,16,1925.7,EXCLUDE,EXCLUDE
+S87Q76NA,Urban Studies,urban studies,17,2238.8,FOUND,urban studies
+S87Q76NA,Visual art,visual art,18,6273.3,REPLACE,visual arts
+S87Q76NA,art history,art history,19,3003.7,FOUND,art history
+S87Q76NA,anthro,anthro,20,13473.3,EXCLUDE,EXCLUDE
+SENRROOG,art,art,1,1691.0,FOUND,art
+SENRROOG,art history,art history,2,1499.8,FOUND,art history
+SENRROOG,asian studies,asian studies,3,1839.2,FOUND,asian studies
+SENRROOG,africana studies,africana studies,4,2330.4,FOUND,africana studies
+SENRROOG,mathematics,mathematics,5,1466.8,FOUND,mathematics
+SENRROOG,history,history,6,1897.0,FOUND,history
+SENRROOG,government,government,7,3286.7,FOUND,government
+SENRROOG,nursing,nursing,8,3630.1,FOUND,nursing
+SENRROOG,english,english,9,3391.3,FOUND,english
+SENRROOG,spanish,spanish,10,1731.1,FOUND,spanish
+SENRROOG,french,french,11,1227.4,FOUND,french
+SENRROOG,german,german,12,1064.8,FOUND,german
+SENRROOG,russian,russian,13,1304.9,FOUND,russian
+SENRROOG,philosophy,philosophy,14,5484.2,FOUND,philosophy
+SENRROOG,psychology,psychology,15,3352.1,FOUND,psychology
+SENRROOG,sociology,sociology,16,2898.6,FOUND,sociology
+SENRROOG,biology,biology,17,2912.8,FOUND,biology
+SENRROOG,physics,physics,18,1409.4,FOUND,physics
+SENRROOG,chemistry,chemistry,19,4940.4,FOUND,chemistry
+SENRROOG,biochemistry,biochemistry,20,2683.1,FOUND,biochemistry
+SENRROOG,music,music,21,860.8,FOUND,music
+SENRROOG,environmental studies,environmental studies,22,5860.1,FOUND,environmental studies
+SENRROOG,urban studies,urban studies,23,2885.2,FOUND,urban studies
+T6E9EPOZ,Biochemistry,biochemistry,1,4242.4,FOUND,biochemistry
+T6E9EPOZ,Chemistry,chemistry,2,2466.8,FOUND,chemistry
+T6E9EPOZ,Biology,biology,3,1587.4,FOUND,biology
+T6E9EPOZ,Physics,physics,4,2544.3,FOUND,physics
+T6E9EPOZ,Art,art,5,1029.2,FOUND,art
+T6E9EPOZ,Art History,art history,6,3709.6,FOUND,art history
+T6E9EPOZ,History,history,7,2277.8,FOUND,history
+T6E9EPOZ,English,english,8,2068.4,FOUND,english
+T6E9EPOZ,Asian Studies,asian studies,9,2683.3,FOUND,asian studies
+T6E9EPOZ,Neuroscience,neuroscience,10,2034.7,FOUND,neuroscience
+T6E9EPOZ,Russian,russian,11,8485.1,FOUND,russian
+T6E9EPOZ,Earth and Ocean Studies,earth and ocean studies,12,9979.9,FOUND,earth and ocean studies
+T6E9EPOZ,Government and Law,government and law,13,9633.9,FOUND,government and law
+T6E9EPOZ,Business,business,14,3003.3,FOUND,business
+TPWBA9PZ,neuroscience,neuroscience,1,2257.8,FOUND,neuroscience
+TPWBA9PZ,biology,biology,2,1277.0,FOUND,biology
+TPWBA9PZ,mathematics,mathematics,3,2826.0,FOUND,mathematics
+TPWBA9PZ,computer science,computer science,4,2523.8,FOUND,computer science
+TPWBA9PZ,psychology,psychology,5,1809.0,FOUND,psychology
+TPWBA9PZ,philosophy,philosophy,6,2033.2,FOUND,philosophy
+TPWBA9PZ,english literature,english literature,7,3314.5,EXCLUDE,EXCLUDE
+TPWBA9PZ,italian studies,italian studies,8,2827.2,FOUND,italian studies
+TPWBA9PZ,francophone studies,francophone studies,9,3022.3,FOUND,francophone studies
+TPWBA9PZ,anthropology,anthropology,10,2560.1,FOUND,anthropology
+TPWBA9PZ,sociology,sociology,11,1365.9,FOUND,sociology
+TPWBA9PZ,archaeology,archaeology,12,4691.3,FOUND,archaeology
+TPWBA9PZ,science and society,science and society,13,11376.4,EXCLUDE,EXCLUDE
+TPWBA9PZ,chinese,chinese,14,1308.6,FOUND,chinese
+TPWBA9PZ,asian studies,asian studies,15,2043.2,FOUND,asian studies
+TPWBA9PZ,arabian studies,arabian studies,16,4189.2,EXCLUDE,EXCLUDE
+TPWBA9PZ,ecology,ecology,17,7442.8,FOUND,ecology
+U2N1A8VX,economics,economics,1,2058.7,FOUND,economics
+U2N1A8VX,psychology,psychology,2,2708.6,FOUND,psychology
+U2N1A8VX,sociology,sociology,3,2091.6,FOUND,sociology
+U2N1A8VX,art history,art history,4,3168.0,FOUND,art history
+U2N1A8VX,history,history,5,1514.8,FOUND,history
+U2N1A8VX,arts,arts,6,1411.1,REPLACE,art
+U2N1A8VX,music,music,7,2331.9,FOUND,music
+U2N1A8VX,literature,literature,8,3829.3,FOUND,literature
+U2N1A8VX,romance languages,romance languages,9,5893.8,FOUND,romance languages
+U2N1A8VX,hispanic studies,hispanic studies,10,6309.5,FOUND,hispanic studies
+U2N1A8VX,italian studies,italian studies,11,4416.6,FOUND,italian studies
+U2N1A8VX,francophone studies,francophone studies,12,3016.8,FOUND,francophone studies
+U2N1A8VX,government,government,13,4066.6,FOUND,government
+U2N1A8VX,anthropology,anthropology,14,5669.6,FOUND,anthropology
+U2N1A8VX,math,math,15,4239.2,FOUND,math
+U2N1A8VX,computer science,computer science,16,2995.2,FOUND,computer science
+U2N1A8VX,neuroscience,neuroscience,17,2422.6,FOUND,neuroscience
+U4TQC9J3,anthropology,anthropology,1,2049.5,FOUND,anthropology
+U4TQC9J3,sociology,sociology,2,1834.3,FOUND,sociology
+U4TQC9J3,physics,physics,3,3228.5,FOUND,physics
+U4TQC9J3,africana studies,africana studies,4,3129.2,FOUND,africana studies
+U4TQC9J3,asian studies,asian studies,5,1785.0,FOUND,asian studies
+U4TQC9J3,history,history,6,1643.6,FOUND,history
+U4TQC9J3,government and legal studies,government and legal studies,7,4600.6,FOUND,government and legal studies
+U4TQC9J3,psychology,psychology,8,2701.8,FOUND,psychology
+U4TQC9J3,economics,economics,9,2551.9,FOUND,economics
+U4TQC9J3,computer science,computer science,10,2091.2,FOUND,computer science
+U4TQC9J3,english,english,11,2170.3,FOUND,english
+U4TQC9J3,biology,biology,12,1055.3,FOUND,biology
+U4TQC9J3,chemistry,chemistry,13,3854.8,FOUND,chemistry
+U4TQC9J3,math,math,14,3735.0,FOUND,math
+U4TQC9J3,education,education,15,2156.9,FOUND,education
+U4TQC9J3,engineering,engineering,16,4136.6,FOUND,engineering
+U4TQC9J3,philosophy,philosophy,17,14766.7,FOUND,philosophy
+U7RW6MVC,english,english,1,3338.5,FOUND,english
+U7RW6MVC,computer science,computer science,2,4218.6,FOUND,computer science
+U7RW6MVC,math,math,3,1614.5,FOUND,math
+U7RW6MVC,biochemistry,biochemistry,4,4770.0,FOUND,biochemistry
+U7RW6MVC,french,french,5,4870.7,FOUND,french
+U7RW6MVC,spanish,spanish,6,2219.8,FOUND,spanish
+U7RW6MVC,classics,classics,7,2331.7,FOUND,classics
+U7RW6MVC,german,german,8,2402.0,FOUND,german
+U7RW6MVC,psychology,psychology,9,3616.8,FOUND,psychology
+U7RW6MVC,political science,political science,10,4462.6,FOUND,political science
+U7RW6MVC,philosophy,philosophy,11,5766.6,FOUND,philosophy
+U7RW6MVC,visual arts,visual arts,12,3033.3,FOUND,visual arts
+U7RW6MVC,theater,theater,13,3626.7,FOUND,theater
+U7RW6MVC,dance,dance,14,2059.6,FOUND,dance
+U7RW6MVC,eos,eos,15,4915.1,FOUND,eos
+U7RW6MVC,italian,italian,16,4639.2,FOUND,italian
+UIBPJL1Q,gov,government,1,971.0,FOUND,government
+UIBPJL1Q,econ,economics,2,777.0,FOUND,economics
+UIBPJL1Q,phil,philosophy,3,1292.0,FOUND,philosophy
+UIBPJL1Q,reglion,religion,4,1847.0,FOUND,religion
+UIBPJL1Q,math,math,5,949.0,FOUND,math
+UIBPJL1Q,biology,biology,6,2658.0,FOUND,biology
+UIBPJL1Q,music,music,7,1429.0,FOUND,music
+UIBPJL1Q,physics,physics,8,1297.0,FOUND,physics
+UIBPJL1Q,DCS,dcs,9,1844.0,FOUND,dcs
+UIBPJL1Q,ES,es,10,1040.0,REPLACE,eos
+UIBPJL1Q,history,history,11,5239.0,FOUND,history
+UIBPJL1Q,english,english,12,1058.0,FOUND,english
+UIBPJL1Q,anthroopplgy,anthropology,13,3602.0,FOUND,anthropology
+UIBPJL1Q,socisligoy,sociology,14,2499.0,FOUND,sociology
+UIBPJL1Q,GSWS,gsws,15,2893.0,FOUND,gsws
+UIBPJL1Q,afirican studies,african studies,16,3642.0,REPLACE,africana studies
+UIBPJL1Q,chemistry,chemistry,17,2947.0,FOUND,chemistry
+UIBPJL1Q,neuro,neuroscience,18,2438.0,FOUND,neuroscience
+UIBPJL1Q,art,art,19,3616.0,FOUND,art
+UIBPJL1Q,dance,dance,20,950.0,FOUND,dance
+UIBPJL1Q,acoutning,accounting,21,12129.0,FOUND,accounting
+UIBPJL1Q,buisness,business,22,1887.0,FOUND,business
+UIBPJL1Q,engeergning,engineering,23,1754.0,FOUND,engineering
+UVAI5SO9,music,music,1,920.0,FOUND,music
+UVAI5SO9,history,history,2,861.0,FOUND,history
+UVAI5SO9,sociology,sociology,3,2418.0,FOUND,sociology
+UVAI5SO9,physics,physics,4,907.0,FOUND,physics
+UVAI5SO9,chemistry,chemistry,5,1085.0,FOUND,chemistry
+UVAI5SO9,biology,biology,6,1198.0,FOUND,biology
+UVAI5SO9,biochemistry,biochemistry,7,1853.0,FOUND,biochemistry
+UVAI5SO9,economics,economics,8,1465.0,FOUND,economics
+UVAI5SO9,math,math,9,3168.0,FOUND,math
+UVAI5SO9,anthropology,anthropology,10,3399.0,FOUND,anthropology
+UVAI5SO9,geology,geology,11,5698.0,FOUND,geology
+UVAI5SO9,oceanography,oceanography,12,1453.0,FOUND,oceanography
+UVAI5SO9,musicology,musicology,13,6283.0,EXCLUDE,EXCLUDE
+UVAI5SO9,visual art,visual art,14,1338.0,REPLACE,visual arts
+UVAI5SO9,chinese,chinese,15,4166.0,FOUND,chinese
+UVAI5SO9,russian,russian,16,898.0,FOUND,russian
+UVAI5SO9,spanish,spanish,17,2123.0,FOUND,spanish
+UVAI5SO9,english,english,18,1323.0,FOUND,english
+UVAI5SO9,English literature,english literature,19,3176.0,EXCLUDE,EXCLUDE
+UVAI5SO9,creative writing,creative writing,20,1657.0,FOUND,creative writing
+UVAI5SO9,journalism,journalism,21,2602.0,FOUND,journalism
+UVAI5SO9,engineering,engineering,22,1198.0,FOUND,engineering
+UVAI5SO9,biomedical engineering,biomedical engineering,23,2784.0,EXCLUDE,EXCLUDE
+UVAI5SO9,civil engineering,civil engineering,24,3106.0,FOUND,civil engineering
+UVAI5SO9,education,education,25,1933.0,FOUND,education
+VJJ2VCIY,Communication,communication,1,4318.2,FOUND,communication
+VJJ2VCIY,Biology,biology,2,2425.3,FOUND,biology
+VJJ2VCIY,biochemistry,biochemistry,3,2790.9,FOUND,biochemistry
+VJJ2VCIY,physics,physics,4,2866.2,FOUND,physics
+VJJ2VCIY,Chemistry,chemistry,5,3091.2,FOUND,chemistry
+VJJ2VCIY,Dance,dance,6,1767.5,FOUND,dance
+VJJ2VCIY,Africana Studies,africana studies,7,4471.8,FOUND,africana studies
+VJJ2VCIY,east Asian studies,east asian studies,8,7303.2,FOUND,east asian studies
+VJJ2VCIY,governemnt,government,9,3943.2,FOUND,government
+VJJ2VCIY,sociology,sociology,10,3456.4,FOUND,sociology
+VJJ2VCIY,archealogy,archaeology,11,7817.3,FOUND,archaeology
+VJJ2VCIY,Neuroscience,neuroscience,12,6510.0,FOUND,neuroscience
+VNHTSXTP,Philosophy,philosophy,1,2743.5,FOUND,philosophy
+VNHTSXTP,Psychology,psychology,2,2283.8,FOUND,psychology
+VNHTSXTP,Business,business,3,1687.8,FOUND,business
+VNHTSXTP,Marketing,marketing,4,1845.2,FOUND,marketing
+VNHTSXTP,Economics,economics,5,2465.5,FOUND,economics
+VNHTSXTP,English,english,6,2513.5,FOUND,english
+VNHTSXTP,Theater,theater,7,1603.1,FOUND,theater
+VNHTSXTP,Visual Arts,visual arts,8,3941.8,FOUND,visual arts
+VNHTSXTP,Biology,biology,9,7141.4,FOUND,biology
+VNHTSXTP,Environmental Science,environmental science,10,7033.3,FOUND,environmental science
+VNHTSXTP,Math,math,11,1150.0,FOUND,math
+VNHTSXTP,History,history,12,7183.5,FOUND,history
+VNHTSXTP,Goverment,government,13,2696.9,FOUND,government
+VNHTSXTP,Anthropology,anthropology,14,7238.2,FOUND,anthropology
+VNHTSXTP,Classics,classics,15,1911.7,FOUND,classics
+VNHTSXTP,Asian Studies,asian studies,16,3119.6,FOUND,asian studies
+VNSY2V6A,philosophy,philosophy,1,5708.0,FOUND,philosophy
+VNSY2V6A,history,history,2,1826.8,FOUND,history
+VNSY2V6A,economics,economics,3,2634.4,FOUND,economics
+VNSY2V6A,politics,politics,4,3271.1,EXCLUDE,EXCLUDE
+VNSY2V6A,art history,art history,5,4329.4,FOUND,art history
+VNSY2V6A,biology,biology,6,2629.0,FOUND,biology
+VNSY2V6A,physics,physics,7,2084.0,FOUND,physics
+VNSY2V6A,mathematics,mathematics,8,2523.3,FOUND,mathematics
+VNSY2V6A,astronomy,astronomy,9,6604.5,FOUND,astronomy
+VNSY2V6A,law,law,10,10185.8,FOUND,law
+VNSY2V6A,english,english,11,5439.3,FOUND,english
+VNSY2V6A,hispanic studies,hispanic studies,12,7869.6,FOUND,hispanic studies
+VNSY2V6A,russian studies,russian studies,13,3979.4,EXCLUDE,EXCLUDE
+W6Z3Y3K6,Business,business,1,1187.8,FOUND,business
+W6Z3Y3K6,Biology,biology,2,1180.9,FOUND,biology
+W6Z3Y3K6,Economics,economics,3,2350.7,FOUND,economics
+W6Z3Y3K6,Accounting,accounting,4,1883.1,FOUND,accounting
+W6Z3Y3K6,Neuroscience,neuroscience,5,2550.7,FOUND,neuroscience
+W6Z3Y3K6,Chemistry,chemistry,6,1308.5,FOUND,chemistry
+W6Z3Y3K6,Math,math,7,808.6,FOUND,math
+W6Z3Y3K6,Stats,stats,8,882.8,EXCLUDE,EXCLUDE
+W6Z3Y3K6,Public Health,public health,9,2916.2,FOUND,public health
+W6Z3Y3K6,Law,law,10,1017.2,FOUND,law
+W6Z3Y3K6,Nursing,nursing,11,5289.8,FOUND,nursing
+W6Z3Y3K6,Nutrition,nutrition,12,3269.6,EXCLUDE,EXCLUDE
+W6Z3Y3K6,Art,art,13,6952.3,FOUND,art
+W6Z3Y3K6,Cinema Studies,cinema studies,14,3488.5,FOUND,cinema studies
+W6Z3Y3K6,English,english,15,1304.4,FOUND,english
+W6Z3Y3K6,French,french,16,962.2,FOUND,french
+W6Z3Y3K6,Spanish,spanish,17,867.1,FOUND,spanish
+W6Z3Y3K6,Italian,italian,18,2116.6,FOUND,italian
+W6Z3Y3K6,Computer Science,computer science,19,7481.8,FOUND,computer science
+W6Z3Y3K6,Ecology,ecology,20,8001.0,FOUND,ecology
+W6Z3Y3K6,Environmental Studies,environmental studies,21,3276.7,FOUND,environmental studies
+WU4Q5VLP,Neruoscience,neuroscience,1,5078.0,FOUND,neuroscience
+WU4Q5VLP,biology,biology,2,2250.0,FOUND,biology
+WU4Q5VLP,chemistru,chemistry,3,3419.0,FOUND,chemistry
+WU4Q5VLP,biochem,biochemistry,4,2481.0,FOUND,biochemistry
+WU4Q5VLP,physics,physics,5,3646.0,FOUND,physics
+WU4Q5VLP,psychology,psychology,6,9050.0,FOUND,psychology
+WU4Q5VLP,math,math,7,3033.0,FOUND,math
+WU4Q5VLP,computer science,computer science,8,3719.0,FOUND,computer science
+WU4Q5VLP,information sciencece,information science,9,8729.0,EXCLUDE,EXCLUDE
+WU4Q5VLP,economics,economics,10,3339.0,FOUND,economics
+WU4Q5VLP,electrochem,electrochemistry,11,11086.0,EXCLUDE,EXCLUDE
+WU4Q5VLP,engineering,engineering,12,3110.0,FOUND,engineering
+XAA8CS8F,digital and computational studies,digital and computational studies,1,7533.4,EXCLUDE,EXCLUDE
+XAA8CS8F,economics,economics,2,1424.8,FOUND,economics
+XAA8CS8F,neuroscience,neuroscience,3,5625.5,FOUND,neuroscience
+XAA8CS8F,history,history,4,1264.1,FOUND,history
+XAA8CS8F,english,english,5,1916.2,FOUND,english
+XAA8CS8F,math,math,6,1745.1,FOUND,math
+XAA8CS8F,computer science,computer science,7,3049.5,FOUND,computer science
+XAA8CS8F,biology,biology,8,1320.9,FOUND,biology
+XAA8CS8F,chemistry,chemistry,9,1814.5,FOUND,chemistry
+XAA8CS8F,biochemistry,biochemistry,10,4582.3,FOUND,biochemistry
+XAA8CS8F,visual arts,visual arts,11,4816.8,FOUND,visual arts
+XAA8CS8F,graphic design,graphic design,12,6301.2,FOUND,graphic design
+XAA8CS8F,dance,dance,13,2572.6,FOUND,dance
+XAA8CS8F,government and legal studies,government and legal studies,14,10033.5,FOUND,government and legal studies
+XAA8CS8F,sports management,sports management,15,4395.5,FOUND,sports management
+XI93MR3J,mathematics,mathematics,1,4247.0,FOUND,mathematics
+XI93MR3J,neuroscience,neuroscience,2,4142.0,FOUND,neuroscience
+XI93MR3J,economics,economics,3,2572.0,FOUND,economics
+XI93MR3J,English,english,4,2142.0,FOUND,english
+XI93MR3J,history,history,5,1302.0,FOUND,history
+XI93MR3J,film,film,6,4824.0,FOUND,film
+XI93MR3J,biochemistry,biochemistry,7,3693.0,FOUND,biochemistry
+XI93MR3J,biology,biology,8,2300.0,FOUND,biology
+XI93MR3J,chemistry,chemistry,9,1641.0,FOUND,chemistry
+XI93MR3J,government and legal studies,government and legal studies,10,4009.0,FOUND,government and legal studies
+XI93MR3J,finance,finance,11,1182.0,FOUND,finance
+XI93MR3J,business,business,12,2773.0,FOUND,business
+XI93MR3J,mechanical engineering,mechanical engineering,13,3779.0,FOUND,mechanical engineering
+XI93MR3J,civil engineering,civil engineering,14,4623.0,FOUND,civil engineering
+XI93MR3J,biomedical engineering,biomedical engineering,15,5388.0,EXCLUDE,EXCLUDE
+XI93MR3J,chemical engineering,chemical engineering,16,9652.0,EXCLUDE,EXCLUDE
+XILQXDX5,neuroscience,neuroscience,1,2246.0,FOUND,neuroscience
+XILQXDX5,business,business,2,1098.0,FOUND,business
+XILQXDX5,economy,economy,3,2450.0,EXCLUDE,EXCLUDE
+XILQXDX5,gender tudies,gender studies,4,1476.0,FOUND,gender studies
+XILQXDX5,biology,biology,5,1266.0,FOUND,biology
+XILQXDX5,computer science,computer science,6,1937.0,FOUND,computer science
+XILQXDX5,english,english,7,1254.0,FOUND,english
+XILQXDX5,chinese,chinese,8,819.0,FOUND,chinese
+XILQXDX5,latin studies,latin studies,9,3072.0,REPLACE,latinx studies
+XILQXDX5,urban studies,urban studies,10,1443.0,FOUND,urban studies
+XILQXDX5,chemistry,chemistry,11,2114.0,FOUND,chemistry
+XILQXDX5,pharmacology,pharmacology,12,2425.0,EXCLUDE,EXCLUDE
+XILQXDX5,physics,physics,13,2384.0,FOUND,physics
+XILQXDX5,math,math,14,1155.0,FOUND,math
+XILQXDX5,environmental science,environmental science,15,3235.0,FOUND,environmental science
+XILQXDX5,communications,communications,16,1763.0,FOUND,communications
+XILQXDX5,marketing,marketing,17,2899.0,FOUND,marketing
+XILQXDX5,theater,theater,18,7397.0,FOUND,theater
+XILQXDX5,film,film,19,1620.0,FOUND,film
+XILQXDX5,engineering,engineering,20,16604.0,FOUND,engineering
+XJF7RLTQ,comp sci,computer science,1,7840.6,FOUND,computer science
+XJF7RLTQ,psychology,psychology,2,2846.9,FOUND,psychology
+XJF7RLTQ,africana studies,africana studies,3,3941.9,FOUND,africana studies
+XJF7RLTQ,latinx studies,latinx studies,4,4755.4,FOUND,latinx studies
+XJF7RLTQ,art history,art history,5,4257.5,FOUND,art history
+XJF7RLTQ,art,art,6,2051.2,FOUND,art
+XJF7RLTQ,history,history,7,4206.3,FOUND,history
+XJF7RLTQ,africana studies,africana studies,8,4812.7,FOUND,africana studies
+XJF7RLTQ,government and legal studies,government and legal studies,9,5583.4,FOUND,government and legal studies
+XJF7RLTQ,sociology,sociology,10,3097.1,FOUND,sociology
+XJF7RLTQ,anthropology,anthropology,11,3115.5,FOUND,anthropology
+XJF7RLTQ,chemistry,chemistry,12,2269.3,FOUND,chemistry
+XJF7RLTQ,biology,biology,13,2113.5,FOUND,biology
+XJF7RLTQ,bio chem,biochemistry,14,4064.0,FOUND,biochemistry
+XV9JV4CP,Art History,art history,1,5169.0,FOUND,art history
+XV9JV4CP,Africana Studies,africana studies,2,3552.0,FOUND,africana studies
+XV9JV4CP,Accounting,accounting,3,2275.0,FOUND,accounting
+XV9JV4CP,Actuarial Sciences,actuarial sciences,4,4734.0,EXCLUDE,EXCLUDE
+XV9JV4CP,Anthropology,anthropology,5,8925.0,FOUND,anthropology
+XV9JV4CP,Business,business,6,2654.0,FOUND,business
+XV9JV4CP,Biology,biology,7,3237.0,FOUND,biology
+XV9JV4CP,Biochemistry,biochemistry,8,4018.0,FOUND,biochemistry
+XV9JV4CP,Chemistry,chemistry,9,3315.0,FOUND,chemistry
+XV9JV4CP,Chinese,chinese,10,1661.0,FOUND,chinese
+XV9JV4CP,Economics,economics,11,5266.0,FOUND,economics
+XV9JV4CP,Environmental Studies,environmental studies,12,5783.0,FOUND,environmental studies
+XV9JV4CP,Engineering,engineering,13,2648.0,FOUND,engineering
+XV9JV4CP,English,english,14,1660.0,FOUND,english
+XV9JV4CP,Spanish,spanish,15,1516.0,FOUND,spanish
+XV9JV4CP,Art,art,16,1826.0,FOUND,art
+Y0GQPG0K,english,english,1,2005.0,FOUND,english
+Y0GQPG0K,philosophy,philosophy,2,1648.0,FOUND,philosophy
+Y0GQPG0K,french,french,3,1776.0,FOUND,french
+Y0GQPG0K,german,german,4,445.0,FOUND,german
+Y0GQPG0K,classics,classics,5,1992.0,FOUND,classics
+Y0GQPG0K,psychology,psychology,6,1968.0,FOUND,psychology
+Y0GQPG0K,computer science,computer science,7,1499.0,FOUND,computer science
+Y0GQPG0K,math,mathematics,8,2537.0,FOUND,mathematics
+Y0GQPG0K,physics,physics,9,977.0,FOUND,physics
+Y0GQPG0K,economics,economics,10,822.0,FOUND,economics
+Y0GQPG0K,government,government,11,691.0,FOUND,government
+Y0GQPG0K,communications,communications,12,3824.0,FOUND,communications
+Y0GQPG0K,hispanic studies,hispanic studies,13,14521.0,FOUND,hispanic studies
+Y0GQPG0K,africana studies,africana studies,14,2131.0,FOUND,africana studies
+Y0GQPG0K,gsws,"gender,  sexuality,  and women's studies",15,1828.0,EXCLUDE,EXCLUDE
+Y0GQPG0K,chemistry,chemistry,16,6467.0,FOUND,chemistry
+Y0GQPG0K,biology,biology,17,1001.0,FOUND,biology
+Y0GQPG0K,biochemistry,biochemistry,18,1637.0,FOUND,biochemistry
+Y0GQPG0K,physics,physics,19,5682.0,FOUND,physics
+YDKEN7JY,government,government,1,3010.0,FOUND,government
+YDKEN7JY,business,business,2,3166.0,FOUND,business
+YDKEN7JY,finance,finance,3,1006.0,FOUND,finance
+YDKEN7JY,econ,economics,4,603.0,FOUND,economics
+YDKEN7JY,education,education,5,1683.0,FOUND,education
+YDKEN7JY,history,history,6,1038.0,FOUND,history
+YDKEN7JY,biology,biology,7,1080.0,FOUND,biology
+YDKEN7JY,physics,physics,8,1460.0,FOUND,physics
+YDKEN7JY,chemistry,chemistry,9,3685.0,FOUND,chemistry
+YDKEN7JY,marketing,marketing,10,1728.0,FOUND,marketing
+YDKEN7JY,accounting,accounting,11,2255.0,FOUND,accounting
+YDKEN7JY,africana studies,africana studies,12,6453.0,FOUND,africana studies
+YDKEN7JY,latin american studies,latin american studies,13,3532.0,FOUND,latin american studies
+YDKEN7JY,spanish,spanish,14,2300.0,FOUND,spanish
+YDKEN7JY,english,english,15,6715.0,FOUND,english
+YDKEN7JY,french,french,16,1061.0,FOUND,french
+YDKEN7JY,german,german,17,957.0,FOUND,german
+YDKEN7JY,mathematics,mathematics,18,1999.0,FOUND,mathematics
+YDKEN7JY,engineering,engineering,19,7288.0,FOUND,engineering
+YDKEN7JY,theatre,theatre,20,3416.0,FOUND,theatre
+YDKEN7JY,dance,dance,21,683.0,FOUND,dance
+YDKEN7JY,music,music,22,859.0,FOUND,music
+YMQ1DC06,english,english,1,2804.0,FOUND,english
+YMQ1DC06,government,government,2,4161.0,FOUND,government
+YMQ1DC06,law,law,3,1250.0,FOUND,law
+YMQ1DC06,politics,politics,4,2632.0,EXCLUDE,EXCLUDE
+YMQ1DC06,sociology,sociology,5,8433.0,FOUND,sociology
+YMQ1DC06,language,language,6,2716.0,FOUND,language
+YMQ1DC06,french,french,7,2874.0,FOUND,french
+YMQ1DC06,anthropology,anthropology,8,4378.0,FOUND,anthropology
+YMQ1DC06,asian studies,asian studies,9,3532.0,FOUND,asian studies
+YMQ1DC06,history,history,10,2308.0,FOUND,history
+YMQ1DC06,chemistry,chemistry,11,2416.0,FOUND,chemistry
+YMQ1DC06,biology,biology,12,3290.0,FOUND,biology
+YMQ1DC06,psychology,psychology,13,3253.0,FOUND,psychology
+YMQ1DC06,education,education,14,4034.0,FOUND,education
+YMQ1DC06,nursing,nursing,15,8205.0,FOUND,nursing
+YP5UHRSA,Math,math,1,1595.4,FOUND,math
+YP5UHRSA,Physics,physics,2,2067.2,FOUND,physics
+YP5UHRSA,Chemistry,chemistry,3,1982.8,FOUND,chemistry
+YP5UHRSA,Biochemistry,biochemistry,4,1878.0,FOUND,biochemistry
+YP5UHRSA,Biology,biology,5,2622.0,FOUND,biology
+YP5UHRSA,Sociology,sociology,6,1733.5,FOUND,sociology
+YP5UHRSA,Psychology,psychology,7,1767.0,FOUND,psychology
+YP5UHRSA,neuroscience,neuroscience,8,3038.8,FOUND,neuroscience
+YP5UHRSA,english,english,9,6027.5,FOUND,english
+YP5UHRSA,history,history,10,2233.3,FOUND,history
+YP5UHRSA,environmental studies,environmental studies,11,6660.6,FOUND,environmental studies
+YP5UHRSA,environmental science,environmental science,12,3315.5,FOUND,environmental science
+YP5UHRSA,economics,economics,13,3702.3,FOUND,economics
+YP5UHRSA,finance,finance,14,1337.8,FOUND,finance
+YP5UHRSA,business,business,15,1324.7,FOUND,business
+YP5UHRSA,french,french,16,3692.0,FOUND,french
+YP5UHRSA,german,german,17,982.7,FOUND,german
+YP5UHRSA,spanish,spanish,18,1951.6,FOUND,spanish
+YP5UHRSA,hispanic studies,hispanic studies,19,3089.2,FOUND,hispanic studies
+YP5UHRSA,africana studies,africana studies,20,3110.1,FOUND,africana studies
+YP5UHRSA,computer science,computer science,21,4163.6,FOUND,computer science
+YQ5FHGIU,Communications,communications,1,3946.5,FOUND,communications
+YQ5FHGIU,Biology,biology,2,1731.3,FOUND,biology
+YQ5FHGIU,Chemistry,chemistry,3,1769.6,FOUND,chemistry
+YQ5FHGIU,BioChem,biochem,4,1555.1,FOUND,biochem
+YQ5FHGIU,Bio Eng,bio engineering,5,2991.9,FOUND,bio engineering
+YQ5FHGIU,Mech Eng,mechanical engineering,6,2161.3,FOUND,mechanical engineering
+YQ5FHGIU,Government,government,7,4033.2,FOUND,government
+YQ5FHGIU,Religion,religion,8,1644.1,FOUND,religion
+YQ5FHGIU,International Affairs,international affairs,9,4091.5,FOUND,international affairs
+YQ5FHGIU,Dance,dance,10,2727.3,FOUND,dance
+YQ5FHGIU,Visual Arts,visual arts,11,2889.2,FOUND,visual arts
+YQ5FHGIU,Athropology,anthropology,12,2411.8,FOUND,anthropology
+YQ5FHGIU,Comp Sci,computer science,13,3564.2,FOUND,computer science
+YQ5FHGIU,DCS,data and computer science,14,1418.3,FOUND,data and computer science
+YQ5FHGIU,English,english,15,4196.9,FOUND,english
+YQ5FHGIU,Romance Languages,romance languages,16,3489.5,FOUND,romance languages
+YQ5FHGIU,Chinese,chinese,17,1588.3,FOUND,chinese
+YQ5FHGIU,Japanese,japanese,18,1350.4,FOUND,japanese
+YQ5FHGIU,Asian Studies,asian studies,19,2228.4,FOUND,asian studies
+YQ5FHGIU,Africana Studies,africana studies,20,3437.7,FOUND,africana studies
+YQ5FHGIU,Physics,physics,21,4336.3,FOUND,physics
+YVQX6LL1,English,english,1,2526.5,FOUND,english
+YVQX6LL1,Math,math,2,2343.9,FOUND,math
+YVQX6LL1,Biology,biology,3,2455.8,FOUND,biology
+YVQX6LL1,Economics,economics,4,2187.0,FOUND,economics
+YVQX6LL1,Environmental Science,environmental science,5,4032.3,FOUND,environmental science
+YVQX6LL1,Environmental Studies,environmental studies,6,5533.5,FOUND,environmental studies
+YVQX6LL1,Political Science,political science,7,3366.4,FOUND,political science
+YVQX6LL1,Spanish,spanish,8,3099.5,FOUND,spanish
+YVQX6LL1,German,german,9,2970.7,FOUND,german
+YVQX6LL1,French,french,10,1660.4,FOUND,french
+YVQX6LL1,Sociology,sociology,11,2666.8,FOUND,sociology
+YVQX6LL1,International Relations,international relations,12,9505.3,FOUND,international relations
+YVQX6LL1,Theater,theater,13,3864.5,FOUND,theater
+YVQX6LL1,Dance,dance,14,2083.1,FOUND,dance
+YVQX6LL1,Chemistry,chemistry,15,3787.5,FOUND,chemistry
+YVQX6LL1,Physics,physics,16,6684.4,FOUND,physics
+ZERL6DH6,anthropology,anthropology,1,3210.9,FOUND,anthropology
+ZERL6DH6,psychology,psychology,2,1182.9,FOUND,psychology
+ZERL6DH6,education,education,3,1466.5,FOUND,education
+ZERL6DH6,pre-med,pre-med,4,1066.9,FOUND,pre-med
+ZERL6DH6,mathematics,mathematics,5,2854.9,FOUND,mathematics
+ZERL6DH6,computer science,computer science,6,1995.1,FOUND,computer science
+ZERL6DH6,dcs,data and computer science,7,1066.6,FOUND,data and computer science
+ZERL6DH6,physics,physics,8,1388.1,FOUND,physics
+ZERL6DH6,french,french,9,2981.8,FOUND,french
+ZERL6DH6,middle eastern / north african,middle eastern / north african,10,12151.0,FOUND,middle eastern / north african
+ZERL6DH6,laclas,laclas,11,1782.5,FOUND,laclas
+ZERL6DH6,latin american studies,latin american studies,12,12470.8,FOUND,latin american studies
+ZERL6DH6,chemistry,chemistry,13,6758.0,FOUND,chemistry
+ZERL6DH6,biology,biology,14,1221.2,FOUND,biology
+ZERL6DH6,english,english,15,1546.0,FOUND,english
+ZERL6DH6,history,history,16,6033.6,FOUND,history
+ZHMH16C4,human and organizational development,human and organizational development,1,10347.1,FOUND,human and organizational development
+ZHMH16C4,early childhood ed,early childhood ed,2,5560.5,FOUND,early childhood ed
+ZHMH16C4,secondary ed,secondary ed,3,2958.8,FOUND,secondary ed
+ZHMH16C4,elementary ed,elementary ed,4,2700.0,FOUND,elementary ed
+ZHMH16C4,special ed,special ed,5,1776.8,FOUND,special ed
+ZHMH16C4,history,history,6,2171.7,FOUND,history
+ZHMH16C4,biology,biology,7,5785.4,FOUND,biology
+ZHMH16C4,chemistry,chemistry,8,4334.1,FOUND,chemistry
+ZHMH16C4,nursing,nursing,9,1956.4,FOUND,nursing
+ZHMH16C4,journalism,journalism,10,4132.2,FOUND,journalism
+ZHMH16C4,film,film,11,6778.7,FOUND,film
+ZHMH16C4,women's studies,women's studies,12,3190.1,FOUND,women's studies
+ZHMH16C4,english,english,13,3766.5,FOUND,english
+ZYQ1C8LT,anthropology,anthropology,1,6825.0,FOUND,anthropology
+ZYQ1C8LT,archeology,archeology,2,5617.0,FOUND,archeology
+ZYQ1C8LT,art history,art history,3,6586.0,FOUND,art history
+ZYQ1C8LT,asian studies,asian studies,4,3985.0,FOUND,asian studies
+ZYQ1C8LT,biology,biology,5,3517.0,FOUND,biology
+ZYQ1C8LT,biochemistry,biochemistry,6,3264.0,FOUND,biochemistry
+ZYQ1C8LT,chemistry,chemistry,7,4679.0,FOUND,chemistry
+ZYQ1C8LT,government,government,8,5815.0,FOUND,government
+ZYQ1C8LT,german,german,9,1738.0,FOUND,german
+ZYQ1C8LT,english,english,10,1649.0,FOUND,english
+ZYQ1C8LT,spanish,spanish,11,1658.0,FOUND,spanish
+ZYQ1C8LT,french,french,12,1775.0,FOUND,french
+ZYQ1C8LT,italian,italian,13,4758.0,FOUND,italian
+ZYQ1C8LT,classics,classics,14,1940.0,FOUND,classics
+ZYQ1C8LT,philosophy,philosophy,15,3282.0,FOUND,philosophy
