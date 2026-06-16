@@ -338,7 +338,7 @@ ggplot(cumulative_curve, aes(x = second, y = avg_subreddits)) +
     y = "Average Number of Subreddits Named"
   ) + theme_minimal()
 
-ggsave("average_subreddits_names_over_time.png", width = 8, height = 6, dpi = 300)
+ggsave("average_subreddits_named_over_time.png", width = 8, height = 6, dpi = 300)
 
 ```
 
