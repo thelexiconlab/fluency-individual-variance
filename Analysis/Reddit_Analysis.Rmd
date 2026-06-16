@@ -17,6 +17,8 @@ library(ggplot2)
 library(readr)
 library(Rtsne)
 library(ggrepel)
+library(tidyr)
+library(stringr)
 ```
 
 1) Grouping demographics data of participants by calculating a short and long form score for each, finding the general median, then splitting participants based on that median.
@@ -261,6 +263,7 @@ ggplot(subreddit_count_per_participant, aes(x = n_subreddits)) +
     title = "Distribution of Subreddit Count Per Participant",
     x = "Number of Subreddits Listed",
     y = "Number of Participants") + theme_minimal()
+ggsave("subreddit_count_distribution.png", width = 8, height = 5, dpi = 300)
 
 
 #distribution of primary buckets people's first subreddit input fell into
@@ -273,6 +276,7 @@ ggplot(primary_bucket_summary, aes(x = reorder(primary_bucket, pct), y = pct)) +
     x = "Category",
     y = "Percentage of Participants (%)"
   ) + theme_minimal()
+ggsave("primary_bucket_distribution.png", width = 8, height = 5, dpi = 300)
 
 #Participant consistency based on primary bucket
 ggplot(participant_consistency_summary, aes(x = n_participants, y = average_pct_match, size = n_participants, label = primary_bucket)) +
@@ -288,6 +292,53 @@ ggplot(participant_consistency_summary, aes(x = n_participants, y = average_pct_
     size = "N Participants",
   ) +
   theme_minimal() + theme(legend.position = "none")
+ggsave("category_consistency_and_popularity.png", width = 8, height = 6, dpi = 300)
+
+```
+
+```{r}
+reddit_raw_data <- read_csv("../Data/raw_data/reddit_data.csv")
+
+subreddit_reaction_time <- reddit_raw_data %>%
+  filter(task == "VFT", domain == "subreddits") %>%
+  select(subject, response_times) %>%
+  
+mutate(response_times = str_remove_all(response_times, "\\[|\\]")) %>%
+  separate_rows(response_times, sep = ",") %>%
+  mutate(response_times = as.numeric(str_trim(response_times))) %>%
+  group_by(subject) %>%
+  mutate(
+    subreddit_number = row_number(),
+    cumulative_rt_s = cumsum(response_times) / 1000
+  ) %>%
+  ungroup()
+
+max_time <- ceiling(max(subreddit_reaction_time$cumulative_rt_s, na.rm = TRUE))
+
+subjects <- unique(subreddit_reaction_time$subject)
+
+cumulative_curve <- tibble(second = 1:max_time) %>%
+  mutate(
+    avg_subreddits = sapply(second, function(s) {
+      mean(sapply(subjects, function(subj) {
+        sum(subreddit_reaction_time$cumulative_rt_s[subreddit_reaction_time$subject == subj] <= s, na.rm = TRUE)
+      }))
+    })
+  )
+
+print(cumulative_curve, n = 90)
+
+ggplot(cumulative_curve, aes(x = second, y = avg_subreddits)) +
+  geom_col(color = "steelblue") + 
+  scale_x_continuous(breaks = seq(0, max_time, 10)) +
+  scale_y_continuous(breaks = seq(0, ceiling(max(cumulative_curve$avg_subreddits)), 1)) +
+  labs(
+    title = "Average Subreddits Named Over Time",
+    x = "Cumulative Time (seconds)",
+    y = "Average Number of Subreddits Named"
+  ) + theme_minimal()
+
+ggsave("average_subreddits_names_over_time.png", width = 8, height = 6, dpi = 300)
 
 ```
 
