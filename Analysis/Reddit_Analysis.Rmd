@@ -681,6 +681,16 @@ View(fluency_regression)
 
 fluency_regression_model <- lm(fluency_number ~ VFT_estimate, data = fluency_regression)
 summary(fluency_regression_model)
+
+ggplot(fluency_regression, aes(x = VFT_estimate, y = fluency_number)) +
+  geom_point(alpha = 0.4, color = "steelblue") + 
+  geom_smooth(method = "lm", color = "darkblue", se = TRUE) +
+  labs(title = "Predicted vs Actual Fluency Score",
+       x = "Estimated Fluency",
+       y = "Actual Fluency Score") +
+  theme_minimal()
+ggsave("fluency_prediction_regression.png", width = 8, heigh = 6, dpi = 300)
+
 ```
 
 Semantic Similarity vs Fluency Regression
@@ -698,6 +708,15 @@ semantic_sum_fluency_df <- fluency_number %>%
 #Regression model
 semantic_regression_model <- lm(fluency_number ~ mean_semantic, data = semantic_sum_fluency_df)
 summary(semantic_regression_model)
+
+ggplot(semantic_sum_fluency_df, aes(x = mean_semantic, y = fluency_number)) +
+  geom_point(alpha = 0.4, color = "steelblue") + 
+  geom_smooth(method = "lm", color = "darkblue", se = TRUE) +
+  labs(title = "Mean Semantic Similarity vs Fluency Score",
+       x = "Mean Semantic Similarity",
+       y = "Fluency Score") +
+  theme_minimal()
+ggsave("semantic_fluency_regression.png", width = 8, heigh = 6, dpi = 300)
 ```
 
 Phonological Similarity vs Fluency Regression
@@ -716,6 +735,15 @@ phonological_sum_fluency_df <- fluency_number %>%
 #Regression model
 phonological_regression_model <- lm(fluency_number ~ mean_phonological, data = phonological_sum_fluency_df)
 summary(phonological_regression_model)
+
+ggplot(phonological_sum_fluency_df, aes(x = mean_phonological, y = fluency_number)) +
+  geom_point(alpha = 0.4, color = "steelblue") + 
+  geom_smooth(method = "lm", color = "darkblue", se = TRUE) +
+  labs(title = "Mean Phonological Similarity vs Fluency Score",
+       x = "Mean Phonological Similarity",
+       y = "Fluency Score") +
+  theme_minimal()
+ggsave("phonological_fluency_regression.png", width = 8, heigh = 6, dpi = 300)
 ```
 
 
