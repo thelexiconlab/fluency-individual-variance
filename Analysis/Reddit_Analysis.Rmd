@@ -52,15 +52,15 @@ demographics %>%
   count(language_exposure_group)
 
 #Loads in forager lexical results for each domain and combines them into one dataset
-all_lexical_results <- bind_rows(read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Analysis/forager/output/animals_forager_results/lexical_results.csv") %>%
+all_lexical_results <- bind_rows(read_csv("forager/output/animals_forager_results/lexical_results.csv") %>%
                                    mutate(domain = "animals", Subject = as.character(Subject)),
-                                 read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Analysis/forager/output/authors_forager_results/lexical_results.csv") %>%
+                                 read_csv("forager/output/authors_forager_results/lexical_results.csv") %>%
                                    mutate(domain = "authors", Subject = as.character(Subject)),
-                                 read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Analysis/forager/output/college_majors_forager_results/lexical_results.csv") %>%
+                                 read_csv("forager/output/college_majors_forager_results/lexical_results.csv") %>%
                                    mutate(domain = "college_majors", Subject = as.character(Subject)),
-                                 read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Analysis/forager/output/musicians_forager_results/lexical_results.csv") %>%
+                                 read_csv("forager/output/musicians_forager_results/lexical_results.csv") %>%
                                    mutate(domain = "musicians", Subject = as.character(Subject)),
-                                 read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Analysis/forager/output/sportspersons_forager_results/lexical_results.csv") %>%
+                                 read_csv("forager/output/sportspersons_forager_results/lexical_results.csv") %>%
                                    mutate(domain = "sportspersons", Subject = as.character(Subject)),
                                  )
 
@@ -82,6 +82,17 @@ print(lexical_summary)
 ```
 
 ```{r}
+
+#lexical_analysis_data<-all_items %>%
+ # rename("semantic" = "Semantic_Similarity_mean", 
+  #       "phonological" = "Phonological_Similarity_mean",
+ #        "frequency" = "Frequency_Value_mean")%>%
+ # pivot_longer(names_to = "cue", cols=c(semantic,phonological,frequency))
+
+
+lexical_raw_results   
+
+
 #Plotting semantic similarity across groups
 ggplot(lexical_summary, aes(x = language_exposure_group, y = mean_semantic, fill = language_exposure_group)) +
   geom_col() +
@@ -532,6 +543,10 @@ for (dom in fluency_domains) {
   print(percentage_named_over_time_plot)
 
 }
+
+
+#library(patchwork)
+# new_plot <- plot1 + plot2
 ```
 
 3) Fluency and interest correlations calculated and range box plots (interest and fluency spread) formed
@@ -696,6 +711,28 @@ ggsave("fluency_prediction_regression.png", width = 8, heigh = 6, dpi = 300)
 Semantic Similarity vs Fluency Regression
 
 ```{r}
+#lexical cue differences across domains
+# linear mixed model
+#library(lme4)
+#lexical_raw_results <- lexical_analysis_data  %>%
+#  group_by(cue) %>%                                   
+ # nest() %>%                                      
+ #mutate(model = map(data, ~ lmer(value ~ domain + (1|gameId), data = .x)),
+ #   emmeans = map(model, ~ emmeans(.x, ~ domain,pbkrtest.limit = 6944)),
+ #   contrasts = map(emmeans,~ pairs(.x, adjust = "holm")),
+ #   tidy_contrasts = map(contrasts, broom::tidy)) %>%
+ # select(cue, tidy_contrasts) %>%
+ # unnest(tidy_contrasts) %>%
+#  mutate(adj.p.value = round(adj.p.value, 3))
+
+
+#does lexical cue value predict fluency score
+#lexical_models <- lexical_analysis_data %>%
+#  group_by(domain, cue) %>%
+#  nest() %>%
+#  mutate( model = map(data, ~ lm(fluency_score ~ value, data = .)))
+
+
 #Creating semantic similarity avgs
 semantic_summary <- all_lexical_results %>%
   group_by(Subject, domain) %>%
