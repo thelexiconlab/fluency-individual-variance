@@ -251,7 +251,7 @@ other_subreddit_alignment_check <- df_analysis %>%
   ) %>%
   arrange(desc(percentage_match))
 
-print(other_subreddit_alignment_check, n = Inf)
+#print(other_subreddit_alignment_check, n = Inf)
 
 category_distribution <- df_analysis %>%
   count(category, sort = TRUE) %>%
@@ -279,7 +279,7 @@ participant_consistency_summary <- other_subreddit_alignment_check %>%
     average_pct_match = round(mean(percentage_match, na.rm = TRUE), 1),
     median_pct_match = round(median(percentage_match, na.rm = TRUE), 1)) %>%
   arrange(desc(n_participants))
-print(participant_consistency_summary)
+#print(participant_consistency_summary)
 
 other_subreddit_alignment_check %>%
   filter(primary_bucket == "religion")
@@ -640,26 +640,36 @@ fluency_wide <- read.csv("../Data/cleaned_data/fluency_interest_estimate.csv")%>
   pivot_wider(names_from = typeoftrial, values_from = response)
 #View(fluency_wide)
 
+#VFT production counts
+vft_production <- all_participant_summary %>%
+  select(subject, domain, n_responses) %>%
+  rename(VFT_production = n_responses)
+
+# Merging production counts with interest data
+fluency_wide <- fluency_wide %>%
+  left_join(vft_production,
+            by = c("subject", "domain"))
+
 #Box plot of interest spread across domains
 ggplot(fluency_wide, aes(x = domain, y = VFT_category_interest)) + geom_boxplot() + labs(title = "Interest Spread by Domain")
 ggsave("interest_spread_by_domain_plot.png", width = 8, height = 6)
 
 #Box plot of fluency spread across domains
-ggplot(fluency_wide, aes(x = domain, y = VFT_estimate)) + geom_boxplot() + labs(title = "Fluency Spead by Domain")
+ggplot(fluency_wide, aes(x = domain, y = VFT_production)) + geom_boxplot() + labs(title = "Fluency Spead by Domain")
 ggsave("fluency_spread_by_domain_plot.png", width = 8, height = 6)
 
 #Summary of correlation between fluency and interest per domain
-fluency_wide %>% group_by(domain) %>% summarize(correlation = cor(VFT_category_interest, VFT_estimate, use = "complete.obs"))
+fluency_wide %>% group_by(domain) %>% summarize(correlation = cor(VFT_category_interest, VFT_production, use = "complete.obs"))
 
 #Plot of correlation, annotated ^
 correlation_labels <- fluency_wide %>%
   group_by(domain) %>%
-  summarize(correlation = round(cor(VFT_category_interest, VFT_estimate, use = "complete.obs"), 2), x = 85, y = max(VFT_estimate, na.rm = TRUE) * 0.9)
+  summarize(correlation = round(cor(VFT_category_interest, VFT_production, use = "complete.obs"), 2), x = max(VFT_category_interest, na.rm = TRUE) * 0.8, y = max(VFT_production, na.rm = TRUE) * 0.9)
 correlation_labels$y <- c(55, 50, 45, 40, 35)
 
-ggplot(fluency_wide, aes(x = VFT_category_interest, y = VFT_estimate, color = domain)) + geom_point(alpha = 0.4) + geom_smooth(method = "lm", se = FALSE) + geom_text(
+ggplot(fluency_wide, aes(x = VFT_category_interest, y = VFT_production, color = domain)) + geom_point(alpha = 0.4) + geom_smooth(method = "lm", se = FALSE) + geom_text(
   data = correlation_labels, aes(x = x, y = y, label = paste0("r" = correlation), color = domain), show.legend = FALSE, size = 3.5) +
-  labs(title = "Fluency vs Interest Correlation by Domain", x = "Category Interest", y = "Fluency Estimate", color = "Domain") + theme_minimal()
+  labs(title = "Fluency vs Interest Correlation by Domain", x = "Category Interest", y = "Number of Items Produced", color = "Domain") + theme_minimal()
 ggsave("fluency_interest_by_domain_correlation_plot.png", width = 8, height = 6)
 ```
 
@@ -716,8 +726,8 @@ subject_level_interest_summary <- subject_summary %>%
     .groups = "drop"
   )
 
-print(lexical_domain_interest_summary)
-print(subject_level_interest_summary)
+#print(lexical_domain_interest_summary)
+#print(subject_level_interest_summary)
 ```
 Plots
 
@@ -791,7 +801,7 @@ ggsave("fluency_prediction_regression.png", width = 8, heigh = 6, dpi = 300)
 
 ```
 
-Lexical Cues and Fluency Regression 
+General Lexical Cues and Fluency Regression 
 ```{r}
 lexical_data_long_form <- all_lexical_results %>%
   group_by(Subject, domain) %>%
@@ -835,6 +845,7 @@ ggplot(lexical_data_long_form, aes(x = value, y = fluency_number)) +
   theme_minimal()
 ggsave("lexical_cues_fluency_regression.png", width = 12, height = 5, dpi = 300)
 ```
+Domain Specific Lexical Cues and Fluency Regression 
 
 ```{r, fig.width = 12, fig.height = 8}
 lexical_model <- lexical_data_long_form %>%
@@ -865,5 +876,4 @@ ggplot(lexical_data_long_form, aes(x = value, y = fluency_number)) +
 
 tidy(lexical_model$model[[1]])
  
-  
 ```

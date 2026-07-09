@@ -726,123 +726,9 @@ other_subreddit_alignment_check &lt;- df_analysis %&gt;%
   ) %&gt;%
   arrange(desc(percentage_match))
 
-print(other_subreddit_alignment_check, n = Inf)</code></pre>
-<pre><code>## # A tibble: 110 × 8
-##     Subject  primary_subreddit primary_bucket total_subreddits matching_category
-##     &lt;chr&gt;    &lt;chr&gt;             &lt;chr&gt;                     &lt;int&gt;             &lt;int&gt;
-##   1 0PRAW6DO r/gradadmissions  academic and …                1                 1
-##   2 476LZI3N r/ApplyingToColl… academic and …                1                 1
-##   3 8JEQ20SU r/books           academic and …                1                 1
-##   4 B3MZX5TF r/AskReddit       advice                        1                 1
-##   5 EA8GWQDV r/running         athletic                      3                 3
-##   6 LUKGQM9Q r/gaming          entertainment                 1                 1
-##   7 TPWBA9PZ r/medicine        academic and …                3                 3
-##   8 U2N1A8VX r/clinicalresear… academic and …                2                 2
-##   9 U4TQC9J3 r/all             entertainment                 1                 1
-##  10 UIBPJL1Q r/neoliberal      news                          2                 2
-##  11 UVAI5SO9 r/cancer          advice                        2                 2
-##  12 YP5UHRSA r/AskReddit       advice                        1                 1
-##  13 9KZ4Q91O r/relationships   advice                        6                 5
-##  14 DUBYYHYX r/ftm             advice                        6                 5
-##  15 ESNMRF10 r/starwars        entertainment                10                 8
-##  16 XJF7RLTQ r/relationships   advice                        5                 4
-##  17 00K73X1D r/Fauxmoi         entertainment                 8                 6
-##  18 IEOJ1IW3 r/HonkaiStarRail  entertainment                 4                 3
-##  19 A5YUTA1F r/marvelrivals    entertainment                22                15
-##  20 XV9JV4CP r/Advice          advice                        3                 2
-##  21 ZYQ1C8LT r/personalfinance learning                      3                 2
-##  22 SENRROOG r/eurovision      entertainment                29                19
-##  23 CI6QQA2Y r/NoStupidQuesti… advice                        5                 3
-##  24 T6E9EPOZ r/gradadmissions  academic and …                5                 3
-##  25 AWO2EA8Q r/emergencymedic… academic and …               12                 7
-##  26 JIMIPV7S r/TheBeatles      entertainment                 9                 5
-##  27 Y0GQPG0K r/GamingLeaksAnd… entertainment                11                 6
-##  28 NXGNLGFN r/baseball        athletic                     13                 7
-##  29 1KEVYYJ9 r/Persona3Reload  entertainment                 4                 2
-##  30 3YX63NZD r/bipolar         advice                        4                 2
-##  31 5K82MZW1 r/knitting        creative                      4                 2
-##  32 6PJDUW9O r/funny           entertainment                 4                 2
-##  33 6XD6NVVO r/ApplyingToColl… academic and …                4                 2
-##  34 86EKSDZC r/magicthecircle… entertainment                 2                 1
-##  35 8ZC5BFHF r/books           academic and …                2                 1
-##  36 9O2ABUMY r/all             entertainment                 4                 2
-##  37 IRFHWRXF r/Bowdoin         academic and …                8                 4
-##  38 NRXHKYAS r/rance           geographic                    4                 2
-##  39 OEQ7A3BW r/gradadmissions  academic and …                2                 1
-##  40 S30LA614 r/NoStupidQuesti… advice                        4                 2
-##  41 VJJ2VCIY r/GetStudying     academic and …                6                 3
-##  42 VNHTSXTP r/AmItheAsshole   advice                        4                 2
-##  43 YVQX6LL1 r/Professors      academic and …               18                 9
-##  44 ZHMH16C4 r/Maine           geographic                   12                 6
-##  45 2BD455O0 r/celestegame     entertainment                13                 6
-##  46 KMXD4OZC r/relationship_a… advice                       26                12
-##  47 KZ9S5MPC r/magicTCG        entertainment                16                 7
-##  48 6CDVQX7L r/UXDesign        academic and …                7                 3
-##  49 FJYUEQN8 r/ClashRoyale     entertainment                30                12
-##  50 LJSMGNV0 r/NoStupidQuesti… advice                        5                 2
-##  51 Q3MFUDV9 r/Jujutsufolk     entertainment                13                 5
-##  52 4CA4DFWP r/nosleep         entertainment                 8                 3
-##  53 20ISZCV2 r/PortlandME      geographic                    6                 2
-##  54 8BL6X7AX r/TrueOffMyChest  advice                        3                 1
-##  55 8PAKX1OM r/writing         creative                      3                 1
-##  56 AJVNZ9CE r/college         academic and …                3                 1
-##  57 BF3MN8ZR r/FinancialCaree… academic and …                3                 1
-##  58 GNLFFB4P r/uswnt           athletic                      6                 2
-##  59 H6D2C4VR r/math            academic and …                3                 1
-##  60 NZ8ZTZHG r/ScienceMemes    entertainment                 6                 2
-##  61 PLW1S0CA r/piracy          entertainment                 3                 1
-##  62 S87Q76NA r/sentinelsmulti… entertainment                 3                 1
-##  63 VNSY2V6A r/travel          geographic                    3                 1
-##  64 XAA8CS8F r/deloitte        academic and …                3                 1
-##  65 HZP27937 r/LifeProTips     advice                       23                 7
-##  66 0QPSDFM3 r/surfing         athletic                      7                 2
-##  67 40SNDKQR r/TraderJoes      food                          7                 2
-##  68 JEW0DH9D r/college         academic and …                7                 2
-##  69 0L28O7LJ r/Paris           geographic                   12                 3
-##  70 37UDZTHY r/StockMarket     learning                      4                 1
-##  71 64LRAXDJ r/hermitcrabs     entertainment                 4                 1
-##  72 BWQ1ZSYD r/lawschooladmis… academic and …                8                 2
-##  73 HCBTBYHS r/vegan           food                          4                 1
-##  74 J8N7DCDH r/books           academic and …                4                 1
-##  75 N9V0QKO1 r/acne            creative                      4                 1
-##  76 NHCBLFL1 r/AmItheAsshole   advice                       12                 3
-##  77 QGT05169 r/funny           entertainment                 4                 1
-##  78 RLHDN7YZ r/knitting        creative                      4                 1
-##  79 RS0Z27EB r/simpleliving    learning                      4                 1
-##  80 YQ5FHGIU r/tea             food                          4                 1
-##  81 ZERL6DH6 r/AskReddit       advice                       17                 4
-##  82 56M8U5A5 r/vexillology     learning                     13                 3
-##  83 YDKEN7JY r/WWEGames        entertainment                13                 3
-##  84 PBNU471N r/creditcards     learning                      9                 2
-##  85 18HXK612 r/AITAH           advice                       19                 4
-##  86 6D26ZXC8 r/asexuality      advice                        5                 1
-##  87 FDULT82W r/ArtBusiness     academic and …                5                 1
-##  88 YMQ1DC06 r/jobs            academic and …               15                 3
-##  89 73N2RQWR r/REU             academic and …               11                 2
-##  90 G8B6AJJV r/peloton         athletic                     11                 2
-##  91 JDVDZARM r/personalfinance learning                      6                 1
-##  92 MCYP84X4 r/Bowdoin         academic and …                6                 1
-##  93 OUSZQD8K r/AmIOverreacting advice                        6                 1
-##  94 K6LTYZJH r/AITAH           advice                        7                 1
-##  95 U7RW6MVC r/NancyDrew       academic and …                7                 1
-##  96 WU4Q5VLP r/interestingasf… learning                     15                 2
-##  97 XI93MR3J r/philosophy      learning                     15                 2
-##  98 IN92PH3J r/pcmasterrace    creative                      8                 1
-##  99 OX30M9NX r/NonCredibleDef… geographic                    8                 1
-## 100 W6Z3Y3K6 r/Damnthatsinter… learning                      8                 1
-## 101 0MGC7F4K r/explainlikeimf… learning                      9                 1
-## 102 FYE2JV3H r/ApplyingToColl… academic and …                9                 1
-## 103 O4NB1X6B r/news            news                         18                 2
-## 104 PLC36LSR r/whatisthisbird  learning                      9                 1
-## 105 97N7CQ49 r/languagelearni… learning                     10                 1
-## 106 LN8REBYY r/foodiesnark     food                         12                 1
-## 107 0GMT2ITP r/knitting        creative                     15                 1
-## 108 7SUXPU9Y r/chemistry       learning                     15                 1
-## 109 XILQXDX5 r/apples          food                         20                 1
-## 110 6VBV95IL r/trees           food                         28                 1
-## # ℹ 3 more variables: unknown_category &lt;int&gt;, percentage_match &lt;dbl&gt;,
-## #   mismatched_subreddits &lt;chr&gt;</code></pre>
-<pre class="r"><code>category_distribution &lt;- df_analysis %&gt;%
+#print(other_subreddit_alignment_check, n = Inf)
+
+category_distribution &lt;- df_analysis %&gt;%
   count(category, sort = TRUE) %&gt;%
   mutate(pct = round(100 * n / sum(n), 1))
 
@@ -894,20 +780,9 @@ print(primary_bucket_summary)</code></pre>
     average_pct_match = round(mean(percentage_match, na.rm = TRUE), 1),
     median_pct_match = round(median(percentage_match, na.rm = TRUE), 1)) %&gt;%
   arrange(desc(n_participants))
-print(participant_consistency_summary)</code></pre>
-<pre><code>## # A tibble: 9 × 4
-##   primary_bucket      n_participants average_pct_match median_pct_match
-##   &lt;chr&gt;                        &lt;int&gt;             &lt;dbl&gt;            &lt;dbl&gt;
-## 1 academic and career             27              47.2             42.9
-## 2 entertainment                   24              52.2             50  
-## 3 advice                          21              52.1             50  
-## 4 learning                        13              19.7             13.3
-## 5 creative                         6              25.4             25  
-## 6 food                             6              15.9             16.6
-## 7 geographic                       6              34               33.3
-## 8 athletic                         5              46.8             33.3
-## 9 news                             2              55.5             55.5</code></pre>
-<pre class="r"><code>other_subreddit_alignment_check %&gt;%
+#print(participant_consistency_summary)
+
+other_subreddit_alignment_check %&gt;%
   filter(primary_bucket == &quot;religion&quot;)</code></pre>
 <pre><code>## # A tibble: 0 × 8
 ## # ℹ 8 variables: Subject &lt;chr&gt;, primary_subreddit &lt;chr&gt;, primary_bucket &lt;chr&gt;,
