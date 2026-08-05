@@ -6,7 +6,8 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+options(readr.show_col_types = FALSE)
 ```
 
 
@@ -27,18 +28,72 @@ library(patchwork)
 library(splines)
 ```
 
-# Language Exposure Groups and Lexical Behaviors
+# Outlier Exclusion
 
-#### Analysis aim: This analysis was done to explore whether participants typical language consumption patterns correlated with differences in the lexical cues used for memory search when producing VFT responses. More specifically, participants were seperated into four groups based on their self-reported exposure to long-form language (e.g., articles, books, newsletters, podcasts) and short form language (e.g., social media platforms). These groups were then compared across three lexical properties of the consecutive words they produced during the VFT. These properties were semantic similarity, phonological similarity, and frequency. 
+#### Before all further analysis was done, outliers were discovered and excluded as specified in the preregistration. 24 participants producing fewer than four responses in any fluency domain(animals, college majors, authors, sportspersons, musicians), were excluded from all analysis frameworks. Three other participants were flagged for producing fewer than four responses to the subreddits question, but produced sufficient numbers of responses in all fluency categories. Therefore, they remained in the analysis. 
 
-#### First, demographic information, containing participants' reported language exposure was imported. Long-form and short-form language exposure values were formed by adding esposure questionaire answers and calculated for each participant. 
-
-#### Next, the median of the long and short form exposure values were caculated and used to categorize participants into four types of language exposure groups: (1) Low long form and low short form, (2) Low long form and high short form, (3) High long form and low short form, and (4) High long form and high short form. As displayed below, each group contained similar numbers of participants.
+#### The first step in this analysis was to read in all the data files then to filter out participants who produced less than four responses across any data set and add them to the set of excluded subjects. Finally, all data files were altered to exclude those participants. 
 
 ```{r}
-#Loading demographics data
-demographics <- read.csv("../Data/cleaned_data/demographics_data.csv")
+#Data files imported and assigned to variable
+demographics <- read.csv("../Data/cleaned_data/demographics_data.csv") 
+fluency_data <- read_csv("../Data/cleaned_data/fluency_data.csv") 
+reddit_raw_data <- read_csv("../Data/raw_data/reddit_data.csv") 
+subreddit_data <- read_csv("../Data/cleaned_data/subreddit_data.csv")
+all_lexical_results <- bind_rows(read_csv("forager/output/animals_forager_results/lexical_results.csv") %>%
+                                   mutate(domain = "animals", Subject = as.character(Subject)),
+                                 read_csv("forager/output/authors_forager_results/lexical_results.csv") %>%
+                                   mutate(domain = "authors", Subject = as.character(Subject)),
+                                 read_csv("forager/output/college_majors_forager_results/lexical_results.csv") %>%
+                                   mutate(domain = "college_majors", Subject = as.character(Subject)),
+                                 read_csv("forager/output/musicians_forager_results/lexical_results.csv") %>%
+                                   mutate(domain = "musicians", Subject = as.character(Subject)),
+                                 read_csv("forager/output/sportspersons_forager_results/lexical_results.csv") %>%
+                                   mutate(domain = "sportspersons", Subject = as.character(Subject)),
+                                 ) 
+#Participants producing less than four responses in any category discovered and pulled
+fluency_number <- fluency_data %>%
+  group_by(Subject, domain) %>%
+  summarise(item_count = n(), .groups = "drop")
 
+low_response_subjects <- fluency_number %>%
+  filter(item_count < 4) %>%
+  pull(Subject) %>%
+  unique()
+
+#The pulled participants are stored in a variable and filtered out of all defined data sets
+excluded_subjects <- unique(c(low_response_subjects))
+
+demographics <- demographics %>%
+  filter(!subject %in% excluded_subjects)
+
+fluency_data <- fluency_data %>%
+  filter(!Subject %in% excluded_subjects)
+
+reddit_raw_data <- reddit_raw_data %>%
+  filter(!subject %in% excluded_subjects)
+
+subreddit_data <- subreddit_data %>%
+  filter(!Subject %in% excluded_subjects)
+
+all_lexical_results <- all_lexical_results %>%
+  filter(!Subject %in% excluded_subjects)
+
+fluency_number = fluency_data %>%
+  group_by(Subject, domain) %>%
+  summarise(item_count = n(), .groups = "drop")
+
+```
+
+# Language Exposure Groups and Lexical Behaviors
+
+#### This analysis explored whether participants typical language consumption patterns correlated with differences in the lexical cues used for memory search when producing VFT responses. More specifically, participants were seperated into four groups based on their self-reported exposure to long-form language (e.g., articles, books, newsletters, podcasts) and short form language (e.g., social media platforms). These groups were then compared across three lexical properties of the consecutive words they produced during the VFT. These properties were semantic similarity, phonological similarity, and frequency. 
+
+#### First, demographic information, containing participants' reported language exposure was imported. Long-form and short-form language exposure values were formed by adding exposure questionnaire answers across long and short form content. 
+
+#### Next, the median of the long and short form exposure values were calculated and used to categorize participants into four types of language exposure groups: (1) Low long form and low short form, (2) Low long form and high short form, (3) High long form and low short form, and (4) High long form and high short form. 
+
+```{r}
 #Calculates scores for long form (articles, books, newsletters, podcasts, etc) and short form (social media) language exposure for each participant
 demographics <- demographics %>% mutate (
   long_form_score = long_NewsArticles + long_FictionBooks + long_NonFictionBooks + long_EssaysBlogsNewsletters + long_Podcasts,
@@ -63,27 +118,13 @@ demographics <- demographics %>% mutate (
 demographics %>% 
   count(language_exposure_group)
 ```
+#### As displayed above, each group contained similar numbers of participants.
 
-#### These exposure patterns then were combined with the lexical responses from the VFT. To do so, these responses were first combined across domains (animals, authors, college majors, musicians, and sportspersons) and then joined with the language exposure data, linking response patterns to the exposure groups. 
+#### Using the Forager pipeline, each consecutive response had a set of calculated lexical cues (semantic similarity, phonological similarity, and word frequency). These cues were averaged across all the responses a participant input for a domain then combined with the language exposure data. Any participants not matching a language exposure group, were excluded at this point to ensure all observations were correctly paired with an exposure group. 
 
-#### Using the Forager pipeline, each consecutive response had a set of calculated lexical cues (semantic similarity, phonological similarity, and word frequency). These cues were averaged across all the responses a participant input for a domain then combined with the language exposure data. Any participants not matching a language exposure group, were excluded at this point to ensure observations were correctly paired with an exposure group. 
-
-#### Finally, the data were displayed in a bar plot comparing lexical cues across domains and language exposure groups. This plot revealed little variation across language exposure groups. In the animals and college majors domains, it appears as semantic similarity and frequency were more highly utilized on average by participants in all language expore groups. This may reflect participants higher familirity with these categories or suggest that these categories contain items with closer semantic relations and higher frequency. Other categories exhibited minimal but greater amounts of variation across groups.
+#### Finally, the data were displayed in a bar plot comparing lexical cues across domains and language exposure groups. In the animals and college majors domains, it appears semantic similarity and frequency were more highly utilized on average by participants in all language expore groups. This could reflect that these categories contain items with closer semantic relations and higher frequency. Other categories exhibited minimal but greater amounts of variation across groups. Overall, the difference between lexical cue use per group is minimal, suggesting language exposure may not greatly impact the types of lexical cues used for word production.
 
 ```{r}
-#Loads in forager lexical results for each domain and combines them into one dataset
-all_lexical_results <- bind_rows(read_csv("forager/output/animals_forager_results/lexical_results.csv") %>%
-                                   mutate(domain = "animals", Subject = as.character(Subject)),
-                                 read_csv("forager/output/authors_forager_results/lexical_results.csv") %>%
-                                   mutate(domain = "authors", Subject = as.character(Subject)),
-                                 read_csv("forager/output/college_majors_forager_results/lexical_results.csv") %>%
-                                   mutate(domain = "college_majors", Subject = as.character(Subject)),
-                                 read_csv("forager/output/musicians_forager_results/lexical_results.csv") %>%
-                                   mutate(domain = "musicians", Subject = as.character(Subject)),
-                                 read_csv("forager/output/sportspersons_forager_results/lexical_results.csv") %>%
-                                   mutate(domain = "sportspersons", Subject = as.character(Subject)),
-                                 )
-
 #Combines lexical results with demographics results, adding language exposure data   
 lexical_language_exposure_groups <- all_lexical_results %>%
   left_join(demographics %>% select(subject, language_exposure_group), by = c("Subject" = "subject"))
@@ -112,6 +153,7 @@ lexical_summary_long_form <- lexical_summary %>%
     values_to = "value"
   )
 
+#Plots data
 ggplot(lexical_summary_long_form, aes(x = language_exposure_group, y = value, fill = language_exposure_group)) +
   geom_col() + facet_grid(cue ~ domain, scales = "free_y", labeller = labeller(
     cue = c(
@@ -128,93 +170,22 @@ ggplot(lexical_summary_long_form, aes(x = language_exposure_group, y = value, fi
 ```
 # Subreddit Response Patterns
 
-#### After grouping participants by language exposure, we shifted to examining their subreddit inputs. This, broadly, included grouping subreddits into clusters, exploring the clusters participants responses fell within, examining the consistency of participants responses, and looking at the number of responses entered
+#### After grouping participants by language exposure, we shifted to examining their subreddit inputs. This, broadly, included grouping subreddits into clusters, exploring the clusters participants responses fell within, examining the consistency of participants responses, and looking at the number of responses entered.
 
-#### The first step in doing this included importing the subreddit data, and counting the frequency of each subreddit input. We then identified the top 150 most commonly appearing subreddits and manually assigned each to one of 10 clusters (entertainment, advice, academic and career, learning, creative, geographic, news, athletic, food, religion, N/A). Any additional manual labeling needed was done within the code below. All of the manually categorized items were combined and matched to the original data, either pairing clusters to responses based on the intial response or one of the alternate, similar subreddits. The table below reveals the number of inputs that fell into each cluster.
+#### The first step in doing this included importing the subreddit data, and counting the frequency of each subreddit input. We then identified the top 150 most commonly appearing subreddits and manually assigned each to one of 10 clusters (entertainment, advice, academic and career, learning, creative, geographic, news, athletic, food, religion, N/A). Any additional manual labeling needed was included within the same excel file. All of the manually categorized items were combined and matched to the original data, either pairing clusters to responses based on the intial response or one of the alternate, similar subreddits. The table below reveals the number of inputs that fell under each cluster.
 
 ```{r}
-subreddit_data <- read_csv("../Data/cleaned_data/subreddit_data.csv")
-
+#Pulls top 150 most input subreddits for manual analysis
 subreddit_counts <- subreddit_data %>% 
   count(corrected_subreddit, sort = TRUE)
 
 top_150_subs <- subreddit_counts %>% 
  slice_head(n = 150)
 
-category_map <- read_csv("../Analysis/top_150_subs_categorized.csv")
+#Imports manually categorized subreddits
+category_map_complete <- read_csv("../Analysis/top_150_subs_categorized.csv")
 
-manually_added_categories <- tribble(
-  ~corrected_subreddit, ~category,
-  "r/BPD", "advice",
-  "r/Baking", "food",
-  "r/Barca", "athletic",
-  "r/BostonBruins", "athletic",
-  "r/Breath_of_the_Wild", "entertainment",
-  "r/Biohackers", "learning",
-  "r/BostonBruins", "athletic",
-  "r/Buddhism", "religion",
-  "r/CFB", "athletic",
-  "r/Catholicism", "religion",
-  "r/ChatGPT", "learning",
-  "r/Costco", "food",
-  "r/CozyPlaces", "entertainment",
-  "r/CrumblCookies", "food",
-  "r/Dreams", "advice",
-  "r/EDC", "advice",
-  "r/EDH", "entertainment",
-  "r/EngagementRings", "creative",
-  "r/FigureSkating", "athletic",
-  "r/FinancialCareers", "academic and career",
-  "r/Forex", "academic and career",
-  "r/FundieSnarkUncensored", "religion",
-  "r/GaySoundsShitposts", "entertainment",
-  "r/GaylorSwift", "entertainment",
-  "r/Hair", "creative",
-  "r/Handwriting", "creative",
-  "r/HomeworkHelp", "academic and career",
-  "r/HonkaiStarRail", "entertainment",
-  "r/IdiotsInCars", "entertainment",
-  "r/Indianapolis", "geographic",
-  "r/Jujutsufolk", "entertainment",
-  "r/MCFC", "athletic",
-  "r/Millennials", "advice",
-  "r/Mommit", "advice",
-  "r/MurderedByWords", "entertainment",
-  "r/NoSleep", "entertainment",
-  "r/NonCredibleDefense", "geographic", 
-  "r/Omaha", "geographic",
-  "r/OnePiece", "entertainment",
-  "r/Reverse1999", "entertainment",
-  "r/RoastMe", "advice", 
-  "r/StockMarket", "learning",
-  "r/UXDesign", "academic and career",
-  "r/math", "academic and career",
-  "r/clinicalresearch", "academic and career",
-  "r/celestegame", "entertainment",
-  "r/surfing", "athletic",
-  "r/TraderJoes", "food",
-  "r/asexuality", "advice",
-  "r/apples", "food",
-  "r/ftm", "advice",
-  "r/uswnt", "athletic",
-  "r/sentinelsmultiverse", "entertainment",
-  "r/deloitte", "academic and career",
-  "r/peloton", "athletic",
-  "r/philosophy", "learning",
-  "r/vegan", "food",
-  "r/rance", "geographic",
-  "r/simpleliving", "learning",
-  "r/tea", "food",
-  "r/whatisthisbird", "learning",
-  "r/vexillology", "learning",	
-  "r/trees", "food",
-  "r/foodiesnark", "food"			
- )
-
-category_map_complete <- bind_rows(category_map, manually_added_categories) %>%
-  distinct(corrected_subreddit, .keep_all = TRUE)
-  
-
+#Combines manual categorizations with rest of data by adding the rest of the subreddits to categories aligned with their primary or alternate subreddits. 
 subreddit_data_categorized <- subreddit_data %>%
   left_join(category_map_complete, 
             by = "corrected_subreddit") %>%
@@ -231,20 +202,20 @@ subreddit_data_categorized <- subreddit_data %>%
 
 subreddit_data_categorized %>%
   count(category, sort = TRUE)
-#
+
 ```
 
-#### For the following analysis, we focused the primary subreddit a person input and whether their following inputs aligned. First we isolated the cluster with which their primary subreddit fell under. Then every subsequenct subreddit input was compared to the primary subreddit, to asses whether or not it matched. A variable was created which stored the number of subreddits a participant input that matched their primary subreddit. This was converted to a percentage. 
+#### For the following analysis, we focused on whether a participants inputs aligned with the primary subreddit they input. First, we isolated the cluster which their primary subreddit fell under. Then every subsequent subreddit input was compared to the primary subreddit, to asses whether or not it matched. A variable was created which stored the number of subreddits a participant input that matched their primary subreddit. This was converted to a percentage. Then, of all the subreddits named, the proportion or percentage that fall in each category were calculated. These percentages were calculated again with only the primary subreddits.
 
-#### Then, of all the subreddits named, the proportion or percentage that fall in each category were calculated. These percentages were calculated again with only the primary subreddits named.
-
-#### Once these measures were obtained, the key question of participants response consistency with their primary subreddit input was assessed. This data gives us a better understanding of the consistency of a participants interests, or whether analyzing and pulling text data from their primary input will create an accurate depiction of a persons interests and how this may differ across different reddit users. 
+#### With these measures obtained, participants response consistency with their primary subreddit input was assessed.
 
 ```{r}
+#Forms primary subreddit buckets containing the first subreddit named
 primary_buckets <- subreddit_data_categorized %>%
   filter(tag == 1) %>%
   transmute(Subject, primary_subreddit = corrected_subreddit, primary_bucket = category)
 
+#Checks proceeding subreddits' alignment with the primary subreddit a participant input and calculates general category consistency across participants
 df_analysis <- subreddit_data_categorized %>%
   left_join(primary_buckets, by = "Subject") %>%
   mutate(matches_primary = (category == primary_bucket))
@@ -260,18 +231,14 @@ other_subreddit_alignment_check <- df_analysis %>%
   ) %>%
   arrange(desc(percentage_match))
 
-#print(other_subreddit_alignment_check, n = Inf)
-
 category_distribution <- df_analysis %>%
   count(category, sort = TRUE) %>%
   mutate(pct = round(100 * n / sum(n), 1))
 
-print(category_distribution)
-
 primary_bucket_summary <- primary_buckets %>%
   count(primary_bucket, sort = TRUE) %>%
   mutate(pct = round(100 * n / sum(n), 1))
-print(primary_bucket_summary)
+
 
 participant_consistency_summary <- other_subreddit_alignment_check %>%
   group_by(primary_bucket) %>%
@@ -280,21 +247,20 @@ participant_consistency_summary <- other_subreddit_alignment_check %>%
     average_pct_match = round(mean(percentage_match, na.rm = TRUE), 1),
     median_pct_match = round(median(percentage_match, na.rm = TRUE), 1)) %>%
   arrange(desc(n_participants))
-#print(participant_consistency_summary)
 
   
 ```
 
-#### Below are plots highlighting (1) the distribution of the numbers of subreddits listed, (2) the cluster distribution of participants primary subreddit, and (3) subreddit category consistency and popularity.
+#### Plots were formed highlighting (1) the distribution of the numbers of subreddits listed, (2) the cluster distribution of participants primary subreddit, and (3) subreddit category consistency and popularity.
 
-#### 1: This plot suggests that most participants name, in total, around four subreddits and broadly name less than ten 10. five or less participants ever named more than 15. This reveals the number of subreddits which likely need to be examined across participants in order to get a good idea of their language exposure and suggests looking into their first 3-4 inputs could provide an accurate idea.
+#### 1: This plot suggests that most participants name, in total, around four subreddits and broadly name less than ten 10. Five or less participants ever named more than 15. This reveals that a participants first 3-4 subreddit inputs may provide an accurate idea of their interests.
 
-#### 2: This plot reveals most participants first subreddit fell under the academic and career, entertainment, or advice cluster, providing us with an idea of the most informative clusters and the clusters most participants consumed content from.
+#### 2: This plot reveals most participants' first subreddit fell under the academic and career, entertainment, or advice cluster, suggesting those are our most informative clusters, which participants consumed information from most.
 
 #### 3: This plot builds on the information presented in the prior plot, including category consistency. It suggests participants whose primary subreddit fell into one of the most popular three clusters, were most likely to remain in those clusters. This may further highlight these three clusters (academic and career, entertainment, or advice) as being most informative for our analysis.
 
 ```{r}
-#distribution of subreddits listed per participant
+#Distribution of subreddits listed per participant
 subreddit_count_per_participant <- subreddit_data_categorized %>%
   group_by(Subject) %>%
   summarise(n_subreddits = n())
@@ -308,7 +274,7 @@ subreddit_count_plot <- ggplot(subreddit_count_per_participant, aes(x = n_subred
     y = "Participant #") + theme_minimal()
 
 
-#distribution of primary buckets people's first subreddit input fell into
+#Distribution of primary buckets people's first subreddit input fell into
 primary_bucket_plot <- ggplot(primary_bucket_summary, aes(x = reorder(primary_bucket, pct), y = pct)) +
   geom_col(fill = "steelblue") +
   coord_flip() +
@@ -340,17 +306,17 @@ consistency_plot <- ggplot(participant_consistency_summary, aes(x = n_participan
 
 # Temporal dynamics of Subreddit Responses
 
-#### This analysis supports the prior analysis exploring what subreddits participants input by looking at participant response times and response number over time. This is another exploratory analysis revealing when participants began responsing and how their response number accumulated over time. It is intended to provide more information on the quality of the subreddit data recieved from participants. 
+#### This analysis revealed when participants began responding and how their response number accumulated over time, with the goal of gathering more information on the quality of the subreddit data recieved from participants. 
 
-#### To explore this, we first restructured the RT data so that response times are cumulative. Then, a second by second summary was generated across all participants which tracks, at each second, how many subreddits each participant had named so far and whether all participant have input a subreddit.
+#### To explore this, we first restructured the RT data so that response times are cumulative. Then, a second by second summary was generated across all participants which tracks, at each second, how many subreddits each participant had named so far and whether all participants have input a subreddit.
 
 ```{r}
-reddit_raw_data <- read_csv("../Data/raw_data/reddit_data.csv")
-
+#Filters subreddit specific RT data 
 subreddit_reaction_time <- reddit_raw_data %>%
   filter(task == "VFT", domain == "subreddits") %>%
   select(subject, response_times) %>%
-  
+
+#Converts RT into cumulative measure   
 mutate(response_times = str_remove_all(response_times, "\\[|\\]")) %>%
   separate_rows(response_times, sep = ",") %>%
   mutate(response_times = as.numeric(str_trim(response_times))) %>%
@@ -367,6 +333,7 @@ subjects <- unique(subreddit_reaction_time$subject)
 
 number_of_subjects <- length(subjects)
 
+#Forms curves for plotting consisting of data on participant RT and when participants first input entered.
 percentage_cumulative_curve <- tibble(second = 1:max_time) %>%
   mutate(
     avg_subreddits = sapply(second, function(s) {
@@ -381,10 +348,9 @@ percentage_cumulative_curve <- tibble(second = 1:max_time) %>%
     })
   )
 
-#print(percentage_cumulative_curve, n = 90)
 ```
 
-#### These data, depicted in the plot below, suggest that by 90, half the alotted time seconds, oarticipants have named majority of the subreddits they will input as well as revealing that not all participants named a subreddit at all. We believe this speaks to the possible difficulty of naming specific subreddits and correlates well with prior plots demonstrating an averge response amount around five. This also further suggests that the first few subreddits a participant input were the most easily retrievable and possibly most relevant to pull text data from.
+#### These data, depicted in the plot below, suggest that by 90, half the alotted time seconds, participants have named majority of the subreddits they will input. It reveals that some participants never named a subreddit. This may highlightthe possible difficulty of naming specific subreddits, and it correlates with prior plots demonstrating an average response number around five. Finally, the data further suggests that the first few subreddits a participant input were the most easily retrievable and possibly most relevant to pull text data from.
 
 ```{r}
 average_items_plot <- ggplot(percentage_cumulative_curve, aes(x = second, y = avg_subreddits)) +
@@ -420,9 +386,9 @@ average_items_plot | percentage_plot
 
 # Temporal dynamics of Domain Responses
 
-#### This analysis replicated the previous analysis, but explores responses to each fluency domain instead. This explorative data reveals participant response patterns for each category. Specifically, it reveals the progression of items input per domain at what point participants named at least one item per domain. This provides us with possible information of domain ease of item retrieval and overall production differences across domains, helping us to better understand the factors that may impact later analysis.
+#### This analysis replicated the previous analysis, but explores participant response patterns to each fluency domain instead. Specifically, it reveals the progression of items input per domain at what point participants named at least one item per domain. This provides us with possible information of domain ease of item retrieval and overall production differences across domains, helping us to better understand the factors that may impact later analysis.
 
-#### This analysis was done by restructuring participants RT data for each domain and forming cumulative response times from them. Then, again, a  second summary was generated across all participants tracking, at each second, how many inputs each participant had named so far across domains and the percent of participants who have input one response to a domain. We also examined the time it took for participants to input their first response. Combined in the plots below, these data reveal the retrieval speed and patterns across domains.
+#### This analysis was done by restructuring participants RT data for each domain to track cumulative response times. Then, a summary was generated across all participants, tracking, (1) at each second, how many inputs each participant had named so far across domains and (2) the percentage of participants who have input one response in a given domains VFT. We also examined the time it took for participants to input their first response.
 
 ```{r}
 all_domain_curves <- tibble()
@@ -472,7 +438,7 @@ for (dom in fluency_domains) {
 }
 ```
 
-#### The plots suggest that animals had the highest response volume followed by college majors with average item inputs above 15. Sportspersons and authors had a lower response average below 10. This may demonstrate that participants could more easily retrieve items for the amials and college major domains, possibly due the lexical structures of items in these two categories compared to the others. This may also suggest lower recall ease for authors, sportspersons, and musicians. We believe this could result from the more name specific nature of these categories, compared to the others which contain fewer proper nouns. The plot showing the percentage of participants naming one item suggests that all participants named at least one item in every single domain, demonstrating that, despite difference in retrieval ease, domains were able to be retrieved from for all participants.
+#### The plots suggest that animals had the highest response volume, with the average item input number above 20. This was followed by college majors, with average item inputs above 15. Sportspersons and authors had a lower response average below 10. This may demonstrate that participants could more easily retrieve items for the amials and college major domains, possibly due the lexical structures of items in these two categories compared to the others. This may also suggest lower recall ease for authors, sportspersons, and musicians. This could result from the more name specific nature of these categories, compared to the others which contain fewer proper nouns. The plot showing the percentage of participants naming one item suggests that all participants named at least one item in every single domain, demonstrating that, despite difference in retrieval ease, domains were able to be retrieved from for all participants.
 
 ```{r}
   first_item_dist <- ggplot(all_first_item_rt, aes(first_rt_s)) +
@@ -497,72 +463,23 @@ combined_rt_plot <- avg_items_named_over_time_plot | percentage_named_over_time_
 combined_rt_plot
 ```
 
+# Category Interest and Verbal Fluency
 
-(possible outlier restructure, incomplete)
-```{r eval=FALSE, include=FALSE}
-fluency_domains <- c(
-  "animals", "authors", "college_majors", "musicians", "sportspersons"
-)
+#### This analysis explored whether a participants interest in a semantic category related to their VFT performance, assessed by the number of items produced. Participant-level summaries were first generated from VFT response data. Then, raw RTs were converted to individual response times so that performance and cumulative response times could be assesed. Interest ratings were collected seperately, from the interest-estimate question preceeding each domain VFT and merged with fluency performance data for each participant.
 
-possible_outliers <- c(
-  "ESNMRF10", "XV9JV4CP", "BWQ1ZSYD"
-)
-
-outlier_cutoff <- 3
-
-summarize_participants <- function(data){
-  data %>%
-    group_by(subject) %>%
-    summarise(first_rt = first(cumulative_rt_s), n_responses = n(), mean_rt = mean(response_times, na.rm = TRUE) / 1000, median_rt = median(response_times, na.rm = TRUE) / 1000, .groups = "drop")
-}
-
-zscores <- function(data){
-  data %>%
-    mutate(z_first = as.numeric(scale(first_rt)), 
-                   z_mean = as.numeric(scale(mean_rt)),
-                   z_n = as.numeric(scale(n_responses)))
-}
-
-participant_summary <- summarize_participants(subreddit_reaction_time)
-participant_summary
-
-ggplot(participant_summary, aes(x = "", y = first_rt)) + geom_boxplot() + theme_minimal()
-
-ggplot(participant_summary, aes(first_rt)) + geom_histogram(bins = 20) + theme_minimal()
-
-ggplot(subreddit_reaction_time, aes(
-  cumulative_rt_s, subreddit_number, group = subject
-)) + geom_line(alpha = .2) + theme_minimal()
-
-participant_summary %>% 
-  zscores() %>%
-  arrange(desc(abs(z_first)))
-
-reddit_raw_data %>%
-  filter(subject %in% possible_outliers)
-
-ggplot(subreddit_reaction_time,
-       aes(cumulative_rt_s, subreddit_number, group = subject, colour = subject %in% possible_outliers)) +
-  geom_line(alpha = .7) + scale_colour_manual(values = c("grey80", "red")) + theme_minimal()
-
+```{r}
+#Creates a participant level VFT summary for each participant, including fluency domains, first response latency, total items produced, mean RT, and median RT.
 all_participant_summary <- reddit_raw_data %>%
   filter(task == "VFT", domain %in% fluency_domains) %>%
-
   select(subject, domain, response_times) %>%
-
   mutate(response_times = str_remove_all(response_times, "\\[|\\]")) %>%
-
   separate_rows(response_times, sep = ",") %>%
-
   mutate(response_times = as.numeric(str_trim(response_times))) %>%
-
   group_by(domain, subject) %>%
-
   mutate(
     item_number = row_number(),
     cumulative_rt_s = cumsum(response_times) / 1000
   ) %>%
-
   summarise(
     first_rt = first(cumulative_rt_s),
     n_responses = n(),
@@ -570,258 +487,32 @@ all_participant_summary <- reddit_raw_data %>%
     median_rt = median(response_times, na.rm = TRUE) / 1000,
     .groups = "drop"
   )
-
-domain_outliers <- all_participant_summary %>%
-  group_by(domain) %>%
-  zscores() %>%
-  ungroup()
-
-domain_outliers %>%
-  filter(abs(z_first) > outlier_cutoff)
-
-domain_outliers %>%
-  filter(z_n < -outlier_cutoff)
-
-domain_outliers %>%
-  filter(
-    abs(z_first) > outlier_cutoff |
-      abs(z_mean) > outlier_cutoff |
-      abs(z_n) > outlier_cutoff
-  ) %>%
-  count(subject, sort = TRUE)
-
-ggplot(
-  all_participant_summary,
-  aes(x = "", y = first_rt)
-) +
-  geom_boxplot() +
-  facet_wrap(~domain) +
-  theme_minimal()
-
-ggplot(
-  all_participant_summary,
-  aes(first_rt)
-) +
-  geom_histogram(bins = 20) +
-  facet_wrap(~domain) +
-  theme_minimal()
-
-domain_outliers %>%
-  group_by(subject) %>%
-  summarise(
-    max_abs_z = max(abs(z_first)),
-    mean_abs_z = mean(abs(z_first)),
-    n_domains = n(),
-    n_outlier_domains = sum(abs(z_first) > outlier_cutoff)
-  ) %>%
-  arrange(desc(max_abs_z))
-
-domain_outliers %>%
-  group_by(subject) %>%
-  summarise(
-    mean_items = mean(n_responses),
-    total_domains = n(),
-    slow_domains = sum(z_first > outlier_cutoff),
-    low_output_domains = sum(z_n < -outlier_cutoff)
-  ) %>%
-  arrange(desc(slow_domains))
-
-
-overall_output <- all_participant_summary %>%
-
-  group_by(subject) %>%
-  summarise(
-    total_items = sum(n_responses),
-    mean_items = mean(n_responses),
-    .groups = "drop"
-  ) %>%
-
-  arrange(total_items)
-
-overall_output
-
-summary(overall_output$total_items)
-
-ggplot(overall_output, aes(total_items)) +
-  geom_histogram(bins = 20) +
-  theme_minimal()
-```
-
-
-# Atypical response analysis
-
-### This analysis shifted away from general participant response patterns to an alaysis and discovery of possible outliers. This exploration was conducted folowing the discovery of delayed subreddit response inputs, skewing the response data. In exploring the behavior patterns of outliers, we can improve the accuracy of our data and understand unusual response patterns. 
-
-#### The first step in this analysis was to condense the participant response data so that each row corresponds to one participant and four measures regarding their RT: the RT of their first response, the number of responses produced, the average response time across all responses, and the median of their RT.   
-
-#### The plots produce include a box plot, a histogram, and a line plot. The box plot reveals 
-```{r}
-participant_summary <- subreddit_reaction_time %>%
-  group_by(subject) %>%
-  summarise(
-    first_rt = first(cumulative_rt_s),
-    n_responses = n(),
-    mean_rt = mean(response_times, na.rm = TRUE) / 1000,
-    median_rt = median(response_times, na.rm = TRUE) / 1000
-  )
-
-ggplot(participant_summary, aes(x = "", y = first_rt)) +
-  geom_boxplot()
-
-ggplot(participant_summary, aes(first_rt)) +
-  geom_histogram(bins = 20)
-
-
-participant_summary %>%
-  mutate(
-    z_first = scale(first_rt),
-    z_mean = scale(mean_rt),
-    z_n = scale(n_responses)
-  ) %>%
-  arrange(desc(abs(z_first)))
-
-participant_summary
-
-
-reddit_raw_data %>%
-  filter(subject %in% c("ESNMRF10", "XV9JV4CP", "BWQ1ZSYD"))
-
-highlight <- c("ESNMRF10", "XV9JV4CP", "BWQ1ZSYD")
-
-ggplot(
-  subreddit_reaction_time,
-  aes(cumulative_rt_s, subreddit_number,
-      group = subject,
-      colour = subject %in% highlight)
-) +
-  geom_line(alpha = 0.7) +
-  scale_colour_manual(values = c("grey80", "red")) +
-  theme_minimal()
-
-
-```
-deviant domain participant
-
-```{r}
-fluency_domains <- c("animals", "authors", "college_majors",
-                     "musicians", "sportspersons")
-
-all_participant_summary <- tibble()
-
-for (dom in fluency_domains) {
-
-  fluency_rt <- reddit_raw_data %>%
-    filter(task == "VFT", domain == dom) %>%
-    select(subject, response_times) %>%
-    mutate(response_times = str_remove_all(response_times, "\\[|\\]")) %>%
-    separate_rows(response_times, sep = ",") %>%
-    mutate(response_times = as.numeric(str_trim(response_times))) %>%
-    group_by(subject) %>%
-    mutate(
-      item_number = row_number(),
-      cumulative_rt_s = cumsum(response_times)/1000
-    ) %>%
-    ungroup()
-
-  participant_summary <- fluency_rt %>%
-    group_by(subject) %>%
-    summarise(
-      first_rt = first(cumulative_rt_s),
-      n_responses = n(),
-      mean_rt = mean(response_times, na.rm = TRUE)/1000,
-      median_rt = median(response_times, na.rm = TRUE)/1000
-    ) %>%
-    mutate(domain = dom)
-
-  all_participant_summary <- bind_rows(all_participant_summary,
-                                       participant_summary)
-}
-
-domain_outliers <- all_participant_summary %>%
-  group_by(domain) %>%
-  mutate(
-    z_first = as.numeric(scale(first_rt)),
-    z_mean = as.numeric(scale(mean_rt)),
-    z_n = as.numeric(scale(n_responses))
-  ) %>%
-  ungroup()
-
-domain_outliers %>%
-  filter(abs(z_first) > 3) %>%
-  arrange(domain, desc(z_first))
-
-domain_outliers %>%
-  filter(z_n < -3)
-
-domain_outliers %>%
-  filter(abs(z_first) > 3 | abs(z_mean) > 3 | abs(z_n) > 3) %>%
-  count(subject, sort = TRUE)
-
-ggplot(all_participant_summary,
-       aes(x = "", y = first_rt)) +
-  geom_boxplot() +
-  facet_wrap(~domain) +
-  theme_minimal()
-
-ggplot(all_participant_summary,
-       aes(first_rt)) +
-  geom_histogram(bins = 20) +
-  facet_wrap(~domain)
-
-domain_outliers %>%
-  group_by(subject) %>%
-  summarise(
-    max_abs_z = max(abs(z_first)),
-    mean_abs_z = mean(abs(z_first)),
-    n_domains = n(),
-    n_outlier_domains = sum(abs(z_first) > 3)
-  ) %>%
-  arrange(desc(max_abs_z))
-
-domain_outliers %>%
-  group_by(subject) %>%
-  summarise(
-    mean_items = mean(n_responses),
-    total_domains = n(),
-    slow_domains = sum(z_first > 3),
-    low_output_domains = sum(z_n < -3)
-  ) %>%
-  arrange(desc(slow_domains))
-
-overall_output <- all_participant_summary %>%
-  group_by(subject) %>%
-  summarise(
-    total_items = sum(n_responses),
-    mean_items = mean(n_responses)
-  ) %>%
-  arrange(total_items)
-
-overall_output
-summary(overall_output$total_items)
-ggplot(overall_output, aes(total_items)) +
-  geom_histogram(bins = 20) +
-  theme_minimal()
-```
-
-
-3) Fluency and interest correlations calculated and range box plots (interest and fluency spread) formed
-
-```{r}
-fluency_wide <- read.csv("../Data/cleaned_data/fluency_interest_estimate.csv")%>%
-  select(-rt)%>%
+ 
+#Imports interest data and reshapes to wide format, where one row correlates to one participants average for a given domain.
+fluency_wide <- read.csv("../Data/cleaned_data/fluency_interest_estimate.csv") %>%
+  select(-rt) %>%
   pivot_wider(names_from = typeoftrial, values_from = response)
-#View(fluency_wide)
 
-#VFT production counts
+#Collects VFT production counts by tracking the subject, domain, and number of responses for that domain
 vft_production <- all_participant_summary %>%
   select(subject, domain, n_responses) %>%
   rename(VFT_production = n_responses)
 
-# Merging production counts with interest data
+#Merges production counts with interest data
 fluency_wide <- fluency_wide %>%
   left_join(vft_production,
             by = c("subject", "domain"))
+```
 
+#### The following plots explore the distributions of interest and fluency proficiency across domains. 
+
+#### The first plot, showing participant interest across domains suggests that most participants noted higher interest in the animals category than others, followed by college majors and musicians. Most participants reported having the least amount of interest in the domain sportspersons.
+
+#### The second plot, showing participant fluency across domains suggests fluency followed a similar pattern with animals having the highest amount of items produced followed by college majors and musicians. Authors however had the fewest number of fluency responses despite having a higher spread of interest. This may further highlight a difficulty in item production for this domain.
+
+#### To explore the association between participants interests and their fluency response production number, scatterplots including fitted linear regression lines paired with pearson correlations were created to visualize the relationship. This plot reveals the highest correlation between interest and fluency in authors and sportspersons and the lowest correlation in animals and college majors. This, again, may demonstrate the specificity of these domains resulting in less ease of item production.
+
+```{r}
 #Box plot of interest spread across domains
 ggplot(fluency_wide, aes(x = domain, y = VFT_category_interest)) + geom_boxplot() + labs(title = "Interest Spread by Domain")
 ggsave("interest_spread_by_domain_plot.png", width = 8, height = 6)
@@ -845,10 +536,12 @@ ggplot(fluency_wide, aes(x = VFT_category_interest, y = VFT_production, color = 
 ggsave("fluency_interest_by_domain_correlation_plot.png", width = 8, height = 6)
 ```
 
-Interest domain split and phonological/semantic similarity + frequency
+# Interest Domain Split and Lexical Cues
+
+#### This analysis built on the interest rating data explored in the prior analysis by splitting participants into low and high interest groups for each domain and exploring whether the use of diferent lexical measures differed between groups. First, participants were grouped into high or low interest groups based on the median interest rating. Participants in the high interst group had an interest score at or above the median while participants in the low interest group had an interest score below the median. Then, interest groups were merged with lexical cue data, linking participant interest levels within a domain to a lexical response pattern. Descriptive summaries were formed, calcuating the domain level averages of lexical cues per interest group and participant everages. This ensured that each participant had equal contribution to the final statistics.
 
 ```{r}
-
+#Imports interest data and reads in interest ratings, splitting participants into high and low interest groups using the median
 interest_groups <- read_csv("../Data/cleaned_data/fluency_interest_estimate.csv") %>%
   filter(typeoftrial == "VFT_category_interest") %>%
   transmute(
@@ -864,6 +557,7 @@ interest_groups <- read_csv("../Data/cleaned_data/fluency_interest_estimate.csv"
   ) %>%
   ungroup()
 
+#Joins interst group data with lexical cue data
 lexical_domain_interest_groups <- all_lexical_results %>%
   left_join(
     interest_groups, 
@@ -871,6 +565,7 @@ lexical_domain_interest_groups <- all_lexical_results %>%
   ) %>%
   filter(!is.na(interest_group))
 
+#Calculates average lexical measures in each domain per group
 lexical_domain_interest_summary <- lexical_domain_interest_groups %>%
   group_by(domain, interest_group) %>%
   summarise(
@@ -886,6 +581,7 @@ lexical_domain_interest_summary <- lexical_domain_interest_groups %>%
     .groups = "drop"
   )
 
+#Calculates individual participant lexical measures in each domain per group and averages those means within each interest group
 subject_summary <- lexical_domain_interest_groups %>%
   group_by(Subject, domain, interest_group) %>%
   summarise(
@@ -916,11 +612,11 @@ subject_level_interest_summary <- subject_summary %>%
   )
 
 ```
-Plots
+
+#### This summary was plotted in the chart below, revealing similar patterns to those seen in the language exposure group analysis. The domain college majors had the highest average lexical cue, while the animals domain had similarly high averages of semantic similarity and fluency. All other domains had a marginally smaller average for all lexical cues. Between high and low interest groups for each domain, there was little to no difference. This suggests a participants interest in a domain did not heavily impact the lexical cues they used in search. 
 
 ```{r}
-library(tidyr)
-
+#Reshapes the data to long format with columns for domain, interest group, metric, and value, and renames the metrics for cleaner plot labels.
 plot_data <- lexical_domain_interest_summary %>%
   pivot_longer(
     cols = starts_with("mean_"),
@@ -936,6 +632,7 @@ plot_data <- lexical_domain_interest_summary %>%
     )
   )
 
+#Creates the plot showing separate panels including high and low interst groups for each domain across each lexical cue
 ggplot(plot_data,
        aes(x = interest_group,
            y = value,
@@ -960,34 +657,29 @@ ggsave("lexical_measures_interest.png",
 ```
 
 # Prediction vs Actual Fluency Regression
-## abcd
+
+#### Finally, our analysis pivoted from exploratory tests to regressions. The first of which, assessed whether a participants predicted fluency correlated with their actual fluency performance. 
+
+#### To do this, predicted fluency estimates were imported and shaped into a wide format where each prediction measure was placed on a seperate column for each participant. Preduicted fluency estimates were merged with the number of VFT items produced per domain. A linear regression model was then fit to this data and a scatterplot with a regression line was created to visualize the relationship between predicted and observed fluency scores.
+
+#### The model revealed that a participants estimated fluency was a significant positive predictor of the number of items produced, b = 0.493, SE = 0.030, t(413) = 16.46, p < .001. This model accounted for 43.1% of the variance in fluency scores, R² = .396, F(1, 413) = 271.10, p < .001.
+
 ```{r}
-#Reading in fluency data
-fluency_data <- read_csv("../Data/cleaned_data/fluency_data.csv")
 
-#Calculating the number of fluency responses per participant per domain
-fluency_number = fluency_data %>%
-  group_by(Subject, domain) %>%
-  summarise(
-    fluency_number = n(), 
-    .groups = "drop"
-  )
-
-#Reading in predicted fluency estimate
+#Imports the predicted fluency estimate and formats the data in wide form so that each domain prediction is in its own column 
 fluency_wide <- read.csv("../Data/cleaned_data/fluency_interest_estimate.csv")%>%
   select(-rt)%>%
   pivot_wider(names_from = typeoftrial, values_from = response)
-#View(fluency_wide)
 
-#Combining actual and estimated fluency
+#Combines fluency response data with estimated fluency
 fluency_regression <- fluency_wide %>%
   left_join(fluency_number, by = c("subject" = "Subject", "domain"))
-#View(fluency_regression)
 
-fluency_regression_model <- lm(fluency_number ~ VFT_estimate, data = fluency_regression)
+#Fits a linear regression model to test if predicted fluency predicts the number of words produces
+fluency_regression_model <- lm(item_count ~ VFT_estimate, data = fluency_regression)
 summary(fluency_regression_model)
 
-ggplot(fluency_regression, aes(x = VFT_estimate, y = fluency_number)) +
+ggplot(fluency_regression, aes(x = VFT_estimate, y = item_count)) +
   geom_point(alpha = 0.4, color = "steelblue") + 
   geom_smooth(method = "lm", color = "darkblue", se = TRUE) +
   labs(title = "Predicted vs Actual Fluency Score",
@@ -998,8 +690,14 @@ ggsave("fluency_prediction_regression.png", width = 8, heigh = 6, dpi = 300)
 
 ```
 
-General Lexical Cues and Fluency Regression 
+# Average Lexical Cues and Fluency Regression  
+
+#### This second regression conducted examined whether lexical cues were associated, generally, with verbal fluency performance. Participant averages were first calculated for each of the three lexical cues, semantic similarity, phonological similarity, and frequency for each domain. Seperate linear mixed-effects models were fit for each lexical cue with fluency as the dependent variable, lexical cues and domains as the fixed effects, and participants as a random intercept. Scatterplots were created with fitted regression lines to depict the relationship between lexical cues and fluency performance.
+
+#### Having greater semantic similarity correlated with producing more fluency responses (β = 8.92, SE = 2.85, t(392.73) = 3.13, p = .002). There was also a positive correlation between phonological similarity and fluency, despite it being weaker than semantic simiilarity (β = 10.22, SE = 5.19, t(367.03) = 1.97, p = .050). Opposing these results, higher word frequency was correlated with lower response production (β = −1.41, SE = 0.52, t(375.52) = −2.71, p = .007).
+
 ```{r}
+#Calculates each participants average lexical cue measures for each fluency domain, reshapes the data, and combines participant lexical summaries with observed fluency counts
 lexical_data_long_form <- all_lexical_results %>%
   group_by(Subject, domain) %>%
   summarise(
@@ -1019,15 +717,20 @@ lexical_model <- lexical_data_long_form %>%
   group_by(cue) %>%
   nest() %>%
   mutate(
-    model = map(data, ~ lmer(fluency_number ~ value + domain + (1|Subject), 
+    model = map(data, ~ lmer(item_count ~ value + domain + (1|Subject), 
                             data = .x)),
     summary = map(model, summary)
   )
 
+#Fits a liner mixed-effects model to each lexical cue with a dependent variable of fluency item production, the lexical cue and domain as fixed effects, and a random intercept for participants
 lexical_model %>%
-  mutate(walk(summary, print))
+  mutate(tidy = map(model, broom.mixed::tidy)) %>%
+  select(cue, tidy) %>%
+  unnest(tidy) %>%
+  filter(effect == "fixed")
 
-ggplot(lexical_data_long_form, aes(x = value, y = fluency_number)) + 
+#Creates a scatter plot with seperate pannels for each lexical cue and fitted regression lines
+ggplot(lexical_data_long_form, aes(x = value, y = item_count)) + 
   geom_point(alpha = 0.3, color = "steelblue") +
   geom_smooth(method = "lm", color = "darkblue", se = TRUE) +
   facet_wrap(~ cue, scales = "free_x",
@@ -1042,22 +745,34 @@ ggplot(lexical_data_long_form, aes(x = value, y = fluency_number)) +
   theme_minimal()
 ggsave("lexical_cues_fluency_regression.png", width = 12, height = 5, dpi = 300)
 ```
-Domain Specific Lexical Cues and Fluency Regression 
+# Domain Specific Lexical Cues and Fluency Regression 
+
+#### This analysis builds on the previous regression and examines whether the relationship between lexical measures and fluency differs by domains. 
+
+#### Linear mixed-effects models were fit to each lexical cue. These models predicted fluency from the lexical cue, domain, and interaction between cue and domain, including random participant intercept. The interaction was included in this model to observe whether the correlation between lexical cues and fluency production differed by domain. A similar set of scatterplots, one per domain, were created with domain specific regression lines. 
+
+#### The model showed significant interactions between semantic similarity and domain. Semantic similarity had the strongest effect on the animals domain and was significantly weaker for the authors domain (β = −60.71, t(361.72) = −4.30, p < .001), musicians domain (β = −61.38, t(362.97) = −4.36, p < .001), and sportspersons domain (β = −52.96, t(356.31) = −3.72, p < .001) in comparison. The interaction between semantic similarity and college majors was not significant (β = −30.88, t(358.25) = −1.92, p = .056).
+
+#### There was no significant main effect of phonological similarity or domain (all p values > .33), suggesting phonological similarity was not associated with fluency performance and this relationship did not differ across domains.
+
+#### There was a significant negative interaction between word frequency and domain. In comparison to the control domain, animals, the frequency and fluency interaction was significantly less negative for the authors domain (β = 5.78, t(363.91) = 2.22, p = .027) and the college majors domain (β = 7.90, t(356.31) = 2.81, p = .005). Interactions for the musicians domain (p = .168) and sportspersons domain (p = .068) were not significant.
 
 ```{r, fig.width = 12, fig.height = 8}
+#Fits the three mixed-effects models by separating the data into each lexical cue and forms an interaction model which estimated the effect of the lexical cue, domain, and whether the lexical cue change differs depending on the domain
 lexical_model <- lexical_data_long_form %>%
   group_by(cue) %>%
   nest() %>%
   mutate(
-    model = map(data, ~ lmer(fluency_number ~ value * domain + (1|Subject), data = .x)),
+    model = map(data, ~ lmer(item_count ~ value * domain + (1|Subject), data = .x)),
     summary = map(model, summary)
   )
 
 lexical_model %>%
   mutate(walk(summary, print))
 
+#Creates a plot showing each participant, a regression line for each domain, and seperate panels for each lexical cue
 ggplot(lexical_data_long_form,
-       aes(x = value, y = fluency_number, color = domain)) +
+       aes(x = value, y = item_count, color = domain)) +
   geom_point(alpha = 0.3) +
   geom_smooth(method = "lm", se = TRUE) +
   facet_wrap(~ cue, 
@@ -1086,42 +801,54 @@ lexical_model %>%
   print(n = Inf)
 
 tidy(lexical_model$model[[1]])
-
- 
 ```
 
-Lexical cue change over time
+# Lexical Cue Change Across FLuency Production 
+
+#### Finally, we analyzed how lexical characteristics changed throughout the VFT. To do this, responses were ordered based on their position in each participants list of words produced, so lexical cues were modeled in relation to task progression. The first response in each verbal fluency sequence was excluded from lexical transition analyses because it lacked a preceding response and therefore no comparable lexical cue value. Mixed effects models were again used to account for individual participant differences. Changes in lexical cues were modeled across relative response position within fluency trials while differences in these changes across domains were tested. 
+
 ```{r}
+#Creates a data containing participant ID, fluency domain, each word produced, and that words order
 word_order <- fluency_data %>%
   transmute(
     Subject, domain, Fluency_Item = corrected_response, position = entry_number
   )
 
-all_lexical_results <- all_lexical_results %>%
+#Assigns an order number to every response for every participant within each domain, removing the first response. Then, standardizes the response sequence so that each trial is on a 0-1 scale
+lexical_transition_results <- all_lexical_results %>%
   group_by(Subject, domain) %>%
-  mutate(position = row_number(), 
-         relative_position = position / max(position)) %>%
+  mutate(position = row_number()) %>%
+  filter(position > 1) %>%   # remove first response
+  mutate(relative_position = position / max(position)) %>%
   ungroup()
 
+#Fits linear mixed-effects mixed models to test whether the lexical cue changes with task progression and if this differs across domains, accounting for individual differences
 semantic_change <- lmer(
   Semantic_Similarity ~ ns(relative_position, 3) * domain +
     (1 | Subject),
-  data = all_lexical_results
+  data = lexical_transition_results
 )
 
 phonological_change <- lmer(
   Phonological_Similarity ~ ns(relative_position, 3) * domain +
     (1 | Subject),
-  data = all_lexical_results
+  data = lexical_transition_results
 )
 
 frequency_change <- lmer(
   Frequency_Value ~ ns(relative_position, 3) * domain +
     (1 | Subject),
-  data = all_lexical_results
+  data = lexical_transition_results
 )
 
-ggplot(all_lexical_results, aes(x = relative_position, y = Semantic_Similarity, color = domain)) +
+nrow(lexical_transition_results)
+summary(lexical_transition_results$relative_position)
+```
+
+
+```{r}
+#Plots lexical cue shift over the course of fluency task
+ggplot(lexical_transition_results, aes(x = relative_position, y = Semantic_Similarity, color = domain)) +
   geom_smooth(method = "loess", se = TRUE) +
   theme_minimal() +
   labs(
@@ -1130,7 +857,7 @@ ggplot(all_lexical_results, aes(x = relative_position, y = Semantic_Similarity, 
     y = "Semantic Similarity"
   )
 
-ggplot(all_lexical_results, aes(x = relative_position, y = Phonological_Similarity, color = domain)) +
+ggplot(lexical_transition_results, aes(x = relative_position, y = Phonological_Similarity, color = domain)) +
   geom_smooth(method = "loess", se = TRUE) +
   theme_minimal() +
   labs(
@@ -1139,7 +866,7 @@ ggplot(all_lexical_results, aes(x = relative_position, y = Phonological_Similari
     y = "Phonological Similarity"
   )
 
-ggplot(all_lexical_results, aes(x = relative_position, y = Frequency_Value, color = domain)) +
+ggplot(lexical_transition_results, aes(x = relative_position, y = Frequency_Value, color = domain)) +
   geom_smooth(method = "loess", se = TRUE) +
   theme_minimal() +
   labs(
@@ -1148,59 +875,85 @@ ggplot(all_lexical_results, aes(x = relative_position, y = Frequency_Value, colo
     y = "Frequency"
   )
 ```
-Significance tests of general variation
+
+### Lexical Cue Change Across Response Position:
+
+#### Including response position improved model fit significantly for all lexical cues. 
+#### Semantic similarity: χ²(3)=36.91, p<.001. 
+#### Phonological similarity: χ²(3) = 10.34, p = .016.
+#### Frequency: χ²(3) = 30.88, p < .001.
+
+
+### Lexical Cue Change Difference By Domain:
+
+#### Semantic Similarity: A likelihood ratio test indicated that the change in semantic similarity across consecutive response positions was significantly different between domains, χ²(12) = 29.76, p = .003.
+
+#### Phonological Similarity: Across resposne positions, the pattern of phonological similairty change was not significantly different domains, χ²(12) = 9.81, p = .632.
+
+#### Frequency: The pattern of frequency change across response positions differed significantly between domains, χ²(12) = 55.49, p < .001.
+
+
+#### The findings revealed in theses tatistics and models correlate with those reported in Semantigories by Kumar et al., which ran a similar experimental task with different domains. Their work similarly revealed that the animals domain had the strongest consecutive semantic similarity and that semantic similarity dropped over the progression of the task. 
+
+#### In their task, phonological similarity increased as the task progressed, which was not seen in our data. 
+
+####Finally, they found that frequency decreased throughout task progression. We found a similar result for only the animals domain. 
+
+#### Overall differences in lexical cue changes observed may result from differences in domains, as only the animals domain is shared between these two experiments. 
+
 ```{r}
+#Fits baseline models which include domain difference and excludes response position to explore whether lexical differ between domains 
 semantic_null <- lmer(
   Semantic_Similarity ~ domain + (1 | Subject),
-  data = all_lexical_results
+  data = lexical_transition_results
 )
 
-anova(semantic_null, semantic_change)
-
+#Repeats the same tests for phonological similarity and frequency 
 phonological_null <- lmer(
   Phonological_Similarity ~ domain + (1 | Subject),
-  data = all_lexical_results
+  data = lexical_transition_results
 )
 
-anova(phonological_null, phonological_change)
 
 frequency_null <- lmer(
   Frequency_Value ~ domain + (1 | Subject),
-  data = all_lexical_results
+  data = lexical_transition_results
 )
-
-anova(frequency_null, frequency_change)
-
-
-#all vary significantly over the course of task
 ```
-significance tests of variation across domains
+
+
+
 ```{r}
+#Fits models including response position as a predictor to test whether lexical cues change across response position while taking domain and participant differences into account
 semantic_main <- lmer(
   Semantic_Similarity ~ ns(relative_position, 3) + domain +
     (1 | Subject),
-  data = all_lexical_results
+  data = lexical_transition_results
 )
-anova(semantic_main, semantic_change)
 
+
+#Repeats the same tests for phonological similarity and frequency 
 phonological_main <- lmer(
   Phonological_Similarity ~ ns(relative_position, 3) + domain +
     (1 | Subject),
-  data = all_lexical_results
+  data = lexical_transition_results
 )
-anova(phonological_main, phonological_change)
 
 frequency_main <- lmer(
   Frequency_Value ~ ns(relative_position, 3) + domain +
     (1 | Subject),
-  data = all_lexical_results
+  data = lexical_transition_results
 )
-anova(frequency_main, frequency_change)
 
-#all vary significantly across domains
 
+#Compares all null models to the main effects model to test if the inclusion of response position improves the models fit
 anova(semantic_null, semantic_main)
 anova(phonological_null, phonological_main)
 anova(frequency_null, frequency_main)
+
+#Compares the main effects model to the interaction model to determine if lexical cue change across response position differs by domain 
+anova(semantic_main, semantic_change)
+anova(phonological_main, phonological_change)
+anova(frequency_main, frequency_change)
 
 ```
