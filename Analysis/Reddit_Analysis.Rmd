@@ -897,7 +897,7 @@ ggplot(lexical_transition_results, aes(x = relative_position, y = Frequency_Valu
 
 #### In their task, phonological similarity increased as the task progressed, which was not seen in our data. 
 
-####Finally, they found that frequency decreased throughout task progression. We found a similar result for only the animals domain. 
+#### Finally, they found that frequency decreased throughout task progression. We found a similar result for only the animals domain. 
 
 #### Overall differences in lexical cue changes observed may result from differences in domains, as only the animals domain is shared between these two experiments. 
 
