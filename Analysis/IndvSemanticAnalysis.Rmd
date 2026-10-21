@@ -26,10 +26,52 @@ library(patchwork)
 library(splines)
 ```
 
+# reading matrices
 
 ```{r}
+library(readr)
+library(purrr)
+library(tools)
+
+# Read the file listing
+files <- read_csv("../Data/similarity_files.csv", show_col_types = FALSE)
+
+# Check the column names and first few rows
+head(files)
+matrix_list <- setNames(
+  map(files$id, function(id) {
+    url <- paste0("https://drive.usercontent.google.com/download?id=",
+      id,"&export=download&confirm=t")
+    as.matrix(read.table(url, header = FALSE))}),
+  toupper(file_path_sans_ext(files$name)))
+
+# Number of matrices loaded
+length(matrix_list)
+
+# Participant IDs
+names(matrix_list)
+
+# Dimensions of the first matrix
+dim(matrix_list[[1]])
+
+# Inspect the first matrix
+matrix_list[[1]][1:5, 1:5]
+
+# Check dimensions across all matrices
+dims <- vapply(matrix_list, 
+               function(m) paste(dim(m), collapse = " x "),
+               character(1))
+
+table(dims)
+
+saveRDS(matrix_list, file = "similarity_matrices.rds")
+# for future
+# matrix_list <- readRDS("similarity_matrices.rds")
+```
+# reading in files
+```{r}
 #Word file, participant matrices, and output paths defined
-word_file <- "~/Library/CloudStorage/OneDrive-BowdoinCollege/Desktop/kumar_fluencyWords.txt"
+word_file <- "kumar_fluencyWords.txt"
 matricies_folder <- "~/Library/CloudStorage/OneDrive-BowdoinCollege/Desktop/kumar_sims"
 similarity_files_location <- "~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Analysis/forager/output"
 data_location <- "~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Data"
@@ -67,7 +109,6 @@ fluency_data <- fluency_data %>%
   filter(!Subject %in% excluded_subjects)
 ```
 
-
 ```{r}
 #reading in the fluency word list, removing whitespace/empty lines and creating index linking words to their position on the list, for accessing matrix
 words <- read_lines(word_file)
@@ -89,8 +130,10 @@ matrix_list <- setNames(
   }), 
   matrix_names
 )
-
+```
 #processing domains
+
+```{r}
 for (domain in fluency_domains) {
   domain_file <- file.path(similarity_files_location, domain, "lexical_results.csv"
   )
