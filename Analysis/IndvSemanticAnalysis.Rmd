@@ -11,39 +11,42 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(tidyverse)
-library(dplyr)
-library(ggplot2)
-library(readr)
-library(Rtsne)
 library(ggrepel)
-library(tidyr)
-library(stringr)
 library(lme4)
 library(lmerTest)
-library(purrr)
-library(broom.mixed)
 library(patchwork)
-library(splines)
+library(performance)
+library(here)
+library(tools)
+
+here::i_am("Analysis/IndvSemanticAnalysis.Rmd")
 ```
 
 # reading matrices
 
 ```{r}
-library(readr)
-library(purrr)
-library(tools)
-
 # Read the file listing
-files <- read_csv("../Data/similarity_files.csv", show_col_types = FALSE)
+rds_path <- here("Data", "similarity_matricies.rds")
 
-# Check the column names and first few rows
-head(files)
-matrix_list <- setNames(
+if(file.exists(rds_path)) {
+  matrix_list <- readRDS(rds_path)
+} else {
+  files <- read_csv(here("Data", "similarity_files.csv"), show_col_types = FALSE)
+  
+  matrix_list <- setNames(
   map(files$id, function(id) {
     url <- paste0("https://drive.usercontent.google.com/download?id=",
       id,"&export=download&confirm=t")
-    as.matrix(read.table(url, header = FALSE))}),
-  toupper(file_path_sans_ext(files$name)))
+    as.matrix(read.table(url, header = FALSE))
+    }),
+  toupper(file_path_sans_ext(files$name))
+  )
+  saveRDS(matrix_list, rds_path)
+}
+stopifnot(all(vapply(matrix_list, function(m) all(dim(m) == length(words)), logical(1))))
+
+# Check the column names and first few rows
+head(files)
 
 # Number of matrices loaded
 length(matrix_list)
@@ -68,22 +71,15 @@ saveRDS(matrix_list, file = "similarity_matrices.rds")
 # for future
 # matrix_list <- readRDS("similarity_matrices.rds")
 ```
-# reading in files
-```{r}
-#Word file, participant matrices, and output paths defined
-word_file <- "kumar_fluencyWords.txt"
-matricies_folder <- "~/Library/CloudStorage/OneDrive-BowdoinCollege/Desktop/kumar_sims"
-similarity_files_location <- "~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Analysis/forager/output"
-data_location <- "~/Library/CloudStorage/OneDrive-BowdoinCollege/Documents/GitHub/fluency-individual-variance/Data"
 
-#fluency domains defined
-fluency_domains <- c(
-  "animals_forager_results",
-  "authors_forager_results",
-  "college_majors_forager_results",
-  "musicians_forager_results",
-  "sportspersons_forager_results"
-)
+# reading in files
+
+```{r}
+word_file <- here("Data", "kumar_fluencyWords.txt")
+similarity_files_location <- here("Analysis", "forager", "output") 
+data_location <- here("Data")
+output_location <- here("Analysis", "forager", "output")
+domains <- c("animals","authors", "college_majors", "musicians", "sportspersons")
 ```
 ## Data Preprocessing
 Prior to analysis steps, fluency data was imported and, in accordance with preprocessing, all participants producing less than four responses in any category were removed from data sets.
@@ -116,27 +112,59 @@ words <- trimws(words)
 words <- words[nzchar(words)]
 
 word_index <- setNames(seq_along(words), words)
-
-#loading in similarity matrices and storing them under a name corresponding to a participant ID
-matrix_files <- list.files(matricies_folder, pattern = "\\.txt$", full.names = TRUE)
-
-matrix_names <- toupper(tools::file_path_sans_ext(
-  basename(matrix_files)
-))
-
-matrix_list <- setNames(
-  lapply(matrix_files, function(f) {
-    as.matrix(read.table(f, header = FALSE))
-  }), 
-  matrix_names
-)
 ```
 #processing domains
 
 ```{r}
-for (domain in fluency_domains) {
-  domain_file <- file.path(similarity_files_location, domain, "lexical_results.csv"
-  )
+add_pairwise_similarity <- function(group, sim, word_index) {
+  group$Previous_Fluency_Item <- lag(group$Fluency_Item)
+  previous_index <- unname(word_index[group$Previous_Fluency_Item])
+  current_index <- unname(word_index[group$Fluency_Item])
+  ok <- !is.na(previous_index) & !is.na(current_index)
+  
+  group$Pairwise_Indv_Similarity <- NA_real_
+  group$Pairwise_Indv_Similarity[ok] <- sim[cbind(previous_index[ok], current_index[ok])]
+  group
+}
+
+process_domain <- function(domain) {
+  path <- file.path(output_location, paste0(domain, "_forager_results"), "lexical_results.csv")
+  if(!file.exists(path)) {message("No lexical results for ", domain); return(NULL)}
+  
+  read_csv(path, show_col_types = FALSE) %>%
+    rename(subject = Subject) %>%
+    mutate(subject = as.character(subject), domain = domain) %>%
+    filter(!subject %in% excluded_subjects) %>%
+    group_split(subject) %>%
+    map(function(g) {
+      sim <- matrix_list[[toupper(g$subject[1])]]
+      if (is.null(sim)) {message("No matrix for ", g$subject[1]); return(NULL)}
+      add_pairwise_similarity(g, sim, word_index)
+    }) %>%
+    bind_rows()
+}
+
+similarities <- map_dfr(domains, process_domain)
+
+similarities <- similarities %>%
+  select(subject, domain, Previous_Fluency_Item, Fluency_Item, Semantic_Similarity, Pairwise_Indv_Similarity)
+
+merged_sim_spam_data <- spatial_distances %>%
+  left_join(similarities, by = c("subject", "domain", "word1" = "Previous_Fluency_Item", "word2" = "Fluency_Item"))
+
+similarities %>% 
+  group_split(domain) %>%
+  walk(function(d) {
+    write_csv(d %>% rename(Subject = subject) %>% select(-domain),
+              file.path(output_location, paste0(d$domain[1], "_forager_results"), "lexical_results_indv_pairwise_similarity.csv"))
+  })
+```
+
+
+```{r}
+for (domain in domains) {
+  domain_file <- file.path(output_location, paste0(domain, "_forager_results"), "lexical_results.csv")
+  
   
   if (!file.exists(domain_file)) {
     cat("No lexical results for", domain, "\n")
@@ -202,9 +230,7 @@ for (domain in fluency_domains) {
     output_dataframe <- bind_rows(output_rows)
     
     output_path <- file.path(
-      similarity_files_location,
-      domain,
-      "lexical_results_indv_pairwise_similarity.csv"
+      output_location, paste0(domain, "_forager_results"), "lexical_results_indv_pairwise_similarity.csv"
     )
     write_csv(output_dataframe, output_path)
     cat("Saved", output_path, "\n")
@@ -212,6 +238,28 @@ for (domain in fluency_domains) {
 }
 
 ``` 
+
+
+```{r}
+old <- map_dfr(fluency_domains, function(d) {
+  f <- file.path(similarity_files_location, d,
+                 "lexical_results_indv_pairwise_similarity.csv")
+  if (file.exists(f)) {
+    read_csv(f, show_col_types = FALSE) %>%
+      mutate(domain = str_remove(d, "_forager_results$"))
+  }
+}) %>%
+  rename(subject = Subject) %>%
+  mutate(subject = as.character(subject)) %>%
+  arrange(subject, domain)
+
+new <- similarities %>% arrange(subject, domain)
+
+nrow(old) == nrow(new)
+identical(old$Previous_Fluency_Item, new$Previous_Fluency_Item)
+all.equal(old$Pairwise_Indv_Similarity, new$Pairwise_Indv_Similarity)
+
+```
 
 ## SpAM Analysis
 
@@ -566,8 +614,23 @@ I wonder if this may indicate that the participant level corpera is not properly
 It was stated that the email sent accompanying the matricies that if a word was not represented in the corpus its similarity was set to 0, so it could be possible that words are misinterpreted as being unrelated when they are just not present.
 
 ```{r}
-frequency_data <- read_csv("~/Library/CloudStorage/OneDrive-BowdoinCollege/Desktop/output.csv") %>%
-  mutate(Subject = as.character(Subject), word = as.character(word), frequency = as.numeric(frequency))
+frequency_dir <- here("Data", "kumar_freqs")
+
+if (!dir.exists(frequency_dir)) {
+  zip_path <- here("Data", "kumar_freqs.zip")
+  download.file("https://drive.usercontent.google.com/download?id=1CCzAThSr95yNf_n3ANcAzto_vWZpf4tZ&export=download&confirm=t", zip_path, mode = "wb")
+  unzip(zip_path, exdir = here("Data"))
+}
+
+frequency_files <- list.files(frequency_dir, pattern = "\\.csv$", full.names = TRUE, recursive = TRUE)
+
+frequency_data <- map_dfr(frequency_files, function(f) {
+  read_csv(f, show_col_types = FALSE) %>%
+    mutate(Subject = toupper(file_path_sans_ext(basename(f))))
+}) %>%
+  mutate(Subject = as.character(Subject),
+         word = as.character(word),
+         frequency = as.numeric(frequency))
 
 overall_frequency <- frequency_data %>%
   summarise(total_rows = n(), 

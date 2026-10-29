@@ -199,3 +199,7 @@ cython_debug/
 .cursorindexingignore
 .Rproj.user
 .positai
+
+*.rds
+Data/kumar_freqs/
+Data/kumar_freqs.zip
