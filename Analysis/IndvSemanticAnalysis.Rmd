@@ -18,6 +18,7 @@ library(patchwork)
 library(performance)
 library(here)
 library(tools)
+library(stringi)
 
 here::i_am("Analysis/IndvSemanticAnalysis.Rmd")
 ```
@@ -72,19 +73,18 @@ saveRDS(matrix_list, file = "similarity_matrices.rds")
 # matrix_list <- readRDS("similarity_matrices.rds")
 ```
 
-# reading in files
-
+## Reading in files with global paths
 ```{r}
 word_file <- here("Data", "kumar_fluencyWords.txt")
-similarity_files_location <- here("Analysis", "forager", "output") 
 data_location <- here("Data")
 output_location <- here("Analysis", "forager", "output")
 domains <- c("animals","authors", "college_majors", "musicians", "sportspersons")
 ```
+
 ## Data Preprocessing
-Prior to analysis steps, fluency data was imported and, in accordance with preprocessing, all participants producing less than four responses in any category were removed from data sets.
+Prior to analysis steps, fluency data was imported and, in accordance with preprocessing, all participants producing less than four responses in any category or lacking a matrix, participant U4TQC9J3, were removed from data sets and further analysis.
 ```{r}
-fluency_data <- read_csv("../Data/cleaned_data/fluency_data.csv", show_col_types = FALSE) %>%
+fluency_data <- read_csv(here("Data", "cleaned_data", "fluency_data.csv"), show_col_types = FALSE) %>%
   mutate(Subject = as.character(Subject))
 
 #participants producing less than four responses in any category discovered and pulled
@@ -97,8 +97,15 @@ low_response_subjects <- fluency_number %>%
   pull(Subject) %>%
   unique()
 
+no_matrix_subjects <- fluency_data %>%
+  filter(!Subject %in% low_response_subjects) %>%
+  pull(Subject) %>%
+  unique() %>%
+  .[!toupper(.) %in% names(matrix_list)]
+
+no_matrix_subjects
 #the pulled participants are stored in a variable and filtered out of all defined data sets
-excluded_subjects <- unique(c(low_response_subjects))
+excluded_subjects <- unique(c(low_response_subjects, no_matrix_subjects))
 
 
 fluency_data <- fluency_data %>%
@@ -106,20 +113,63 @@ fluency_data <- fluency_data %>%
 ```
 
 ```{r}
-#reading in the fluency word list, removing whitespace/empty lines and creating index linking words to their position on the list, for accessing matrix
+#reading in the fluency word list into a vector, trims spaces/tabs, drops empty lines, creates position vector labeling numbers with corresponding word for similarity matrix combination
 words <- read_lines(word_file)
 words <- trimws(words)
 words <- words[nzchar(words)]
-
 word_index <- setNames(seq_along(words), words)
 ```
-#processing domains
 
+##Helper functions 
 ```{r}
+#Checks how many rows a lost after a step
+audit_rows <- function(label, before, after) {
+  tibble(step = label,
+         rows_before = nrow(before),
+         rows_after = nrow(after),
+         rows_lost = nrow(before) - nrow(after),
+         percent_kept = round(100 * nrow(after) / nrow(before), 1))
+}
+
+#Checks how many NAs present in columns
+na_report <- function(df, cols) {
+  tibble(column = cols, 
+         num_na = map_int(cols, ~ sum(is.na(df[[.x]]))),
+         percent_na = round(100 * num_na / nrow(df), 1))
+}
+
+#The first form of word matching, converting test to lowercase and removing white space
+normalize_word <- function(x) {
+  x %>% str_to_lower() %>% str_remove_all("\\s+")
+}
+
+#The second form of word matching, converting accented characters to plain, makes lowercase, and deletes anything that isnt a letter or number
+strip_word <- function(x) {
+  x %>% stri_trans_general("Latin-ASCII") %>% str_to_lower() %>%
+    str_remove_all("[^a-z0-9]")
+}
+```
+
+##Pairwise Similarity and Domain Processing 
+```{r}
+word_index <- setNames(seq_along(words), normalize_word(words))
+
+stripped_index <- setNames(seq_along(words), strip_word(words))
+stripped_index <- stripped_index[!duplicated(names(stripped_index))]
+
+#corrects words based on first normalization, if failed tries with the second strip then returns matrix positions
+lookup_word <- function(x) {
+  i <- unname(word_index[normalize_word(x)])
+  miss <- is.na(i)
+  i[miss] <- unname(stripped_index[strip_word(x[miss])])
+  i
+}
+
+#looks up matrix position of both previous words and current words and marks which pairs have both items present 
 add_pairwise_similarity <- function(group, sim, word_index) {
   group$Previous_Fluency_Item <- lag(group$Fluency_Item)
-  previous_index <- unname(word_index[group$Previous_Fluency_Item])
-  current_index <- unname(word_index[group$Fluency_Item])
+  previous_index <- lookup_word(group$Previous_Fluency_Item)
+  current_index <- lookup_word(group$Fluency_Item)
   ok <- !is.na(previous_index) & !is.na(current_index)
   
   group$Pairwise_Indv_Similarity <- NA_real_
@@ -127,6 +177,7 @@ add_pairwise_similarity <- function(group, sim, word_index) {
   group
 }
 
+#reads in the forager output of a domain, standardizes name, and adds domain column. Then splits the data by participant and finds the participants matrix and runs pairwise similarity function.
 process_domain <- function(domain) {
   path <- file.path(output_location, paste0(domain, "_forager_results"), "lexical_results.csv")
   if(!file.exists(path)) {message("No lexical results for ", domain); return(NULL)}
@@ -144,15 +195,25 @@ process_domain <- function(domain) {
     bind_rows()
 }
 
-similarities <- map_dfr(domains, process_domain)
+#returns (1) total row #, count of how many items were the first, lacking a previous word, and how many pairs are missing a word from word list, (2) the number of pairs per domain, how many have NA individual similarity cols, and (3) a per domain individual pairwise similarity file 
+complete_similarities <- map_dfr(domains, process_domain)
 
-similarities <- similarities %>%
-  select(subject, domain, Previous_Fluency_Item, Fluency_Item, Semantic_Similarity, Pairwise_Indv_Similarity)
+complete_similarities %>% 
+  summarise(
+    total = n(),
+    first_item = sum(is.na(Previous_Fluency_Item)),
+    not_in_word_list = sum(!is.na(Previous_Fluency_Item) &
+                             (is.na(lookup_word(Fluency_Item)) | is.na(lookup_word(Previous_Fluency_Item)))))
+  
 
-merged_sim_spam_data <- spatial_distances %>%
-  left_join(similarities, by = c("subject", "domain", "word1" = "Previous_Fluency_Item", "word2" = "Fluency_Item"))
+complete_similarities %>%
+  filter(!is.na(Previous_Fluency_Item)) %>%
+  group_by(domain) %>%
+  summarise(pairs = n(),
+            missing = sum(is.na(Pairwise_Indv_Similarity)),
+            pct_missing = round(100 * missing / pairs, 1))
 
-similarities %>% 
+complete_similarities %>% 
   group_split(domain) %>%
   walk(function(d) {
     write_csv(d %>% rename(Subject = subject) %>% select(-domain),
@@ -161,150 +222,58 @@ similarities %>%
 ```
 
 
-```{r}
-for (domain in domains) {
-  domain_file <- file.path(output_location, paste0(domain, "_forager_results"), "lexical_results.csv")
-  
-  
-  if (!file.exists(domain_file)) {
-    cat("No lexical results for", domain, "\n")
-    next
-  }
-  
-  dataframe = read_csv(domain_file, show_col_types = FALSE) %>%
-    mutate(Subject = as.character(Subject)) %>%
-    filter(!Subject %in% as.character(excluded_subjects))
-  
-  output_rows <- list()
-  row_counter <- 1
-  
-  subjects <- unique(dataframe$Subject)
-  
-  for (subject in subjects) {
-    group <- dataframe %>%
-      filter(Subject == subject)
-    similarity <- matrix_list[[toupper(as.character(subject))]]
-    if (is.null(similarity)) {
-      cat("No matrix found for subject: ", subject, "\n")
-      next
-    }
-    
-    
-    #for each participant, two new cols are made. Previous_Fluency_Item, holding the previous fluency response, Pairwise_indv_Similarity, the similarity between the current response and the preceding one
-    previous_word <- NULL
-    group$Previous_Fluency_Item <- NA_character_
-    group$Pairwise_Indv_Similarity <- NA_real_
-
-    
-    for (i in seq_len(nrow(group))) {
-      current_word <- group$Fluency_Item[i]
-      pairwise_similarity <- NA_real_
-      
-      if(!is.null(previous_word) && !is.na(previous_word)) {
-        group$Previous_Fluency_Item[i] <- previous_word
-      }
-      
-      if(
-        !is.null(previous_word) &&
-        !is.na(current_word) &&
-        !is.na(previous_word) &&
-        current_word %in% words &&
-        previous_word %in% words
-      ) {
-        previous_index <- word_index[[previous_word]]
-        current_index <- word_index[[current_word]]
-        
-        pairwise_similarity <- similarity[
-          previous_index, current_index
-        ]
-      }
-      group$Pairwise_Indv_Similarity[i] <- pairwise_similarity
-      previous_word <- current_word
-    }
-    
-    output_rows[[row_counter]] <- group
-    row_counter <- row_counter + 1
-  }
-  
-  if (length(output_rows) > 0) {
-    output_dataframe <- bind_rows(output_rows)
-    
-    output_path <- file.path(
-      output_location, paste0(domain, "_forager_results"), "lexical_results_indv_pairwise_similarity.csv"
-    )
-    write_csv(output_dataframe, output_path)
-    cat("Saved", output_path, "\n")
-  }
-}
-
-``` 
-
-
-```{r}
-old <- map_dfr(fluency_domains, function(d) {
-  f <- file.path(similarity_files_location, d,
-                 "lexical_results_indv_pairwise_similarity.csv")
-  if (file.exists(f)) {
-    read_csv(f, show_col_types = FALSE) %>%
-      mutate(domain = str_remove(d, "_forager_results$"))
-  }
-}) %>%
-  rename(subject = Subject) %>%
-  mutate(subject = as.character(subject)) %>%
-  arrange(subject, domain)
-
-new <- similarities %>% arrange(subject, domain)
-
-nrow(old) == nrow(new)
-identical(old$Previous_Fluency_Item, new$Previous_Fluency_Item)
-all.equal(old$Pairwise_Indv_Similarity, new$Pairwise_Indv_Similarity)
-
-```
-
 ## SpAM Analysis
 
 First, both general semantic similarity, based on the matricies from a general text corpora, and individual semantic similarity, based on the unweighted matricies from a participant's input subreddits, were correlated with euclidean distances pulled from each participant's SpAM response and pooled. This analysis revealed both general and individual semantic similarity correlated negatively with euclidean distance, yet the general semantic similarity had a more negative, stronger association (r = -0.478) compared to individual semantic similarity (r = -0.262).
 
+Euclidean Distance vs General Semantic Similarity: -0.392
+Euclidean Distance vs Individual Semantic Similarity: -0.218
+
 ```{r}
-#SpAM data read in and combined with general and individual semantic similarity
-spatial_distances <- read_csv(
-  file.path(data_location, "raw_data", "organized_spam.csv"), show_col_types = FALSE
-)
-
-similarity_data <- list()
-
-for (domain_folder in fluency_domains) {
-  file <- file.path(
-    similarity_files_location,
-    domain_folder, 
-    "lexical_results_indv_pairwise_similarity.csv"
-  )
+#translates what participant types in fluency to corrected response used by forager 
+corrections <- fluency_data %>%
+  transmute(subject = as.character(Subject),
+            domain, spam_word = response, forager_word = corrected_response) %>%
+  filter(!is.na(spam_word), !is.na(forager_word), 
+         strip_word(spam_word) != strip_word(forager_word)) %>%
+           distinct()
+  nrow(corrections)
+  corrections %>% slice_sample(n = 30)
   
-  if (file.exists(file)) {
-    dataframe <- read_csv(file, show_col_types = FALSE)
-    domain_name <- str_remove(
-      domain_folder,
-      "_forager_results$"
-    )
-    similarity_data[[domain_name]] <- dataframe %>%
-      mutate(domain = domain_name) %>%
-      select(
-        Subject,
-        domain,
-        Previous_Fluency_Item,
-        Fluency_Item,
-        Semantic_Similarity,
-        Pairwise_Indv_Similarity
-      )
-  }
-}
+  corrections %>% count(subject, domain, spam_word) %>% filter(n > 1)
 
-similarities <- bind_rows(similarity_data)
+  #read in SpAM file         
+spatial_distances <- read_csv(here("Data", "raw_data", "organized_spam.csv"), show_col_types = FALSE) %>%
+  mutate(subject = as.character(subject)) %>%
+  filter(!subject %in% excluded_subjects)
 
-#matches each spatial word pair with its semantic similarity by participant, domain, and word pair
-merged_sim_spam_data <- spatial_distances %>%
-  left_join(similarities, by = c("subject" = "Subject", "domain" = "domain", "word1" = "Previous_Fluency_Item", "word2" = "Fluency_Item")
-  )
+#corrects spam words based on corrections, using correct word if necessary
+spatial_distances_fixed <- spatial_distances %>%
+  left_join(corrections %>% rename(word1 = spam_word, w1_fix = forager_word), 
+            by = c("subject", "domain", "word1")) %>%
+  left_join(corrections %>% rename(word2 = spam_word, w2_fix = forager_word), 
+            by = c("subject", "domain", "word2")) %>%
+  mutate(w1 = strip_word(coalesce(w1_fix, word1)),
+         w2 = strip_word(coalesce(w2_fix, word2)))
+
+similarities <- complete_similarities %>%
+  mutate(w1 = strip_word(Previous_Fluency_Item),
+         w2 = strip_word(Fluency_Item)) %>%
+  select(subject, domain, w1, w2, Semantic_Similarity, Pairwise_Indv_Similarity)
+
+merged_sim_spam_data <- spatial_distances_fixed %>%
+  left_join(similarities, by = c("subject", "domain", "w1", "w2"))
+
+nrow(merged_sim_spam_data) == nrow(spatial_distances)
+
+unmatched <- merged_sim_spam_data %>%
+  filter(!is.na(word1), !is.na(word2), is.na(Semantic_Similarity)) %>%
+  select(subject, domain, word1, word2)
+
+nrow(unmatched)
+unmatched %>% count(domain)
+
+na_report(merged_sim_spam_data, c("euclidean_distance", "Semantic_Similarity", "Pairwise_Indv_Similarity"))
 
 #only valid rows kept are those with complete values for all measures used to match word pairs
 valid_rows <- merged_sim_spam_data %>%
@@ -313,6 +282,48 @@ valid_rows <- merged_sim_spam_data %>%
     !is.na(Semantic_Similarity),
     !is.na(Pairwise_Indv_Similarity)
   )
+
+audit_rows("valid_rows filter", merged_sim_spam_data, valid_rows)
+valid_rows %>% count(domain)
+n_distinct(valid_rows$subject)
+
+present <- complete_similarities %>%
+  distinct(subject, domain, key = strip_word(Fluency_Item))
+
+unmatched_diagram <- merged_sim_spam_data %>%
+  filter(!is.na(word1), !is.na(word2), is.na(Semantic_Similarity)) %>%
+  left_join(present %>% mutate(w1_in = TRUE),
+            by = c("subject", "domain", "w1" = "key")) %>%
+  left_join(present %>% mutate(w2_in = TRUE),
+            by = c("subject", "domain", "w2" = "key")) %>%
+  mutate(w1_in = coalesce(w1_in, FALSE),
+         w2_in = coalesce(w2_in, FALSE),
+         reason = case_when(w1_in & w2_in ~ "both in forager, not consecutive",
+                            !w1_in & !w2_in ~ "both missing from forager",
+                            TRUE ~ "one word missing from forager"))
+
+count(unmatched_diagram, domain, reason)
+
+fluency_data %>%
+  filter(is.na(corrected_response) | corrected_response == "") %>%
+  count(domain)
+```
+
+
+```{r}
+compare_correlations <- function(data, ..., min_n = 5) {
+  data %>%
+    group_by(...) %>%
+    filter(n() >= min_n,
+           n_distinct(euclidean_distance) >= 2,
+           n_distinct(Semantic_Similarity) >= 2,
+           n_distinct(Pairwise_Indv_Similarity) >= 2) %>%
+    summarise(num_pairs = n(),
+            general_semantic_cor = cor(euclidean_distance, Semantic_Similarity),
+            individual_semantic_cor = cor(euclidean_distance, Pairwise_Indv_Similarity),
+            individual_sub_general = individual_semantic_cor - general_semantic_cor,
+            .groups = "drop")
+}
 
 #correlations
 general_semantic_correlation <- cor(
@@ -339,23 +350,10 @@ correlation_r2 <- tibble(measure = c("General", "Individual"),
 correlation_r2
 ```
 
-Next, the same comparison as done previously was performed on the participant level. For each of the 72 participants remaining for analysis, the correlations between euclidean distance and the two semantic similarity measures was calculated. Then, the general semantic similarity was subtracted from the individual semantic similarity revealing that for 6 of the 72 participants, individual semantic similarity better correlated with their spatial distances in the SpAM task. For each of these participants, their SpAM arrangements were further examined and plotted in the cleaned_data folder under "spam_subject_layouts.pdf."
+Next, the same comparison as done previously was performed on the participant level. For each of the 81 participants remaining for analysis, the correlations between euclidean distance and the two semantic similarity measures was calculated. Then, the general semantic similarity was subtracted from the individual semantic similarity revealing that for 12 of the 81 participants, individual semantic similarity better correlated with their spatial distances in the SpAM task. For each of these participants, their SpAM arrangements were further examined and plotted in the cleaned_data folder under "spam_subject_layouts.pdf."
 
 ```{r}
-#requires, for participant level correlations, that there are at least 5 valid observations and 2 distinct values
-subject_level_df <- valid_rows %>%
-  group_by(subject) %>%
-  filter(n() >= 5,
-         n_distinct(euclidean_distance) >= 2,
-         n_distinct(Semantic_Similarity) >= 2,
-         n_distinct(Pairwise_Indv_Similarity) >= 2) %>%
-  summarise(num_pairs = n(),
-            general_semantic_cor = cor(euclidean_distance, Semantic_Similarity),
-            individual_semantic_cor = cor(euclidean_distance, Pairwise_Indv_Similarity),
-            individual_sub_general = individual_semantic_cor - general_semantic_cor,
-            .groups = "drop"
-            ) %>%
-  rename(subject = subject)
+subject_level_df <- compare_correlations(valid_rows, subject)
 
 print(subject_level_df, n = Inf)
 
@@ -406,19 +404,7 @@ This relationship was then examined at the domain level, for each participant.
 
 ```{r}
 #repeat of prior analysis for each participant per domain 
-subject_domain_df <- valid_rows %>%
-  group_by(subject, domain) %>%
-  filter(
-    n() >= 5,
-    n_distinct(Semantic_Similarity) >= 2,
-    n_distinct(Pairwise_Indv_Similarity) >= 2,
-    n_distinct(euclidean_distance) >= 2
-  ) %>%
-  summarise(num_pairs = n(),
-            general_semantic_cor = cor(euclidean_distance, Semantic_Similarity),
-            individual_semantic_cor = cor(euclidean_distance, Pairwise_Indv_Similarity),
-            individual_sub_general = individual_semantic_cor - general_semantic_cor,
-            .groups = "drop")
+subject_domain_df <- compare_correlations(valid_rows, subject, domain)
 
 print(subject_domain_df, n = Inf)
 
@@ -428,7 +414,6 @@ write_csv(subject_domain_df, file.path(data_location, "cleaned_data", "subject_d
 Then, for the six participants where the indv semantic similarity was a better predictor, the differences in each domain for those participants were explored.
 
 ```{r}
-#for the 
 individual_level_sim_win <- subject_level_df %>%
   filter(individual_sub_general < 0) %>%
   pull(subject)
@@ -454,20 +439,14 @@ print(domain_subject_win, n = Inf)
 The analysis was then done at the domain level, exploring whether the individual vs general semantic model performed differently across domains. This revealed that the general semantic similarity measure had a stronger relation with spatial distance on the domains with the largest number of comparable pairs.
 
 ```{r}
-domain_level_df <- valid_rows %>%
-  group_by(domain) %>%
-  summarise(num_pairs = n(),
-            general_semantic_cor = cor(euclidean_distance, Semantic_Similarity),
-            individual_semantic_cor = cor(euclidean_distance, Pairwise_Indv_Similarity),
-            individual_sub_general = individual_semantic_cor - general_semantic_cor,
-            .groups = "drop")
+domain_level_df <- compare_correlations(valid_rows, domain, min_n = 0)
 
 print(domain_level_df, n = Inf)
 ```
 
 ## Fluency Analysis
 
-Following the spatial distance analyses, fluency was analyzed in relation to both similarity measures. This analysis revealed the opposite pattern, as higher fluency was weakly correlated with higher mean general semantic similarity (r = 0.120) but had a moderate negative correlation with individual semantic similarity (-0.250).
+Following the spatial distance analyses, fluency was analyzed in relation to both similarity measures. This analysis revealed the opposite pattern, as higher fluency was correlated with higher mean general semantic similarity (r = 0.438) and had a moderate positive correlation with individual semantic similarity (0.278).
 
 ```{r}
 #calculates each participant's mean semantic similarity within each domain
@@ -493,6 +472,14 @@ fluency_count <- fluency %>%
 merged_similarity_fluency <- subject_mean_similarity %>%
   inner_join(fluency_count, by = c("subject", "domain")) %>%
   filter(n_items >= 2)
+
+audit_rows("subject_mean_similarity x fluency_count", subject_mean_similarity, merged_similarity_fluency)
+
+anti_join(subject_mean_similarity, fluency_count, by = c("subject", "domain"))
+anti_join(fluency_count, subject_mean_similarity, by = c("subject", "domain"))
+
+joined <- inner_join(subject_mean_similarity, fluency_count, by= c("subject", "domain"))
+audit_rows("n_items >= 2 filter", joined, merged_similarity_fluency)
 
 general_sim_fluency_correlation <- cor(
   merged_similarity_fluency$fluency_count,
@@ -547,6 +534,13 @@ individual_semantic_model <- lmer (
 summary(general_semantic_model)
 summary(individual_semantic_model)
 ```
+```{r}
+fluency_model_data <- merged_similarity_fluency %>%
+  mutate(subject = factor(subject), domain = factor(domain))
+lmer(general_mean ~ fluency_count * domain + (1 | subject), data = fluency_model_data)
+lmer(individual_mean ~ fluency_count * domain + (1 | subject), data = fluency_model_data)
+```
+
 
 Marginal r^2, demonstrating the variance explained by fixed effects, and conditional r^2, demonstrating variance explained by the fixed effects and random participant inercepts were calculated and each revealed that the general model outperformed the indivudual.
 
