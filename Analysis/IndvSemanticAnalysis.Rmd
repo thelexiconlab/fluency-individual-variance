@@ -11,26 +11,27 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(tidyverse)
-library(ggrepel)
-library(lme4)
-library(lmerTest)
-library(patchwork)
-library(performance)
-library(here)
+library(ggrepel) #for label pushing apart
+library(lme4) #for fitting linear mixed models
+library(lmerTest) #modifies lmer to print summary
+library(patchwork) #combined ggplots in one figure
+library(performance) #diagnostics models
+library(here) #file paths relative to project root 
 library(tools)
-library(stringi)
+library(stringi) #string operations
 
-here::i_am("Analysis/IndvSemanticAnalysis.Rmd")
+here::i_am("Analysis/IndvSemanticAnalysis.Rmd") #situates project within github repo
 ```
 
 # reading matrices
+To begin the analysis, matricies for each participant are loaded in from the google drive and stored in r's memory to prevent repeated downloading. This resulted in a total of 109 matricies with the dimensions 3080 x 3080
 
 ```{r}
 # Read the file listing
 rds_path <- here("Data", "similarity_matricies.rds")
 
 if(file.exists(rds_path)) {
-  matrix_list <- readRDS(rds_path)
+  matrix_list <- readRDS(rds_path) #reads list of matricies back into memory instead of redownloading if it exists
 } else {
   files <- read_csv(here("Data", "similarity_files.csv"), show_col_types = FALSE)
   
@@ -44,10 +45,9 @@ if(file.exists(rds_path)) {
   )
   saveRDS(matrix_list, rds_path)
 }
-stopifnot(all(vapply(matrix_list, function(m) all(dim(m) == length(words)), logical(1))))
 
 # Check the column names and first few rows
-head(files)
+# head(files)
 
 # Number of matrices loaded
 length(matrix_list)
@@ -68,14 +68,14 @@ dims <- vapply(matrix_list,
 
 table(dims)
 
-saveRDS(matrix_list, file = "similarity_matrices.rds")
+# saveRDS(matrix_list, file = "similarity_matrices.rds")
 # for future
 # matrix_list <- readRDS("similarity_matrices.rds")
 ```
 
 ## Reading in files with global paths
 ```{r}
-word_file <- here("Data", "kumar_fluencyWords.txt")
+word_file <- here("Data", "kumar_fluencyWords.txt") #path to word list used in fluency/matricies
 data_location <- here("Data")
 output_location <- here("Analysis", "forager", "output")
 domains <- c("animals","authors", "college_majors", "musicians", "sportspersons")
@@ -84,6 +84,7 @@ domains <- c("animals","authors", "college_majors", "musicians", "sportspersons"
 ## Data Preprocessing
 Prior to analysis steps, fluency data was imported and, in accordance with preprocessing, all participants producing less than four responses in any category or lacking a matrix, participant U4TQC9J3, were removed from data sets and further analysis.
 ```{r}
+#reads in fluency data and ensures subject col is text data
 fluency_data <- read_csv(here("Data", "cleaned_data", "fluency_data.csv"), show_col_types = FALSE) %>%
   mutate(Subject = as.character(Subject))
 
@@ -92,11 +93,13 @@ fluency_number <- fluency_data %>%
   group_by(Subject, domain) %>%
   summarise(item_count = n(), .groups = "drop")
 
+#stores subjects who produced less than four responses
 low_response_subjects <- fluency_number %>%
   filter(item_count < 4) %>%
   pull(Subject) %>%
   unique()
 
+#stores subjects whos ID is not in the matrix names
 no_matrix_subjects <- fluency_data %>%
   filter(!Subject %in% low_response_subjects) %>%
   pull(Subject) %>%
@@ -104,7 +107,8 @@ no_matrix_subjects <- fluency_data %>%
   .[!toupper(.) %in% names(matrix_list)]
 
 no_matrix_subjects
-#the pulled participants are stored in a variable and filtered out of all defined data sets
+
+#the pulled participants are filtered out of all defined data sets
 excluded_subjects <- unique(c(low_response_subjects, no_matrix_subjects))
 
 
@@ -112,17 +116,21 @@ fluency_data <- fluency_data %>%
   filter(!Subject %in% excluded_subjects)
 ```
 
+##Cleaning word list
 ```{r}
-#reading in the fluency word list into a vector, trims spaces/tabs, drops empty lines, creates position vector labeling numbers with corresponding word for similarity matrix combination
+#reading in the fluency word list into a vector, trims spaces/tabs, drops empty lines, creates position vector labeling numbers with corresponding word
 words <- read_lines(word_file)
 words <- trimws(words)
 words <- words[nzchar(words)]
+
+stopifnot(all(vapply(matrix_list, function(m) all(dim(m) == length(words)), logical(1)))) #checks column + row number is equal to the word number
+
 word_index <- setNames(seq_along(words), words)
 ```
 
 ##Helper functions 
 ```{r}
-#Checks how many rows a lost after a step
+#Builds tibble recording how many rows a filtering step removed and what percent remained
 audit_rows <- function(label, before, after) {
   tibble(step = label,
          rows_before = nrow(before),
@@ -131,19 +139,19 @@ audit_rows <- function(label, before, after) {
          percent_kept = round(100 * nrow(after) / nrow(before), 1))
 }
 
-#Checks how many NAs present in columns
+#Pulls columns, flags missing values, and counts them
 na_report <- function(df, cols) {
   tibble(column = cols, 
          num_na = map_int(cols, ~ sum(is.na(df[[.x]]))),
          percent_na = round(100 * num_na / nrow(df), 1))
 }
 
-#The first form of word matching, converting test to lowercase and removing white space
+#The first form of word matching, converting to lowercase and removing white space
 normalize_word <- function(x) {
   x %>% str_to_lower() %>% str_remove_all("\\s+")
 }
 
-#The second form of word matching, converting accented characters to plain, makes lowercase, and deletes anything that isnt a letter or number
+#The second form of word matching, stripping accents, making lowercase, and deleting anything that isn't a letter or number
 strip_word <- function(x) {
   x %>% stri_trans_general("Latin-ASCII") %>% str_to_lower() %>%
     str_remove_all("[^a-z0-9]")
@@ -152,6 +160,7 @@ strip_word <- function(x) {
 
 ##Pairwise Similarity and Domain Processing 
 ```{r}
+#rebuilds the word index with normalized words
 word_index <- setNames(seq_along(words), normalize_word(words))
 
 stripped_index <- setNames(seq_along(words), strip_word(words))
@@ -167,17 +176,20 @@ lookup_word <- function(x) {
 
 #looks up matrix position of both previous words and current words and marks which pairs have both items present 
 add_pairwise_similarity <- function(group, sim, word_index) {
-  group$Previous_Fluency_Item <- lag(group$Fluency_Item)
+  group$Previous_Fluency_Item <- lag(group$Fluency_Item) #lag shifts vector down one row so each row has word before it, creating pair
   previous_index <- lookup_word(group$Previous_Fluency_Item)
   current_index <- lookup_word(group$Fluency_Item)
+  group$previous_idx <- previous_index
+  group$current_idx <- current_index #gives row and column numbers for two words in pair for permutation analysis
   ok <- !is.na(previous_index) & !is.na(current_index)
   
+  #creates column filled with NA then fills valid positions
   group$Pairwise_Indv_Similarity <- NA_real_
   group$Pairwise_Indv_Similarity[ok] <- sim[cbind(previous_index[ok], current_index[ok])]
   group
 }
 
-#reads in the forager output of a domain, standardizes name, and adds domain column. Then splits the data by participant and finds the participants matrix and runs pairwise similarity function.
+#reads in the forager output of a domain, standardizes name and adds domain label. Then splits the data into per participant data frames and finds the participants matrix and adds similarity column
 process_domain <- function(domain) {
   path <- file.path(output_location, paste0(domain, "_forager_results"), "lexical_results.csv")
   if(!file.exists(path)) {message("No lexical results for ", domain); return(NULL)}
@@ -224,13 +236,10 @@ complete_similarities %>%
 
 ## SpAM Analysis
 
-First, both general semantic similarity, based on the matricies from a general text corpora, and individual semantic similarity, based on the unweighted matricies from a participant's input subreddits, were correlated with euclidean distances pulled from each participant's SpAM response and pooled. This analysis revealed both general and individual semantic similarity correlated negatively with euclidean distance, yet the general semantic similarity had a more negative, stronger association (r = -0.478) compared to individual semantic similarity (r = -0.262).
-
-Euclidean Distance vs General Semantic Similarity: -0.392
-Euclidean Distance vs Individual Semantic Similarity: -0.218
+First, both general semantic similarity, based on the matricies from a general text corpora, and individual semantic similarity, based on the unweighted matricies from a participant's input subreddits, were correlated with euclidean distances pulled from each participant's SpAM response and pooled. This analysis revealed both general and individual semantic similarity correlated negatively with euclidean distance, yet the general semantic similarity had a more negative, moderate association (r = -0.392) compared to individual semantic similarity (r = -0.218).
 
 ```{r}
-#translates what participant types in fluency to corrected response used by forager 
+#translates what participant types in fluency to corrected response used by forager, keeping rows where both words exist and the typed word differs from the corrected one 
 corrections <- fluency_data %>%
   transmute(subject = as.character(Subject),
             domain, spam_word = response, forager_word = corrected_response) %>%
@@ -238,16 +247,16 @@ corrections <- fluency_data %>%
          strip_word(spam_word) != strip_word(forager_word)) %>%
            distinct()
   nrow(corrections)
-  corrections %>% slice_sample(n = 30)
   
+  corrections %>% slice_sample(n = 30)
   corrections %>% count(subject, domain, spam_word) %>% filter(n > 1)
 
-  #read in SpAM file         
+  #read in SpAM pairwise distances         
 spatial_distances <- read_csv(here("Data", "raw_data", "organized_spam.csv"), show_col_types = FALSE) %>%
   mutate(subject = as.character(subject)) %>%
   filter(!subject %in% excluded_subjects)
 
-#corrects spam words based on corrections, using correct word if necessary
+#attaches corrections to both words, uses correction if needed
 spatial_distances_fixed <- spatial_distances %>%
   left_join(corrections %>% rename(word1 = spam_word, w1_fix = forager_word), 
             by = c("subject", "domain", "word1")) %>%
@@ -259,13 +268,15 @@ spatial_distances_fixed <- spatial_distances %>%
 similarities <- complete_similarities %>%
   mutate(w1 = strip_word(Previous_Fluency_Item),
          w2 = strip_word(Fluency_Item)) %>%
-  select(subject, domain, w1, w2, Semantic_Similarity, Pairwise_Indv_Similarity)
+  select(subject, domain, w1, w2, previous_idx, current_idx,Semantic_Similarity, Pairwise_Indv_Similarity)
 
+#merges SpAM distances and similarity values matched per person/domain
 merged_sim_spam_data <- spatial_distances_fixed %>%
   left_join(similarities, by = c("subject", "domain", "w1", "w2"))
 
 nrow(merged_sim_spam_data) == nrow(spatial_distances)
 
+#checks rows where the words exist but no similarity found, seeing if clustering in particular domain
 unmatched <- merged_sim_spam_data %>%
   filter(!is.na(word1), !is.na(word2), is.na(Semantic_Similarity)) %>%
   select(subject, domain, word1, word2)
@@ -275,7 +286,7 @@ unmatched %>% count(domain)
 
 na_report(merged_sim_spam_data, c("euclidean_distance", "Semantic_Similarity", "Pairwise_Indv_Similarity"))
 
-#only valid rows kept are those with complete values for all measures used to match word pairs
+#only rows kept are those with complete values for all measures used to match word pairs
 valid_rows <- merged_sim_spam_data %>%
   filter(
     !is.na(euclidean_distance),
@@ -283,10 +294,12 @@ valid_rows <- merged_sim_spam_data %>%
     !is.na(Pairwise_Indv_Similarity)
   )
 
+#checks loss
 audit_rows("valid_rows filter", merged_sim_spam_data, valid_rows)
 valid_rows %>% count(domain)
 n_distinct(valid_rows$subject)
 
+#list of words actually produced by each person in each domain then checks missing values and reason for missing
 present <- complete_similarities %>%
   distinct(subject, domain, key = strip_word(Fluency_Item))
 
@@ -304,10 +317,207 @@ unmatched_diagram <- merged_sim_spam_data %>%
 
 count(unmatched_diagram, domain, reason)
 
+#checks for nonexistent corrections
 fluency_data %>%
   filter(is.na(corrected_response) | corrected_response == "") %>%
   count(domain)
 ```
+
+#Shuffled permutation analysis
+
+```{r}
+set.seed(2026)
+num_permutation <- 100
+subjects <- unique(valid_rows$subject)
+
+permutation_results <- map(subjects, function(current_subject) {
+  subject_data <- valid_rows %>% filter(subject == current_subject)
+  idx <- cbind(subject_data$previous_idx, subject_data$current_idx)
+  own_correlation <- cor(subject_data$euclidean_distance, subject_data$Pairwise_Indv_Similarity)
+  
+  other_participant_ids <- sample(setdiff(names(matrix_list), toupper(current_subject)), num_permutation)
+  permutation_correlation <- map_dbl(other_participant_ids, function(donor_id) {
+    values <- matrix_list[[donor_id]][idx]
+    if (sd(values) == 0) NA_real_ else cor(subject_data$euclidean_distance, values)
+  })
+  
+  list(summary = tibble(subject = current_subject,
+                        own_correlation = own_correlation,
+                        permutation_mean = mean(permutation_correlation, na.rm = TRUE),
+                        permutation_sd = sd(permutation_correlation, na.rm = TRUE),
+                        p = (1 + sum(permutation_correlation <= own_correlation, na.rm = TRUE)) /
+                          (1 + sum(!is.na(permutation_correlation)))),
+       permutation_correlation = permutation_correlation)
+})
+
+permutation_summary <- map_dfr(permutation_results, "summary")
+```
+
+
+```{r}
+sum(permutation_summary$p < 0.05)
+mean(permutation_summary$p < 0.05)
+
+t.test(permutation_summary$own_correlation, permutation_summary$permutation_mean, paired = TRUE)
+
+permutation_matrix <- do.call(rbind, map(permutation_results, "permutation_correlation"))
+null_means <- colMeans(permutation_matrix, na.rm = TRUE)
+observed_mean <- mean(permutation_summary$own_correlation)
+(1 + sum(null_means <= observed_mean)) / (1 + length(null_means))
+hist(null_means); abline(v = observed_mean, col = "red")
+```
+
+#Group mean permutation analysis
+
+
+```{r}
+leaving_one_out_results <- map_dfr(subjects, function(current_subject) {
+  subject_data <- valid_rows %>% filter(subject == current_subject)
+  idx <- cbind(subject_data$previous_idx, subject_data$current_idx)
+  others <- setdiff(names(matrix_list), toupper(current_subject))
+  
+  sims <- vapply(others, function(donor_id) matrix_list[[donor_id]][idx], numeric(nrow(subject_data)))
+  leave_one_out_mean <- rowMeans(sims)
+  
+  tibble(subject = current_subject, 
+         own_correlation = cor(subject_data$euclidean_distance,
+                               subject_data$Pairwise_Indv_Similarity),
+         leaving_one_out_correlation = cor(subject_data$euclidean_distance,
+                               leave_one_out_mean),
+         general_correlation = cor(subject_data$euclidean_distance,
+                               subject_data$Semantic_Similarity))
+})
+
+```
+
+
+```{r}
+leaving_one_out_results %>%
+  summarise(across(c(own_correlation, leaving_one_out_correlation, general_correlation), list(mean = mean, median = median)))
+
+t.test(leaving_one_out_results$own_correlation, leaving_one_out_results$leaving_one_out_correlation, paired = TRUE)
+t.test(leaving_one_out_results$leaving_one_out_correlation, leaving_one_out_results$general_correlation, paired = TRUE)
+
+```
+#Table of indv, general, and permutations
+
+```{r}
+set.seed(2026)
+min_pairs <- 5
+safe_to_correlate <- function(x, y) if (sd(x) == 0 || sd(y) == 0) NA_real_ else cor(x, y)
+
+domain_cells <- map(subjects, function(current_subject) {
+  subject_data <- valid_rows %>% filter(subject == current_subject)
+  idx <- cbind(subject_data$previous_idx, subject_data$current_idx)
+  others <- setdiff(names(matrix_list), toupper(current_subject))
+  donors <- sample(others, num_permutation)
+  
+  donor_similarities <- vapply(donors, function(id) matrix_list[[id]][idx], numeric(nrow(subject_data)))
+  leave_one_out_mean <- rowMeans(vapply(others, function(id) matrix_list[[id]][idx], numeric(nrow(subject_data))))
+  
+  map(unique(subject_data$domain), function(dom) {
+    rows <- which(subject_data$domain == dom)
+    if (length(rows) < min_pairs) return(NULL)
+    distance <- subject_data$euclidean_distance[rows]
+    own_correlation <- safe_to_correlate(distance, subject_data$Pairwise_Indv_Similarity[rows])
+    if (is.na(own_correlation)) return(NULL)
+    permutation_correlation <- apply(donor_similarities[rows, , drop = FALSE], 2, function(v) safe_to_correlate(distance, v))
+    list(summary = tibble(subject = current_subject, 
+                          domain = dom,
+                          num_pairs = length(rows),
+                          own_correlation = own_correlation,
+                          permutation_mean = mean(permutation_correlation, na.rm = TRUE),
+                          leave_one_out_correlation = safe_to_correlate(distance, leave_one_out_mean[rows]),
+                          general_correlation = safe_to_correlate(distance, subject_data$Semantic_Similarity[rows])), 
+         permutation_correlation = permutation_correlation)
+  }) %>% compact()
+}) %>% list_flatten()
+
+domain_summary <- map_dfr(domain_cells, "summary") %>% drop_na()
+
+```
+
+```{r}
+count(domain_summary, domain)
+
+domain_summary %>%
+  group_by(domain) %>%
+  summarise(
+    own_v_swap_difference = mean(own_correlation - permutation_mean),
+    own_v_swap_p = t.test(own_correlation, permutation_mean, paired = TRUE)$p.value,
+    
+    own_v_loo_difference = mean(own_correlation - leave_one_out_correlation),
+    own_v_loo_p = t.test(own_correlation, leave_one_out_correlation, paired = TRUE)$p.value,
+    
+    own_v_general_difference = mean(own_correlation - general_correlation),
+    own_v_general_p = t.test(own_correlation, general_correlation, paired = TRUE)$p.value,
+    
+    loo_v_general_p = t.test(leave_one_out_correlation, general_correlation, paired = TRUE)$p.value
+  )
+
+```
+#Table of permutations, general, and individual
+```{r}
+pal <- c(Swapped = "#9A9A9A", Own = "#4A6FA5", Consensus = "#D9953A", General = "#2B2B2B")
+
+poster_theme <- theme_minimal(base_size = 22) +
+  theme(plot.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank(),
+        legend.position = "none")
+
+# Fisher-z mean and CI for a vector of correlations
+fisher_summary <- function(r) {
+  z  <- atanh(pmax(pmin(r, .999), -.999))
+  m  <- mean(z); k <- length(z)
+  se <- sd(z) / sqrt(k)
+  tibble(mean_r = tanh(m),
+         lo = tanh(m - qt(.975, k - 1) * se),
+         hi = tanh(m + qt(.975, k - 1) * se),
+         n = k)
+}
+```
+
+
+```{r}
+ladder_data <- leaving_one_out_results %>%
+  select(subject, Own = own_correlation,
+         Consensus = leaving_one_out_correlation, General = general_correlation) %>%
+  left_join(permutation_summary %>% select(subject, Swapped = permutation_mean),
+            by = "subject") %>%
+  pivot_longer(-subject, names_to = "predictor", values_to = "r") %>%
+  mutate(predictor = factor(predictor, levels = c("Swapped", "Own", "Consensus", "General")))
+
+ladder_summary <- ladder_data %>%
+  group_by(predictor) %>%
+  group_modify(~ fisher_summary(.x$r)) %>%
+  ungroup()
+
+ladder_plot <- ggplot() +
+  geom_line(data = ladder_data, aes(predictor, r, group = subject),
+            color = "grey80", alpha = .4) +
+  geom_jitter(data = ladder_data, aes(predictor, r),
+              color = "grey55", alpha = .5, width = .08, size = 1.5) +
+  geom_pointrange(data = ladder_summary,
+                  aes(predictor, mean_r, ymin = lo, ymax = hi, color = predictor),
+                  size = 1.4, linewidth = 1.6) +
+  scale_color_manual(values = pal) +
+  labs(title = "General > consensus > own ≈ stranger's matrix",
+       x = NULL, y = "correlation with SpAM distance") +
+  poster_theme
+
+ggsave("ladder.png", ladder_plot, width = 10, height = 7, dpi = 300)
+
+
+
+```
+
+
+
+
+
+
+
+
 
 
 ```{r}
@@ -318,7 +528,7 @@ compare_correlations <- function(data, ..., min_n = 5) {
            n_distinct(euclidean_distance) >= 2,
            n_distinct(Semantic_Similarity) >= 2,
            n_distinct(Pairwise_Indv_Similarity) >= 2) %>%
-    summarise(num_pairs = n(),
+    summarise(num_pairs = n(), #more negative r = stronger negative distance relation
             general_semantic_cor = cor(euclidean_distance, Semantic_Similarity),
             individual_semantic_cor = cor(euclidean_distance, Pairwise_Indv_Similarity),
             individual_sub_general = individual_semantic_cor - general_semantic_cor,
@@ -353,6 +563,7 @@ correlation_r2
 Next, the same comparison as done previously was performed on the participant level. For each of the 81 participants remaining for analysis, the correlations between euclidean distance and the two semantic similarity measures was calculated. Then, the general semantic similarity was subtracted from the individual semantic similarity revealing that for 12 of the 81 participants, individual semantic similarity better correlated with their spatial distances in the SpAM task. For each of these participants, their SpAM arrangements were further examined and plotted in the cleaned_data folder under "spam_subject_layouts.pdf."
 
 ```{r}
+#one row per participant with two correlations + difference
 subject_level_df <- compare_correlations(valid_rows, subject)
 
 print(subject_level_df, n = Inf)
@@ -363,6 +574,7 @@ write_csv(subject_level_df, file.path(data_location, "cleaned_data", "subject_le
 mean(subject_level_df$individual_sub_general < 0, na.rm = TRUE)
 print(summary(subject_level_df$individual_sub_general))
 
+#extracts subjects whos individual measure won
 subjects_to_plot <- subject_level_df %>%
   filter(!is.na(individual_sub_general), individual_sub_general < 0) %>%
   pull(subject) %>%
@@ -418,6 +630,7 @@ individual_level_sim_win <- subject_level_df %>%
   filter(individual_sub_general < 0) %>%
   pull(subject)
 
+#in winners, how many win in each domain
 domain_individual_level_win <- subject_domain_df %>%
   filter(subject %in% individual_level_sim_win) %>%
   group_by(domain) %>%
@@ -442,6 +655,30 @@ The analysis was then done at the domain level, exploring whether the individual
 domain_level_df <- compare_correlations(valid_rows, domain, min_n = 0)
 
 print(domain_level_df, n = Inf)
+
+domain_long <- domain_summary %>%
+  select(subject, domain, Swapped = permutation_mean, Own = own_correlation,
+         Consensus = leave_one_out_correlation, General = general_correlation) %>%
+  pivot_longer(c(Swapped, Own, Consensus, General),
+               names_to = "predictor", values_to = "r") %>%
+  mutate(predictor = factor(predictor, levels = c("Swapped", "Own", "Consensus", "General")))
+
+domain_plot_data <- domain_long %>%
+  group_by(domain, predictor) %>%
+  group_modify(~ fisher_summary(.x$r)) %>%
+  ungroup() %>%
+  mutate(domain_label = paste0(str_replace(domain, "_", " "), "\n(n = ", n, ")"))
+
+domain_plot <- ggplot(domain_plot_data,
+                      aes(domain_label, mean_r, ymin = lo, ymax = hi, color = predictor)) +
+  geom_pointrange(position = position_dodge(width = .6), size = 1, linewidth = 1.2) +
+  scale_color_manual(values = pal) +
+  labs(title = " ",
+       x = NULL, y = "Mean correlation", color = NULL) +
+  poster_theme +
+  theme(legend.position = "bottom", text = element_text(size = 18))
+
+domain_plot
 ```
 
 ## Fluency Analysis
@@ -449,7 +686,7 @@ print(domain_level_df, n = Inf)
 Following the spatial distance analyses, fluency was analyzed in relation to both similarity measures. This analysis revealed the opposite pattern, as higher fluency was correlated with higher mean general semantic similarity (r = 0.438) and had a moderate positive correlation with individual semantic similarity (0.278).
 
 ```{r}
-#calculates each participant's mean semantic similarity within each domain
+#collapses pair data into one row per word pair per person x domain, calculates each participant's mean general/individual semantic similarity within each domain
 subject_mean_similarity <- valid_rows %>%
   mutate(subject = as.character(subject)) %>%
   group_by(subject, domain) %>%
@@ -460,14 +697,16 @@ subject_mean_similarity <- valid_rows %>%
     .groups = "drop"
   )
 
-#each participnts fluency responses are counted and counts are joined with their mean semantic similarity
+#each participants fluency responses are counted and counts are joined with their mean semantic similarity
 fluency <- read_csv(file.path(data_location, "raw_data", "organized_fluency.csv"),
                     show_col_types = FALSE) %>%
   mutate(subject = as.character(subject))
+
 fluency_count <- fluency %>%
   group_by(subject, domain) %>%
   summarise(fluency_count = n(),
             .groups = "drop")
+
 
 merged_similarity_fluency <- subject_mean_similarity %>%
   inner_join(fluency_count, by = c("subject", "domain")) %>%
@@ -475,9 +714,11 @@ merged_similarity_fluency <- subject_mean_similarity %>%
 
 audit_rows("subject_mean_similarity x fluency_count", subject_mean_similarity, merged_similarity_fluency)
 
+#returns rows with either a similarity table but no fluency and vice versa
 anti_join(subject_mean_similarity, fluency_count, by = c("subject", "domain"))
 anti_join(fluency_count, subject_mean_similarity, by = c("subject", "domain"))
 
+#checks loss from filter specifically
 joined <- inner_join(subject_mean_similarity, fluency_count, by= c("subject", "domain"))
 audit_rows("n_items >= 2 filter", joined, merged_similarity_fluency)
 
@@ -508,6 +749,58 @@ domain_fluency_correlations <- merged_similarity_fluency %>%
 print(domain_fluency_correlations, n = Inf)
 ```
 
+#Fluency analysis testing fluency count correlation with similarity for general and individual
+```{r}
+fluency_model_data <- merged_similarity_fluency %>%
+  group_by(domain) %>%
+  mutate(fluency_z = as.numeric(scale(fluency_count))) %>%
+  ungroup() %>%
+  mutate(subject = factor(subject), domain = factor(domain))
+
+m_gen_main <- lmer(general_mean ~ fluency_z + domain + (1 | subject), data = fluency_model_data)
+m_gen_int  <- lmer(general_mean ~ fluency_z * domain + (1 | subject), data = fluency_model_data)
+anova(m_gen_main, m_gen_int)
+
+m_ind_main <- lmer(individual_mean ~ fluency_z + domain + (1 | subject), data = fluency_model_data)
+m_ind_int  <- lmer(individual_mean ~ fluency_z * domain + (1 | subject), data = fluency_model_data)
+anova(m_ind_main, m_ind_int)
+
+domain_cor_tests <- merged_similarity_fluency %>%
+  group_by(domain) %>%
+  summarise(
+    general_r    = cor(fluency_count, general_mean),
+    general_p    = cor.test(fluency_count, general_mean)$p.value,
+    individual_r = cor(fluency_count, individual_mean),
+    individual_p = cor.test(fluency_count, individual_mean)$p.value,
+    .groups = "drop")
+
+domain_cor_p <- domain_cor_tests %>%
+  select(domain, general_p, individual_p) %>%
+  pivot_longer(-domain, names_to = "measure", values_to = "p") %>%
+  mutate(p_holm = p.adjust(p, method = "holm"))
+
+domain_cor_p
+
+
+fluency_plot_data <- domain_fluency_correlations %>%
+  select(domain, num_subjects, General = general_cor, Individual = individual_cor) %>%
+  pivot_longer(c(General, Individual), names_to = "measure", values_to = "r") %>%
+  mutate(lo = tanh(atanh(r) - 1.96 / sqrt(num_subjects - 3)),
+         hi = tanh(atanh(r) + 1.96 / sqrt(num_subjects - 3)),
+         domain_label = paste0(str_replace(domain, "_", " "), "\n(n = ", num_subjects, ")"))
+
+fluency_domain_plot <- ggplot(fluency_plot_data,
+                              aes(domain_label, r, ymin = lo, ymax = hi, color = measure)) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_pointrange(position = position_dodge(width = .5), size = 0.2, linewidth = 1.2) +
+  scale_color_manual(values = c(General = "#2B2B2B", Individual = "#4A6FA5")) +
+  labs(title = " ",
+       x = NULL, y = "r with fluency count", color = NULL) +
+  poster_theme + theme(legend.position = "bottom", text = element_text(size = 18))
+
+fluency_domain_plot
+```
+
 ## SpAM Mixed Models
 
 Linear mixed effects models were formed based on semantic similarity and spatial distance data, excluding frequency, and showed that the coefficient for general semantic similarity was -0.9024 while for individual semantic similarity it was -0.4763. This showed that both measures had a relationship with spatial distance but that the general model associated more.
@@ -519,7 +812,7 @@ model_data <- valid_rows %>%
          is.finite(Pairwise_Indv_Similarity)) %>%
   mutate(subject = factor(subject), domain = factor(domain))
 
-#general model including general semantic similarity, domain, and each subject acting as their own baseline
+#general model including general semantic similarity, domain, and each subject acting as their own baseline, semantic similarity and domain as fixed effects with subject random intercept
 general_semantic_model <- lmer (
   euclidean_distance ~ Semantic_Similarity + domain + (1 | subject), 
   data = model_data, REML = TRUE
@@ -533,12 +826,6 @@ individual_semantic_model <- lmer (
 
 summary(general_semantic_model)
 summary(individual_semantic_model)
-```
-```{r}
-fluency_model_data <- merged_similarity_fluency %>%
-  mutate(subject = factor(subject), domain = factor(domain))
-lmer(general_mean ~ fluency_count * domain + (1 | subject), data = fluency_model_data)
-lmer(individual_mean ~ fluency_count * domain + (1 | subject), data = fluency_model_data)
 ```
 
 
@@ -607,7 +894,7 @@ I wonder if this may indicate that the participant level corpera is not properly
 
 It was stated that the email sent accompanying the matricies that if a word was not represented in the corpus its similarity was set to 0, so it could be possible that words are misinterpreted as being unrelated when they are just not present.
 
-```{r}
+```{r}#
 frequency_dir <- here("Data", "kumar_freqs")
 
 if (!dir.exists(frequency_dir)) {
@@ -655,7 +942,7 @@ frequency_data %>%
 
 I looked at this on the participant level and found that the percentage of zero frequency words ranged across participants from 25.6% to 72.2% so some participants could have semantic similarity measures which are more or less effected. Also, looking back at the domains pairs able to be analyzed, for domains containing the most unique entries like sportspersons and authors, there were very very few pairs that could be properly compared.
 
-```{r}
+```{r}#
 participant_frequency <- frequency_data %>%
   group_by(Subject) %>%
   summarise(total_rows = n(),
