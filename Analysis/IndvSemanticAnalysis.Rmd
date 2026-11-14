@@ -22,6 +22,15 @@ library(stringi) #string operations
 
 here::i_am("Analysis/IndvSemanticAnalysis.Rmd") #situates project within github repo
 ```
+```{r}
+pal <- c(Swapped = "#9A9A9A", Own = "#4A6FA5", Consensus = "#D9953A", General = "#2B2B2B")
+
+poster_theme <- theme_minimal(base_size = 22) +
+  theme(plot.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank(),
+        legend.position = "none")
+
+```
 
 # reading matrices
 To begin the analysis, matricies for each participant are loaded in from the google drive and stored in r's memory to prevent repeated downloading. This resulted in a total of 109 matricies with the dimensions 3080 x 3080
@@ -114,6 +123,13 @@ excluded_subjects <- unique(c(low_response_subjects, no_matrix_subjects))
 
 fluency_data <- fluency_data %>%
   filter(!Subject %in% excluded_subjects)
+
+tibble(completed = n_distinct(fluency_number$Subject),
+       low_response = length(low_response_subjects),
+       no_matrix = length(no_matrix_subjects),
+       no_valid_pairs = length(setdiff(setdiff(unique(fluency_number$Subject), excluded_subjects),
+                                       as.character(valid_rows$subject))),
+       analyzed = n_distinct(valid_rows$subject))
 ```
 
 ##Cleaning word list
@@ -267,32 +283,24 @@ spatial_distances_fixed <- spatial_distances %>%
 
 similarities <- complete_similarities %>%
   mutate(w1 = strip_word(Previous_Fluency_Item),
-         w2 = strip_word(Fluency_Item)) %>%
-  select(subject, domain, w1, w2, previous_idx, current_idx,Semantic_Similarity, Pairwise_Indv_Similarity)
+         w2 = strip_word(Fluency_Item),
+         matched = TRUE) %>%
+  select(subject, domain, w1, w2, previous_idx, current_idx,
+         Pairwise_Indv_Similarity, matched)
 
-#merges SpAM distances and similarity values matched per person/domain
 merged_sim_spam_data <- spatial_distances_fixed %>%
   left_join(similarities, by = c("subject", "domain", "w1", "w2"))
 
-nrow(merged_sim_spam_data) == nrow(spatial_distances)
+nrow(merged_sim_spam_data) == nrow(spatial_distances)   # must print TRUE
 
-#checks rows where the words exist but no similarity found, seeing if clustering in particular domain
 unmatched <- merged_sim_spam_data %>%
-  filter(!is.na(word1), !is.na(word2), is.na(Semantic_Similarity)) %>%
+  filter(!is.na(word1), !is.na(word2), is.na(matched)) %>%
   select(subject, domain, word1, word2)
 
-nrow(unmatched)
-unmatched %>% count(domain)
+na_report(merged_sim_spam_data, c("euclidean_distance", "Pairwise_Indv_Similarity"))
 
-na_report(merged_sim_spam_data, c("euclidean_distance", "Semantic_Similarity", "Pairwise_Indv_Similarity"))
-
-#only rows kept are those with complete values for all measures used to match word pairs
 valid_rows <- merged_sim_spam_data %>%
-  filter(
-    !is.na(euclidean_distance),
-    !is.na(Semantic_Similarity),
-    !is.na(Pairwise_Indv_Similarity)
-  )
+  filter(!is.na(euclidean_distance), !is.na(Pairwise_Indv_Similarity))
 
 #checks loss
 audit_rows("valid_rows filter", merged_sim_spam_data, valid_rows)
@@ -323,49 +331,85 @@ fluency_data %>%
   count(domain)
 ```
 
-#Shuffled permutation analysis
-
 ```{r}
-set.seed(2026)
-num_permutation <- 100
 subjects <- unique(valid_rows$subject)
+sims_by_subject <- map(subjects, function(s) {
+  d <- valid_rows %>% filter(subject == s)
+  idx <- cbind(d$previous_idx, d$current_idx)
+  others <- setdiff(names(matrix_list), toupper(s))
+  vapply(others, function(id) matrix_list[[id]][idx], numeric(nrow(d)))
+}) %>% setNames(subjects)
 
-permutation_results <- map(subjects, function(current_subject) {
-  subject_data <- valid_rows %>% filter(subject == current_subject)
-  idx <- cbind(subject_data$previous_idx, subject_data$current_idx)
-  own_correlation <- cor(subject_data$euclidean_distance, subject_data$Pairwise_Indv_Similarity)
-  
-  other_participant_ids <- sample(setdiff(names(matrix_list), toupper(current_subject)), num_permutation)
-  permutation_correlation <- map_dbl(other_participant_ids, function(donor_id) {
-    values <- matrix_list[[donor_id]][idx]
-    if (sd(values) == 0) NA_real_ else cor(subject_data$euclidean_distance, values)
-  })
-  
-  list(summary = tibble(subject = current_subject,
-                        own_correlation = own_correlation,
-                        permutation_mean = mean(permutation_correlation, na.rm = TRUE),
-                        permutation_sd = sd(permutation_correlation, na.rm = TRUE),
-                        p = (1 + sum(permutation_correlation <= own_correlation, na.rm = TRUE)) /
-                          (1 + sum(!is.na(permutation_correlation)))),
-       permutation_correlation = permutation_correlation)
+spam_data <- map_dfr(subjects, function(s) {
+  valid_rows %>% filter(subject == s) %>%
+    mutate(individual_similarity = Pairwise_Indv_Similarity,
+           consensus_similarity = rowMeans(sims_by_subject[[s]]))
+}) %>% mutate(subject = factor(subject), domain = factor(domain))
+
+fit <- function(f, d) lmer(f, data = d, REML = FALSE)
+r2m <- function(m) performance::r2_nakagawa(m)$R2_marginal
+r2c <- function(m) performance::r2_nakagawa(m)$R2_conditional
+
+model_spam_base      <- fit(euclidean_distance ~ domain + (1 | subject), spam_data)
+model_spam_indiv     <- fit(euclidean_distance ~ individual_similarity * domain + (1 | subject), spam_data)
+model_spam_consensus <- fit(euclidean_distance ~ consensus_similarity * domain + (1 | subject), spam_data)
+
+# Swapped: one random donor per participant per draw, refit 100 times
+set.seed(2026)
+draw_swapped <- function() unlist(lapply(subjects, function(s) {
+  m <- sims_by_subject[[s]]; m[, sample(ncol(m), 1)]
+}), use.names = FALSE)
+
+swap_r2 <- map_dfr(1:100, function(k) {
+  d <- spam_data; d$swapped_similarity <- draw_swapped()
+  m <- fit(euclidean_distance ~ swapped_similarity * domain + (1 | subject), d)
+  tibble(draw = k, marginal = r2m(m), conditional = r2c(m))
 })
 
-permutation_summary <- map_dfr(permutation_results, "summary")
+spam_r2 <- tibble(
+  measure = c("Domain only", "Swapped (mean of 100)", "Own", "Consensus"),
+  marginal = c(r2m(model_spam_base), mean(swap_r2$marginal), r2m(model_spam_indiv), r2m(model_spam_consensus)),
+  conditional = c(r2c(model_spam_base), mean(swap_r2$conditional), r2c(model_spam_indiv), r2c(model_spam_consensus)))
+spam_r2
+
+# does Own beat a random stranger's matrix?
+(1 + sum(swap_r2$marginal >= r2m(model_spam_indiv))) / (1 + nrow(swap_r2))
+
 ```
-
-
 ```{r}
-sum(permutation_summary$p < 0.05)
-mean(permutation_summary$p < 0.05)
+set.seed(2026)
+swaps <- replicate(100, draw_swapped(), simplify = FALSE)   # one random stranger per participant per draw
 
-t.test(permutation_summary$own_correlation, permutation_summary$permutation_mean, paired = TRUE)
+domain_r2_models <- map_dfr(levels(spam_data$domain), function(dom) {
+  keep <- spam_data$domain == dom
+  d <- droplevels(spam_data[keep, ])
 
-permutation_matrix <- do.call(rbind, map(permutation_results, "permutation_correlation"))
-null_means <- colMeans(permutation_matrix, na.rm = TRUE)
-observed_mean <- mean(permutation_summary$own_correlation)
-(1 + sum(null_means <= observed_mean)) / (1 + length(null_means))
-hist(null_means); abline(v = observed_mean, col = "red")
+  own  <- r2m(fit(euclidean_distance ~ individual_similarity + (1 | subject), d))
+  cons <- r2m(fit(euclidean_distance ~ consensus_similarity + (1 | subject), d))
+  sw   <- map_dbl(swaps, function(s) {
+            d$swapped_similarity <- s[keep]
+            r2m(fit(euclidean_distance ~ swapped_similarity + (1 | subject), d)) })
+
+  tibble(domain = dom, n_pairs = nrow(d),
+         Swapped = mean(sw), Own = own, Consensus = cons,
+         own_vs_swap_p = (1 + sum(sw >= own)) / (1 + length(sw)))
+}) %>% mutate(own_vs_swap_p_holm = p.adjust(own_vs_swap_p, method = "holm"))
+
+domain_r2_models
+
 ```
+```{r}
+domain_r2_models %>%
+  pivot_longer(c(Swapped, Own, Consensus), names_to = "measure", values_to = "marginal") %>%
+  mutate(measure = factor(measure, levels = c("Swapped", "Own", "Consensus")),
+         domain_label = paste0(str_replace(domain, "_", " "), "\n(", n_pairs, " pairs)")) %>%
+  ggplot(aes(domain_label, marginal, fill = measure)) +
+  geom_col(position = position_dodge(width = .8), width = .7) +
+  scale_fill_manual(values = pal) +
+  labs(x = NULL, y = "Variance explained (marginal R²)", fill = NULL, title = NULL) +
+  poster_theme + theme(legend.position = "bottom", text = element_text(size = 12))
+```
+
 
 #Group mean permutation analysis
 
@@ -399,115 +443,27 @@ t.test(leaving_one_out_results$own_correlation, leaving_one_out_results$leaving_
 t.test(leaving_one_out_results$leaving_one_out_correlation, leaving_one_out_results$general_correlation, paired = TRUE)
 
 ```
-#Table of indv, general, and permutations
+
 
 ```{r}
-set.seed(2026)
-min_pairs <- 5
-safe_to_correlate <- function(x, y) if (sd(x) == 0 || sd(y) == 0) NA_real_ else cor(x, y)
-
-domain_cells <- map(subjects, function(current_subject) {
-  subject_data <- valid_rows %>% filter(subject == current_subject)
-  idx <- cbind(subject_data$previous_idx, subject_data$current_idx)
-  others <- setdiff(names(matrix_list), toupper(current_subject))
-  donors <- sample(others, num_permutation)
-  
-  donor_similarities <- vapply(donors, function(id) matrix_list[[id]][idx], numeric(nrow(subject_data)))
-  leave_one_out_mean <- rowMeans(vapply(others, function(id) matrix_list[[id]][idx], numeric(nrow(subject_data))))
-  
-  map(unique(subject_data$domain), function(dom) {
-    rows <- which(subject_data$domain == dom)
-    if (length(rows) < min_pairs) return(NULL)
-    distance <- subject_data$euclidean_distance[rows]
-    own_correlation <- safe_to_correlate(distance, subject_data$Pairwise_Indv_Similarity[rows])
-    if (is.na(own_correlation)) return(NULL)
-    permutation_correlation <- apply(donor_similarities[rows, , drop = FALSE], 2, function(v) safe_to_correlate(distance, v))
-    list(summary = tibble(subject = current_subject, 
-                          domain = dom,
-                          num_pairs = length(rows),
-                          own_correlation = own_correlation,
-                          permutation_mean = mean(permutation_correlation, na.rm = TRUE),
-                          leave_one_out_correlation = safe_to_correlate(distance, leave_one_out_mean[rows]),
-                          general_correlation = safe_to_correlate(distance, subject_data$Semantic_Similarity[rows])), 
-         permutation_correlation = permutation_correlation)
-  }) %>% compact()
-}) %>% list_flatten()
-
-domain_summary <- map_dfr(domain_cells, "summary") %>% drop_na()
-
-```
-
-```{r}
-count(domain_summary, domain)
-
-domain_summary %>%
-  group_by(domain) %>%
-  summarise(
-    own_v_swap_difference = mean(own_correlation - permutation_mean),
-    own_v_swap_p = t.test(own_correlation, permutation_mean, paired = TRUE)$p.value,
-    
-    own_v_loo_difference = mean(own_correlation - leave_one_out_correlation),
-    own_v_loo_p = t.test(own_correlation, leave_one_out_correlation, paired = TRUE)$p.value,
-    
-    own_v_general_difference = mean(own_correlation - general_correlation),
-    own_v_general_p = t.test(own_correlation, general_correlation, paired = TRUE)$p.value,
-    
-    loo_v_general_p = t.test(leave_one_out_correlation, general_correlation, paired = TRUE)$p.value
-  )
-
-```
-#Table of permutations, general, and individual
-```{r}
-pal <- c(Swapped = "#9A9A9A", Own = "#4A6FA5", Consensus = "#D9953A", General = "#2B2B2B")
-
-poster_theme <- theme_minimal(base_size = 22) +
-  theme(plot.title = element_text(face = "bold"),
-        panel.grid.minor = element_blank(),
-        legend.position = "none")
-
-# Fisher-z mean and CI for a vector of correlations
-fisher_summary <- function(r) {
-  z  <- atanh(pmax(pmin(r, .999), -.999))
-  m  <- mean(z); k <- length(z)
-  se <- sd(z) / sqrt(k)
-  tibble(mean_r = tanh(m),
-         lo = tanh(m - qt(.975, k - 1) * se),
-         hi = tanh(m + qt(.975, k - 1) * se),
-         n = k)
+plot_r2 <- function(r2_tbl, ymax) {
+  base <- r2_tbl$marginal[r2_tbl$measure == "Domain only"]
+  r2_tbl %>%
+    filter(measure != "Domain only") %>%
+    mutate(measure = factor(recode(measure, "Swapped (mean of 100)" = "Swapped"),
+                            levels = c("Swapped", "Own", "Consensus"))) %>%
+    ggplot(aes(measure, marginal, fill = measure)) +
+    geom_col(width = .6) +
+    geom_hline(yintercept = base, linetype = "dashed") +
+    geom_text(aes(label = sprintf("%.3f", marginal)), vjust = -0.4, size = 8) +
+    scale_fill_manual(values = pal) +
+    scale_y_continuous(limits = c(0, ymax)) +
+    labs(x = NULL, y = "Variance explained (marginal R²)", title = NULL) +
+    poster_theme + theme(text = element_text(size = 18))
 }
-```
 
-
-```{r}
-r2_table <- tibble(
-  measure = c("Swapped", "Own", "Consensus"),
-  mean_r = c(mean(permutation_summary$permutation_mean),
-             mean(leaving_one_out_results$own_correlation),
-             mean(leaving_one_out_results$leaving_one_out_correlation)),
-  mean_R2 = c(mean(map_dbl(permutation_results, ~ mean(.x$permutation_correlation^2, na.rm = TRUE))),
-              mean(leaving_one_out_results$own_correlation^2),
-              mean(leaving_one_out_results$leaving_one_out_correlation^2))
-) %>%
-  mutate(across(where(is.numeric), ~ round(.x, 3)))
-
-r2_table
-```
-
-```{r}
-r2_plot <- r2_table %>%
-  mutate(measure = factor(measure, levels = c("Swapped", "Own", "Consensus"))) %>%
-  ggplot(aes(measure, mean_R2, fill = measure)) +
-  geom_col(width = .6) +
-  geom_text(aes(label = sprintf("%.3f", mean_R2)), vjust = -0.4, size = 8) +
-  scale_fill_manual(values = pal) +
-  scale_y_continuous(limits = c(0, 0.12)) +
-  labs(x = NULL, y = "Variance explained (R²)",
-       title = "Correlation between similarity measures and SpAM distances") +
-  poster_theme +
-  theme(plot.title = element_text(size = 18, face = "bold"),
-        plot.title.position = "plot")
-
-ggsave("r2_plot.png", r2_plot, width = 8, height = 6, dpi = 300)
+fig1 <- plot_r2(spam_r2, 0.13)
+ggsave("fig1_spam_r2.png", fig1, width = 8, height = 6, dpi = 300)
 ```
 
 ```{r}
@@ -527,52 +483,8 @@ domain_r2_plot_data <- domain_r2 %>%
   mutate(lo = pmax(mean_R2 - qt(.975, n - 1) * se, 0),
          hi = mean_R2 + qt(.975, n - 1) * se,
          domain_label = paste0(str_replace(domain, "_", " "), "\n(n = ", n, ")"))
-
-domain_r2_bar <- ggplot(domain_r2_plot_data,
-                        aes(domain_label, mean_R2, fill = measure)) +
-  geom_col(position = position_dodge(width = .8), width = .7) +
-  geom_errorbar(aes(ymin = lo, ymax = hi),
-                position = position_dodge(width = .8),
-                width = .25, linewidth = 1) +
-  scale_fill_manual(values = pal) +
-  labs(x = NULL, y = "Mean R²", fill = NULL, title = NULL) +
-  poster_theme +
-  theme(legend.position = "bottom", text = element_text(size = 18))
-
-ggsave("domain_r2_bar.png", domain_r2_bar, width = 10, height = 6, dpi = 300)
 ```
 
-
-
-```{r}
-domain_level_df <- compare_correlations(valid_rows, domain, min_n = 0)
-
-print(domain_level_df, n = Inf)
-
-domain_long <- domain_summary %>%
-  select(subject, domain, Swapped = permutation_mean, Own = own_correlation,
-         Consensus = leave_one_out_correlation, General = general_correlation) %>%
-  pivot_longer(c(Swapped, Own, Consensus, General),
-               names_to = "predictor", values_to = "r") %>%
-  mutate(predictor = factor(predictor, levels = c("Swapped", "Own", "Consensus", "General")))
-
-domain_plot_data <- domain_long %>%
-  group_by(domain, predictor) %>%
-  group_modify(~ fisher_summary(.x$r)) %>%
-  ungroup() %>%
-  mutate(domain_label = paste0(str_replace(domain, "_", " "), "\n(n = ", n, ")"))
-
-domain_plot <- ggplot(domain_plot_data,
-                      aes(domain_label, mean_r, ymin = lo, ymax = hi, color = predictor)) +
-  geom_pointrange(position = position_dodge(width = .6), size = 1, linewidth = 1.2) +
-  scale_color_manual(values = pal) +
-  labs(title = " ",
-       x = NULL, y = "Mean correlation", color = NULL) +
-  poster_theme +
-  theme(legend.position = "bottom", text = element_text(size = 18))
-
-domain_plot
-```
 
 ## Fluency Analysis
 
@@ -616,7 +528,7 @@ print(domain_fluency_correlations, n = Inf)
 
 #Fluency analysis testing fluency count correlation with similarity for general and individual
 ```{r}
-# does the fluency relationship differ by domain?
+#fluency relationship across domains
 fluency_model_data <- merged_similarity_fluency %>%
   group_by(domain) %>%
   mutate(fluency_z = as.numeric(scale(fluency_count))) %>%
@@ -641,9 +553,17 @@ domain_cor_p <- merged_similarity_fluency %>%
 domain_cor_p
 
 ```
+
+
 ```{r}
 set.seed(2026)
+fluency <- read_csv(file.path(data_location, "raw_data", "organized_fluency.csv"),
+                    show_col_types = FALSE) %>%
+  mutate(subject = as.character(subject))
 
+fluency_count <- fluency %>%
+  group_by(subject, domain) %>%
+  summarise(fluency_count = n(), .groups = "drop")
 # similarity for every valid pair under Own, Consensus, and 100 random strangers
 pair_sims <- map_dfr(subjects, function(s) {
   d <- valid_rows %>% filter(subject == s)
@@ -666,41 +586,43 @@ fluency_all <- pair_sims %>%
   inner_join(fluency_count, by = c("subject", "domain")) %>%
   filter(n_items >= 2)
 
-# within-domain correlation with fluency count for each measure
-fluency_r <- fluency_all %>%
-  group_by(domain) %>%
-  filter(n() >= 5) %>%
-  summarise(n = n(),
-            Own = cor(fluency_count, own),
-            Consensus = cor(fluency_count, consensus),
-            across(starts_with("swap"), ~ cor(fluency_count, .x)),
-            .groups = "drop") %>%
-  mutate(Swapped = rowMeans(across(starts_with("swap")))) %>%
-  select(domain, n, Swapped, Own, Consensus)
+fluency_fit <- fluency_all %>% mutate(subject = factor(subject), domain = factor(domain))
 
-fluency_r
+model_fluency_base      <- fit(fluency_count ~ domain + (1 | subject), fluency_fit)
+model_fluency_indiv     <- fit(fluency_count ~ own * domain + (1 | subject), fluency_fit)
+model_fluency_consensus <- fit(fluency_count ~ consensus * domain + (1 | subject), fluency_fit)
 
+swap_fluency_r2 <- map_dfr(1:100, function(k) {
+  d <- fluency_fit; d$swapped <- d[[paste0("swap", k)]]
+  m <- fit(fluency_count ~ swapped * domain + (1 | subject), d)
+  tibble(draw = k, marginal = r2m(m), conditional = r2c(m))
+})
+
+fluency_r2 <- tibble(
+  measure = c("Domain only", "Swapped (mean of 100)", "Own", "Consensus"),
+  marginal = c(r2m(model_fluency_base), mean(swap_fluency_r2$marginal), r2m(model_fluency_indiv), r2m(model_fluency_consensus)),
+  conditional = c(r2c(model_fluency_base), mean(swap_fluency_r2$conditional), r2c(model_fluency_indiv), r2c(model_fluency_consensus)))
+fluency_r2
+
+(1 + sum(swap_fluency_r2$marginal >= r2m(model_fluency_indiv))) / (1 + nrow(swap_fluency_r2))
 ```
+
+
 ```{r}
-fluency_plot_data <- fluency_r %>%
-  pivot_longer(c(Swapped, Own, Consensus), names_to = "measure", values_to = "r") %>%
-  mutate(measure = factor(measure, levels = c("Swapped", "Own", "Consensus")),
-         lo = tanh(atanh(r) - 1.96 / sqrt(n - 3)),
-         hi = tanh(atanh(r) + 1.96 / sqrt(n - 3)),
-         domain_label = paste0(str_replace(domain, "_", " "), "\n(n = ", n, ")"))
-
-fluency_bar <- ggplot(fluency_plot_data,
-                      aes(domain_label, r, fill = measure)) +
-  geom_hline(yintercept = 0) +
-  geom_col(position = position_dodge(width = .8), width = .7) +
-  geom_errorbar(aes(ymin = lo, ymax = hi),
-                position = position_dodge(width = .8), width = .25, linewidth = 1) +
+fig3 <- fluency_r2 %>%
+  mutate(gain = marginal - marginal[measure == "Domain only"]) %>%
+  filter(measure != "Domain only") %>%
+  mutate(measure = factor(recode(measure, "Swapped (mean of 100)" = "Swapped"),
+                          levels = c("Swapped", "Own", "Consensus"))) %>%
+  ggplot(aes(measure, gain, fill = measure)) +
+  geom_col(width = .6) +
+  geom_text(aes(label = sprintf("+%.3f", gain)), vjust = -0.4, size = 8) +
   scale_fill_manual(values = pal) +
-  labs(x = NULL, y = "Fluency–similarity correlation (r)", fill = NULL, title = NULL) +
-  poster_theme + theme(legend.position = "bottom", text = element_text(size = 18))
+  scale_y_continuous(limits = c(0, 0.02)) +
+  labs(x = NULL, y = "R² gained over domain alone", title = NULL) +
+  poster_theme + theme(text = element_text(size = 18))
 
-ggsave("fluency_bar.png", fluency_bar, width = 10, height = 6, dpi = 300)
-
+ggsave("fig3_fluency_gain.png", fig3, width = 8, height = 6, dpi = 300)
 ```
 
 
