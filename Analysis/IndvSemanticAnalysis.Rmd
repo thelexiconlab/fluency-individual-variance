@@ -479,177 +479,70 @@ fisher_summary <- function(r) {
 
 
 ```{r}
-ladder_data <- leaving_one_out_results %>%
-  select(subject, Own = own_correlation,
-         Consensus = leaving_one_out_correlation, General = general_correlation) %>%
-  left_join(permutation_summary %>% select(subject, Swapped = permutation_mean),
-            by = "subject") %>%
-  pivot_longer(-subject, names_to = "predictor", values_to = "r") %>%
-  mutate(predictor = factor(predictor, levels = c("Swapped", "Own", "Consensus", "General")))
+r2_table <- tibble(
+  measure = c("Swapped", "Own", "Consensus"),
+  mean_r = c(mean(permutation_summary$permutation_mean),
+             mean(leaving_one_out_results$own_correlation),
+             mean(leaving_one_out_results$leaving_one_out_correlation)),
+  mean_R2 = c(mean(map_dbl(permutation_results, ~ mean(.x$permutation_correlation^2, na.rm = TRUE))),
+              mean(leaving_one_out_results$own_correlation^2),
+              mean(leaving_one_out_results$leaving_one_out_correlation^2))
+) %>%
+  mutate(across(where(is.numeric), ~ round(.x, 3)))
 
-ladder_summary <- ladder_data %>%
-  group_by(predictor) %>%
-  group_modify(~ fisher_summary(.x$r)) %>%
-  ungroup()
-
-ladder_plot <- ggplot() +
-  geom_line(data = ladder_data, aes(predictor, r, group = subject),
-            color = "grey80", alpha = .4) +
-  geom_jitter(data = ladder_data, aes(predictor, r),
-              color = "grey55", alpha = .5, width = .08, size = 1.5) +
-  geom_pointrange(data = ladder_summary,
-                  aes(predictor, mean_r, ymin = lo, ymax = hi, color = predictor),
-                  size = 1.4, linewidth = 1.6) +
-  scale_color_manual(values = pal) +
-  labs(title = "General > consensus > own ≈ stranger's matrix",
-       x = NULL, y = "correlation with SpAM distance") +
-  poster_theme
-
-ggsave("ladder.png", ladder_plot, width = 10, height = 7, dpi = 300)
-
-
-
+r2_table
 ```
-
-
-
-
-
-
-
-
-
 
 ```{r}
-compare_correlations <- function(data, ..., min_n = 5) {
-  data %>%
-    group_by(...) %>%
-    filter(n() >= min_n,
-           n_distinct(euclidean_distance) >= 2,
-           n_distinct(Semantic_Similarity) >= 2,
-           n_distinct(Pairwise_Indv_Similarity) >= 2) %>%
-    summarise(num_pairs = n(), #more negative r = stronger negative distance relation
-            general_semantic_cor = cor(euclidean_distance, Semantic_Similarity),
-            individual_semantic_cor = cor(euclidean_distance, Pairwise_Indv_Similarity),
-            individual_sub_general = individual_semantic_cor - general_semantic_cor,
-            .groups = "drop")
-}
+r2_plot <- r2_table %>%
+  mutate(measure = factor(measure, levels = c("Swapped", "Own", "Consensus"))) %>%
+  ggplot(aes(measure, mean_R2, fill = measure)) +
+  geom_col(width = .6) +
+  geom_text(aes(label = sprintf("%.3f", mean_R2)), vjust = -0.4, size = 8) +
+  scale_fill_manual(values = pal) +
+  scale_y_continuous(limits = c(0, 0.12)) +
+  labs(x = NULL, y = "Variance explained (R²)",
+       title = "Correlation between similarity measures and SpAM distances") +
+  poster_theme +
+  theme(plot.title = element_text(size = 18, face = "bold"),
+        plot.title.position = "plot")
 
-#correlations
-general_semantic_correlation <- cor(
-  valid_rows$euclidean_distance,
-  valid_rows$Semantic_Similarity
-  )
-
-individual_semantic_correlation <- cor(
-  valid_rows$euclidean_distance,
-  valid_rows$Pairwise_Indv_Similarity
-  )
-
-cat(sprintf("Euclidean Distance vs General Semantic Similarity: %.3f\n",
-            general_semantic_correlation
-            ))
-cat(sprintf("Euclidean Distance vs Individual Semantic Similarity: %.3f\n",
-            individual_semantic_correlation
-            ))
-
-#r^2
-correlation_r2 <- tibble(measure = c("General", "Individual"),
-                         r = c(general_semantic_correlation, individual_semantic_correlation), 
-                         r_squared = c(general_semantic_correlation, individual_semantic_correlation)^2)
-correlation_r2
+ggsave("r2_plot.png", r2_plot, width = 8, height = 6, dpi = 300)
 ```
-
-Next, the same comparison as done previously was performed on the participant level. For each of the 81 participants remaining for analysis, the correlations between euclidean distance and the two semantic similarity measures was calculated. Then, the general semantic similarity was subtracted from the individual semantic similarity revealing that for 12 of the 81 participants, individual semantic similarity better correlated with their spatial distances in the SpAM task. For each of these participants, their SpAM arrangements were further examined and plotted in the cleaned_data folder under "spam_subject_layouts.pdf."
 
 ```{r}
-#one row per participant with two correlations + difference
-subject_level_df <- compare_correlations(valid_rows, subject)
+domain_r2 <- map_dfr(domain_cells, function(cell) {
+  s <- cell$summary
+  tibble(subject = s$subject, domain = s$domain, num_pairs = s$num_pairs,
+         Own       = s$own_correlation^2,
+         Consensus = s$leave_one_out_correlation^2,
+         Swapped   = mean(cell$permutation_correlation^2, na.rm = TRUE))
+}) %>% drop_na()
 
-print(subject_level_df, n = Inf)
+domain_r2_plot_data <- domain_r2 %>%
+  pivot_longer(c(Swapped, Own, Consensus), names_to = "measure", values_to = "R2") %>%
+  mutate(measure = factor(measure, levels = c("Swapped", "Own", "Consensus"))) %>%
+  group_by(domain, measure) %>%
+  summarise(n = n(), mean_R2 = mean(R2), se = sd(R2) / sqrt(n), .groups = "drop") %>%
+  mutate(lo = pmax(mean_R2 - qt(.975, n - 1) * se, 0),
+         hi = mean_R2 + qt(.975, n - 1) * se,
+         domain_label = paste0(str_replace(domain, "_", " "), "\n(n = ", n, ")"))
 
-write_csv(subject_level_df, file.path(data_location, "cleaned_data", "subject_level_correlations.csv"))
+domain_r2_bar <- ggplot(domain_r2_plot_data,
+                        aes(domain_label, mean_R2, fill = measure)) +
+  geom_col(position = position_dodge(width = .8), width = .7) +
+  geom_errorbar(aes(ymin = lo, ymax = hi),
+                position = position_dodge(width = .8),
+                width = .25, linewidth = 1) +
+  scale_fill_manual(values = pal) +
+  labs(x = NULL, y = "Mean R²", fill = NULL, title = NULL) +
+  poster_theme +
+  theme(legend.position = "bottom", text = element_text(size = 18))
 
-#extract all participants whos indv semantic similarity outperformed general semantic similarity
-mean(subject_level_df$individual_sub_general < 0, na.rm = TRUE)
-print(summary(subject_level_df$individual_sub_general))
-
-#extracts subjects whos individual measure won
-subjects_to_plot <- subject_level_df %>%
-  filter(!is.na(individual_sub_general), individual_sub_general < 0) %>%
-  pull(subject) %>%
-  as.character %>%
-  unique()
-
-spam_subjects <- spatial_distances %>%
-  mutate(subject = as.character(subject)) %>%
-      filter(subject %in% subjects_to_plot)
-
+ggsave("domain_r2_bar.png", domain_r2_bar, width = 10, height = 6, dpi = 300)
 ```
 
-```{r, eval = FALSE}
 
-spam_layout_plot <- spam_subjects %>%
-  group_by(subject, domain) %>%
-  group_split() %>%
-  map(function(subj) {
-    subject_id <- unique(subj$subject)
-    domain_name <- unique(as.character(subj$domain))
-    
-    ggplot(subj, aes(x = x, y = y)) +
-      geom_point(size = 2.5, alpha = 0.8) +
-      geom_text_repel(aes(label = word), 
-                      size = 3,
-                      max.overlaps = Inf) +
-      coord_equal() +
-      labs(title = paste(subject_id, "-", domain_name),
-           x = "x", y = "y") + theme_minimal()
-  })
-
-spam_combined_plots <- wrap_plots(spam_layout_plot, ncol = 2)
-
-ggsave(filename = file.path(data_location, "cleaned_data", "spam_subject_layouts.pdf"),
-       plot = spam_combined_plots, width = 14, height = max(10, 4 * ceiling(length(spam_layout_plot) / 2)), limitsize = FALSE)
-```
-
-This relationship was then examined at the domain level, for each participant.
-
-```{r}
-#repeat of prior analysis for each participant per domain 
-subject_domain_df <- compare_correlations(valid_rows, subject, domain)
-
-print(subject_domain_df, n = Inf)
-
-write_csv(subject_domain_df, file.path(data_location, "cleaned_data", "subject_domain_level_correlations.csv"))
-```
-
-Then, for the six participants where the indv semantic similarity was a better predictor, the differences in each domain for those participants were explored.
-
-```{r}
-individual_level_sim_win <- subject_level_df %>%
-  filter(individual_sub_general < 0) %>%
-  pull(subject)
-
-#in winners, how many win in each domain
-domain_individual_level_win <- subject_domain_df %>%
-  filter(subject %in% individual_level_sim_win) %>%
-  group_by(domain) %>%
-  summarise(
-    num_negative = sum(individual_sub_general < 0),
-    num_subject = n(),
-    .groups = "drop"
-  )
-
-print(domain_individual_level_win)
-
-domain_subject_win <- subject_domain_df %>%
-  filter(subject %in% individual_level_sim_win, individual_sub_general < 0) %>%
-  select(subject, domain, individual_sub_general)
-
-print(domain_subject_win, n = Inf)
-```
-
-The analysis was then done at the domain level, exploring whether the individual vs general semantic model performed differently across domains. This revealed that the general semantic similarity measure had a stronger relation with spatial distance on the domains with the largest number of comparable pairs.
 
 ```{r}
 domain_level_df <- compare_correlations(valid_rows, domain, min_n = 0)
@@ -683,208 +576,135 @@ domain_plot
 
 ## Fluency Analysis
 
-Following the spatial distance analyses, fluency was analyzed in relation to both similarity measures. This analysis revealed the opposite pattern, as higher fluency was correlated with higher mean general semantic similarity (r = 0.438) and had a moderate positive correlation with individual semantic similarity (0.278).
 
 ```{r}
-#collapses pair data into one row per word pair per person x domain, calculates each participant's mean general/individual semantic similarity within each domain
+# each participant's mean individual similarity per domain
 subject_mean_similarity <- valid_rows %>%
   mutate(subject = as.character(subject)) %>%
   group_by(subject, domain) %>%
-  summarise(
-    general_mean = mean(Semantic_Similarity, na.rm = TRUE),
-    individual_mean = mean(Pairwise_Indv_Similarity, na.rm = TRUE),
-    n_items = n(),
-    .groups = "drop"
-  )
+  summarise(individual_mean = mean(Pairwise_Indv_Similarity, na.rm = TRUE),
+            n_items = n(),
+            .groups = "drop")
 
-#each participants fluency responses are counted and counts are joined with their mean semantic similarity
+# fluency count per participant and domain
 fluency <- read_csv(file.path(data_location, "raw_data", "organized_fluency.csv"),
                     show_col_types = FALSE) %>%
   mutate(subject = as.character(subject))
 
 fluency_count <- fluency %>%
   group_by(subject, domain) %>%
-  summarise(fluency_count = n(),
-            .groups = "drop")
-
+  summarise(fluency_count = n(), .groups = "drop")
 
 merged_similarity_fluency <- subject_mean_similarity %>%
   inner_join(fluency_count, by = c("subject", "domain")) %>%
   filter(n_items >= 2)
 
+# loss checks
 audit_rows("subject_mean_similarity x fluency_count", subject_mean_similarity, merged_similarity_fluency)
-
-#returns rows with either a similarity table but no fluency and vice versa
 anti_join(subject_mean_similarity, fluency_count, by = c("subject", "domain"))
-anti_join(fluency_count, subject_mean_similarity, by = c("subject", "domain"))
 
-#checks loss from filter specifically
-joined <- inner_join(subject_mean_similarity, fluency_count, by= c("subject", "domain"))
-audit_rows("n_items >= 2 filter", joined, merged_similarity_fluency)
-
-general_sim_fluency_correlation <- cor(
-  merged_similarity_fluency$fluency_count,
-  merged_similarity_fluency$general_mean
-)
-
-individual_sim_fluency_correlation <- cor(
-  merged_similarity_fluency$fluency_count,
-  merged_similarity_fluency$individual_mean
-)
-
-cat(sprintf("Fluency count vs General similarity = %.3f\n", general_sim_fluency_correlation))
-cat(sprintf("Fluency count vs Individual similarity = %.3f\n", individual_sim_fluency_correlation))
-
+# within-domain correlations (individual similarity only)
 domain_fluency_correlations <- merged_similarity_fluency %>%
   group_by(domain) %>%
   filter(n() >= 5) %>%
-  summarise(
-    num_subjects = n(),
-    general_cor = cor(fluency_count, general_mean),
-    individual_cor = cor(fluency_count, individual_mean),
-    difference = individual_cor - general_cor,
-    .groups = "drop"
-  )
+  summarise(num_subjects = n(),
+            individual_cor = cor(fluency_count, individual_mean),
+            .groups = "drop")
 
 print(domain_fluency_correlations, n = Inf)
 ```
 
 #Fluency analysis testing fluency count correlation with similarity for general and individual
 ```{r}
+# does the fluency relationship differ by domain?
 fluency_model_data <- merged_similarity_fluency %>%
   group_by(domain) %>%
   mutate(fluency_z = as.numeric(scale(fluency_count))) %>%
   ungroup() %>%
   mutate(subject = factor(subject), domain = factor(domain))
 
-m_gen_main <- lmer(general_mean ~ fluency_z + domain + (1 | subject), data = fluency_model_data)
-m_gen_int  <- lmer(general_mean ~ fluency_z * domain + (1 | subject), data = fluency_model_data)
-anova(m_gen_main, m_gen_int)
+model_indv_main <- lmer(individual_mean ~ fluency_z + domain + (1 | subject), data = fluency_model_data)
+model_indv_int  <- lmer(individual_mean ~ fluency_z * domain + (1 | subject), data = fluency_model_data)
+anova(model_indv_main, model_indv_int)
 
-m_ind_main <- lmer(individual_mean ~ fluency_z + domain + (1 | subject), data = fluency_model_data)
-m_ind_int  <- lmer(individual_mean ~ fluency_z * domain + (1 | subject), data = fluency_model_data)
-anova(m_ind_main, m_ind_int)
+# overall within-domain association (replaces the confounded pooled r)
+summary(model_indv_main)$coefficients["fluency_z", ]
 
-domain_cor_tests <- merged_similarity_fluency %>%
+# which domains differ from zero? Holm over 5 tests
+domain_cor_p <- merged_similarity_fluency %>%
   group_by(domain) %>%
-  summarise(
-    general_r    = cor(fluency_count, general_mean),
-    general_p    = cor.test(fluency_count, general_mean)$p.value,
-    individual_r = cor(fluency_count, individual_mean),
-    individual_p = cor.test(fluency_count, individual_mean)$p.value,
-    .groups = "drop")
-
-domain_cor_p <- domain_cor_tests %>%
-  select(domain, general_p, individual_p) %>%
-  pivot_longer(-domain, names_to = "measure", values_to = "p") %>%
-  mutate(p_holm = p.adjust(p, method = "holm"))
+  summarise(individual_r = cor(fluency_count, individual_mean),
+            individual_p = cor.test(fluency_count, individual_mean)$p.value,
+            .groups = "drop") %>%
+  mutate(p_holm = p.adjust(individual_p, method = "holm"))
 
 domain_cor_p
 
+```
+```{r}
+set.seed(2026)
 
-fluency_plot_data <- domain_fluency_correlations %>%
-  select(domain, num_subjects, General = general_cor, Individual = individual_cor) %>%
-  pivot_longer(c(General, Individual), names_to = "measure", values_to = "r") %>%
-  mutate(lo = tanh(atanh(r) - 1.96 / sqrt(num_subjects - 3)),
-         hi = tanh(atanh(r) + 1.96 / sqrt(num_subjects - 3)),
-         domain_label = paste0(str_replace(domain, "_", " "), "\n(n = ", num_subjects, ")"))
+# similarity for every valid pair under Own, Consensus, and 100 random strangers
+pair_sims <- map_dfr(subjects, function(s) {
+  d <- valid_rows %>% filter(subject == s)
+  idx <- cbind(d$previous_idx, d$current_idx)
+  others <- setdiff(names(matrix_list), toupper(s))
+  sims <- vapply(others, function(id) matrix_list[[id]][idx], numeric(nrow(d)))
+  swaps <- as_tibble(sims[, sample(ncol(sims), 100), drop = FALSE],
+                     .name_repair = ~ paste0("swap", seq_along(.x)))
+  bind_cols(tibble(subject = s, domain = d$domain,
+                   own = d$Pairwise_Indv_Similarity,
+                   consensus = rowMeans(sims)),
+            swaps)
+})
 
-fluency_domain_plot <- ggplot(fluency_plot_data,
-                              aes(domain_label, r, ymin = lo, ymax = hi, color = measure)) +
-  geom_hline(yintercept = 0, linetype = "dashed") +
-  geom_pointrange(position = position_dodge(width = .5), size = 0.2, linewidth = 1.2) +
-  scale_color_manual(values = c(General = "#2B2B2B", Individual = "#4A6FA5")) +
-  labs(title = " ",
-       x = NULL, y = "r with fluency count", color = NULL) +
+# mean similarity per participant and domain, joined to fluency counts
+fluency_all <- pair_sims %>%
+  group_by(subject, domain) %>%
+  summarise(across(c(own, consensus, starts_with("swap")), mean),
+            n_items = n(), .groups = "drop") %>%
+  inner_join(fluency_count, by = c("subject", "domain")) %>%
+  filter(n_items >= 2)
+
+# within-domain correlation with fluency count for each measure
+fluency_r <- fluency_all %>%
+  group_by(domain) %>%
+  filter(n() >= 5) %>%
+  summarise(n = n(),
+            Own = cor(fluency_count, own),
+            Consensus = cor(fluency_count, consensus),
+            across(starts_with("swap"), ~ cor(fluency_count, .x)),
+            .groups = "drop") %>%
+  mutate(Swapped = rowMeans(across(starts_with("swap")))) %>%
+  select(domain, n, Swapped, Own, Consensus)
+
+fluency_r
+
+```
+```{r}
+fluency_plot_data <- fluency_r %>%
+  pivot_longer(c(Swapped, Own, Consensus), names_to = "measure", values_to = "r") %>%
+  mutate(measure = factor(measure, levels = c("Swapped", "Own", "Consensus")),
+         lo = tanh(atanh(r) - 1.96 / sqrt(n - 3)),
+         hi = tanh(atanh(r) + 1.96 / sqrt(n - 3)),
+         domain_label = paste0(str_replace(domain, "_", " "), "\n(n = ", n, ")"))
+
+fluency_bar <- ggplot(fluency_plot_data,
+                      aes(domain_label, r, fill = measure)) +
+  geom_hline(yintercept = 0) +
+  geom_col(position = position_dodge(width = .8), width = .7) +
+  geom_errorbar(aes(ymin = lo, ymax = hi),
+                position = position_dodge(width = .8), width = .25, linewidth = 1) +
+  scale_fill_manual(values = pal) +
+  labs(x = NULL, y = "Fluency–similarity correlation (r)", fill = NULL, title = NULL) +
   poster_theme + theme(legend.position = "bottom", text = element_text(size = 18))
 
-fluency_domain_plot
-```
-
-## SpAM Mixed Models
-
-Linear mixed effects models were formed based on semantic similarity and spatial distance data, excluding frequency, and showed that the coefficient for general semantic similarity was -0.9024 while for individual semantic similarity it was -0.4763. This showed that both measures had a relationship with spatial distance but that the general model associated more.
-
-```{r}
-model_data <- valid_rows %>%
-  filter(is.finite(euclidean_distance),
-         is.finite(Semantic_Similarity),
-         is.finite(Pairwise_Indv_Similarity)) %>%
-  mutate(subject = factor(subject), domain = factor(domain))
-
-#general model including general semantic similarity, domain, and each subject acting as their own baseline, semantic similarity and domain as fixed effects with subject random intercept
-general_semantic_model <- lmer (
-  euclidean_distance ~ Semantic_Similarity + domain + (1 | subject), 
-  data = model_data, REML = TRUE
-)
-
-#individual model with same setup but individual semantic similarity
-individual_semantic_model <- lmer (
-  euclidean_distance ~ Pairwise_Indv_Similarity + domain + (1 | subject), 
-  data = model_data, REML = TRUE
-)
-
-summary(general_semantic_model)
-summary(individual_semantic_model)
-```
-
-
-Marginal r^2, demonstrating the variance explained by fixed effects, and conditional r^2, demonstrating variance explained by the fixed effects and random participant inercepts were calculated and each revealed that the general model outperformed the indivudual.
-
-```{r}
-r2_general <- performance :: r2_nakagawa(general_semantic_model)
-r2_individual <- performance :: r2_nakagawa(individual_semantic_model)
-
-r2_comparison <- tibble(
-  model = c("General", "Individual"),
-  marginal_R2 = c(r2_general$R2_marginal, r2_individual$R2_marginal),
-  conditional_R2 = c(r2_general$R2_conditional, r2_individual$R2_conditional)
-)
-
-print(r2_comparison)
-```
-
-Plots were made displaying fluency scores relation to both individual and general semantic similarity, and across domains with enough comparisons to be included.
-
-```{r}
-fluency_plot_data <- merged_similarity_fluency %>%
-  filter(
-    n_items >= 2, 
-    is.finite(fluency_count),
-    is.finite(general_mean),
-    is.finite(individual_mean)
-  )
-
-plot_general <- ggplot(
-  fluency_plot_data, aes(x = fluency_count, y = general_mean)
-) + 
-  geom_point(alpha = 0.7) +
-  geom_smooth(method = "lm", se = TRUE) +
-  geom_text_repel(aes(label = subject), size = 2.5, max.overlaps = 15) +
-  labs(
-    title = "Fluency vs. General Semantic Similarity",
-    x = "Fluency score",
-    y = "Mean general semantic similarity"
-  ) + theme_minimal()
-
-plot_individual <- ggplot(
-  fluency_plot_data, aes(x = fluency_count, y = individual_mean)
-) + 
-  geom_point(alpha = 0.7) +
-  geom_smooth(method = "lm", se = TRUE) +
-  geom_text_repel(aes(label = subject), size = 2.5, max.overlaps = 15) +
-  labs(
-    title = "Fluency vs. Individual Semantic Similarity",
-    x = "Fluency score",
-    y = "Mean individual semantic similarity"
-  ) + theme_minimal()
-
-plot_general + plot_individual
-
-plot_general + facet_wrap(~ domain, scales = "free_x")
-plot_individual + facet_wrap(~ domain, scales = "free_x")
+ggsave("fluency_bar.png", fluency_bar, width = 10, height = 6, dpi = 300)
 
 ```
+
+
+_______ old
 
 ## Word Fluency Examination
 
